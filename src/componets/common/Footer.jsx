@@ -1,0 +1,85 @@
+export default function Footer() {
+    return (
+      <div>
+        <footer className="bg-black">
+          <div className="w-[1200px] mx-auto text-white py-[50px] flex justify-between mt-[50px]">
+            <div>
+              <div className="space-y-[24px]">
+                <a href="./about.html">
+                  <img src="./assets/img/hərşeyburada2.svg" alt="" />
+                </a>
+                <div>
+                  <a href="#" className="text-[20px] font-[500] cursor-pointer opacity-70 hover:opacity-100">
+                    Abunə Olun
+                  </a>
+                </div>
+                <div className="flex space-x-[16px]">
+                  <a href="#" target="_blank">
+                    <i className="text-[20px] opacity-70 hover:opacity-100 fa-brands fa-facebook-f"></i>
+                  </a>
+                  <a href="#" target="_blank">
+                    <i className="text-[20px] opacity-70 hover:opacity-100 fa-brands fa-twitter"></i>
+                  </a>
+                  <a href="https://www.instagram.com/herseyburadaz/" target="_blank">
+                    <i className="text-[20px] opacity-70 hover:opacity-100 fa-brands fa-instagram"></i>
+                  </a>
+                  <a href="#" target="_blank">
+                    <i className="text-[20px] opacity-70 hover:opacity-100 fa-brands fa-linkedin-in"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+  
+            <div className="flex flex-col">
+              <h3 className="font-[500] text-[20px] mb-[24px]">Dəstək</h3>
+              <p className="text-[16px] mb-[16px]">Bakı, Azərbaycan</p>
+              <p className="text-[16px] mb-[16px]">herseyburadacomp@gmail.com</p>
+              <p className="text-[16px] mb-[16px]">+994 (55) 777 88 85</p>
+            </div>
+  
+            <div className="flex flex-col">
+              <h3 className="font-[500] text-[20px] mb-[24px]">Hesab</h3>
+              <a className="text-[16px] mb-[16px] opacity-70 hover:opacity-100 hover:underline" href="./account.html">
+                Hesabım
+              </a>
+              <a className="text-[16px] mb-[16px] opacity-70 hover:opacity-100 hover:underline" href="./signup.html">
+                Daxil ol
+              </a>
+              <a className="text-[16px] mb-[16px] opacity-70 hover:opacity-100 hover:underline" href="./cart.html">
+                Səbətim
+              </a>
+              <a className="text-[16px] mb-[16px] opacity-70 hover:opacity-100 hover:underline" href="./wishlist.html">
+                Sevimlilər
+              </a>
+            </div>
+  
+            <div className="flex flex-col">
+              <h3 className="font-[500] text-[20px] mb-[24px]">Tez Link</h3>
+              <a className="text-[16px] mb-[16px] opacity-70 hover:opacity-100 hover:underline" href="#">
+                Gizlilik Siyasəti
+              </a>
+              <a className="text-[16px] mb-[16px] opacity-70 hover:opacity-100 hover:underline" href="#">
+                İstifadə Şərtləri
+              </a>
+              <a className="text-[16px] mb-[16px] opacity-70 hover:opacity-100 hover:underline" href="./contact.html">
+                Əlaqə
+              </a>
+              <a className="text-[16px] mb-[16px] opacity-70 hover:opacity-100 hover:underline" href="./about.html">
+                Haqqımızda
+              </a>
+            </div>
+          </div>
+  
+          <div className="flex items-center justify-center bg-black gap-x-[6px] py-[16px] border-t-[1px] border-[#141414]">
+            <div className="size-[20px]">
+              <img className="object-cover opacity-50" src="./assets/img/c.svg" alt="" />
+            </div>
+            <div className="text-[16px] text-[#d9d9d9]">
+              <a href="#">Copyright Rimel 2022. Bütün hüquqlar qorunur</a>
+            </div>
+          </div>
+        </footer>
+      </div>
+    );
+  }
+  

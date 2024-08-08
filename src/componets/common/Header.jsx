@@ -1,0 +1,115 @@
+import { Link } from "react-router-dom";
+
+export default function Header() {
+  return (
+    <header className="border-b-[1px] sticky top-0 bg-white z-40">
+      <div className="mt-[10px] w-[1200px] mx-auto flex justify-between items-center py-[20px]">
+        <div className="flex justify-between items-center w-[830px] gap-x-[70px]">
+          <div className="text-[24px] font-logo">
+            <Link to={'/'}>
+              <img src="./assets/img/hərşeyburada.svg" alt="" />
+            </Link>
+          </div>
+          <div className="flex justify-between items-center h-[40px] grow pr-[5px] pl-[14px] rounded-[14px] border">
+            <input
+              className="bg-transparent placeholder-black opacity-50 outline-none text-sm grow"
+              type="text"
+              placeholder="Nə ilə maraqlanırsınız?"
+            />
+            <a
+              href="./filter.html"
+              className="size-[32px] bg-[#ff9130] rounded-[10px] cursor-pointer text-white inline-flex justify-center items-center hover:bg-[#e07575]"
+            >
+              <i className="fa-solid fa-magnifying-glass text-[13px]" />
+            </a>
+          </div>
+        </div>
+        <nav className="w-[347px] flex justify-end gap-x-[16px] items-center gap-x-[24px]">
+          <a
+            href="./cart.html"
+            className="inline-flex items-center gap-x-[5px] hover:text-[#ff7518]"
+          >
+            <i className="fa-solid fa-cart-shopping text-[20px] " />
+            <span className="text-[12px]">Səbətim</span>
+          </a>
+          <a
+            href="./wishlist.html"
+            className="inline-flex items-center gap-x-[5px] hover:text-[#ff7518]"
+          >
+            <i className="fa-solid fa-heart text-[20px] " />
+            <span className="text-[12px]">Sevimlilərim</span>
+          </a>
+          <div className="flex flex-col relative ">
+            <div
+              id="account"
+              className="inline-flex cursor-pointer items-center gap-x-[5px] hover:text-[#ff7518]"
+            >
+              <i className="fa-solid fa-user text-[20px] " />
+              <span className="text-[12px]">Hesabım</span>
+            </div>
+            <div
+              id="dropdown"
+              className="absolute flex-col justify-start right-0 top-3 hidden w-[200px] bg-white shadow-lg rounded-lg mt-2 py-2"
+            >
+              <a
+                href="./account.html"
+                className="flex justify-between items-center px-4 py-2 text-sm hover:bg-gray-100 hover:text-[#ff7518]"
+              >
+                <img
+                  src="assets/img/Icon-user.svg"
+                  className="size-[22px] w-[20%] mr-2"
+                  alt=""
+                />
+                <span className="text-left w-[80%]">Hesabımın idarəsi</span>
+              </a>
+              <a
+                href="#"
+                className="flex justify-between items-center px-4 py-2 text-sm hover:bg-gray-100 hover:text-[#ff7518]"
+              >
+                <img
+                  src="assets/img/Icon-mallbag.svg"
+                  alt=""
+                  className="size-[24px] w-[20%] mr-2"
+                />
+                <span className="text-left w-[80%]">Mənim sifarişlərim</span>
+              </a>
+              <a
+                href="#"
+                className="flex justify-between items-center px-4 py-2 text-sm hover:bg-gray-100 hover:text-[#ff7518]"
+              >
+                <img
+                  src="assets/img/Icon-service.svg"
+                  alt=""
+                  className="size-[21px] w-[20%] mr-2"
+                />
+                <span className="text-left w-[80%]">Müştəri xidməti</span>
+              </a>
+              <a
+                href="#"
+                className="flex justify-between items-center px-4 py-2 text-sm hover:bg-gray-100 hover:text-[#ff7518]"
+              >
+                <img
+                  src="assets/img/Icon-Reviews.svg"
+                  alt=""
+                  className="size-[25px] w-[20%] mr-2"
+                />
+                <span className="text-left w-[80%]">Mənim rəylərim</span>
+              </a>
+              <a
+                href="./login.html"
+                className="flex justify-between items-center px-4 py-2 text-sm hover:bg-gray-100 hover:text-[#ff7518]"
+              >
+                <img
+                  src="assets/img/Icon-logout.svg"
+                  alt=""
+                  className="size-[24px] w-[20%] mr-2"
+                />
+                <span className="text-left w-[80%]">Çıxış et</span>
+              </a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+  );
+}
