@@ -19,7 +19,7 @@ export function AboutSection() {
           </p>
         </div>
         <figure className="w-[705px] h-[609px]">
-          <img className="h-full w-full object-cover" src="./assets/img/about.jpg" alt="about" />
+          <img className="h-full w-full object-cover" src="/about.jpg" alt="about" />
         </figure>
       </div>
     );
