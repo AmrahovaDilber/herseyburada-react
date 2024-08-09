@@ -1,8 +1,8 @@
 import CheckOut from "../componets/ui/CheckOut";
 
-function CheckOut(){
+function CheckOutPage(){
     <div>
         <CheckOut></CheckOut>
     </div>
 }
-export default CheckOut;
+export default CheckOutPage;
