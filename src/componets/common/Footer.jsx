@@ -8,7 +8,7 @@ export default function Footer() {
             <div>
               <div className="space-y-[24px]">
                 <a href="./about.html">
-                  <img src="./assets/img/hərşeyburada2.svg" alt="" />
+                  <img src="/public/hərşeyburada2.svg" alt="" />
                 </a>
                 <div>
                   <a href="#" className="text-[20px] font-[500] cursor-pointer opacity-70 hover:opacity-100">

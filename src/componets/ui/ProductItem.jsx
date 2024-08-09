@@ -28,11 +28,11 @@ export default function ProductItem({ product }) {
             <img src={imageUrl} className="object-cover" alt={name} />
           </figure>
           <figure className="size-[34px] rounded-full bg-[#FFFFFF] absolute top-[12px] right-[12px] flex items-center justify-center">
-            <img src="./assets/img/heart.svg" className="object-cover" />
+            <img src="/public/heart.svg" className="object-cover" />
           </figure>
           <div className="absolute bottom-0 py-[8px] hidden group-hover:flex space-x-[3px] items-center justify-center w-full bg-[#000000]">
             <figure className="size-[24px] text-white">
-              <img src="assets/img/sebet.svg" className="object-cover" />
+              <img src="/public/sebet.svg" className="object-cover" />
             </figure>
             <p className="text-[#FFFF] text-[12px] font-normal">Add To Cart</p>
           </div>
@@ -50,18 +50,14 @@ export default function ProductItem({ product }) {
             </p>
           </div>
           <div className="flex space-x-[8px] items-center">
-            <div className="w-[100px] flex items-center space-x-2">
+            <div className="w-[100px] flex space-x-[8px]">
               {Array.from({ length: 5 }, (_, index) => (
-                <figure key={index} className="w-[20px]">
-                  <img
-                    className="object-cover"
-                    src={`./assets/img/star${index < rating ? "" : "-empty"}.svg`}
-                    alt="star"
-                  />
-                </figure>
+                <div key={index} className="w-[10px]">
+                  <i class="text-[14px] fa-regular fa-star"></i>
+                </div>
               ))}
             </div>
-            <p className="text-[#7F7F7F] font-semibold text-[14px]">
+            <p className="text-[#7F7F7F] font-semibold">
               ({reviewCount})
             </p>
           </div>
