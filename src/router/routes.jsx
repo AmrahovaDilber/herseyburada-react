@@ -1,3 +1,4 @@
+import CheckOutPage from "../componets/ui/CheckOut";
 import AppLayout from "../layouts/AppLayout";
 import AboutPage from "../pages/About";
 import AccountPage from "../pages/AccoutPage";
@@ -44,6 +45,10 @@ const routers = [
   {
     path: "/about",
     element: <AboutPage></AboutPage>,
+  },
+  {
+    path: "/checkout",
+    element: <CheckOutPage></CheckOutPage>,
   },
 ];
 

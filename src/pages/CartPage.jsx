@@ -10,14 +10,14 @@ export default function CartPage() {
       price: "$650",
       quantity: 1,
       subtotal: "$650",
-      image: "./assets/img/monitor.png",
+      image: "/public/monitor.png",
     },
     {
       name: "H1 Gamepad",
       price: "$550",
       quantity: 1,
       subtotal: "$550",
-      image: "./assets/img/gamepad.png",
+      image: "/public/itemConsol.svg",
     },
   ];
 

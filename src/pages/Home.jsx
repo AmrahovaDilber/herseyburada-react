@@ -3,6 +3,7 @@ import CategorySection from "../componets/ui/CategorySection";
 import MusicExperience from "../componets/ui/MusicExperience";
 import Services from "../componets/ui/Services";
 import Sales from "../componets/ui/Sales";
+import ExploreProduct from "../componets/ui/ExploreProduct";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <Sales></Sales>
       <BestSellers></BestSellers>
       <MusicExperience></MusicExperience>
+      <ExploreProduct></ExploreProduct>
       <Services></Services>
     </div>
   );
