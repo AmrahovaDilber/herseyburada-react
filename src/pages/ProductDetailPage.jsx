@@ -6,8 +6,8 @@ import QuantitySelector from "../componets/ui/QuantitySelector";
 import DeliveryInfo from "../componets/ui/DeliveryInfo";
 export default function ProductDetailPage() {
   return (
-    <div className="flex flex-col">
-      <div className="flex justify-between my-[50px] ">
+    <div className="flex flex-col w-[1200px]">
+      <div className="flex justify-between my-[50px] w-[1200px] ">
         <div className="flex gap-x-[43px]">
           {/* ThumbnailList */}
           <div className="flex flex-col gap-y-[8px]">

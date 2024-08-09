@@ -6,7 +6,7 @@ const SignupForm = () => {
       <figure className="w-[600px] h-[650px]">
         <img
           className="w-full h-full object-cover"
-          src="./assets/img/login-register.svg"
+          src="/login-register.svg"
           alt=""
         />
       </figure>

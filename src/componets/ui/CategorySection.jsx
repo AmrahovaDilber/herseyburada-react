@@ -1093,18 +1093,50 @@ export default function CategorySection() {
         </div>
         {/* RIGHTBOX */}
         <div className="relative text-white bg-black w-full max-w-[892px] h-[344px] overflow-hidden z-10">
-          <div
-            className="flex transition-transform duration-500 ease-in-out"
-            id="sliderAdvert"
-          >
-            {/* Slides will be dynamically inserted here by JavaScript */}
+      
+          <div className="flex space-x-[40px]">
+            <div className="w-[294px] flex flex-col pt-[58px] pl-[64px]">
+              <div className="flex space-x-[14px] mb-[10px] items-center">
+                <div className="w-[40px] h-[49px]">
+                  <img src="/apple.svg" className="object-cover" />
+                </div>
+                <p className="font-normal text-[16px] text-[#FAFAFA]">
+                  iPhone 14 Seriyası
+                </p>
+              </div>
+              <p className="text-[48px] text-[#FAFAFA] font-semibold w-[294px]">
+                10%-ə qədər Endirim
+              </p>
+              {/* <div className="flex items-center mt-[22px] space-x-2">
+                <button className="underline text-[16px] text-#FAFAFA font-medium">
+                  İndi Al
+                </button>
+                <div className="size-[24px]">
+                  <img
+                    className="object-cover"
+                    src="/icons_arrow-right.svg"
+                  />
+                </div>
+              </div> */}
+            </div>
+
+          
+            <div className="w-[496px] h-[310px] pt-[16px]">
+              <img
+                src="/iphone.png"
+                className="object-cover"
+                alt="phone"
+              />
+            </div>
           </div>
-          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-3">
-            <div className="dot size-[12px] rounded-full bg-gray-200 cursor-pointer" />
-            <div className="dot size-[12px] rounded-full bg-gray-200 cursor-pointer" />
-            <div className="dot size-[12px] rounded-full bg-gray-200 cursor-pointer" />
-            {/* Add more dots here as needed */}
+          <div className="flex space-x-3 items-center w-[110px] mx-auto">
+            <div class="size-[12px] rounded-full bg-gray-200"></div>
+            <div class="size-[12px] rounded-full bg-gray-200"></div>
+            <div class="size-[12px] rounded-full bg-gray-200"></div>
+            <div class="size-[12px] rounded-full bg-gray-200"></div>
+            <div class="size-[12px] rounded-full bg-gray-200"></div>
           </div>
+    
         </div>
       </div>
     </section>
