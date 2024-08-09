@@ -1,5 +1,6 @@
 // CartItem.jsx
 export default function CartItem({ product }) {
+
     return (
       <div className="grid grid-cols-4 rounded-[4px] gap-[15rem] h-[102px] items-center border border-gray-100 shadow-sm px-[40px]">
         <div className="flex items-center">

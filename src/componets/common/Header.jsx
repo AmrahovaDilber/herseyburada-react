@@ -1,12 +1,27 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Header() {
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
+
+  const handleAccountClick = (e) => {
+    e.stopPropagation(); // Prevent click event propagation
+    setDropdownOpen((prev) => !prev); // Toggle dropdown visibility
+  };
+
+  const handleOutsideClick = () => {
+    setDropdownOpen(false); // Close dropdown when clicking outside
+  };
+
+  // Close the dropdown when clicking anywhere outside
+  document.addEventListener("click", handleOutsideClick);
+
   return (
     <header className="border-b-[1px] sticky top-0 bg-white z-40">
       <div className="mt-[10px] w-[1200px] mx-auto flex justify-between items-center py-[20px]">
         <div className="flex justify-between items-center w-[830px] gap-x-[70px]">
           <div className="text-[24px] font-logo">
-            <Link to={'/'}>
+            <Link to={"/"}>
               <img src="/herseyburada.svg" alt="" />
             </Link>
           </div>
@@ -16,7 +31,8 @@ export default function Header() {
               type="text"
               placeholder="Nə ilə maraqlanırsınız?"
             />
-            <Link to={'/filter'}
+            <Link
+              to={"/filter"}
               className="size-[32px] bg-[#ff9130] rounded-[10px] cursor-pointer text-white inline-flex justify-center items-center hover:bg-[#e07575]"
             >
               <i className="fa-solid fa-magnifying-glass text-[13px]" />
@@ -24,13 +40,15 @@ export default function Header() {
           </div>
         </div>
         <nav className="w-[347px] flex justify-end gap-x-[16px] items-center gap-x-[24px]">
-          <Link to={'/cartpage'}
+          <Link
+            to={"/cartpage"}
             className="inline-flex items-center gap-x-[5px] hover:text-[#ff7518]"
           >
             <i className="fa-solid fa-cart-shopping text-[20px] " />
             <span className="text-[12px]">Səbətim</span>
           </Link>
-          <Link to={'/wishlist'}
+          <Link
+            to={"/wishlist"}
             className="inline-flex items-center gap-x-[5px] hover:text-[#ff7518]"
           >
             <i className="fa-solid fa-heart text-[20px] " />
@@ -40,70 +58,79 @@ export default function Header() {
             <div
               id="account"
               className="inline-flex cursor-pointer items-center gap-x-[5px] hover:text-[#ff7518]"
+              onClick={handleAccountClick}
             >
               <i className="fa-solid fa-user text-[20px] " />
               <span className="text-[12px]">Hesabım</span>
             </div>
-            <div
-              id="dropdown"
-              className="absolute flex-col justify-start right-0 top-3 hidden w-[200px] bg-white shadow-lg rounded-lg mt-2 py-2"
-            >
-              <a
-                href="./account.html"
-                className="flex justify-between items-center px-4 py-2 text-sm hover:bg-gray-100 hover:text-[#ff7518]"
+            {isDropdownOpen && (
+              <div
+                id="dropdown"
+                className="absolute flex-col justify-start right-0 top-3 w-[200px] bg-white shadow-lg rounded-lg mt-2 py-2"
               >
-                <img
-                  src="assets/img/Icon-user.svg"
-                  className="size-[22px] w-[20%] mr-2"
-                  alt=""
-                />
-                <span className="text-left w-[80%]">Hesabımın idarəsi</span>
-              </a>
-              <a
-                href="#"
-                className="flex justify-between items-center px-4 py-2 text-sm hover:bg-gray-100 hover:text-[#ff7518]"
-              >
-                <img
-                  src="assets/img/Icon-mallbag.svg"
-                  alt=""
-                  className="size-[24px] w-[20%] mr-2"
-                />
-                <span className="text-left w-[80%]">Mənim sifarişlərim</span>
-              </a>
-              <a
-                href="#"
-                className="flex justify-between items-center px-4 py-2 text-sm hover:bg-gray-100 hover:text-[#ff7518]"
-              >
-                <img
-                  src="assets/img/Icon-service.svg"
-                  alt=""
-                  className="size-[21px] w-[20%] mr-2"
-                />
-                <span className="text-left w-[80%]">Müştəri xidməti</span>
-              </a>
-              <a
-                href="#"
-                className="flex justify-between items-center px-4 py-2 text-sm hover:bg-gray-100 hover:text-[#ff7518]"
-              >
-                <img
-                  src="assets/img/Icon-Reviews.svg"
-                  alt=""
-                  className="size-[25px] w-[20%] mr-2"
-                />
-                <span className="text-left w-[80%]">Mənim rəylərim</span>
-              </a>
-              <a
-                href="./login.html"
-                className="flex justify-between items-center px-4 py-2 text-sm hover:bg-gray-100 hover:text-[#ff7518]"
-              >
-                <img
-                  src="assets/img/Icon-logout.svg"
-                  alt=""
-                  className="size-[24px] w-[20%] mr-2"
-                />
-                <span className="text-left w-[80%]">Çıxış et</span>
-              </a>
-            </div>
+                <a
+                  href="./account.html"
+                  className="flex justify-between items-center px-4 py-2 text-sm hover:bg-gray-100 hover:text-[#ff7518]"
+                >
+                  <img
+                    src="assets/img/Icon-user.svg"
+                    className="size-[22px] w-[20%] mr-2"
+                    alt=""
+                  />
+                  <Link to={"/account"} className="text-left w-[80%]">
+                    Hesabımın idarəsi
+                  </Link>
+                </a>
+                <a
+                  href="#"
+                  className="flex justify-between items-center px-4 py-2 text-sm hover:bg-gray-100 hover:text-[#ff7518]"
+                >
+                  <img
+                    src="assets/img/Icon-mallbag.svg"
+                    alt=""
+                    className="size-[24px] w-[20%] mr-2"
+                  />
+                  <Link to={"/cartpage"} className="text-left w-[80%]">
+                    Mənim sifarişlərim
+                  </Link>
+                </a>
+                <a
+                  href="#"
+                  className="flex justify-between items-center px-4 py-2 text-sm hover:bg-gray-100 hover:text-[#ff7518]"
+                >
+                  <img
+                    src="assets/img/Icon-service.svg"
+                    alt=""
+                    className="size-[21px] w-[20%] mr-2"
+                  />
+                  <span className="text-left w-[80%]">Müştəri xidməti</span>
+                </a>
+                <a
+                  href="#"
+                  className="flex justify-between items-center px-4 py-2 text-sm hover:bg-gray-100 hover:text-[#ff7518]"
+                >
+                  <img
+                    src="assets/img/Icon-Reviews.svg"
+                    alt=""
+                    className="size-[25px] w-[20%] mr-2"
+                  />
+                  <span className="text-left w-[80%]">Mənim rəylərim</span>
+                </a>
+                <a
+                  href="./login.html"
+                  className="flex justify-between items-center px-4 py-2 text-sm hover:bg-gray-100 hover:text-[#ff7518]"
+                >
+                  <img
+                    src="assets/img/Icon-logout.svg"
+                    alt=""
+                    className="size-[24px] w-[20%] mr-2"
+                  />
+                  <Link to={"/"} className="text-left w-[80%]">
+                    Çıxış et
+                  </Link>
+                </a>
+              </div>
+            )}
           </div>
         </nav>
       </div>
