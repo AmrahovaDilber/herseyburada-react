@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Footer() {
     return (
       <div>
@@ -39,18 +41,18 @@ export default function Footer() {
   
             <div className="flex flex-col">
               <h3 className="font-[500] text-[20px] mb-[24px]">Hesab</h3>
-              <a className="text-[16px] mb-[16px] opacity-70 hover:opacity-100 hover:underline" href="./account.html">
+              <Link to={'account'} className="text-[16px] mb-[16px] opacity-70 hover:opacity-100 hover:underline">
                 Hesabım
-              </a>
-              <a className="text-[16px] mb-[16px] opacity-70 hover:opacity-100 hover:underline" href="./signup.html">
+              </Link>
+              <Link to={'/signup'} className="text-[16px] mb-[16px] opacity-70 hover:opacity-100 hover:underline">
                 Daxil ol
-              </a>
-              <a className="text-[16px] mb-[16px] opacity-70 hover:opacity-100 hover:underline" href="./cart.html">
+              </Link>
+              <Link to={'/cartpage'} className="text-[16px] mb-[16px] opacity-70 hover:opacity-100 hover:underline">
                 Səbətim
-              </a>
-              <a className="text-[16px] mb-[16px] opacity-70 hover:opacity-100 hover:underline" href="./wishlist.html">
+              </Link>
+              <Link to={'/wishlist'} className="text-[16px] mb-[16px] opacity-70 hover:opacity-100 hover:underline">
                 Sevimlilər
-              </a>
+              </Link>
             </div>
   
             <div className="flex flex-col">

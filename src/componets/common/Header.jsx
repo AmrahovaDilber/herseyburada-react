@@ -7,7 +7,7 @@ export default function Header() {
         <div className="flex justify-between items-center w-[830px] gap-x-[70px]">
           <div className="text-[24px] font-logo">
             <Link to={'/'}>
-              <img src="./assets/img/hərşeyburada.svg" alt="" />
+              <img src="/herseyburada.svg" alt="" />
             </Link>
           </div>
           <div className="flex justify-between items-center h-[40px] grow pr-[5px] pl-[14px] rounded-[14px] border">
@@ -16,29 +16,26 @@ export default function Header() {
               type="text"
               placeholder="Nə ilə maraqlanırsınız?"
             />
-            <a
-              href="./filter.html"
+            <Link to={'/filter'}
               className="size-[32px] bg-[#ff9130] rounded-[10px] cursor-pointer text-white inline-flex justify-center items-center hover:bg-[#e07575]"
             >
               <i className="fa-solid fa-magnifying-glass text-[13px]" />
-            </a>
+            </Link>
           </div>
         </div>
         <nav className="w-[347px] flex justify-end gap-x-[16px] items-center gap-x-[24px]">
-          <a
-            href="./cart.html"
+          <Link to={'/cartpage'}
             className="inline-flex items-center gap-x-[5px] hover:text-[#ff7518]"
           >
             <i className="fa-solid fa-cart-shopping text-[20px] " />
             <span className="text-[12px]">Səbətim</span>
-          </a>
-          <a
-            href="./wishlist.html"
+          </Link>
+          <Link to={'/wishlist'}
             className="inline-flex items-center gap-x-[5px] hover:text-[#ff7518]"
           >
             <i className="fa-solid fa-heart text-[20px] " />
             <span className="text-[12px]">Sevimlilərim</span>
-          </a>
+          </Link>
           <div className="flex flex-col relative ">
             <div
               id="account"

@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+import ItemDetails from "./ProductDetails";
+
 export default function ProductItem({ product }) {
   const {
     name,
@@ -13,8 +16,7 @@ export default function ProductItem({ product }) {
   return (
     <div>
       <div className="h-[360px] relative shadow-lg">
-        <a
-          href={detailsUrl}
+        <Link to={'/productdetails'}
           className="relative flex items-center justify-center h-[250px] bg-[#F5F5F5] group"
         >
           <div className="w-[55px] h-[26px] bg-[#FF7518] rounded-md absolute top-[12px] left-[12px]">
@@ -34,7 +36,7 @@ export default function ProductItem({ product }) {
             </figure>
             <p className="text-[#FFFF] text-[12px] font-normal">Add To Cart</p>
           </div>
-        </a>
+        </Link>
         <div className="p-3 flex flex-col">
           <p className="font-medium text-[16px] text-[#000000] mb-[8px]">
             {name}
