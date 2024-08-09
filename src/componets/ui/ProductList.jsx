@@ -8,7 +8,7 @@ const products = [
     originalPrice: 160,
     rating: 5,
     reviewCount: 88,
-    imageUrl: "/public/itemConsol.svg",
+    imageUrl: "/itemConsol.svg",
     detailsUrl: "./details.html",
   },
   {
@@ -19,7 +19,7 @@ const products = [
     originalPrice: 80,
     rating: 4,
     reviewCount: 120,
-    imageUrl: "/public/itemConsol.svg",
+    imageUrl: "/itemConsol.svg",
     detailsUrl: "./details-razer.html",
   },
   {
@@ -30,7 +30,7 @@ const products = [
     originalPrice: 100,
     rating: 4.5,
     reviewCount: 200,
-    imageUrl: "/public/itemConsol.svg",
+    imageUrl: "/itemConsol.svg",
     detailsUrl: "./details-logitech.html",
   },
   {
@@ -41,7 +41,7 @@ const products = [
     originalPrice: 200,
     rating: 4.8,
     reviewCount: 150,
-    imageUrl: "/public/itemConsol.svg",
+    imageUrl: "/itemConsol.svg",
     detailsUrl: "./details-corsair.html",
   },
 ];
