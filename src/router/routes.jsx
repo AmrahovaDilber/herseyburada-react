@@ -1,4 +1,5 @@
 import AppLayout from "../layouts/AppLayout";
+import AboutPage from "../pages/About";
 import CartPage from "../pages/CartPage";
 import Home from "../pages/Home";
 import ProductDetailPage from "../pages/ProductDetailPage";
@@ -9,19 +10,23 @@ const routers = [
   },
   {
     path: "/cart",
-    element: <CartPage></CartPage>
+    element: <CartPage></CartPage>,
   },
   {
     path: "/productdetails",
-    element: <ProductDetailPage></ProductDetailPage>
+    element: <ProductDetailPage></ProductDetailPage>,
+  },
+  {
+    path: "/about",
+    element: <AboutPage></AboutPage>,
   },
 ];
 
 const layoutRouter = (routers) => {
   return routers.map((router) => {
-      router.element = <AppLayout>{router.element}</AppLayout>;
+    router.element = <AppLayout>{router.element}</AppLayout>;
     return router;
   });
 };
 
-export default layoutRouter(routers)
+export default layoutRouter(routers);
