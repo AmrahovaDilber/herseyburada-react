@@ -1,4 +1,3 @@
-// Coupon.jsx
 export default function Coupon() {
     return (
       <div>
