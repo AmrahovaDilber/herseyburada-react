@@ -34,7 +34,7 @@ export default function ProductItem({ product }) {
             <figure className="size-[24px] text-white">
               <img src="/public/sebet.svg" className="object-cover" />
             </figure>
-            <p className="text-[#FFFF] text-[12px] font-normal">Add To Cart</p>
+            <Link to={'/cartpage'} className="text-[#FFFF] text-[12px] font-normal">Add To Cart</Link>
           </div>
         </Link>
         <div className="p-3 flex flex-col">
