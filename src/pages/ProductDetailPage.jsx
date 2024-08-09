@@ -71,7 +71,6 @@ export default function ProductDetailPage() {
           <DeliveryInfo />
         </div>
       </div>
-
       <TitleSubtitle subtitle="Trenddə" />
       <ProductList />
     </div>

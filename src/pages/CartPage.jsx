@@ -2,6 +2,7 @@
 import CartList from "../componets/ui/CartList";
 import Coupon from "../componets/ui/Coupan";
 import CartTotal from "../componets/ui/CartTotal";
+import { Link } from "react-router-dom";
 export default function CartPage() {
   const products = [
     {
@@ -26,19 +27,20 @@ export default function CartPage() {
   return (
     <main className="w-[1200px] mx-auto pt-[40px] font-poppins">
       <div className="mb-[40px] text-gray-500">
-        <a
-          href="index.html"
+        <Link
+          to={"/"}
           className="hover:text-black transition-colors duration-200"
         >
           Home
-        </a>
+        </Link>
         <span className="mx-[12px]">/</span>
-        <a
+        <Link
+          to={"/cartpage"}
           href="cart.html"
           className="hover:text-black text-black transition-colors duration-200"
         >
           Cart
-        </a>
+        </Link>
       </div>
 
       <div className="mb-[80px]">

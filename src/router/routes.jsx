@@ -2,7 +2,10 @@ import AppLayout from "../layouts/AppLayout";
 import AboutPage from "../pages/About";
 import CartPage from "../pages/CartPage";
 import Home from "../pages/Home";
+import LoginPage from "../pages/LoginPage";
 import ProductDetailPage from "../pages/ProductDetailPage";
+import SignUpPage from "../pages/SignUpPage";
+import WishList from "../pages/WishList";
 const routers = [
   {
     path: "/",
@@ -20,14 +23,18 @@ const routers = [
     path: "/cartpage",
     element: <CartPage></CartPage>,
   },
-  // {
-  //   path: "/wishlist",
-  //   element: <Wishlist></Wishlist>,
-  // },
-  // {
-  //   path: "/signup",
-  //   element: <SignUp></SignUp>,
-  // },
+  {
+    path: "/wishlist",
+    element:<WishList></WishList>
+  },
+  {
+    path: "/signup",
+    element: <SignUpPage></SignUpPage>,
+  },
+  {
+    path: "/login",
+    element: <LoginPage></LoginPage>,
+  },
   // {
   //   path: "/account",
   //   element: <Account></Account>,
