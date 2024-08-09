@@ -53,7 +53,7 @@ export default function ProductItem({ product }) {
             <div className="w-[100px] flex space-x-[8px]">
               {Array.from({ length: 5 }, (_, index) => (
                 <div key={index} className="w-[10px]">
-                  <i class="text-[14px] fa-regular fa-star"></i>
+                  <i className="text-[14px] fa-regular fa-star"></i>
                 </div>
               ))}
             </div>

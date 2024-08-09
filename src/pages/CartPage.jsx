@@ -48,12 +48,12 @@ export default function CartPage() {
 
         {/* CartActions Component */}
         <div className="mt-[24px] flex justify-between">
-          <a
-            href="filter.html"
+          <Link
+       to={'/filter'}
             className="border border-black/50 rounded-[4px] px-[48px] py-[16px] font-medium hover:bg-gray-100 transition-colors duration-200"
           >
             Return To Shop
-          </a>
+          </Link>
           <a
             href="#"
             className="border border-black/50 rounded-[4px] px-[48px] py-[16px] font-medium hover:bg-gray-100 transition-colors duration-200"

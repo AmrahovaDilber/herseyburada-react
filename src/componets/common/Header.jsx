@@ -5,12 +5,12 @@ export default function Header() {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
 
   const handleAccountClick = (e) => {
-    e.stopPropagation(); // Prevent click event propagation
-    setDropdownOpen((prev) => !prev); // Toggle dropdown visibility
+    e.stopPropagation(); 
+    setDropdownOpen((prev) => !prev); 
   };
 
   const handleOutsideClick = () => {
-    setDropdownOpen(false); // Close dropdown when clicking outside
+    setDropdownOpen(false); 
   };
 
   // Close the dropdown when clicking anywhere outside
@@ -68,8 +68,8 @@ export default function Header() {
                 id="dropdown"
                 className="absolute flex-col justify-start right-0 top-3 w-[200px] bg-white shadow-lg rounded-lg mt-2 py-2"
               >
-                <a
-                  href="./account.html"
+                <Link
+                  to={"/account"}
                   className="flex justify-between items-center px-4 py-2 text-sm hover:bg-gray-100 hover:text-[#ff7518]"
                 >
                   <img
@@ -77,12 +77,10 @@ export default function Header() {
                     className="size-[22px] w-[20%] mr-2"
                     alt=""
                   />
-                  <Link to={"/account"} className="text-left w-[80%]">
-                    Hesabımın idarəsi
-                  </Link>
-                </a>
-                <a
-                  href="#"
+                  <span className="text-left w-[80%]">Hesabımın idarəsi</span>
+                </Link>
+                <Link
+                  to={"/cartpage"}
                   className="flex justify-between items-center px-4 py-2 text-sm hover:bg-gray-100 hover:text-[#ff7518]"
                 >
                   <img
@@ -90,10 +88,8 @@ export default function Header() {
                     alt=""
                     className="size-[24px] w-[20%] mr-2"
                   />
-                  <Link to={"/cartpage"} className="text-left w-[80%]">
-                    Mənim sifarişlərim
-                  </Link>
-                </a>
+                  <span className="text-left w-[80%]">Mənim sifarişlərim</span>
+                </Link>
                 <a
                   href="#"
                   className="flex justify-between items-center px-4 py-2 text-sm hover:bg-gray-100 hover:text-[#ff7518]"
@@ -116,8 +112,8 @@ export default function Header() {
                   />
                   <span className="text-left w-[80%]">Mənim rəylərim</span>
                 </a>
-                <a
-                  href="./login.html"
+                <Link
+                  to={"/login"}
                   className="flex justify-between items-center px-4 py-2 text-sm hover:bg-gray-100 hover:text-[#ff7518]"
                 >
                   <img
@@ -125,10 +121,8 @@ export default function Header() {
                     alt=""
                     className="size-[24px] w-[20%] mr-2"
                   />
-                  <Link to={"/"} className="text-left w-[80%]">
-                    Çıxış et
-                  </Link>
-                </a>
+                  <span className="text-left w-[80%]">Çıxış et</span>
+                </Link>
               </div>
             )}
           </div>
