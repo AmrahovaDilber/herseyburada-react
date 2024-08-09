@@ -63,12 +63,12 @@ export default function Footer() {
               <a className="text-[16px] mb-[16px] opacity-70 hover:opacity-100 hover:underline" href="#">
                 İstifadə Şərtləri
               </a>
-              <a className="text-[16px] mb-[16px] opacity-70 hover:opacity-100 hover:underline" href="./contact.html">
+              <Link to={'/contact'} className="text-[16px] mb-[16px] opacity-70 hover:opacity-100 hover:underline" href="./contact.html">
                 Əlaqə
-              </a>
-              <a className="text-[16px] mb-[16px] opacity-70 hover:opacity-100 hover:underline" href="./about.html">
+              </Link>
+              <Link to={'/about'} className="text-[16px] mb-[16px] opacity-70 hover:opacity-100 hover:underline" href="./about.html">
                 Haqqımızda
-              </a>
+              </Link>
             </div>
           </div>
   

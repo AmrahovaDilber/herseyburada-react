@@ -8,6 +8,7 @@ import LoginPage from "../pages/LoginPage";
 import ProductDetailPage from "../pages/ProductDetailPage";
 import SignUpPage from "../pages/SignUpPage";
 import WishList from "../pages/WishList";
+import ContactPage from '../pages/ContactPage';
 const routers = [
   {
     path: "/",
@@ -44,6 +45,10 @@ const routers = [
   {
     path: "/about",
     element: <AboutPage></AboutPage>,
+  },
+  {
+    path: "/contact",
+    element: <ContactPage></ContactPage>
   },
 ];
 

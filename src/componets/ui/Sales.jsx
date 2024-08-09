@@ -6,7 +6,10 @@ export default function Sales() {
     <div>
       <TitleSubtitle subtitle="Trendde" title="Endirimler">
         <div className="space-x-[8px] flex items-center">
-          <figure className="bg-[#F5F5F5] size-[46px] rounded-full text-black flex justify-center items-center cursor-pointer"z>
+          <figure
+            className="bg-[#F5F5F5] size-[46px] rounded-full text-black flex justify-center items-center cursor-pointer"
+            z
+          >
             <img src="/public/icons_arrow-left.svg" alt="Previous" />
           </figure>
           <figure className="bg-[#F5F5F5] size-[46px] rounded-full text-black flex justify-center items-center cursor-pointer">
