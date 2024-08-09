@@ -1,17 +1,17 @@
 export default function Services() {
     const services = [
       {
-        imgSrc: "/public/icon-delivery.svg",
+        imgSrc: "/icon-delivery.svg",
         title: "FREE AND FAST DELIVERY",
         description: "Free delivery for all orders over $140",
       },
       {
-        imgSrc: "/public/icon-headphone.svg",
+        imgSrc: "/icon-headphone.svg",
         title: "24/7 CUSTOMER SERVICE",
         description: "Friendly 24/7 customer support",
       },
       {
-        imgSrc: "/public/icon-delivery.svg",
+        imgSrc: "/icon-delivery.svg",
         title: "MONEY BACK GUARANTEE",
         description: "We return money within 30 days",
       },
