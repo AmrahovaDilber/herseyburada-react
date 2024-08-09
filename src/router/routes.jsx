@@ -9,6 +9,7 @@ import LoginPage from "../pages/LoginPage";
 import ProductDetailPage from "../pages/ProductDetailPage";
 import SignUpPage from "../pages/SignUpPage";
 import WishList from "../pages/WishList";
+import ContactPage from '../pages/ContactPage';
 const routers = [
   {
     path: "/",
@@ -21,6 +22,10 @@ const routers = [
   {
     path: "/filter",
     element: <FilterPage></FilterPage>,
+  },
+  {
+    path: "/contact",
+    element: <ContactPage></ContactPage>
   },
   {
     path: "/cartpage",
@@ -48,7 +53,7 @@ const routers = [
   },
   {
     path: "/checkout",
-    element: <CheckOutPage></CheckOutPage>,
+    element: <CheckOutPage></CheckOutPage>
   },
 ];
 
