@@ -13,7 +13,7 @@ export default function CategorySection() {
                 </li>
                 <figure>
                   <img
-                    src="/public/right.svg"
+                    src="/right.svg"
                     className="object-cover cursor-pointer"
                   />
                 </figure>
@@ -100,7 +100,7 @@ export default function CategorySection() {
                 </li>
                 <figure>
                   <img
-                    src="/public/right.svg"
+                    src="/right.svg"
                     className="object-cover cursor-pointer"
                   />
                 </figure>
@@ -184,7 +184,7 @@ export default function CategorySection() {
                 </li>
                 <figure>
                   <img
-                    src="/public/right.svg"
+                    src="/right.svg"
                     className="object-cover cursor-pointer"
                   />
                 </figure>
@@ -322,7 +322,7 @@ export default function CategorySection() {
                 </li>
                 <figure>
                   <img
-                    src="/public/right.svg"
+                    src="/right.svg"
                     className="object-cover cursor-pointer"
                   />
                 </figure>
@@ -457,7 +457,7 @@ export default function CategorySection() {
                 </li>
                 <figure>
                   <img
-                    src="/public/right.svg"
+                    src="/right.svg"
                     className="object-cover cursor-pointer"
                   />
                 </figure>
@@ -583,7 +583,7 @@ export default function CategorySection() {
                 </li>
                 <figure>
                   <img
-                    src="/public/right.svg"
+                    src="/right.svg"
                     className="object-cover cursor-pointer"
                   />
                 </figure>
@@ -706,7 +706,7 @@ export default function CategorySection() {
                 </li>
                 <figure>
                   <img
-                    src="/public/right.svg"
+                    src="/right.svg"
                     className="object-cover cursor-pointer"
                   />
                 </figure>
@@ -835,7 +835,7 @@ export default function CategorySection() {
                 </li>
                 <figure>
                   <img
-                    src="/public/right.svg"
+                    src="/right.svg"
                     className="object-cover cursor-pointer"
                   />
                 </figure>
@@ -988,7 +988,7 @@ export default function CategorySection() {
                 </li>
                 <figure>
                   <img
-                    src="/public/right.svg"
+                    src="/right.svg"
                     className="object-cover cursor-pointer"
                   />
                 </figure>

@@ -20,11 +20,11 @@ export default function WishList() {
                 <img src="/itemConsol.svg" className="object-cover" alt="img" />
               </div>
               <div className="size-[34px] rounded-full bg-[#FFFFFF] absolute top-[12px] right-[12px] flex items-center justify-center">
-                <img src="/public/delete.png" className="object-cover" />
+                <img src="/delete.png" className="object-cover" />
               </div>
               <div className="bottom-0 absolute py-[8px] hidden group-hover:flex space-x-[3px] items-center justify-center w-full bg-[#000000]">
                 <div className="size-[24px] text-white">
-                  <img src="/public/sebet.svg" className="object-cover" />
+                  <img src="/sebet.svg" className="object-cover" />
                 </div>
                 <p className="text-[#FFFF] text-[12px] font-normal">
                   Add To Cart
@@ -55,11 +55,11 @@ export default function WishList() {
                 <img src="/itemConsol.svg" className="object-cover" alt="img" />
               </div>
               <div className="size-[34px] rounded-full bg-[#FFFFFF] absolute top-[12px] right-[12px] flex items-center justify-center">
-                <img src="/public/delete.png" className="object-cover" />
+                <img src="/delete.png" className="object-cover" />
               </div>
               <div className="bottom-0 absolute py-[8px] hidden group-hover:flex space-x-[3px] items-center justify-center w-full bg-[#000000]">
                 <div className="size-[24px] text-white">
-                  <img src="/public/sebet.svg" className="object-cover" />
+                  <img src="/sebet.svg" className="object-cover" />
                 </div>
                 <p className="text-[#FFFF] text-[12px] font-normal">
                   Add To Cart
@@ -90,11 +90,11 @@ export default function WishList() {
                 <img src="/itemConsol.svg" className="object-cover" alt="img" />
               </div>
               <div className="size-[34px] rounded-full bg-[#FFFFFF] absolute top-[12px] right-[12px] flex items-center justify-center">
-                <img src="/public/delete.png" className="object-cover" />
+                <img src="/delete.png" className="object-cover" />
               </div>
               <div className="bottom-0 absolute py-[8px] hidden group-hover:flex space-x-[3px] items-center justify-center w-full bg-[#000000]">
                 <div className="size-[24px] text-white">
-                  <img src="/public/sebet.svg" className="object-cover" />
+                  <img src="/sebet.svg" className="object-cover" />
                 </div>
                 <p className="text-[#FFFF] text-[12px] font-normal">
                   Add To Cart
@@ -125,11 +125,11 @@ export default function WishList() {
                 <img src="/itemConsol.svg" className="object-cover" alt="img" />
               </div>
               <div className="size-[34px] rounded-full bg-[#FFFFFF] absolute top-[12px] right-[12px] flex items-center justify-center">
-                <img src="/public/delete.png" className="object-cover" />
+                <img src="/delete.png" className="object-cover" />
               </div>
               <div className="bottom-0 absolute py-[8px] hidden group-hover:flex space-x-[3px] items-center justify-center w-full bg-[#000000]">
                 <div className="size-[24px] text-white">
-                  <img src="/public/sebet.svg" className="object-cover" />
+                  <img src="/sebet.svg" className="object-cover" />
                 </div>
                 <p className="text-[#FFFF] text-[12px] font-normal">
                   Add To Cart
@@ -173,11 +173,11 @@ export default function WishList() {
                 <img src="/itemConsol.svg" className="object-cover" alt="img" />
               </div>
               <div className="size-[34px] rounded-full bg-[#FFFFFF] absolute top-[12px] right-[12px] flex items-center justify-center">
-                <img src="/public/eye.svg" className="object-cover" />
+                <img src="/eye.svg" className="object-cover" />
               </div>
               <div className="bottom-0 absolute py-[8px] hidden group-hover:flex space-x-[3px] items-center justify-center w-full bg-[#000000]">
                 <div className="size-[24px] text-white">
-                  <img src="/public/sebet.svg" className="object-cover" />
+                  <img src="/sebet.svg" className="object-cover" />
                 </div>
                 <p className="text-[#FFFF] text-[12px] font-normal">
                   Add To Cart
@@ -208,11 +208,11 @@ export default function WishList() {
                 <img src="/itemConsol.svg" className="object-cover" alt="img" />
               </div>
               <div className="size-[34px] rounded-full bg-[#FFFFFF] absolute top-[12px] right-[12px] flex items-center justify-center">
-                <img src="/public/eye.svg" className="object-cover" />
+                <img src="/eye.svg" className="object-cover" />
               </div>
               <div className="bottom-0 absolute py-[8px] hidden group-hover:flex space-x-[3px] items-center justify-center w-full bg-[#000000]">
                 <div className="size-[24px] text-white">
-                  <img src="/public/sebet.svg" className="object-cover" />
+                  <img src="/sebet.svg" className="object-cover" />
                 </div>
                 <p className="text-[#FFFF] text-[12px] font-normal">
                   Add To Cart
@@ -243,11 +243,11 @@ export default function WishList() {
                 <img src="/itemConsol.svg" className="object-cover" alt="img" />
               </div>
               <div className="size-[34px] rounded-full bg-[#FFFFFF] absolute top-[12px] right-[12px] flex items-center justify-center">
-                <img src="/public/eye.svg" className="object-cover" />
+                <img src="/eye.svg" className="object-cover" />
               </div>
               <div className="bottom-0 absolute py-[8px] hidden group-hover:flex space-x-[3px] items-center justify-center w-full bg-[#000000]">
                 <div className="size-[24px] text-white">
-                  <img src="/public/sebet.svg" className="object-cover" />
+                  <img src="/sebet.svg" className="object-cover" />
                 </div>
                 <p className="text-[#FFFF] text-[12px] font-normal">
                   Add To Cart
@@ -278,11 +278,11 @@ export default function WishList() {
                 <img src="/itemConsol.svg" className="object-cover" alt="img" />
               </div>
               <div className="size-[34px] rounded-full bg-[#FFFFFF] absolute top-[12px] right-[12px] flex items-center justify-center">
-                <img src="/public/eye.svg" className="object-cover" />
+                <img src="/eye.svg" className="object-cover" />
               </div>
               <div className="bottom-0 absolute py-[8px] hidden group-hover:flex space-x-[3px] items-center justify-center w-full bg-[#000000]">
                 <div className="size-[24px] text-white">
-                  <img src="/public/sebet.svg" className="object-cover" />
+                  <img src="/sebet.svg" className="object-cover" />
                 </div>
                 <p className="text-[#FFFF] text-[12px] font-normal">
                   Add To Cart
