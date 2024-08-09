@@ -1,3 +1,4 @@
+
 import AppLayout from "../layouts/AppLayout";
 import AboutPage from "../pages/About";
 import CartPage from "../pages/CartPage";
@@ -9,18 +10,31 @@ const routers = [
     element: <Home></Home>,
   },
   {
-    path: "/cart",
-    element: <CartPage></CartPage>,
-  },
-  {
     path: "/productdetails",
     element: <ProductDetailPage></ProductDetailPage>,
   },
   {
-    path: "/about",
-    element: <AboutPage></AboutPage>,
+    path: "/filter",
+    element: <Filter></Filter>,
+  },
+  {
+    path: "/cartpage",
+    element: <CartPage></CartPage>,
+  },
+  {
+    path: "/wishlist",
+    element: <Wishlist></Wishlist>,
+  },
+  {
+    path: "/signup",
+    element: <SignUp></SignUp>,
+  },
+  {
+    path: "/account",
+    element: <Account></Account>,
   },
 ];
+
 
 const layoutRouter = (routers) => {
   return routers.map((router) => {
