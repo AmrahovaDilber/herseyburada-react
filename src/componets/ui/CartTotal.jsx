@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 // CartTotal.jsx
 export default function CartTotal({ subtotal, total }) {
     return (
@@ -16,11 +18,11 @@ export default function CartTotal({ subtotal, total }) {
           <span id="total">{total}</span>
         </div>
         <div className="flex justify-center">
-          <a href="./checkout.html">
+          <Link to={'/checkout'}>
             <button className="px-[48px] py-[16px] rounded-[4px] text-white bg-[#ff7518] font-medium transition-colors hover:bg-[#e07575] duration-200">
               Proceed to Checkout
             </button>
-          </a>
+          </Link>
         </div>
       </div>
     );

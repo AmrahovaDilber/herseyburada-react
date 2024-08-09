@@ -1,3 +1,4 @@
+import CheckOutPage from "../componets/ui/CheckOut";
 import AppLayout from "../layouts/AppLayout";
 import AboutPage from "../pages/About";
 import AccountPage from "../pages/AccoutPage";
@@ -21,6 +22,10 @@ const routers = [
   {
     path: "/filter",
     element: <FilterPage></FilterPage>,
+  },
+  {
+    path: "/contact",
+    element: <ContactPage></ContactPage>
   },
   {
     path: "/cartpage",
@@ -47,8 +52,8 @@ const routers = [
     element: <AboutPage></AboutPage>,
   },
   {
-    path: "/contact",
-    element: <ContactPage></ContactPage>
+    path: "/checkout",
+    element: <CheckOutPage></CheckOutPage>
   },
 ];
 
