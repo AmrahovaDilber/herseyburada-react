@@ -90,8 +90,7 @@ export default function Header() {
                   />
                   <span className="text-left w-[80%]">Mənim sifarişlərim</span>
                 </Link>
-                <a
-                  href="#"
+                <Link to={'/contact'}
                   className="flex justify-between items-center px-4 py-2 text-sm hover:bg-gray-100 hover:text-[#ff7518]"
                 >
                   <img
@@ -100,7 +99,7 @@ export default function Header() {
                     className="size-[21px] w-[20%] mr-2"
                   />
                   <span className="text-left w-[80%]">Müştəri xidməti</span>
-                </a>
+                </Link>
                 <a
                   href="#"
                   className="flex justify-between items-center px-4 py-2 text-sm hover:bg-gray-100 hover:text-[#ff7518]"

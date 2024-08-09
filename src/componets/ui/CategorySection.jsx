@@ -1130,11 +1130,11 @@ export default function CategorySection() {
             </div>
           </div>
           <div className="flex space-x-3 items-center w-[110px] mx-auto">
-            <div class="size-[12px] rounded-full bg-gray-200"></div>
-            <div class="size-[12px] rounded-full bg-gray-200"></div>
-            <div class="size-[12px] rounded-full bg-gray-200"></div>
-            <div class="size-[12px] rounded-full bg-gray-200"></div>
-            <div class="size-[12px] rounded-full bg-gray-200"></div>
+            <div className="size-[12px] rounded-full bg-gray-200"></div>
+            <div className="size-[12px] rounded-full bg-gray-200"></div>
+            <div className="size-[12px] rounded-full bg-gray-200"></div>
+            <div className="size-[12px] rounded-full bg-gray-200"></div>
+            <div className="size-[12px] rounded-full bg-gray-200"></div>
           </div>
     
         </div>

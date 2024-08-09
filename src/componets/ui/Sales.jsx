@@ -8,7 +8,6 @@ export default function Sales() {
         <div className="space-x-[8px] flex items-center">
           <figure
             className="bg-[#F5F5F5] size-[46px] rounded-full text-black flex justify-center items-center cursor-pointer"
-            z
           >
             <img src="/public/icons_arrow-left.svg" alt="Previous" />
           </figure>

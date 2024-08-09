@@ -7,25 +7,25 @@ export default function Footer() {
           <div className="w-[1200px] mx-auto text-white py-[50px] flex justify-between mt-[50px]">
             <div>
               <div className="space-y-[24px]">
-                <a href="./about.html">
+                <Link to={'/'}>
                   <img src="/public/hərşeyburada2.svg" alt="" />
-                </a>
+                </Link>
                 <div>
-                  <a href="#" className="text-[20px] font-[500] cursor-pointer opacity-70 hover:opacity-100">
+                  <Link to={'/'} className="text-[20px] font-[500] cursor-pointer opacity-70 hover:opacity-100">
                     Abunə Olun
-                  </a>
+                  </Link>
                 </div>
                 <div className="flex space-x-[16px]">
-                  <a href="#" target="_blank">
+                  <Link to={'/'} target="_blank">
                     <i className="text-[20px] opacity-70 hover:opacity-100 fa-brands fa-facebook-f"></i>
-                  </a>
-                  <a href="#" target="_blank">
+                  </Link>
+                  <Link to={'/'} target="_blank">
                     <i className="text-[20px] opacity-70 hover:opacity-100 fa-brands fa-twitter"></i>
-                  </a>
+                  </Link>
                   <a href="https://www.instagram.com/herseyburadaz/" target="_blank">
                     <i className="text-[20px] opacity-70 hover:opacity-100 fa-brands fa-instagram"></i>
                   </a>
-                  <a href="#" target="_blank">
+                  <a target="_blank">
                     <i className="text-[20px] opacity-70 hover:opacity-100 fa-brands fa-linkedin-in"></i>
                   </a>
                 </div>

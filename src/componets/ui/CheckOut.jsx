@@ -1,24 +1,22 @@
+import { Link } from "react-router-dom";
+
 function CheckOut() {
   return (
     <>
       <div className="mb-[40px]">
-        <a href="account.html" className="opacity-50 hover:opacity-80">
+        <Link to={'/account'} className="opacity-50 hover:opacity-80">
           Account
-        </a>
+        </Link>
         <span className="opacity-50 mx-[12px]">/</span>
-        <a href="./account.html" className="opacity-50 hover:opacity-80">
-          My Account
-        </a>
-        <span className="opacity-50 mx-[12px]">/</span>
-        <a href="#" className="opacity-50 hover:opacity-80">
+        <Link to={'/filter'} href="#" className="opacity-50 hover:opacity-80">
           Product
-        </a>
+        </Link>
         <span className="opacity-50 mx-[12px]">/</span>
-        <a href="cart.html" className="opacity-50 hover:opacity-80">
+        <Link to={'/cartpage'} className="opacity-50 hover:opacity-80">
           View Cart
-        </a>
+        </Link>
         <span className="opacity-50 mx-[12px]">/</span>
-        <a href="checkout.html">CheckOut</a>
+        <Link to={'/checkout'} >CheckOut</Link>
       </div>
       <div>
         <h1 className="font-medium text-[36px] mb-[48px]">Billing Details</h1>
@@ -102,7 +100,7 @@ function CheckOut() {
             <div className="space-y-[32px] w-[425px]">
               <div className="flex items-center h-[54px] ">
                 <figure className="inline-flex items-center size-[54px] px-[2px] py-[5px] mr-[24px]">
-                  <img src="./assets/img/gamepad.png" alt="" />
+                  <img src="/gamepad.png" alt="" />
                 </figure>
                 <div className="flex w-full justify-between items-center">
                   <soan>H1 Gamepad</soan>
@@ -111,7 +109,7 @@ function CheckOut() {
               </div>
               <div className="flex items-center h-[54px]">
                 <figure className="inline-flex items-center size-[54px] px-[2px] py-[5px] mr-[24px]">
-                  <img src="./assets/img/monitor.png" alt="" />
+                  <img src="/monitor.png" alt="" />
                 </figure>
                 <div className="flex w-full justify-between items-center">
                   <span>LCD Monitor</span>
@@ -142,28 +140,28 @@ function CheckOut() {
                 <figure className="w-[42px] h-[28px] px-[2px]">
                   <img
                     className="w-full h-full object-contain"
-                    src="./assets/img/bkash.png"
+                    src="/bkash.png"
                     alt="bKash"
                   />
                 </figure>
                 <figure className="w-[42px] h-[28px] px-[2px]">
                   <img
                     className="w-full h-full object-contain"
-                    src="./assets/img/visa.png"
+                    src="/visa.png"
                     alt="Visa"
                   />
                 </figure>
                 <figure className="w-[42px] h-[28px] px-[2px]">
                   <img
                     className="w-full h-full object-contain"
-                    src="./assets/img/master-card.png"
+                    src="/master-card.png"
                     alt="MasterCard"
                   />
                 </figure>
                 <figure className="w-[42px] h-[28px] px-[2px]">
                   <img
                     className="w-full h-full object-contain"
-                    src="./assets/img/fireball.png"
+                    src="/fireball.png"
                     alt=""
                   />
                 </figure>

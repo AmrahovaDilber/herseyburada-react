@@ -9,7 +9,7 @@ const ContactPage = () => {
           Home
         </Link>
         <span className="opacity-50 mx-[12px]">/</span>
-        <a href="contact.html">Contact</a>
+        <Link to={'/contact'}>Contact</Link>
       </div>
       <div className="flex justify-between">
         <div className="px-[35px] w-[340px] py-[40px] space-y-[32px] border border-gray-100 shadow-md rounded-[4px]">
