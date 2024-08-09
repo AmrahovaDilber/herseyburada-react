@@ -1,6 +1,8 @@
 import AppLayout from "../layouts/AppLayout";
 import AboutPage from "../pages/About";
+import AccountPage from "../pages/AccoutPage";
 import CartPage from "../pages/CartPage";
+import FilterPage from "../pages/FilterPage";
 import Home from "../pages/Home";
 import LoginPage from "../pages/LoginPage";
 import ProductDetailPage from "../pages/ProductDetailPage";
@@ -15,17 +17,17 @@ const routers = [
     path: "/productdetails",
     element: <ProductDetailPage></ProductDetailPage>,
   },
-  // {
-  //   path: "/filter",
-  //   element: <Filter></Filter>,
-  // },
+  {
+    path: "/filter",
+    element: <FilterPage></FilterPage>,
+  },
   {
     path: "/cartpage",
     element: <CartPage></CartPage>,
   },
   {
     path: "/wishlist",
-    element:<WishList></WishList>
+    element: <WishList></WishList>,
   },
   {
     path: "/signup",
@@ -35,10 +37,10 @@ const routers = [
     path: "/login",
     element: <LoginPage></LoginPage>,
   },
-  // {
-  //   path: "/account",
-  //   element: <Account></Account>,
-  // },
+  {
+    path: "/account",
+    element: <AccountPage></AccountPage>,
+  },
   {
     path: "/about",
     element: <AboutPage></AboutPage>,

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import ItemDetails from "./ProductDetails";
+
 
 export default function ProductItem({ product }) {
   const {
@@ -10,7 +10,7 @@ export default function ProductItem({ product }) {
     rating,
     reviewCount,
     imageUrl,
-    detailsUrl,
+    // detailsUrl,
   } = product;
 
   return (
