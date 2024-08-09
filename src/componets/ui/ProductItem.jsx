@@ -28,11 +28,11 @@ export default function ProductItem({ product }) {
             <img src={imageUrl} className="object-cover" alt={name} />
           </figure>
           <figure className="size-[34px] rounded-full bg-[#FFFFFF] absolute top-[12px] right-[12px] flex items-center justify-center">
-            <img src="/public/heart.svg" className="object-cover" />
+            <img src="/heart.svg" className="object-cover" />
           </figure>
           <div className="absolute bottom-0 py-[8px] hidden group-hover:flex space-x-[3px] items-center justify-center w-full bg-[#000000]">
             <figure className="size-[24px] text-white">
-              <img src="/public/sebet.svg" className="object-cover" />
+              <img src="/sebet.svg" className="object-cover" />
             </figure>
             <Link to={'/cartpage'} className="text-[#FFFF] text-[12px] font-normal">Add To Cart</Link>
           </div>

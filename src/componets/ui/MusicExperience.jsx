@@ -40,7 +40,7 @@ export default function MusicExperience() {
       </button>
     </div>
     <div className="w-1/2 pt-[82px] pr-[60px]">
-      <img src="/public/microphone.png" className="object-cover" />
+      <img src="/microphone.png" className="object-cover" />
     </div>
   </div>
 </section>

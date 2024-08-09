@@ -9,10 +9,10 @@ export default function Sales() {
           <figure
             className="bg-[#F5F5F5] size-[46px] rounded-full text-black flex justify-center items-center cursor-pointer"
           >
-            <img src="/public/icons_arrow-left.svg" alt="Previous" />
+            <img src="/icons_arrow-left.svg" alt="Previous" />
           </figure>
           <figure className="bg-[#F5F5F5] size-[46px] rounded-full text-black flex justify-center items-center cursor-pointer">
-            <img src="/public/icons_arrow-right.svg" alt="Next" />
+            <img src="/icons_arrow-right.svg" alt="Next" />
           </figure>
         </div>
       </TitleSubtitle>
