@@ -12,26 +12,34 @@ export default function ProductDetailPage() {
           {/* ThumbnailList */}
           <div className="flex flex-col gap-y-[8px]">
             {/* Example thumbnails */}
-            <img
-              src="https://images-na.ssl-images-amazon.com/images/I/51zyUeBrFgL._AC_UL600_SR600,600_.jpg"
-              alt="Thumbnail 1"
-              className="w-[100px] h-[100px] border rounded"
-            />
-            <img
-              src="https://cdn.mobilesyrup.com/wp-content/uploads/2021/10/xbox-canadian-controller.jpg"
-              alt="Thumbnail 2"
-              className="w-[100px] h-[100px] border rounded"
-            />
-            <img
-              src="https://m.media-amazon.com/images/I/51EfS8UJe9L._AC_UF894,1000_QL80_.jpg"
-              alt="Thumbnail 3"
-              className="w-[100px] h-[100px] border rounded"
-            />
-            <img
-              src="https://i.ebayimg.com/images/g/2pwAAOSwu55kdZEk/s-l1200.jpg"
-              alt="Thumbnail 3"
-              className="w-[100px] h-[100px] border rounded"
-            />
+            <figure className="w-[170px] flex-1 rounded-[4px] border cursor-pointer">
+              <img
+                src="https://images-na.ssl-images-amazon.com/images/I/51zyUeBrFgL._AC_UL600_SR600,600_.jpg"
+                alt="Thumbnail 1"
+                className="w-full object-cover"
+              />
+            </figure>
+            <figure className="w-[170px] flex-1 rounded-[4px] border cursor-pointer">
+              <img
+                src="https://cdn.mobilesyrup.com/wp-content/uploads/2021/10/xbox-canadian-controller.jpg"
+                alt="Thumbnail 1"
+                className="w-full object-cover"
+              />
+            </figure>
+            <figure className="w-[170px] flex-1 rounded-[4px] border cursor-pointer">
+              <img
+                src="https://m.media-amazon.com/images/I/51EfS8UJe9L._AC_UF894,1000_QL80_.jpg"
+                alt="Thumbnail 1"
+                className="w-full object-cover"
+              />
+            </figure>
+            <figure className="w-[170px] flex-1 rounded-[4px] border cursor-pointer">
+              <img
+                src="https://i.ebayimg.com/images/g/2pwAAOSwu55kdZEk/s-l1200.jpg"
+                alt="Thumbnail 1"
+                className="w-full object-cover"
+              />
+            </figure>
           </div>
 
           {/* ProductImages */}

@@ -14,7 +14,7 @@ function DeliveryInfo() {
       </div>
       <div className="flex items-center gap-x-[16px] py-[24px] px-[16px]">
         <div>
-          <img src="./assets/img/Icon-return.svg" alt="" />
+          <img src="/Icon-return.svg" alt="" />
         </div>
         <div>
           <h4 className="text-[16px] font-[500]">Return Delivery</h4>
