@@ -73,7 +73,7 @@ export default function Header() {
                   className="flex justify-between items-center px-4 py-2 text-sm hover:bg-gray-100 hover:text-[#ff7518]"
                 >
                   <img
-                    src="/public/Icon-user.svg"
+                    src="/Icon-user.svg"
                     className="size-[22px] w-[20%] mr-2"
                     alt=""
                   />
@@ -84,7 +84,7 @@ export default function Header() {
                   className="flex justify-between items-center px-4 py-2 text-sm hover:bg-gray-100 hover:text-[#ff7518]"
                 >
                   <img
-                    src="/public/Icon-mallbag.svg"
+                    src="/Icon-mallbag.svg"
                     alt=""
                     className="size-[24px] w-[20%] mr-2"
                   />
@@ -94,7 +94,7 @@ export default function Header() {
                   className="flex justify-between items-center px-4 py-2 text-sm hover:bg-gray-100 hover:text-[#ff7518]"
                 >
                   <img
-                    src="/public/Icon-service.svg"
+                    src="/Icon-service.svg"
                     alt=""
                     className="size-[21px] w-[20%] mr-2"
                   />
@@ -105,7 +105,7 @@ export default function Header() {
                   className="flex justify-between items-center px-4 py-2 text-sm hover:bg-gray-100 hover:text-[#ff7518]"
                 >
                   <img
-                    src="/public/Icon-Reviews.svg"
+                    src="/Icon-Reviews.svg"
                     alt=""
                     className="size-[25px] w-[20%] mr-2"
                   />
@@ -116,7 +116,7 @@ export default function Header() {
                   className="flex justify-between items-center px-4 py-2 text-sm hover:bg-gray-100 hover:text-[#ff7518]"
                 >
                   <img
-                    src="/public/Icon-logout.svg"
+                    src="/Icon-logout.svg"
                     alt=""
                     className="size-[24px] w-[20%] mr-2"
                   />
