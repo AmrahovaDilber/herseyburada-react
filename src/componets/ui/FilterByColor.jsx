@@ -1,4 +1,4 @@
-// components/FilterByColor.jsx
+
 const colors = [
   { bgColorClass: 'bg-red-600', name: 'Red', count: 10 },
   { bgColorClass: 'bg-blue-600', name: 'Blue', count: 14 },

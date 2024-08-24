@@ -1,4 +1,4 @@
-// components/FilterByPrice.jsx
+
 const FilterByPrice = () => {
     return (
       <div>
