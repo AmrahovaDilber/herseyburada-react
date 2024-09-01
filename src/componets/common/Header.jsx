@@ -1,16 +1,23 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { useContextApp } from "../../context/AppContext";
 
 export default function Header() {
+  const { carts } = useContextApp();
+  const[length,setLength]=useState(null)
   const [isDropdownOpen, setDropdownOpen] = useState(false);
 
+  useEffect(() => {
+    setLength(carts.length)
+  },[carts])
+
   const handleAccountClick = (e) => {
-    e.stopPropagation(); 
-    setDropdownOpen((prev) => !prev); 
+    e.stopPropagation();
+    setDropdownOpen((prev) => !prev);
   };
 
   const handleOutsideClick = () => {
-    setDropdownOpen(false); 
+    setDropdownOpen(false);
   };
 
   // Close the dropdown when clicking anywhere outside
@@ -41,12 +48,18 @@ export default function Header() {
         </div>
         <nav className="w-[347px] flex justify-end gap-x-[16px] items-center gap-x-[24px]">
           <Link
-            to={"/cartpage"}
-            className="inline-flex items-center gap-x-[5px] hover:text-[#ff7518]"
+            to="/cartpage"
+            className="relative inline-flex items-center gap-x-1 hover:text-[#ff7518]"
           >
-            <i className="fa-solid fa-cart-shopping text-[20px] " />
+            <i className="fa-solid fa-cart-shopping text-[20px] relative" />
             <span className="text-[12px]">Səbətim</span>
+            {length > 0 && (
+              <span className="absolute bottom-3 right-10 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-white text-[10px] font-bold">
+                {length}
+              </span>
+            )}
           </Link>
+
           <Link
             to={"/wishlist"}
             className="inline-flex items-center gap-x-[5px] hover:text-[#ff7518]"
@@ -90,7 +103,8 @@ export default function Header() {
                   />
                   <span className="text-left w-[80%]">Mənim sifarişlərim</span>
                 </Link>
-                <Link to={'/contact'}
+                <Link
+                  to={"/contact"}
                   className="flex justify-between items-center px-4 py-2 text-sm hover:bg-gray-100 hover:text-[#ff7518]"
                 >
                   <img

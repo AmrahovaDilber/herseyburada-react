@@ -1,12 +1,14 @@
+import { useContextApp } from "../../context/AppContext";
 import ProductList from "./ProductList";
 import TitleSubtitle from "./TitleSubtitle";
 
-export default function Sales() {
+export default function ExploreProducts() {
+  const { products } = useContextApp();
   return (
     <div>
       <TitleSubtitle subtitle="Məhsullarımız" title="Məhsullarımızı kəşf et">
         <div className="space-x-[8px] flex items-center">
-          <figure className="bg-[#F5F5F5] size-[46px] rounded-full text-black flex justify-center items-center cursor-pointer"z>
+          <figure className="bg-[#F5F5F5] size-[46px] rounded-full text-black flex justify-center items-center cursor-pointer">
             <img src="/icons_arrow-left.svg" alt="Previous" />
           </figure>
           <figure className="bg-[#F5F5F5] size-[46px] rounded-full text-black flex justify-center items-center cursor-pointer">
@@ -14,7 +16,7 @@ export default function Sales() {
           </figure>
         </div>
       </TitleSubtitle>
-      <ProductList />
+      <ProductList products={products} />
       <div className="mx-auto w-[234px] my-[60px]">
         <button className="h-[56px] w-[234px] bg-[#FF7518] hover:bg-[#e07575] rounded-md text-[#FAFAFA] text-[16px] font-medium text-center">
           Hamısını göstər

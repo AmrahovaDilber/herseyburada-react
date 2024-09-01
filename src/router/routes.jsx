@@ -6,18 +6,21 @@ import CartPage from "../pages/CartPage";
 import FilterPage from "../pages/FilterPage";
 import Home from "../pages/Home";
 import LoginPage from "../pages/LoginPage";
-import ProductDetailPage from "../pages/ProductDetailPage";
 import SignUpPage from "../pages/SignUpPage";
 import WishList from "../pages/WishList";
-import ContactPage from '../pages/ContactPage';
+import ContactPage from "../pages/ContactPage";
+
+import ProductDetail from "../componets/ui/ProductDetail";
+import {  AppContextProvider } from "../context/AppContext";
+
 const routers = [
   {
     path: "/",
     element: <Home></Home>,
   },
   {
-    path: "/productdetails",
-    element: <ProductDetailPage></ProductDetailPage>,
+    path: "/productdetails/:slug",
+    element: <ProductDetail></ProductDetail>,
   },
   {
     path: "/filter",
@@ -25,7 +28,7 @@ const routers = [
   },
   {
     path: "/contact",
-    element: <ContactPage></ContactPage>
+    element: <ContactPage></ContactPage>,
   },
   {
     path: "/cartpage",
@@ -53,13 +56,17 @@ const routers = [
   },
   {
     path: "/checkout",
-    element: <CheckOutPage></CheckOutPage>
+    element: <CheckOutPage></CheckOutPage>,
   },
 ];
 
 const layoutRouter = (routers) => {
   return routers.map((router) => {
-    router.element = <AppLayout>{router.element}</AppLayout>;
+    router.element = (
+      <AppContextProvider>
+        <AppLayout>{router.element}</AppLayout>
+      </AppContextProvider>
+    );
     return router;
   });
 };

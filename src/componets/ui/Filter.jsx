@@ -3,7 +3,6 @@ import FilterByPrice from "./FilterByPrice";
 import FilterBySize from "./FilterBySize";
 import FilterProductCategories from "./FilterProductCategories ";
 import Pagination from "./Pagination";
-import ProductList from "./ProductList";
 
 function Filter() {
   return (

@@ -1,16 +1,26 @@
-import CartItem from './CartItem';
+import CartItem from "./CartItem";
+
 export default function CartList({ products }) {
   return (
-    <div className="space-y-[40px]">
-      <div className="grid grid-cols-4 rounded-[4px] gap-[15rem] items-center h-[72px] font-semibold border border-gray-100 shadow-sm px-[40px]">
+    <div className="space-y-4 h-[450px] overflow-y-auto">
+      <div className="grid grid-cols-[2fr_1fr_1fr_1fr_1fr] gap-4 items-center h-16 font-semibold border border-gray-100 shadow-sm px-4 py-2">
         <div>Product</div>
         <div>Price</div>
         <div>Quantity</div>
-        <div className="text-right">Subtotal</div>
+        <div className="text-center">Subtotal</div>
+        <div className="text-center">Delete</div>
       </div>
-      {products.map((product) => (
-        <CartItem key={product.name} product={product} />
-      ))}
+      {products.length > 0 &&
+        products.map((product) => (
+          <CartItem key={product.id} product={product} />
+        ))}
+      {products.length === 0 && (
+        <div className="flex justify-center items-center h-80  rounded-lg  ">
+          <p className="text-gray-600 text-lg font-semibold">
+            Your Cart Is Empty
+          </p>
+        </div>
+      )}
     </div>
   );
 }

@@ -1,7 +1,10 @@
 import ProductList from "./ProductList";
 import TitleSubtitle from "./TitleSubtitle";
+import { useContextApp } from "../../context/AppContext";
 
 export default function BestSellers() {
+
+  const { products } = useContextApp();
   return (
     <div>
       <TitleSubtitle subtitle="Bu ay" title="Ən çox satılanlar">
@@ -9,7 +12,7 @@ export default function BestSellers() {
           Hamısını göstər
         </button>
       </TitleSubtitle>
-      <ProductList />
+      <ProductList products={products} />
     </div>
   );
 }

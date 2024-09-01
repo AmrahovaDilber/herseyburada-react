@@ -1,4 +1,4 @@
-function ProductOptions() {
+function ProductOptions({findProduct}) {
   return (
     <div>
       <div className="flex items-center mb-6">
@@ -31,7 +31,7 @@ function ProductOptions() {
       <div className="flex items-center mb-[24px]">
         <p className="text-xl mr-6">Size:</p>
         <div className="flex">
-          {["XS", "S", "M", "L", "XL"].map((size) => (
+          {findProduct.sizes.map((size) => (
             <label
               key={size}
               className="inline-flex items-center justify-center border w-8 h-8 rounded mr-4 cursor-pointer"

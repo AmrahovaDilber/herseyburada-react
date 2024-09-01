@@ -3,23 +3,31 @@ import CartList from "../componets/ui/CartList";
 import Coupon from "../componets/ui/Coupan";
 import CartTotal from "../componets/ui/CartTotal";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useContextApp } from "../context/AppContext";
 export default function CartPage() {
-  const products = [
-    {
-      name: "LCD Monitor",
-      price: "$650",
-      quantity: 1,
-      subtotal: "$650",
-      image: "/monitor.png",
-    },
-    {
-      name: "H1 Gamepad",
-      price: "$550",
-      quantity: 1,
-      subtotal: "$550",
-      image: "/itemConsol.svg",
-    },
-  ];
+  const [cartProducts, setCartProducts] = useState([])
+  const{fetchCartProducts}=useContextApp()
+  useEffect(() => {
+    setCartProducts(fetchCartProducts())
+  },[])
+
+  // const products = [
+  //   {
+  //     name: "LCD Monitor",
+  //     price: "$650",
+  //     quantity: 1,
+  //     subtotal: "$650",
+  //     image: "/monitor.png",
+  //   },
+  //   {
+  //     name: "H1 Gamepad",
+  //     price: "$550",
+  //     quantity: 1,
+  //     subtotal: "$550",
+  //     image: "/itemConsol.svg",
+  //   },
+  // ];
 
   const subtotal = "$1200";
   const total = "$1225";
@@ -44,7 +52,7 @@ export default function CartPage() {
       </div>
 
       <div className="mb-[80px]">
-        <CartList products={products} />
+        <CartList products={cartProducts} />
 
         {/* CartActions Component */}
         <div className="mt-[24px] flex justify-between">
