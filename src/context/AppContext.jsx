@@ -6,11 +6,21 @@ export const AppContext = createContext();
 
 export const AppContextProvider = ({ children }) => {
   const [products, setProducts] = useState(PRODUCTS);
+
   const [carts, setCarts] = useState(
     localStorage.getItem("carts")
       ? JSON.parse(localStorage.getItem("carts"))
       : []
   );
+  const [favorites, setFavorites] = useState(
+    localStorage.getItem("favorites")
+      ? JSON.parse(localStorage.getItem("favorites"))
+      : []
+  );
+  const saveFavorites = (items) => {
+    localStorage.setItem("favorites", JSON.stringify(items));
+    setFavorites(items);
+  };
 
   const saveCart = (items) => {
     localStorage.setItem("carts", JSON.stringify(items));
@@ -36,7 +46,7 @@ export const AppContextProvider = ({ children }) => {
     const product = products.find((product) => product.id === id);
 
     if (product) {
-      saveCart(updatedBaskets); 
+      saveCart(updatedBaskets);
       fetchProducts(updatedBaskets);
       notification(`${product.name} removed from cart`);
     } else {
@@ -56,12 +66,47 @@ export const AppContextProvider = ({ children }) => {
     return products.filter((product) => carts.includes(product.id));
   };
 
+  const addToFavorites = (id) => {
+    const findProduct = products.find((product) => product.id === id);
+    if (findProduct) {
+      if (!favorites.includes(id)) {
+        const updatedFavorites = [...favorites, id];
+        fetchProducts(updatedFavorites);
+        saveFavorites(updatedFavorites);
+        notification(
+          `${findProduct.name} adlı məhsul sevimlilərə əlavə olundu`
+        );
+      }
+    }
+  };
+
+  const removeFromFavorites = (id) => {
+    const findProduct = products.find((product) => product.id === id);
+    const updatedFavorites = favorites.filter((productId) => productId !== id);
+    saveFavorites(updatedFavorites);
+    fetchProducts(updatedFavorites)
+    notification(`${findProduct.name} adlı məhsul sevimlilərdən çıxarıldı`);
+  };
+
+
+  const fetchFavoritesProducts = () => {
+    return products.filter((product)=>favorites.includes(product.id))
+  }
+  const isFavorited = (id) => {
+    return favorites.includes(id);
+  };
+
   const values = {
     products,
     addToCart,
     removeFromCart,
     carts,
+    favorites,
     fetchCartProducts,
+    addToFavorites,
+    removeFromFavorites,
+    isFavorited,
+    fetchFavoritesProducts
   };
 
   return <AppContext.Provider value={values}>{children}</AppContext.Provider>;

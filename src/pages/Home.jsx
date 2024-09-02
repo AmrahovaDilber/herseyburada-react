@@ -9,10 +9,10 @@ export default function Home() {
   return (
     <div>
       <CategorySection></CategorySection>
-      <Sales></Sales> 
-       <BestSellers></BestSellers>
+      <Sales></Sales>
+      <BestSellers></BestSellers>
       <MusicExperience></MusicExperience>
-    <ExploreProducts></ExploreProducts>
+      <ExploreProducts></ExploreProducts>
       <Services></Services>
     </div>
   );

@@ -6,11 +6,11 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useContextApp } from "../context/AppContext";
 export default function CartPage() {
-  const [cartProducts, setCartProducts] = useState([])
-  const{fetchCartProducts}=useContextApp()
+  const [cartProducts, setCartProducts] = useState([]);
+  const { fetchCartProducts } = useContextApp();
   useEffect(() => {
-    setCartProducts(fetchCartProducts())
-  },[])
+    setCartProducts(fetchCartProducts());
+  }, [fetchCartProducts]);
 
   // const products = [
   //   {

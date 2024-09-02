@@ -3,13 +3,18 @@ import { Link } from "react-router-dom";
 import { useContextApp } from "../../context/AppContext";
 
 export default function Header() {
-  const { carts } = useContextApp();
-  const[length,setLength]=useState(null)
+  const { carts, favorites } = useContextApp();
+  const [cartLength, setCartLength] = useState(null);
+  const [favoritesLength, setFavoritesLength] = useState(null);
   const [isDropdownOpen, setDropdownOpen] = useState(false);
 
   useEffect(() => {
-    setLength(carts.length)
-  },[carts])
+    setCartLength(carts.length);
+  }, [carts]);
+
+  useEffect(() => {
+    setFavoritesLength(favorites.length);
+  }, [favorites]);
 
   const handleAccountClick = (e) => {
     e.stopPropagation();
@@ -46,26 +51,32 @@ export default function Header() {
             </Link>
           </div>
         </div>
-        <nav className="w-[347px] flex justify-end gap-x-[16px] items-center gap-x-[24px]">
+        <nav className="w-[347px] flex justify-end items-center gap-x-[24px]">
           <Link
             to="/cartpage"
             className="relative inline-flex items-center gap-x-1 hover:text-[#ff7518]"
           >
-            <i className="fa-solid fa-cart-shopping text-[20px] relative" />
+            <i className="fa-solid fa-cart-shopping text-[20px] " />
             <span className="text-[12px]">Səbətim</span>
-            {length > 0 && (
+            {cartLength > 0 && (
               <span className="absolute bottom-3 right-10 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-white text-[10px] font-bold">
-                {length}
+                {cartLength}
               </span>
             )}
           </Link>
 
           <Link
             to={"/wishlist"}
-            className="inline-flex items-center gap-x-[5px] hover:text-[#ff7518]"
+            className="relative inline-flex items-center gap-x-[5px] hover:text-[#ff7518]"
           >
             <i className="fa-solid fa-heart text-[20px] " />
             <span className="text-[12px]">Sevimlilərim</span>
+
+            {favoritesLength > 0 && (
+              <span className="absolute bottom-3 right-[60px] flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-white text-[10px] font-bold">
+                {favoritesLength}
+              </span>
+            )}
           </Link>
           <div className="flex flex-col relative ">
             <div

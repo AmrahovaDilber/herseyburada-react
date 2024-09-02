@@ -1,29 +1,26 @@
-import { Link } from "react-router-dom";
 import { useContextApp } from "../../context/AppContext";
-import { IoMdHeartEmpty } from "react-icons/io";
-import { IoMdHeart } from "react-icons/io";
+import { Link } from "react-router-dom";
+import { IoMdHeartEmpty, IoMdHeart } from "react-icons/io";
 
-export default function ProductItem({ product }) {
+export default function FavoriteItem({ product,index }) {
   const {
-    addToCart,
-    removeFromCart,
+    isFavorited,
     addToFavorites,
     removeFromFavorites,
-    isFavorited,
+    removeFromCart,
+    addToCart,
   } = useContextApp();
 
   return (
-    <div>
-      <div className="h-[360px] relative shadow-lg">
-        <div className="relative flex items-center justify-center h-[250px] bg-[#F5F5F5] group">
-          <div className="w-[55px] h-[26px] bg-[#FF7518] rounded-md absolute top-[12px] left-[12px]">
-            <p className="font-normal text-[12px] text-center py-1 text-[#FAFAFA]">
-              -{product.discount}%
-            </p>
+    <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden">
+      <div className="relative">
+        <div className="relative flex items-center justify-center h-64 bg-[#F5F5F5] group">
+          <div className="absolute top-2 left-2 bg-orange-500 text-white text-xs py-1 px-2 rounded-md">
+            -{product.discount}%
           </div>
           <Link
-            className="absolute inset-0  flex justify-center items-center "
             to={`/productdetails/${product.slug}`}
+            className="absolute inset-0 flex justify-center items-center"
           >
             <figure className="w-[190px] h-[180px]">
               <img
@@ -33,7 +30,6 @@ export default function ProductItem({ product }) {
               />
             </figure>
           </Link>
-
           <figure className="size-[34px] rounded-full bg-[#FFFFFF] absolute top-[12px] right-[12px] flex items-center justify-center">
             {!isFavorited(product.id) ? (
               <button
@@ -74,29 +70,28 @@ export default function ProductItem({ product }) {
           </div>
         </div>
 
-        <div className="p-3 flex flex-col">
-          <p className="font-medium text-[16px] text-[#000000] mb-[8px]">
+        <div className="p-4">
+          <p className="text-lg font-semibold text-gray-800 mb-2">
             {product.name}
           </p>
-          <div className="space-x-[12px] flex items-center mb-[8px]">
-            <p className="text-[16px] font-medium text-[#FF7518]">
+          <div className="flex items-center mb-2">
+            <p className="text-xl font-semibold text-orange-500">
               ${product.currentPrice}
             </p>
-            <p className="text-[16px] font-medium text-[#7F7F7F] line-through">
+            <p className="text-lg font-medium text-gray-500 line-through ml-2">
               ${product.originalPrice}
             </p>
           </div>
-          <div className="flex space-x-[8px] items-center">
-            <div className="w-[100px] flex space-x-[8px]">
+          <div className="flex items-center space-x-2">
+            <div className="flex space-x-1">
               {Array.from({ length: 5 }, (_, index) => (
-                <div key={index} className="w-[10px]">
-                  <i className="text-[14px] fa-regular fa-star"></i>
-                </div>
+                <i
+                  key={index}
+                  className="text-sm fa-regular fa-star text-yellow-400"
+                ></i>
               ))}
             </div>
-            <p className="text-[#7F7F7F] font-semibold">
-              ({product.reviewCount})
-            </p>
+            <p className="text-gray-500 font-medium">({product.reviewCount})</p>
           </div>
         </div>
       </div>
