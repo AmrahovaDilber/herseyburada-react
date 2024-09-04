@@ -1,50 +1,55 @@
-// CartPage.jsx
 import CartList from "../componets/ui/CartList";
 import Coupon from "../componets/ui/Coupan";
 import CartTotal from "../componets/ui/CartTotal";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useContextApp } from "../context/AppContext";
+
 export default function CartPage() {
   const [cartProducts, setCartProducts] = useState([]);
-  const { fetchCartProducts } = useContextApp();
+  const { fetchCartProducts, saveCart ,fetchProducts} = useContextApp();
+  const [count, setCount] = useState(0);
+  const [text, setText] = useState("");
+  const [shipping, setShipping] = useState(25);
+
   useEffect(() => {
     setCartProducts(fetchCartProducts());
   }, [fetchCartProducts]);
 
-  // const products = [
-  //   {
-  //     name: "LCD Monitor",
-  //     price: "$650",
-  //     quantity: 1,
-  //     subtotal: "$650",
-  //     image: "/monitor.png",
-  //   },
-  //   {
-  //     name: "H1 Gamepad",
-  //     price: "$550",
-  //     quantity: 1,
-  //     subtotal: "$550",
-  //     image: "/itemConsol.svg",
-  //   },
-  // ];
+  function subtotal() {
+    return cartProducts.reduce(
+      (acc, product) => acc + product.originalPrice * count,
+      0
+    );
+  }
 
-  const subtotal = "$1200";
-  const total = "$1225";
+  const total = subtotal() + shipping;
+
+  function handleApply() {
+    if (text === "BURADA") {
+      setShipping(0);
+    }
+  }
+
+  function handleUpdateCart() {
+    setCartProducts([]);
+    const arr=[]
+    saveCart([]);
+    fetchProducts(arr);
+  }
 
   return (
     <main className="w-[1200px] mx-auto pt-[40px] font-poppins">
       <div className="mb-[40px] text-gray-500">
         <Link
-          to={"/"}
+          to="/"
           className="hover:text-black transition-colors duration-200"
         >
           Home
         </Link>
         <span className="mx-[12px]">/</span>
         <Link
-          to={"/cartpage"}
-          href="cart.html"
+          to="/cartpage"
           className="hover:text-black text-black transition-colors duration-200"
         >
           Cart
@@ -52,28 +57,27 @@ export default function CartPage() {
       </div>
 
       <div className="mb-[80px]">
-        <CartList products={cartProducts} />
+        <CartList count={count} setCount={setCount} products={cartProducts} />
 
-        {/* CartActions Component */}
         <div className="mt-[24px] flex justify-between">
           <Link
-            to={"/filter"}
+            to="/filter"
             className="border border-black/50 rounded-[4px] px-[48px] py-[16px] font-medium hover:bg-gray-100 transition-colors duration-200"
           >
             Return To Shop
           </Link>
-          <a
-            href="#"
+          <button
+            onClick={handleUpdateCart}
             className="border border-black/50 rounded-[4px] px-[48px] py-[16px] font-medium hover:bg-gray-100 transition-colors duration-200"
           >
             Update Cart
-          </a>
+          </button>
         </div>
       </div>
 
       <div className="flex justify-between">
-        <Coupon />
-        <CartTotal subtotal={subtotal} total={total} />
+        <Coupon handleApply={handleApply} text={text} setText={setText} />
+        <CartTotal subtotal={`$${subtotal()}`} total={`$${total}`} />
       </div>
     </main>
   );

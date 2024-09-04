@@ -12,11 +12,13 @@ export const AppContextProvider = ({ children }) => {
       ? JSON.parse(localStorage.getItem("carts"))
       : []
   );
+
   const [favorites, setFavorites] = useState(
     localStorage.getItem("favorites")
       ? JSON.parse(localStorage.getItem("favorites"))
       : []
   );
+
   const saveFavorites = (items) => {
     localStorage.setItem("favorites", JSON.stringify(items));
     setFavorites(items);
@@ -71,7 +73,6 @@ export const AppContextProvider = ({ children }) => {
     if (findProduct) {
       if (!favorites.includes(id)) {
         const updatedFavorites = [...favorites, id];
-        fetchProducts(updatedFavorites);
         saveFavorites(updatedFavorites);
         notification(
           `${findProduct.name} adlı məhsul sevimlilərə əlavə olundu`
@@ -84,7 +85,6 @@ export const AppContextProvider = ({ children }) => {
     const findProduct = products.find((product) => product.id === id);
     const updatedFavorites = favorites.filter((productId) => productId !== id);
     saveFavorites(updatedFavorites);
-    fetchProducts(updatedFavorites)
     notification(`${findProduct.name} adlı məhsul sevimlilərdən çıxarıldı`);
   };
 
@@ -102,11 +102,13 @@ export const AppContextProvider = ({ children }) => {
     removeFromCart,
     carts,
     favorites,
+    fetchProducts,
     fetchCartProducts,
     addToFavorites,
     removeFromFavorites,
     isFavorited,
-    fetchFavoritesProducts
+    fetchFavoritesProducts,
+    saveCart
   };
 
   return <AppContext.Provider value={values}>{children}</AppContext.Provider>;

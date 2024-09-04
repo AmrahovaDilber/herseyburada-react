@@ -75,18 +75,18 @@ export default function Footer() {
 
           <div className="flex flex-col">
             <h3 className="font-[500] text-[20px] mb-[24px]">Tez Link</h3>
-            <a
+            <Link
               className="text-[16px] mb-[16px] opacity-70 hover:opacity-100 hover:underline"
-              href="#"
+              to={"/gizliliksiyaseti"}
             >
               Gizlilik Siyasəti
-            </a>
-            <a
+            </Link>
+            <Link
               className="text-[16px] mb-[16px] opacity-70 hover:opacity-100 hover:underline"
-              href="#"
+              to={"/istifadesertleri"}
             >
               İstifadə Şərtləri
-            </a>
+            </Link>
             <Link
               to={"/contact"}
               className="text-[16px] mb-[16px] opacity-70 hover:opacity-100 hover:underline"

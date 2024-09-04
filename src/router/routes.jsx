@@ -9,7 +9,8 @@ import LoginPage from "../pages/LoginPage";
 import SignUpPage from "../pages/SignUpPage";
 import WishList from "../pages/WishList";
 import ContactPage from "../pages/ContactPage";
-
+import GizlilikSiyaseti from '../pages/GizlilikSiyaseti';
+import IstifadeSertleri from '../pages/IstifadeSertleri';
 import ProductDetail from "../componets/ui/ProductDetail";
 import {  AppContextProvider } from "../context/AppContext";
 
@@ -57,6 +58,14 @@ const routers = [
   {
     path: "/checkout",
     element: <CheckOutPage></CheckOutPage>,
+  },
+  {
+    path: "/gizliliksiyaseti",
+    element:<GizlilikSiyaseti></GizlilikSiyaseti>
+  },
+  {
+    path: "/istifadesertleri",
+    element:<IstifadeSertleri></IstifadeSertleri>
   },
 ];
 

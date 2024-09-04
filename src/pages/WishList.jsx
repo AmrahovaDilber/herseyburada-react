@@ -8,6 +8,9 @@ export default function WishList() {
     fetchFavoritesProducts,
     favorites,
     products,
+    carts,
+    saveCart,
+fetchProducts
   } = useContextApp();
 
   const [favoritesProducts, setFavoritesProducts] = useState([]);
@@ -16,6 +19,19 @@ export default function WishList() {
     setFavoritesProducts(fetchFavoritesProducts());
   }, [favorites, products]);
 
+
+  function addToBag() {
+    const updatedCarts = [...carts];
+    favoritesProducts.map((product) => {
+      if (!updatedCarts.includes(product.id)) {
+        updatedCarts.push(product.id);
+      }
+    });
+    saveCart(updatedCarts);
+    fetchProducts(updatedCarts);
+  }
+  
+
   return (
     <main className=" min-h-screen py-10">
       <div className="container mx-auto px-4">
@@ -23,7 +39,9 @@ export default function WishList() {
           <p className="text-2xl font-semibold text-gray-800">
             Wishlist ({favoritesProducts.length})
           </p>
-          <button className="py-2 px-4 text-white bg-orange-500 rounded-md hover:bg-orange-600">
+          <button
+            onClick={addToBag}
+            className="py-2 px-4 text-white bg-orange-500 rounded-md hover:bg-orange-600">
             Move All To Bag
           </button>
         </div>

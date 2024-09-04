@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useContextApp } from "../../context/AppContext";
-
+import { FcAbout } from "react-icons/fc";
 export default function Header() {
   const { carts, favorites } = useContextApp();
   const [cartLength, setCartLength] = useState(null);
@@ -31,13 +31,13 @@ export default function Header() {
   return (
     <header className="border-b-[1px] sticky top-0 bg-white z-40">
       <div className="mt-[10px] w-[1200px] mx-auto flex justify-between items-center py-[20px]">
-        <div className="flex justify-between items-center w-[830px] gap-x-[70px]">
+        <div className="flex   items-center  space-x-[100px] w-[830px] ">
           <div className="text-[24px] font-logo">
             <Link to={"/"}>
               <img src="/herseyburada.svg" alt="" />
             </Link>
           </div>
-          <div className="flex justify-between items-center h-[40px] grow pr-[5px] pl-[14px] rounded-[14px] border">
+          <div className="flex justify-between items-center h-[40px] flex-1 grow pr-[5px] pl-[14px] rounded-[14px] border">
             <input
               className="bg-transparent placeholder-black opacity-50 outline-none text-sm grow"
               type="text"
@@ -51,15 +51,15 @@ export default function Header() {
             </Link>
           </div>
         </div>
-        <nav className="w-[347px] flex justify-end items-center gap-x-[24px]">
+        <nav className="flex-1 flex justify-end items-center gap-x-[24px]">
           <Link
             to="/cartpage"
             className="relative inline-flex items-center gap-x-1 hover:text-[#ff7518]"
           >
             <i className="fa-solid fa-cart-shopping text-[20px] " />
-            <span className="text-[12px]">Səbətim</span>
+            {/* <span className="text-[12px]">Səbətim</span> */}
             {cartLength > 0 && (
-              <span className="absolute bottom-3 right-10 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-white text-[10px] font-bold">
+              <span className="absolute bottom-3 left-4 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-white text-[10px] font-bold">
                 {cartLength}
               </span>
             )}
@@ -70,13 +70,20 @@ export default function Header() {
             className="relative inline-flex items-center gap-x-[5px] hover:text-[#ff7518]"
           >
             <i className="fa-solid fa-heart text-[20px] " />
-            <span className="text-[12px]">Sevimlilərim</span>
+            {/* <span className="text-[12px]">Sevimlilərim</span> */}
 
             {favoritesLength > 0 && (
-              <span className="absolute bottom-3 right-[60px] flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-white text-[10px] font-bold">
+              <span className="absolute bottom-3 left-3 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-white text-[10px] font-bold">
                 {favoritesLength}
               </span>
             )}
+          </Link>
+          <Link
+            to={"/about"}
+            className="relative inline-flex items-center gap-x-[5px] hover:text-[#ff7518]"
+          >
+            <FcAbout className="text-[19px]" />
+            {/* <span className="text-[12px]">Haqqimizda</span> */}
           </Link>
           <div className="flex flex-col relative ">
             <div
@@ -85,7 +92,7 @@ export default function Header() {
               onClick={handleAccountClick}
             >
               <i className="fa-solid fa-user text-[20px] " />
-              <span className="text-[12px]">Hesabım</span>
+              {/* <span className="text-[12px]">Hesabım</span> */}
             </div>
             {isDropdownOpen && (
               <div

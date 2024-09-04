@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import { useContextApp } from "../../context/AppContext";
 
 export default function ProductDetail() {
-  const { products ,addToCart} = useContextApp();
+  const { products ,addToCart,addToFavorites} = useContextApp();
   const { slug } = useParams();
   const findProduct = products.find((product) => product.slug === slug);
   console.log(slug);
@@ -79,7 +79,9 @@ export default function ProductDetail() {
           </button>
 
           {/* WishlistButton */}
-          <button className="bg-gray-200 text-gray-800 py-2 px-4 rounded">
+          <button
+          onClick={()=>addToFavorites(findProduct.id)}
+            className="bg-gray-200 text-gray-800 py-2 px-4 rounded">
             Add to Wishlist
           </button>
         </div>
