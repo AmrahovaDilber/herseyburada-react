@@ -1,95 +1,893 @@
 const data = {
-  categories: [
+  "kateqoriyalar": [
     {
-      category_id: 1,
-      category_name: "Electronics",
-      products: [
+      "kateqoriya_id": 1,
+      "kateqoriya_adı": "Qadın",
+      "subkateqoriyalar": [
         {
-          product_id: 10,
-          product_name: "HAVIT HV-G92 Gamepad",
-          price: 450.0,
-          original_price: 500.0,
-          discount: 10,
-          image_url: "https://example.com/products/product-h.jpg",
-          description: "Bu, HAVIT HV-G92 Gamepad üçün təsviridir.",
-          colors: ["Red", "Black"],
-          sizes: ["M", "L", "XL"],
-          reviews: [
+          "subkateqoriya_id": 1,
+          "subkateqoriya_adı": "Köynək",
+          "məhsullar": [
             {
-              review_id: 1,
-              rating: 4,
-              comment: "Çox yaxşı məhsuldur!",
+              "product_id": 1,
+              "product_name": "Qadın Köynək 1",
+              "price": 50.0,
+              "original_price": 70.0,
+              "discount": 10,
+              "image_url": "https://example.com/products/women-shirt1.jpg",
+              "description": "Qadın üçün şık köynək.",
+              "colors": ["Red","White", "Black"],
+              "sizes": ["S", "M", "L"],
+              "reviews": [
+                {
+                  "review_id": 1,
+                  "rating": 4.0,
+                  "comment": "Çox gözəl köynək.",
+                }
+              ]
+            },
+            // {
+            //   "product_id": 2,
+            //   "product_name": "Qadın Köynək 2",
+            //   "price": 60.0,
+            //   "original_price": 80.0,
+            //   "discount": 15,
+            //   "image_url": "https://example.com/products/women-shirt2.jpg",
+            //   "description": "Rəngarəng və rahat köynək.",
+            //   "colors": ["Red", "Blue"],
+            //   "sizes": ["M", "L", "XL"],
+            //   "reviews": [
+            //     {
+            //       "review_id": 2,
+            //       "rating": 5.0,
+            //       "comment": "Çox rahat və şıx!"
+            //     },
+            //     {
+            //       "review_id": 3,
+            //       "rating": 4.5,
+            //       "comment": "Rəngi çox gözəl, amma ölçü kiçik."
+            //     }
+            //   ]
+            // },
+            {
+              "product_id": 5,
+              "product_name": "Qadın Köynək 3",
+              "price": 70.0,
+              "original_price": 90.0,
+              "discount": 22,
+              "image_url": "https://example.com/products/women-shirt3.jpg",
+              "description": "Ən son moda köynək.",
+              "colors": ["Pink", "Purple"],
+              "sizes": ["S", "M", "L"],
+              "reviews": [
+                {
+                  "review_id": 7,
+                  "rating": 4.6,
+                  "comment": "Gözəl və müasir dizayn."
+                },
+                {
+                  "review_id": 8,
+                  "rating": 4.3,
+                  "comment": "Təsvir olunduğu kimi deyil, amma yaxşıdır."
+                }
+              ]
             },
             {
-              review_id: 2,
-              rating: 5,
-              comment: "Keyfiyyəti yüksəkdir.",
-            },
-          ],
+              "product_id": 6,
+              "product_name": "Qadın Köynək 4",
+              "price": 65.0,
+              "original_price": 85.0,
+              "discount": 25,
+              "image_url": "https://example.com/products/women-shirt4.jpg",
+              "description": "Dəri kimi yumuşaq köynək.",
+              "colors": ["Green", "Beige"],
+              "sizes": ["M", "L", "XL"],
+              "reviews": [
+                {
+                  "review_id": 9,
+                  "rating": 4.9,
+                  "comment": "Süper rahat və keyfiyyətli."
+                },
+                {
+                  "review_id": 10,
+                  "rating": 4.4,
+                  "comment": "Bir az bahalı, amma dəyər."
+                }
+              ]
+            }
+          ]
         },
         {
-          product_id: 11,
-          product_name: "Sony WH-1000XM4",
-          price: 950.0,
-          original_price: 1000.0,
-          discount: 5,
-          image_url: "https://example.com/products/product-i.jpg",
-          description: "Sony WH-1000XM4 üçün təsvir.",
-          colors: ["Black", "Silver"],
-          sizes: ["L"],
-          reviews: [
+          "subkateqoriya_id": 2,
+          "subkateqoriya_adı": "Jaket",
+          "məhsullar": [
             {
-              review_id: 3,
-              rating: 4.5,
-              comment: "Mükəmməl səs keyfiyyəti.",
-            },
-          ],
+              "product_id": 2,
+              "product_name": "Qadın Jaket 1",
+              "price": 80.0,
+              "original_price": 100.0,
+              "discount": 20,
+              "image_url": "https://example.com/products/women-jacket1.jpg",
+              "description": "Qış üçün isti jaket.",
+              "colors": ["Grey", "Navy"],
+              "sizes": ["M", "L", "XL"],
+              "reviews": [
+                {
+                  "review_id": 2,
+                  "rating": 4.5,
+                  "comment": "Çox rahat və isti.",
+                }
+              ]
+            }
+          ]
         },
-      ],
+        {
+          "subkateqoriya_id": 3,
+          "subkateqoriya_adı": "Cins Şalvar",
+          "məhsullar": [
+            {
+              "product_id": 3,
+              "product_name": "Cins Şalvar 1",
+              "price": 60.0,
+              "original_price": 80.0,
+              "discount": 15,
+              "image_url": "https://example.com/products/jeans1.jpg",
+              "description": "Rahat və şık cins şalvar.",
+              "colors": ["Blue", "Black"],
+              "sizes": ["S", "M", "L"],
+              "reviews": [
+                {
+                  "review_id": 3,
+                  "rating": 4.2,
+                  "comment": "Çox rahat və yaxşı keyfiyyət.",
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subkateqoriya_id": 4,
+          "subkateqoriya_adı": "Şortik",
+          "məhsullar": []
+        },
+        {
+          "subkateqoriya_id": 5,
+          "subkateqoriya_adı": "Palto",
+          "məhsullar": []
+        },
+        {
+          "subkateqoriya_id": 6,
+          "subkateqoriya_adı": "Pencək",
+          "məhsullar": []
+        },
+        {
+          "subkateqoriya_id": 7,
+          "subkateqoriya_adı": "Pijama",
+          "məhsullar": []
+        },
+        {
+          "subkateqoriya_id": 8,
+          "subkateqoriya_adı": "Çanta",
+          "məhsullar": []
+        },
+        {
+          "subkateqoriya_id": 9,
+          "subkateqoriya_adı": "Makiyaj",
+          "məhsullar": []
+        },
+        {
+          "subkateqoriya_id": 10,
+          "subkateqoriya_adı": "Pul Kisəsi",
+          "məhsullar": []
+        }
+      ]
     },
     {
-      category_id: 2,
-      category_name: "Clothing",
-      products: [
+      "kateqoriya_id": 2,
+      "kateqoriya_adı": "Kişi",
+      "subkateqoriyalar": [
         {
-          product_id: 20,
-          product_name: "Nike Air Max",
-          price: 120.0,
-          original_price: 150.0,
-          discount: 20,
-          image_url: "https://example.com/products/nike-air-max.jpg",
-          description: "Nike Air Max idman ayaqqabısı.",
-          colors: ["Red", "Blue", "Black"],
-          sizes: ["S", "M", "L", "XL"],
-          reviews: [
-            {
-              review_id: 4,
-              rating: 4.7,
-              comment: "Çox rahatdır və gözəl görünüşə malikdir.",
-            },
-          ],
+          "subkateqoriya_id": 1,
+          "subkateqoriya_adı": "Şalvar",
+          "məhsullar": []
         },
         {
-          product_id: 21,
-          product_name: "Adidas T-shirt",
-          price: 35.0,
-          original_price: 50.0,
-          discount: 30,
-          image_url: "https://example.com/products/adidas-tshirt.jpg",
-          description: "Adidas t-shirt idman üçün idealdır.",
-          colors: ["White", "Black"],
-          sizes: ["M", "L", "XL"],
-          reviews: [
+          "subkateqoriya_id": 2,
+          "subkateqoriya_adı": "Köynək",
+          "məhsullar": [
             {
-              review_id: 5,
-              rating: 4.2,
-              comment: "Rahat və yüngüldür.",
+              "product_id": 2,
+              "product_name": "Kişi Köynək 1",
+              "price": 60.0,
+              "original_price": 80.0,
+              "discount": 15,
+              "image_url": "https://example.com/products/men-shirt1.jpg",
+              "description": "Kişi üçün tərz köynək.",
+              "colors": ["Blue", "Gray"],
+              "sizes": ["M", "L", "XL"],
+              "reviews": [
+                {
+                  "review_id": 2,
+                  "rating": 4.5,
+                  "comment": "Keyfiyyətli və rahat köynək."
+                }
+              ]
             },
-          ],
+          ]
+          
         },
-      ],
+        {
+          "subkateqoriya_id": 3,
+          "subkateqoriya_adı": "Jaket",
+          "məhsullar": []
+        },
+        {
+          "subkateqoriya_id": 4,
+          "subkateqoriya_adı": "Pencək",
+          "məhsullar": []
+        },
+        {
+          "subkateqoriya_id": 5,
+          "subkateqoriya_adı": "Ayaqqabı",
+          "məhsullar": []
+        },
+        {
+          "subkateqoriya_id": 6,
+          "subkateqoriya_adı": "Çanta",
+          "məhsullar": []
+        },
+        {
+          "subkateqoriya_id": 7,
+          "subkateqoriya_adı": "Papaq",
+          "məhsullar": []
+        },
+        {
+          "subkateqoriya_id": 8,
+          "subkateqoriya_adı": "Kəmər",
+          "məhsullar": []
+        },
+        {
+          "subkateqoriya_id": 9,
+          "subkateqoriya_adı": "Günəş Eynəyi",
+          "məhsullar": []
+        },
+        {
+          "subkateqoriya_id": 10,
+          "subkateqoriya_adı": "Qalustuk",
+          "məhsullar": []
+        },
+        {
+          "subkateqoriya_id": 11,
+          "subkateqoriya_adı": "Pul Kisəsi",
+          "məhsullar": []
+        },
+        {
+          "subkateqoriya_id": 12,
+          "subkateqoriya_adı": "Saat",
+          "məhsullar": [
+            {
+              "product_id": 11,
+              "product_name": "Sony WH-1000XM4",
+              "price": 950.0,
+              "original_price": 1000.0,
+              "discount": 5,
+              "image_url": "https://example.com/products/product-i.jpg",
+              "description": "Sony WH-1000XM4 üçün təsvir.",
+              "colors": ["Black", "Silver"],
+              "sizes": ["L"],
+              "reviews": [
+                {
+                  "review_id": 3,
+                  "rating": 4.5,
+                  "comment": "Mükəmməl səs keyfiyyəti.",
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
-  ],
-};
-
+    {
+      "kateqoriya_id": 3,
+      "kateqoriya_adı": "Elektronika",
+      "subkateqoriyalar": [
+        {
+          "subkateqoriya_id": 1,
+          "subkateqoriya_adı": "Telefon",
+          "məhsullar": []
+        },
+        {
+          "subkateqoriya_id": 2,
+          "subkateqoriya_adı": "Kompüter",
+          "məhsullar": []
+        },
+        {
+          "subkateqoriya_id": 3,
+          "subkateqoriya_adı": "Planşet",
+          "məhsullar": []
+        },
+        {
+          "subkateqoriya_id": 4,
+          "subkateqoriya_adı": "Saat",
+          "məhsullar": []
+        },
+        {
+          "subkateqoriya_id": 5,
+          "subkateqoriya_adı": "Şarj Cihazları",
+          "məhsullar": []
+        },
+        {
+          "subkateqoriya_id": 6,
+          "subkateqoriya_adı": "Qulaqlıqlar",
+          "məhsullar": []
+        },
+        {
+          "subkateqoriya_id": 7,
+          "subkateqoriya_adı": "Klaviatura",
+          "məhsullar": []
+        },
+        {
+          "subkateqoriya_id": 8,
+          "subkateqoriya_adı": "Siçan",
+          "məhsullar": []
+        },
+        {
+          "subkateqoriya_id": 9,
+          "subkateqoriya_adı": "Ram",
+          "məhsullar": []
+        },
+        {
+          "subkateqoriya_id": 10,
+          "subkateqoriya_adı": "Ekran Kartı",
+          "məhsullar": []
+        },
+        {
+          "subkateqoriya_id": 11,
+          "subkateqoriya_adı": "Foto və Kamera",
+          "məhsullar": []
+        },
+        {
+          "subkateqoriya_id": 12,
+          "subkateqoriya_adı": "Printer və Skaner",
+          "məhsullar": []
+        },
+        {
+          "subkateqoriya_id": 13,
+          "subkateqoriya_adı": "Televiziya",
+          "məhsullar": []
+        },
+        {
+          "subkateqoriya_id": 14,
+          "subkateqoriya_adı": "Saç Qurudan",
+          "məhsullar": []
+        },
+        {
+          "subkateqoriya_id": 15,
+          "subkateqoriya_adı": "Təraş Maşını",
+          "məhsullar": []
+        },
+        {
+          "subkateqoriya_id": 16,
+          "subkateqoriya_adı": "Paltaryuyan Maşın",
+          "məhsullar": []
+        },
+        {
+          "subkateqoriya_id": 17,
+          "subkateqoriya_adı": "Qabyuyan Maşın",
+          "məhsullar": []
+        },
+        {
+          "subkateqoriya_id": 18,
+          "subkateqoriya_adı": "Quruducu",
+          "məhsullar": []
+        },
+        {
+          "subkateqoriya_id": 19,
+          "subkateqoriya_adı": "Kombi",
+          "məhsullar": []
+        },
+        {
+          "subkateqoriya_id": 20,
+          "subkateqoriya_adı": "Kondisioner",
+          "məhsullar": []
+        },
+        {
+          "subkateqoriya_id": 21,
+          "subkateqoriya_adı": "Mikrodalğalı Soba",
+          "məhsullar": []
+        },
+        {
+          "subkateqoriya_id": 22,
+          "subkateqoriya_adı": "Mikser və Mikser Dəsti",
+          "məhsullar": []
+        }
+      ]
+    },
+    {
+      "kateqoriya_id": 4,
+      "kateqoriya_adı": "Ev & Yaşam",
+      "subkateqoriyalar": [
+        {
+          "subkateqoriya_id": 1,
+          "subkateqoriya_adı": "Oyuncaq",
+          "məhsullar": [
+            {
+              "product_id": 11,
+              "product_name": "LEGO Technic Car",
+              "price": 950.0,
+              "original_price": 1000.0,
+              "discount": 5,
+              "image_url": "https://example.com/products/lego-car.jpg",
+              "description": "LEGO Technic seriyasından yüksək detallı avtomobil oyuncağı.",
+              "colors": ["Red", "Blue"],
+              "sizes": ["L"],
+              "reviews": [
+                {
+                  "review_id": 3,
+                  "rating": 4.5,
+                  "comment": "Çox əyləncəli və detallı bir modeldir."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subkateqoriya_id": 2,
+          "subkateqoriya_adı": "Divar Saatı",
+          "məhsullar": []
+        },
+        {
+          "subkateqoriya_id": 3,
+          "subkateqoriya_adı": "Güzgü",
+          "məhsullar": []
+        },
+        {
+          "subkateqoriya_id": 4,
+          "subkateqoriya_adı": "Pərdə",
+          "məhsullar": []
+        },
+        {
+          "subkateqoriya_id": 5,
+          "subkateqoriya_adı": "Divan Dəsti",
+          "məhsullar": []
+        },
+        {
+          "subkateqoriya_id": 6,
+          "subkateqoriya_adı": "Kreslo",
+          "məhsullar": []
+        },
+        {
+          "subkateqoriya_id": 7,
+          "subkateqoriya_adı": "İşıqlandırma",
+          "məhsullar": []
+        },
+        {
+          "subkateqoriya_id": 8,
+          "subkateqoriya_adı": "Mətbəx Şkafı",
+          "məhsullar": []
+        },
+        {
+          "subkateqoriya_id": 9,
+          "subkateqoriya_adı": "Çaydan",
+          "məhsullar": []
+        },
+        {
+          "subkateqoriya_id": 10,
+          "subkateqoriya_adı": "Dəsmal və Dəsmal Dəsti",
+          "məhsullar": []
+        },
+        {
+          "subkateqoriya_id": 11,
+          "subkateqoriya_adı": "Hamam Dəsti",
+          "məhsullar": []
+        },
+        {
+          "subkateqoriya_id": 12,
+          "subkateqoriya_adı": "Blazers",
+          "məhsullar": []
+        },
+        {
+          "subkateqoriya_id": 13,
+          "subkateqoriya_adı": "Yataq Otağı",
+          "məhsullar": []
+        },
+        {
+          "subkateqoriya_id": 14,
+          "subkateqoriya_adı": "Yorğan",
+          "məhsullar": []
+        },
+        {
+          "subkateqoriya_id": 15,
+          "subkateqoriya_adı": "Yataq Örtüyü",
+          "məhsullar": []
+        },
+        {
+          "subkateqoriya_id": 16,
+          "subkateqoriya_adı": "Yastıq",
+          "məhsullar": []
+        },
+        {
+          "subkateqoriya_id": 17,
+          "subkateqoriya_adı": "Velosiped",
+          "məhsullar": []
+        },
+        {
+          "subkateqoriya_id": 18,
+          "subkateqoriya_adı": "Termoslar",
+          "məhsullar": []
+        },
+        {
+          "subkateqoriya_id": 19,
+          "subkateqoriya_adı": "Kitablar",
+          "məhsullar": []
+        }
+      ]
+    },
+{ "kateqoriya_id": 5,
+  "kateqoriya_adı": "Supermarket",
+  "subkateqoriyalar": [
+    {
+      "subkateqoriya_id": 1,
+      "subkateqoriya_adı": "Yuyucu Toz",
+      "məhsullar": []
+    },
+    {
+      "subkateqoriya_id": 2,
+      "subkateqoriya_adı": "Qab Yuyucu",
+      "məhsullar": []
+    },
+    {
+      "subkateqoriya_id": 3,
+      "subkateqoriya_adı": "Otaq Ətri",
+      "məhsullar": []
+    },
+    {
+      "subkateqoriya_id": 4,
+      "subkateqoriya_adı": "Hamam Təmizləyiciləri",
+      "məhsullar": []
+    },
+    {
+      "subkateqoriya_id": 5,
+      "subkateqoriya_adı": "Tualet Kağızı",
+      "məhsullar": []
+    },
+    {
+      "subkateqoriya_id": 6,
+      "subkateqoriya_adı": "Kağız Dəsmal",
+      "məhsullar": []
+    },
+    {
+      "subkateqoriya_id": 7,
+      "subkateqoriya_adı": "Saça Qulluq",
+      "məhsullar": []
+    },
+    {
+      "subkateqoriya_id": 8,
+      "subkateqoriya_adı": "Ağız Baxımı",
+      "məhsullar": []
+    },
+    {
+      "subkateqoriya_id": 9,
+      "subkateqoriya_adı": "Dəriyə Qulluq",
+      "məhsullar": []
+    },
+    {
+      "subkateqoriya_id": 10,
+      "subkateqoriya_adı": "Elektrikli Diş Fırçaları",
+      "məhsullar": []
+    },
+    {
+      "subkateqoriya_id": 11,
+      "subkateqoriya_adı": "Təraş Məhsulları",
+      "məhsullar": []
+    },
+    {
+      "subkateqoriya_id": 12,
+      "subkateqoriya_adı": "Körpə Üçün Əlavə Qidalanma",
+      "məhsullar": []
+    },
+    {
+      "subkateqoriya_id": 13,
+      "subkateqoriya_adı": "Dəsmallar",
+      "məhsullar": []
+    },
+    {
+      "subkateqoriya_id": 14,
+      "subkateqoriya_adı": "Uşaq Kosmetikası",
+      "məhsullar": []
+    },
+    {
+      "subkateqoriya_id": 15,
+      "subkateqoriya_adı": "Uşaq Qidaları",
+      "məhsullar": []
+    },
+    {
+      "subkateqoriya_id": 16,
+      "subkateqoriya_adı": "Körpə Təmizləyici Pambıq",
+      "məhsullar": []
+    },
+    {
+      "subkateqoriya_id": 17,
+      "subkateqoriya_adı": "Uşaq Pudrası",
+      "məhsullar": []
+    },
+    {
+      "subkateqoriya_id": 18,
+      "subkateqoriya_adı": "Uşaq Şampunu",
+      "məhsullar": []
+    },
+    {
+      "subkateqoriya_id": 19,
+      "subkateqoriya_adı": "Çay",
+      "məhsullar": []
+    },
+    {
+      "subkateqoriya_id": 20,
+      "subkateqoriya_adı": "Qəlyanaltı",
+      "məhsullar": []
+    },
+    {
+      "subkateqoriya_id": 21,
+      "subkateqoriya_adı": "Quru Yemək",
+      "məhsullar": []
+    },
+    {
+      "subkateqoriya_id": 22,
+      "subkateqoriya_adı": "Qəhvə",
+      "məhsullar": []
+    },
+    {
+      "subkateqoriya_id": 23,
+      "subkateqoriya_adı": "Makaron",
+      "məhsullar": []
+    },
+    {
+      "subkateqoriya_id": 24,
+      "subkateqoriya_adı": "Duz və Ədviyyat",
+      "məhsullar": []
+    },
+    {
+      "subkateqoriya_id": 25,
+      "subkateqoriya_adı": "Şəkər",
+      "məhsullar": []
+    },
+    {
+      "subkateqoriya_id": 26,
+      "subkateqoriya_adı": "Süd",
+      "məhsullar": []
+    },
+    {
+      "subkateqoriya_id": 27,
+      "subkateqoriya_adı": "Bitki Çayları",
+      "məhsullar": []
+    },
+    {
+      "subkateqoriya_id": 28,
+      "subkateqoriya_adı": "Quru Meyvə",
+      "məhsullar": []
+    },
+    {
+      "subkateqoriya_id": 29,
+      "subkateqoriya_adı": "Şokolad",
+      "məhsullar": []
+    },
+    {
+      "subkateqoriya_id": 30,
+      "subkateqoriya_adı": "Biskvit",
+      "məhsullar": []
+    },
+    {
+      "subkateqoriya_id": 31,
+      "subkateqoriya_adı": "Çörək Məmulatları",
+      "məhsullar": []
+    },
+    {
+      "subkateqoriya_id": 32,
+      "subkateqoriya_adı": "Şirniyyat Məmulatları",
+      "məhsullar": []
+    },
+    {
+      "subkateqoriya_id": 33,
+      "subkateqoriya_adı": "Qoz-Fındıq",
+      "məhsullar": []
+    },
+    {
+      "subkateqoriya_id": 34,
+      "subkateqoriya_adı": "Yulaf",
+      "məhsullar": []
+    },
+    {
+      "subkateqoriya_id": 35,
+      "subkateqoriya_adı": "Maye Yağ",
+      "məhsullar": []
+    },
+    {
+      "subkateqoriya_id": 36,
+      "subkateqoriya_adı": "Zibil Qutusu",
+      "məhsullar": []
+    }
+      ]
+    },
+    {
+      "kateqoriya_id": 6,
+      "kateqoriya_adı": "İdman & Çöl",
+    "subkateqoriyalar": [
+      {
+        "subkateqoriya_id": 1,
+        "subkateqoriya_adı": "İdman Köynəyi",
+        "məhsullar": []
+      },
+      {
+        "subkateqoriya_id": 2,
+        "subkateqoriya_adı": "Gödəkçə və Jilet",
+        "məhsullar": []
+      },
+      {
+        "subkateqoriya_id": 3,
+        "subkateqoriya_adı": "Yağış Paltarı",
+        "məhsullar": []
+      },
+      {
+        "subkateqoriya_id": 4,
+        "subkateqoriya_adı": "İdman Büstqalteri",
+        "məhsullar": []
+      },
+      {
+        "subkateqoriya_id": 5,
+        "subkateqoriya_adı": "İdman Paltosu",
+        "məhsullar": []
+      },
+      {
+        "subkateqoriya_id": 6,
+        "subkateqoriya_adı": "İdman Papağı",
+        "məhsullar": []
+      },
+      {
+        "subkateqoriya_id": 7,
+        "subkateqoriya_adı": "İdman Ayaqqabısı",
+        "məhsullar": []
+      },
+      {
+        "subkateqoriya_id": 8,
+        "subkateqoriya_adı": "İdman Zalı Üçün Avadanlıqlar",
+        "məhsullar": []
+      },
+      {
+        "subkateqoriya_id": 10,
+        "subkateqoriya_adı": "Mat",
+        "məhsullar": []
+      },
+      {
+        "subkateqoriya_id": 11,
+        "subkateqoriya_adı": "İp Atlama",
+        "məhsullar": []
+      },
+      {
+        "subkateqoriya_id": 12,
+        "subkateqoriya_adı": "Boks Əlcəyi",
+        "məhsullar": []
+      },
+      {
+        "subkateqoriya_id": 13,
+        "subkateqoriya_adı": "Düşərgə Alətləri",
+        "məhsullar": []
+      },
+      {
+        "subkateqoriya_id": 13,
+        "subkateqoriya_adı": "Alpinizm və Dırmanma",
+        "məhsullar": []
+      },
+      {
+        "subkateqoriya_id": 15,
+        "subkateqoriya_adı": "Su İdmanı Avadanlıqları",
+        "məhsullar": []
+      },
+      {
+        "subkateqoriya_id": 16,
+        "subkateqoriya_adı": "Dalğıc Avadanlıqları",
+        "məhsullar": []
+      },
+      {
+        "subkateqoriya_id": 17,
+        "subkateqoriya_adı": "Balıqçılıq Ləvazimatları",
+        "məhsullar": []
+      },
+      {
+        "subkateqoriya_id": 19,
+        "subkateqoriya_adı": "Çadır",
+        "məhsullar": []
+      },
+      {
+        "subkateqoriya_id": 20,
+        "subkateqoriya_adı": "Pilates Topları",
+        "məhsullar": []
+      },
+      {
+        "subkateqoriya_id": 21,
+        "subkateqoriya_adı": "Protein tozu",
+        "məhsullar": []
+      },
+      {
+        "subkateqoriya_id": 22,
+        "subkateqoriya_adı": "Top",
+        "məhsullar": []
+      },
+  
+    ]
+  },
+    {
+     "kateqoriya_id": 6,
+      "kateqoriya_adı": "Ev Heyvanları & Bağ",
+      "subkateqoriyalar": [
+        {
+          "id": 1,
+          "subkateqoriya_adı": "Pişik Yeməyi",
+          "məhsullar": []
+        },
+        {
+          "id": 2,
+          "subkateqoriya_adı": "İt Yeməyi",
+          "məhsullar": []
+        },
+        {
+          "id": 3,
+          "subkateqoriya_adı": "Quş Məhsulları",
+          "məhsullar": []
+        },
+        {
+          "id": 4,
+          "subkateqoriya_adı": "Akvarium Məhsulları",
+          "məhsullar": []
+        },
+        {
+          "id": 5,
+          "subkateqoriya_adı": "Pişik Vitamini",
+          "məhsullar": []
+        },
+   
+   
+        {
+          "id": 8,
+          "subkateqoriya_adı": "Pişik Oyuncaqları",
+          "məhsullar": []
+        },
+        {
+          "id": 9,
+          "subkateqoriya_adı": "İt Oyuncaqları",
+          "məhsullar": []
+        },
+        {
+          "id": 10,
+          "subkateqoriya_adı": "Pişiklərin Yaş Yeməyi",
+          "məhsullar": []
+        },
+        {
+          "id": 11,
+          "subkateqoriya_adı": "Pişiklərin Müalicəsi",
+          "məhsullar": []
+        },
+        {
+          "id": 12,
+          "subkateqoriya_adı": "İtlərin Müalicəsi",
+          "məhsullar": []
+        },
+        {
+          "id": 13,
+          "subkateqoriya_adı": "Pişik şampunu",
+          "məhsullar": []
+        },
+        {
+          "id": 14,
+          "subkateqoriya_adı": "İt şampunu",
+          "məhsullar": []
+        },
+        {
+          "id": 19,
+          "subkateqoriya_adı": "Balıq Yemi",
+          "məhsullar": []
+        },
+      ]
+}
+  ]
+}
 export default data;

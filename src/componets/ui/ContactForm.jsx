@@ -1,16 +1,28 @@
 import { useForm } from 'react-hook-form';
+import  { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
 const ContactForm = () => {
-  const form = useForm();
-  const { register, handleSubmit, formState } = form;
+  const formRef = useRef(); 
+  const { register, handleSubmit, formState } = useForm();
   const { errors } = formState;
   
   function onSubmit(data) {
     console.log(data);
+    emailjs
+    .sendForm('service_x165pd3', 'template_ogqf8df', formRef.current, 'tLHxzJLhqO4YWH7bh')
+    .then(
+      () => {
+        alert('Success!');
+      },
+      (error) => {
+        alert('Failed! ' + error.text);
+      },
+    );
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="py-[40px] px-[30px] space-y-[32px] border border-gray-100 shadow-md rounded-[4px]">
+    <form ref={formRef} onSubmit={handleSubmit(onSubmit)} className="py-[40px] px-[30px] space-y-[32px] border border-gray-100 shadow-md rounded-[4px]">
       <div className="grid grid-cols-3 gap-[16px]">
         <div>
           <input

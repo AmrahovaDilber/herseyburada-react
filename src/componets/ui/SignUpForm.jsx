@@ -1,60 +1,208 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
+import { useContextApp } from "../../context/AppContext";
+import { useState } from "react";
+import { doCreateUserWithEmailAndPassword } from "../../firebase/auth";
+import { useForm } from "react-hook-form";
+
+import { db} from '../../firebase/firebase';
 
 const SignupForm = () => {
+  const [isRegistering, setIsRegistering] = useState(false);
+  const { userLoggedIn } = useContextApp();
+
+  const {
+    register: registerUser,
+    handleSubmit: handleRegisterSubmit,
+    formState: { errors: registerErrors },
+    watch: watchRegister,
+  } = useForm();
+
+  const email = watchRegister("email");
+  const password = watchRegister("password");
+  const name = watchRegister("name");
+  const surname = watchRegister("surname");
+  const number = watchRegister("number");
+
+  async function onSubmit(data) {
+    console.log(data);
+    setIsRegistering(true);
+    try {
+      // Register the user with Firebase Authentication
+      const userCredential = await doCreateUserWithEmailAndPassword(email, password);
+      const user = userCredential.user;
+
+      // After registering, save additional user info to Firestore
+      await db.collection("users").doc(user.uid).set({
+        name: name,
+        surname: surname,
+        email: email,
+        number: number,
+        uid: user.uid,
+      });
+
+      console.log("User registered and data saved");
+      setIsRegistering(false);
+    } catch (error) {
+      console.error("Error registering user:", error.message);
+      setIsRegistering(false);
+    }
+  }
+
   return (
-    <main className="main-content flex items-center justify-between w-[1200px] mx-auto">
-      <figure className="w-[600px] h-[650px]">
-        <img
-          className="w-full h-full object-cover"
-          src="/login-register.svg"
-          alt=""
-        />
-      </figure>
-      <form className="sign-up-form flex flex-col" method="post">
-        <h1
-          className="form-title text-[36px] font-[500] mb-[24px]"
-          style={{ fontFamily: "'Inter', sans-serif" }}
-        >
-          Hesab yaradın
-        </h1>
-        <h3 className="form-subtitle text-[16px] mb-[48px]">
-          Məlumatlarınızı aşağıda qeyd edin
-        </h3>
-        <input
-          type="text"
-          className="form-input border-b-[1px] border-b-[#B3B3B3] outline-0 mb-[40px]"
-          placeholder="Ad"
-        />
-        <input
-          type="text"
-          className="form-input border-b-[1px] border-b-[#B3B3B3] outline-0 mb-[40px]"
-          placeholder="Email ya da Telefon nömrəsi"
-        />
-        <input
-          type="password"
-          className="form-input border-b-[1px] border-b-[#B3B3B3] outline-0 mb-[40px]"
-          placeholder="Parol"
-        />
-        <button
-          className="submit-btn bg-[#FF7518] hover:bg-[#e07575] text-[#ffffff] py-[16px] px-[122px] mb-[16px] rounded-[4px] cursor-pointer"
-          type="submit"
-        >
-          Hesab yarat
-        </button>
-        <button className="google-btn bg-[#ffffff] border-[1px] border-[#B3B3B3] py-[16px] px-[86px] mb-[32px] rounded-[4px] cursor-pointer">
-          Sign Up with Google
-        </button>
-        <p className="form-bottom text-center opacity-70">
-          Artıq hesabın var?
-          <Link
-            to={'/login'}
-            className="ml-[16px] underline opacity-100 underline-offset-2 hover:no-underline hover:opacity-80"
-          >
-            Daxil ol
-          </Link>
-        </p>
-      </form>
-    </main>
+    <>
+      {userLoggedIn && <Navigate to={"/"} replace={true} />}
+      <main className="flex items-center justify-center w-full min-h-screen">
+        <div className="flex items-center overflow-hidden w-full max-w-[1200px]">
+          <figure className="w-1/2 h-full hidden lg:block">
+            <img
+              className="w-full h-full object-cover"
+              src="/login-register.svg"
+              alt="Signup Illustration"
+            />
+          </figure>
+          <div className="w-full lg:w-1/2 p-8">
+            <h1
+              className="text-4xl font-semibold mb-6 text-gray-800 text-center"
+              style={{ fontFamily: "'Inter', sans-serif" }}
+            >
+              Hesab yaradın
+            </h1>
+            <h3 className="text-lg mb-8 text-gray-600 text-center">
+              Məlumatlarınızı aşağıda qeyd edin
+            </h3>
+            <form
+              onSubmit={handleRegisterSubmit(onSubmit)}
+              className="flex flex-col space-y-4"
+              method="post"
+            >
+              {/* Name Input */}
+              <div>
+                <input
+                  type="text"
+                  {...registerUser("name", { required: "Name is required" })}
+                  className="w-full py-2 border-b-2 border-gray-300 focus:border-blue-500 outline-none mb-1 transition-all"
+                  placeholder="Ad"
+                />
+                <p className="text-red-500 text-sm">
+                  {registerErrors.name?.message}
+                </p>
+              </div>
+
+              {/* Surname Input */}
+              <div>
+                <input
+                  type="text"
+                  {...registerUser("surname", {
+                    required: "Please fill the field",
+                  })}
+                  className="w-full py-2 border-b-2 border-gray-300 focus:border-blue-500 outline-none mb-1 transition-all"
+                  placeholder="Soyad"
+                />
+                <p className="text-red-500 text-sm">
+                  {registerErrors.surname?.message}
+                </p>
+              </div>
+
+              {/* Email Input */}
+              <div>
+                <input
+                  type="email"
+                  {...registerUser("email", {
+                    required: "Email is required",
+                    pattern: {
+                      value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+                      message: "Invalid email format",
+                    },
+                  })}
+                  className="w-full py-2 border-b-2 border-gray-300 focus:border-blue-500 outline-none mb-1 transition-all"
+                  placeholder="Email"
+                />
+                <p className="text-red-500 text-sm">
+                  {registerErrors.email?.message}
+                </p>
+              </div>
+
+              {/* Phone Number Input */}
+              <div>
+                <input
+                  type="number"
+                  {...registerUser("number", {
+                    required: "Phone number is required",
+                    minLength: {
+                      value: 10,
+                      message: "Phone number must be at least 10 digits",
+                    },
+                  })}
+                  className="w-full py-2 border-b-2 border-gray-300 focus:border-blue-500 outline-none mb-1 transition-all"
+                  placeholder="Phone Number"
+                />
+                <p className="text-red-500 text-sm">
+                  {registerErrors.number?.message}
+                </p>
+              </div>
+
+              {/* Password Input */}
+              <div>
+                <input
+                  type="password"
+                  {...registerUser("password", {
+                    required: "Password is required",
+                    minLength: {
+                      value: 6,
+                      message: "Password must be at least 6 characters",
+                    },
+                  })}
+                  className="w-full py-2 border-b-2 border-gray-300 focus:border-blue-500 outline-none mb-1 transition-all"
+                  placeholder="Parol"
+                />
+                <p className="text-red-500 text-sm">
+                  {registerErrors.password?.message}
+                </p>
+              </div>
+
+              {/* Re-enter Password Input */}
+              <div>
+                <input
+                  type="password"
+                  {...registerUser("rePassword", {
+                    required: "Please confirm your password",
+                    validate: (value) =>
+                      value === watchRegister("password") ||
+                      "Passwords don't match",
+                  })}
+                  className="w-full py-2 border-b-2 border-gray-300 focus:border-blue-500 outline-none mb-1 transition-all"
+                  placeholder="Re-enter Password"
+                />
+                <p className="text-red-500 text-sm">
+                  {registerErrors.rePassword?.message}
+                </p>
+              </div>
+
+              <button
+                className="bg-orange-500 hover:bg-orange-600 text-white py-3 rounded transition-colors"
+                type="submit"
+                disabled={isRegistering}
+              >
+                {isRegistering ? "Yüklənir..." : "Hesab yarat"}
+              </button>
+              <button className="bg-white border border-gray-300 text-gray-700 py-3 rounded transition-colors hover:bg-gray-100">
+                Sign Up with Google
+              </button>
+
+              <p className="text-center text-gray-600">
+                Artıq hesabın var?
+                <Link
+                  to="/login"
+                  className="ml-2 text-blue-500 underline hover:no-underline"
+                >
+                  Daxil ol
+                </Link>
+              </p>
+            </form>
+          </div>
+        </div>
+      </main>
+    </>
   );
 };
 

@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 
 function Account() {
   const {
@@ -28,12 +29,12 @@ function Account() {
                 <li className="text-[#FF7518] font-semibold cursor-pointer hover:underline">
                   Mənim hesabım
                 </li>
-                <li className="text-gray-600 cursor-pointer hover:text-[#FF7518] hover:underline">
+                <Link to='/addressbook' className="text-gray-600 cursor-pointer hover:text-[#FF7518] hover:underline">
                   Address kitabçam
-                </li>
-                <li className="text-gray-600 cursor-pointer hover:text-[#FF7518] hover:underline">
+                </Link>
+                <Link to='/paymentoptions' className="text-gray-600 cursor-pointer hover:text-[#FF7518] hover:underline">
                   My Payment Options
-                </li>
+                </Link>
               </ul>
             </li>
             <li className="font-bold text-lg text-[#333]">

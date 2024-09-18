@@ -1,8 +1,13 @@
-import { useState, createContext, useContext } from "react";
+import { useState, createContext, useContext, useEffect } from "react";
 import { notification } from "../utils/helper";
 import PRODUCTS from "../constant/product";
-
+import { set, useForm } from "react-hook-form";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "../firebase/firebase";
+import data from "../data/categoriesData";
 export const AppContext = createContext();
+
+
 
 export const AppContextProvider = ({ children }) => {
   const [products, setProducts] = useState(PRODUCTS);
@@ -88,15 +93,112 @@ export const AppContextProvider = ({ children }) => {
     notification(`${findProduct.name} adlı məhsul sevimlilərdən çıxarıldı`);
   };
 
-
   const fetchFavoritesProducts = () => {
-    return products.filter((product)=>favorites.includes(product.id))
-  }
+    return products.filter((product) => favorites.includes(product.id));
+  };
   const isFavorited = (id) => {
     return favorites.includes(id);
   };
 
+  // !!!!!!!!!!!!!!!!!!!!!!Product Filtering!!!!!!!!!!!!!!!
+  const [allData, setAllData] = useState(data);
+  const [query, setQuery] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const [selectedColor, setSelectedColor] = useState("");
+  const [selectedSizes, setSelectedSizes] = useState([]);
+  const [maxPrice, setMaxPrice] = useState(2000);
+
+  const handleFilterPrice = (price) => {
+    setMaxPrice(price);
+  };
+  // Filter For the Categories
+  function handleFilterCategory(categoryName) {
+    const filteredProducts =
+      allData.kateqoriyalar
+        .find((category) => category.kateqoriya_adı === categoryName)
+        ?.subkateqoriyalar.flatMap((subcategory) => subcategory.məhsullar) ||
+      [];
+
+    setAllData(filteredProducts);
+    setSelectedCategory(categoryName);
+  }
+  // Filter For the Colors
+  const handleFilterColor = (color) => {
+    if (selectedColor === color) {
+      setSelectedColor("");
+    } else {
+      setSelectedColor(color);
+    }
+  };
+
+
+  // FILTER FOR THE INPUT
+  function handleInputChange(e) {
+    setQuery(e.target.value);
+  }
+
+  const filteredInputItems = allData.kateqoriyalar
+    .map((category) => ({
+      ...category,
+      subkateqoriyalar: category.subkateqoriyalar
+        .map((subcategory) => ({
+          ...subcategory,
+          // Check if mahsullar exists before filtering
+          mahsullar: Array.isArray(subcategory.mahsullar)
+            ? subcategory.mahsullar.filter((product) =>
+                product.product_name.toLowerCase().includes(query.toLowerCase())
+              )
+            : [], // If mahsullar is undefined or not an array, return an empty array
+        }))
+        .filter((subcategory) => subcategory.mahsullar.length > 0), // Remove subcategories with no matching products
+    }))
+    .filter((category) => category.subkateqoriyalar.length > 0); // Remove categories with no matching subcategories
+
+  //!!!!!!!!!!!!!!!!!!!! Register!!!!!!!!!!!!!!!!!!!!!
+  const [currentUser, setCurrentUser] = useState(null);
+  const [userLoggedIn, setUserLoggedIn] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, initializeUser);
+    return unsubscribe;
+  }, []);
+
+  async function initializeUser(user) {
+    if (user) {
+      setCurrentUser({ ...user });
+      setUserLoggedIn(true);
+    } else {
+      setCurrentUser(null);
+      setUserLoggedIn(false);
+    }
+    setLoading(false);
+  }
+  const registerForm = useForm();
+  const {
+    register: registerUser,
+    handleSubmit: handleRegisterSubmit,
+    formState: registerFormState,
+    watch: watchRegister,
+    // setValue: setRegisterValue,
+  } = registerForm;
+
+  const { errors: registerErrors } = registerFormState;
+
+  //!!!!!!!!!!!!!!! Login Form Hook!!!!!!!!!!!!!!!
+  const loginForm = useForm();
+
+  const {
+    register: loginUser,
+    handleSubmit: handleLoginSubmit,
+    formState: loginFormState,
+    watch: watchLogin,
+  } = loginForm;
+
+  const { errors: loginErrors } = loginFormState;
+
   const values = {
+    allData,
     products,
     addToCart,
     removeFromCart,
@@ -108,7 +210,34 @@ export const AppContextProvider = ({ children }) => {
     removeFromFavorites,
     isFavorited,
     fetchFavoritesProducts,
-    saveCart
+    saveCart,
+    // register
+    registerUser,
+    handleRegisterSubmit,
+    registerErrors,
+    watchRegister,
+    // login
+    loginUser,
+    handleLoginSubmit,
+    loginErrors,
+    currentUser,
+    userLoggedIn,
+    watchLogin,
+    loading,
+
+    // FILTER
+    handleFilterCategory,
+    query,
+    handleInputChange,
+    filteredInputItems,
+    selectedCategory,
+    handleFilterColor,
+    selectedColor,
+    handleFilterPrice,
+    maxPrice,
+    selectedSizes,
+    setSelectedSizes,
+   
   };
 
   return <AppContext.Provider value={values}>{children}</AppContext.Provider>;

@@ -13,6 +13,8 @@ import GizlilikSiyaseti from '../pages/GizlilikSiyaseti';
 import IstifadeSertleri from '../pages/IstifadeSertleri';
 import ProductDetail from "../componets/ui/ProductDetail";
 import {  AppContextProvider } from "../context/AppContext";
+import AddressBook from "../componets/ui/AddressBook";
+import PaymentOptions from "../componets/ui/PaymentOptions";
 
 const routers = [
   {
@@ -25,6 +27,14 @@ const routers = [
   },
   {
     path: "/filter",
+    element: <FilterPage></FilterPage>,
+  },
+  {
+    path: "/products/:slug",
+    element: <FilterPage></FilterPage>,
+  },
+  {
+    path: "/subcategories/:slug",
     element: <FilterPage></FilterPage>,
   },
   {
@@ -67,6 +77,14 @@ const routers = [
     path: "/istifadesertleri",
     element:<IstifadeSertleri></IstifadeSertleri>
   },
+  {
+    path: '/addressbook',
+    element:<AddressBook></AddressBook>
+  },
+  {
+    path: "/paymentoptions",
+    element:<PaymentOptions></PaymentOptions>
+  }
 ];
 
 const layoutRouter = (routers) => {

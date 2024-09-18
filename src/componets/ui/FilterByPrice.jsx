@@ -1,15 +1,32 @@
+import  { useState } from 'react';
+import { useContextApp } from "../../context/AppContext";
 
 const FilterByPrice = () => {
-    return (
-      <div>
-        <h2 className="font-bold mb-2">Filter by Price</h2>
-        <div className="space-y-2">
-          <p>Price: $0 - $2000</p>
-          <input type="range" min={0} max={2000} className="w-[200px]" />
-        </div>
-      </div>
-    );
+  const { handleFilterPrice } = useContextApp();
+  const [priceRange, setPriceRange] = useState(2000);
+
+  const handlePriceChange = (e) => {
+    const newPrice = parseInt(e.target.value);
+    setPriceRange(newPrice);
+    handleFilterPrice(newPrice);
   };
-  
-  export default FilterByPrice;
-  
+
+  return (
+    <div>
+      <h2 className="font-bold mb-2">Filter by Price</h2>
+      <div className="space-y-2">
+        <p>Price: $0 - ${priceRange}</p>
+        <input 
+          type="range" 
+          min={0} 
+          max={2000} 
+          value={priceRange}
+          onChange={handlePriceChange}
+          className="w-[200px]" 
+        />
+      </div>
+    </div>
+  );
+};
+
+export default FilterByPrice;

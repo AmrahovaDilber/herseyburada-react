@@ -1,3 +1,5 @@
+import React from 'react';
+import { useContextApp } from "../../context/AppContext";
 
 const colors = [
   { bgColorClass: 'bg-red-600', name: 'Red', count: 10 },
@@ -9,6 +11,8 @@ const colors = [
 ];
 
 const FilterByColor = () => {
+  const { handleFilterColor, selectedColor } = useContextApp();
+
   return (
     <div>
       <h2 className="font-bold mb-2">Filter by Color</h2>
@@ -16,7 +20,12 @@ const FilterByColor = () => {
         {colors.map(({ bgColorClass, name, count }) => (
           <li key={name} className="hover:bg-gray-100 rounded-sm">
             <label className="flex items-center cursor-pointer">
-              <input type="checkbox" className="mr-2 cursor-pointer" />
+              <input 
+                type="checkbox" 
+                className="mr-2 cursor-pointer" 
+                checked={selectedColor.toLowerCase() === name.toLowerCase()}
+                onChange={() => handleFilterColor(name)}
+              />
               <span className={`w-4 h-4 rounded mr-2 ${bgColorClass}`} />
               {name} ({count})
             </label>
