@@ -6,7 +6,7 @@ import {
   doPasswordReset,
 } from "../../firebase/auth";
 import { useState } from "react";
-import google from '../../../public/google.png'
+import google from "../../../public/google.png";
 import { notification } from "../../utils/helper";
 const LoginForm = () => {
   const [isSigningIn, setIsSigningIn] = useState(false);
@@ -37,13 +37,13 @@ const LoginForm = () => {
         await doSignInWithGoogle();
       } catch (err) {
         console.error(err);
-        setIsSigningIn(false); 
+        setIsSigningIn(false);
       }
     }
   };
 
-   // Forgot Password Functionality
-   const handleForgotPassword = async () => {
+  // Forgot Password Functionality
+  const handleForgotPassword = async () => {
     if (forgotPasswordEmail) {
       try {
         await doPasswordReset(forgotPasswordEmail);
@@ -60,7 +60,7 @@ const LoginForm = () => {
       {userLoggedIn && <Navigate to={"/"} replace={true} />}
       <main className="main-content flex space-x-[50px] items-center w-[1200px] mx-auto">
         <form
-          onSubmit={handleLoginSubmit(onSubmit)} 
+          onSubmit={handleLoginSubmit(onSubmit)}
           className="login-form flex flex-col justify-self-start w-[50%]"
           method="post"
         >
@@ -121,9 +121,9 @@ const LoginForm = () => {
               Daxil ol
             </button>
             <p
-              onClick={() => setForgotPasswordEmail(email)} 
+              onClick={() => setForgotPasswordEmail(email)}
               className="text-[#FF7518] hover:text-[#e07575] text-[16px] cursor-pointer transition-colors"
-              onDoubleClick={handleForgotPassword} 
+              onDoubleClick={handleForgotPassword}
             >
               Parolu unutmusan?
             </p>

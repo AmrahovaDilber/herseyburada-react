@@ -1,85 +1,77 @@
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Autoplay } from 'swiper/modules';
 
-// // Slider configuration
-// const sliderConfig = {
-//   slideWidth: 892, // Slide width in pixels
-//   autoSlideInterval: 4000, // Auto slide interval in milliseconds
-//   slides: [
-//     {
-//       imgSrc: "./assets/img/apple.svg",
-//       series: "iPhone 14 Seriyası",
-//       discount: "10%-ə qədər Endirim",
-//       buttonText: "İndi Al",
-//       buttonLink: "#",
-//       mainImgSrc: "./assets/img/phone.png",
-//     },
-//     {
-//       imgSrc: "./assets/img/apple.svg",
-//       series: "iPhone 13 Seriyası",
-//       discount: "15%-ə qədər Endirim",
-//       buttonText: "İndi Al",
-//       buttonLink: "#",
-//       mainImgSrc: "./assets/img/phone.png",
-//     },
-//     {
-//       imgSrc: "./assets/img/apple.svg",
-//       series: "iPhone 15 Seriyası",
-//       discount: "20%-ə qədər Endirim",
-//       buttonText: "İndi Al",
-//       buttonLink: "#",
-//       mainImgSrc: "./assets/img/phone.png",
-//     },
-//   ]
-// };
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
 
-// // Slider Component
-// const Slider = () => {
-//   const [currentSlide, setCurrentSlide] = useState(0);
+export default function Slider() {
+  return (
+    <Swiper
+      modules={[Pagination, Autoplay]}
+      spaceBetween={50}
+      slidesPerView={1}
+      pagination={{
+        clickable: true,
+        renderBullet: (index, className) => {
+          return `<span class="${className} custom-bullet"></span>`;
+        },
+      }}
+      autoplay={{ delay: 3000 }} 
+      className="w-full"
+      onSwiper={(swiper) => console.log(swiper)}
+      onSlideChange={() => console.log('slide change')}
+    >
+      {/* Slide 1 */}
+      <SwiperSlide>
+        <div className="relative text-white  bg-black w-full max-w-[992px] h-[344px] overflow-hidden z-10">
+          <div className="flex space-x-[40px]">
+            <div className="w-[294px] flex flex-col pt-[58px] pl-[64px]">
+              <div className="flex space-x-[14px] mb-[10px] items-center">
+                <div className="w-[40px] h-[49px]">
+                  <img src="/apple.svg" className="object-cover" alt="apple" />
+                </div>
+                <p className="font-normal text-[16px] text-[#FAFAFA]">
+                  iPhone 14 Seriyası
+                </p>
+              </div>
+              <p className="text-[48px] text-[#FAFAFA] font-semibold w-[294px]">
+                10%-ə qədər Endirim
+              </p>
+            </div>
 
-//   useEffect(() => {
-//     const slideInterval = setInterval(() => {
-//       setCurrentSlide((prevSlide) => (prevSlide + 1) % sliderConfig.slides.length);
-//     }, sliderConfig.autoSlideInterval);
+            <div className="w-[496px] h-[310px] pt-[16px]">
+              <img src="/iphone.png" className="object-cover" alt="phone" />
+            </div>
+          </div>
+        </div>
+      </SwiperSlide>
 
-//     return () => clearInterval(slideInterval);
-//   }, []);
+      {/* Slide 2 */}
+      <SwiperSlide>
+        <div className="relative text-white  bg-black w-full max-w-[992px] h-[344px] overflow-hidden z-10">
+          <div className="flex space-x-[40px]">
+            <div className="w-[294px] flex flex-col pt-[58px] pl-[64px]">
+              <div className="flex space-x-[14px] mb-[10px] items-center">
+                <div className="w-[40px] h-[49px]">
+                  <img src="/apple.svg" className="object-cover" alt="apple" />
+                </div>
+                <p className="font-normal text-[16px] text-[#FAFAFA]">
+                  iPhone 14
+                </p>
+              </div>
+              <p className="text-[48px] text-[#FAFAFA] font-semibold w-[294px]">
+                10%-ə qədər Endirim
+              </p>
+            </div>
 
-//   const goToSlide = (index) => {
-//     setCurrentSlide(index);
-//   };
+            <div className="w-[496px] h-[310px] pt-[16px]">
+              <img src="/iphone.png" className="object-cover" alt="phone" />
+            </div>
+          </div>
+        </div>
+      </SwiperSlide>
 
-//   return (
-//     <div className="relative text-white bg-black w-full max-w-[892px] h-[344px] overflow-hidden z-10">
-//       <div
-//         className="flex transition-transform duration-500 ease-in-out"
-//         id="sliderAdvert"
-//         style={{ transform: `translateX(-${currentSlide * sliderConfig.slideWidth}px)` }}
-//       >
-//         {sliderConfig.slides.map((slide, index) => (
-//           <div key={index} style={{ width: sliderConfig.slideWidth }}>
-//             <img src={slide.mainImgSrc} alt={slide.series} />
-//             <div>
-//               <img src={slide.imgSrc} alt={slide.series} />
-//               <h2>{slide.series}</h2>
-//               <p>{slide.discount}</p>
-//               <a href={slide.buttonLink} className="button">
-//                 {slide.buttonText}
-//               </a>
-//             </div>
-//           </div>
-//         ))}
-//       </div>
-
-//       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-3">
-//         {sliderConfig.slides.map((_, index) => (
-//           <div
-//             key={index}
-//             className={`dot size-[12px] rounded-full cursor-pointer ${index === currentSlide ? 'bg-white' : 'bg-gray-200'}`}
-//             onClick={() => goToSlide(index)}
-//           ></div>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Slider;
+    </Swiper>
+  );
+}

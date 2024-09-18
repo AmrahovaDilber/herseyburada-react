@@ -4,7 +4,7 @@ import "./assets/css/index.css";
 import routes from "./router/routes";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import './App.css'
 
 const router = createHashRouter(routes);
 createRoot(document.getElementById("root")).render(

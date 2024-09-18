@@ -1,0 +1,17 @@
+/* Add custom bullet styles */
+.custom-bullet {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Style the active bullet */
+  .swiper-pagination-bullet-active.custom-bullet {
+    background-color: #ff7f50; /* Highlight active bullet with a different color */
+    transform: scale(1.2); /* Slightly enlarge the active bullet */
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  }
+  

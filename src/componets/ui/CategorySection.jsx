@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import data from "../../data/categoriesData";
+import Slider from "./Slider";
+
 
 export default function CategorySection() {
   return (
@@ -48,45 +50,7 @@ export default function CategorySection() {
         </div>
 
         {/* RIGHTBOX */}
-        <div className="relative text-white bg-black w-full max-w-[892px] h-[344px] overflow-hidden z-10">
-          <div className="flex space-x-[40px]">
-            <div className="w-[294px] flex flex-col pt-[58px] pl-[64px]">
-              <div className="flex space-x-[14px] mb-[10px] items-center">
-                <div className="w-[40px] h-[49px]">
-                  <img src="/apple.svg" className="object-cover" />
-                </div>
-                <p className="font-normal text-[16px] text-[#FAFAFA]">
-                  iPhone 14 Seriyası
-                </p>
-              </div>
-              <p className="text-[48px] text-[#FAFAFA] font-semibold w-[294px]">
-                10%-ə qədər Endirim
-              </p>
-              {/* <div className="flex items-center mt-[22px] space-x-2">
-                <button className="underline text-[16px] text-#FAFAFA font-medium">
-                  İndi Al
-                </button>
-                <div className="size-[24px]">
-                  <img
-                    className="object-cover"
-                    src="/icons_arrow-right.svg"
-                  />
-                </div>
-              </div> */}
-            </div>
-
-            <div className="w-[496px] h-[310px] pt-[16px]">
-              <img src="/iphone.png" className="object-cover" alt="phone" />
-            </div>
-          </div>
-          <div className="flex space-x-3 items-center w-[110px] mx-auto">
-            <div className="size-[12px] rounded-full bg-gray-200"></div>
-            <div className="size-[12px] rounded-full bg-gray-200"></div>
-            <div className="size-[12px] rounded-full bg-gray-200"></div>
-            <div className="size-[12px] rounded-full bg-gray-200"></div>
-            <div className="size-[12px] rounded-full bg-gray-200"></div>
-          </div>
-        </div>
+       <Slider></Slider>
       </div>
     </section>
   );
