@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import data from "../../data/categoriesData";
 import Slider from "./Slider";
 
-
 export default function CategorySection() {
   return (
     <section>
@@ -35,7 +34,7 @@ export default function CategorySection() {
                   <div className="grid grid-cols-4 gap-6">
                     {item.subkateqoriyalar.map((subkateqoriya, subIndex) => (
                       <Link
-                        to={`/subcategories/${subkateqoriya.subkateqoriya_adı}`}
+                        to={`/products/${item.kateqoriya_adı}/${subkateqoriya.subkateqoriya_adı}`}
                         key={subIndex}
                         className="px-4 py-3 w-full text-[14px] text-[#333] hover:bg-gray-100 hover:text-[#007BFF] transition-all duration-300 ease-in-out cursor-pointer rounded-md shadow-sm"
                       >
@@ -50,7 +49,7 @@ export default function CategorySection() {
         </div>
 
         {/* RIGHTBOX */}
-       <Slider></Slider>
+        <Slider></Slider>
       </div>
     </section>
   );

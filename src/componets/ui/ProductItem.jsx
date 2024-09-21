@@ -29,22 +29,22 @@ export default function ProductItem({ product }) {
               <img
                 src={product.imageUrl}
                 className="object-cover"
-                alt={product.name}
+                alt={product.product_name}
               />
             </figure>
           </Link>
 
           <figure className="size-[34px] rounded-full bg-[#FFFFFF] absolute top-[12px] right-[12px] flex items-center justify-center">
-            {!isFavorited(product.id) ? (
+            {!isFavorited(product.product_id) ? (
               <button
-                onClick={() => addToFavorites(product.id)}
+                onClick={() => addToFavorites(product.product_id)}
                 className="size-[23px]"
               >
                 <IoMdHeartEmpty className="size-full" />
               </button>
             ) : (
               <button
-                onClick={() => removeFromFavorites(product.id)}
+                onClick={() => removeFromFavorites(product.product_id)}
                 className="size-[23px]"
               >
                 <IoMdHeart className="size-full text-red-500" />
@@ -58,14 +58,14 @@ export default function ProductItem({ product }) {
             </figure>
             {product.isBasket ? (
               <button
-                onClick={() => removeFromCart(product.id)}
+                onClick={() => removeFromCart(product.product_id)}
                 className="text-[#FFFF] text-[12px] font-normal"
               >
                 Remove From Cart
               </button>
             ) : (
               <button
-                onClick={() => addToCart(product.id)}
+                onClick={() => addToCart(product.product_id)}
                 className="text-[#FFFF] text-[12px] font-normal"
               >
                 Add To Cart
@@ -76,14 +76,14 @@ export default function ProductItem({ product }) {
 
         <div className="p-3 flex flex-col">
           <p className="font-medium text-[16px] text-[#000000] mb-[8px]">
-            {product.name}
+            {product.product_name}
           </p>
           <div className="space-x-[12px] flex items-center mb-[8px]">
             <p className="text-[16px] font-medium text-[#FF7518]">
-              ${product.currentPrice}
+              ${product.price}
             </p>
             <p className="text-[16px] font-medium text-[#7F7F7F] line-through">
-              ${product.originalPrice}
+              ${product.original_price}
             </p>
           </div>
           <div className="flex space-x-[8px] items-center">
@@ -94,9 +94,12 @@ export default function ProductItem({ product }) {
                 </div>
               ))}
             </div>
-            <p className="text-[#7F7F7F] font-semibold">
-              ({product.reviewCount})
-            </p>
+            {product.reviews.map((rew,index) => (
+                <p key={index} className="text-[#7F7F7F] font-semibold">
+                ({rew.rating})
+              </p>
+            ))}
+          
           </div>
         </div>
       </div>

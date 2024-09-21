@@ -1,16 +1,56 @@
 import { useState, createContext, useContext, useEffect } from "react";
 import { notification } from "../utils/helper";
-import PRODUCTS from "../constant/product";
-import { set, useForm } from "react-hook-form";
+import {  useForm } from "react-hook-form";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../firebase/firebase";
 import data from "../data/categoriesData";
 export const AppContext = createContext();
 
-
-
 export const AppContextProvider = ({ children }) => {
-  const [products, setProducts] = useState(PRODUCTS);
+  const [allData, setAllData] = useState(data);
+  const [products, setProducts] = useState(
+    allData.kateqoriyalar.flatMap((category) =>
+      category.subkateqoriyalar.flatMap((subcategory) => subcategory.məhsullar)
+    )
+  );
+  // !!!!!!!!!!!!!!!!!!!!!!Product Filtering!!!!!!!!!!!!!!!
+  const [selectedPrice, setSelectedPrice] = useState([0, 2000]);
+  const [selectedColors, setSelectedColors] = useState([]);
+  const [selectedSizes, setSelectedSizes] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState("Qadın");
+
+  const [query, setQuery] = useState("");
+  const [selectedCategories, setSelectedCategories] = useState([]);
+
+  const [maxPrice, setMaxPrice] = useState(2000);
+
+  const handleFilterPrice = (price) => {
+    setMaxPrice(price);
+  };
+
+  const handleCategoryChange = (categoryName) => {
+    setSelectedCategories((prev) =>
+      prev.includes(categoryName)
+        ? prev.filter((cat) => cat !== categoryName)
+        : [...prev, categoryName]
+    );
+  };
+
+  // Filter For the Categories
+  const handleFilterCategory = () => {
+    if (selectedCategories.length === 0) {
+      return products;
+    }
+    return allData.kateqoriyalar
+      .filter((category) =>
+        selectedCategories.includes(category.kateqoriya_adı)
+      )
+      .flatMap((category) =>
+        category.subkateqoriyalar.flatMap(
+          (subcategory) => subcategory.məhsullar
+        )
+      );
+  };
 
   const [carts, setCarts] = useState(
     localStorage.getItem("carts")
@@ -35,13 +75,16 @@ export const AppContextProvider = ({ children }) => {
   };
 
   const addToCart = (id) => {
-    const product = products.find((product) => product.id === id);
+    const product = products.find((prod) => prod.product_id === id);
+
     if (product) {
       if (!carts.includes(id)) {
         const updatedBaskets = [...carts, id];
         saveCart(updatedBaskets);
         fetchProducts(updatedBaskets);
-        notification(`${product.name} added to cart`);
+        notification(`${product.product_name} added to cart`);
+      } else {
+        notification(`${product.product_name} is already in the cart`);
       }
     } else {
       notification(`Product not found`);
@@ -50,111 +93,85 @@ export const AppContextProvider = ({ children }) => {
 
   const removeFromCart = (id) => {
     const updatedBaskets = carts.filter((item) => item !== id);
-    const product = products.find((product) => product.id === id);
+    const product = products.find((prod) => prod.product_id === id);
 
     if (product) {
       saveCart(updatedBaskets);
       fetchProducts(updatedBaskets);
-      notification(`${product.name} removed from cart`);
+      notification(`${product.product_name} removed from cart`);
     } else {
       notification(`Product not found`);
     }
   };
 
   const fetchProducts = (updatedBaskets) => {
-    const items = products.map((product) => ({
+    const updatedProducts = products.map((product) => ({
       ...product,
-      isBasket: updatedBaskets.includes(product.id),
+      isBasket: updatedBaskets.includes(product.product_id),
     }));
-    setProducts(items);
+    setProducts(updatedProducts);
   };
 
   const fetchCartProducts = () => {
-    return products.filter((product) => carts.includes(product.id));
+    return products.filter((product) => carts.includes(product.product_id));
   };
 
   const addToFavorites = (id) => {
-    const findProduct = products.find((product) => product.id === id);
+    const findProduct = products.find((product) => product.product_id === id);
+
     if (findProduct) {
       if (!favorites.includes(id)) {
         const updatedFavorites = [...favorites, id];
         saveFavorites(updatedFavorites);
         notification(
-          `${findProduct.name} adlı məhsul sevimlilərə əlavə olundu`
+          `${findProduct.product_name} adlı məhsul sevimlilərə əlavə olundu`
         );
       }
+    } else {
+      notification(`Product not found`);
     }
   };
 
   const removeFromFavorites = (id) => {
-    const findProduct = products.find((product) => product.id === id);
-    const updatedFavorites = favorites.filter((productId) => productId !== id);
-    saveFavorites(updatedFavorites);
-    notification(`${findProduct.name} adlı məhsul sevimlilərdən çıxarıldı`);
+    const findProduct = products.find((product) => product.product_id === id);
+
+    if (findProduct) {
+      const updatedFavorites = favorites.filter(
+        (productId) => productId !== id
+      );
+      saveFavorites(updatedFavorites);
+      notification(
+        `${findProduct.product_name} adlı məhsul sevimlilərdən çıxarıldı`
+      );
+    } else {
+      notification(`Product not found`);
+    }
   };
 
   const fetchFavoritesProducts = () => {
-    return products.filter((product) => favorites.includes(product.id));
+    return products.filter((product) => favorites.includes(product.product_id));
   };
+
   const isFavorited = (id) => {
     return favorites.includes(id);
   };
 
-  // !!!!!!!!!!!!!!!!!!!!!!Product Filtering!!!!!!!!!!!!!!!
-  const [allData, setAllData] = useState(data);
-  const [query, setQuery] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("");
-  const [selectedColor, setSelectedColor] = useState("");
-  const [selectedSizes, setSelectedSizes] = useState([]);
-  const [maxPrice, setMaxPrice] = useState(2000);
+  // Endirimler
+  const discountedProducts = products.filter(
+    (item) => item && item.discount > 0
+  );
+  const sortedDiscountedProducts = discountedProducts.sort(
+    (a, b) => b.discount - a.discount
+  );
 
-  const handleFilterPrice = (price) => {
-    setMaxPrice(price);
-  };
-  // Filter For the Categories
-  function handleFilterCategory(categoryName) {
-    const filteredProducts =
-      allData.kateqoriyalar
-        .find((category) => category.kateqoriya_adı === categoryName)
-        ?.subkateqoriyalar.flatMap((subcategory) => subcategory.məhsullar) ||
-      [];
+  // Best sellers
 
-    setAllData(filteredProducts);
-    setSelectedCategory(categoryName);
-  }
-  // Filter For the Colors
-  const handleFilterColor = (color) => {
-    if (selectedColor === color) {
-      setSelectedColor("");
-    } else {
-      setSelectedColor(color);
-    }
-  };
+  const sellerProducts = products.filter((item) => item && item.salesCount > 0);
+  const sortedSellerProducts = [...sellerProducts].sort(
+    (a, b) => b.salesCount - a.salesCount
+  );
 
-
-  // FILTER FOR THE INPUT
-  function handleInputChange(e) {
-    setQuery(e.target.value);
-  }
-
-  const filteredInputItems = allData.kateqoriyalar
-    .map((category) => ({
-      ...category,
-      subkateqoriyalar: category.subkateqoriyalar
-        .map((subcategory) => ({
-          ...subcategory,
-          // Check if mahsullar exists before filtering
-          mahsullar: Array.isArray(subcategory.mahsullar)
-            ? subcategory.mahsullar.filter((product) =>
-                product.product_name.toLowerCase().includes(query.toLowerCase())
-              )
-            : [], // If mahsullar is undefined or not an array, return an empty array
-        }))
-        .filter((subcategory) => subcategory.mahsullar.length > 0), // Remove subcategories with no matching products
-    }))
-    .filter((category) => category.subkateqoriyalar.length > 0); // Remove categories with no matching subcategories
-
-  //!!!!!!!!!!!!!!!!!!!! Register!!!!!!!!!!!!!!!!!!!!!
+  //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Register!!!!!!!!!!!!!!!!!!!!!!!!!
   const [currentUser, setCurrentUser] = useState(null);
   const [userLoggedIn, setUserLoggedIn] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -185,7 +202,7 @@ export const AppContextProvider = ({ children }) => {
 
   const { errors: registerErrors } = registerFormState;
 
-  //!!!!!!!!!!!!!!! Login Form Hook!!!!!!!!!!!!!!!
+  //!!!!!!!!!!!!!!!!!!!!!!!!!!!1!! Login Form Hook!!!!!!!!!!!!!!!!!!!!!!
   const loginForm = useForm();
 
   const {
@@ -197,9 +214,47 @@ export const AppContextProvider = ({ children }) => {
 
   const { errors: loginErrors } = loginFormState;
 
+  // new
+  // Filter for the colors
+  const handleColorChange = (color) => {
+    setSelectedColors((prev) =>
+      prev.includes(color) ? prev.filter((c) => c !== color) : [...prev, color]
+    );
+  };
+
+  // Filter for the Size
+  const handleSizeChange = (size) => {
+    setSelectedSizes((prev) =>
+      prev.includes(size) ? prev.filter((s) => s !== size) : [...prev, size]
+    );
+  };
+
+  // FILTER FOR THE INPUT
+  function handleInputChange(e) {
+    setQuery(e.target.value);
+  }
+
+  const filteredInputItems = allData.kateqoriyalar
+    .map((category) => ({
+      ...category,
+      subkateqoriyalar: category.subkateqoriyalar
+        .map((subcategory) => ({
+          ...subcategory,
+          // Check if mahsullar exists before filtering
+          mahsullar: Array.isArray(subcategory.mahsullar)
+            ? subcategory.mahsullar.filter((product) =>
+                product.product_name.toLowerCase().includes(query.toLowerCase())
+              )
+            : [],
+        }))
+        .filter((subcategory) => subcategory.mahsullar.length > 0),
+    }))
+    .filter((category) => category.subkateqoriyalar.length > 0);
+
   const values = {
-    allData,
     products,
+    setProducts,
+    allData,
     addToCart,
     removeFromCart,
     carts,
@@ -230,14 +285,25 @@ export const AppContextProvider = ({ children }) => {
     query,
     handleInputChange,
     filteredInputItems,
-    selectedCategory,
-    handleFilterColor,
-    selectedColor,
+    selectedCategories,
+    // handleFilterColor,
     handleFilterPrice,
     maxPrice,
+    handleCategoryChange,
+    sortedDiscountedProducts,
+    sortedSellerProducts,
+
+    // new
+    selectedColors,
+    setSelectedColors,
+    handleColorChange,
     selectedSizes,
     setSelectedSizes,
-   
+    handleSizeChange,
+    selectedPrice,
+    setSelectedPrice,
+    selectedCategory,
+    setSelectedCategory,
   };
 
   return <AppContext.Provider value={values}>{children}</AppContext.Provider>;

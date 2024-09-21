@@ -1,7 +1,7 @@
 import { useContextApp } from "../../context/AppContext";
 
 const FilterProductCategories = () => {
-  const { allData, handleFilterCategory, selectedCategory } = useContextApp();
+  const { allData, selectedCategories, handleCategoryChange } = useContextApp();
 
   return (
     <div>
@@ -12,8 +12,8 @@ const FilterProductCategories = () => {
             <label className="flex items-center cursor-pointer">
               <input
                 type="checkbox"
-                checked={selectedCategory === category.kateqoriya_adı}
-                onChange={() => handleFilterCategory(category.kateqoriya_adı)}
+                checked={selectedCategories.includes(category.kateqoriya_adı)}
+                onChange={() => handleCategoryChange(category.kateqoriya_adı)}
                 className="mr-2 cursor-pointer"
               />
               {category.kateqoriya_adı}

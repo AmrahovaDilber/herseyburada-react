@@ -30,8 +30,8 @@ const routers = [
     element: <FilterPage></FilterPage>,
   },
   {
-    path: "/products/:slug",
-    element: <FilterPage></FilterPage>,
+    path: "/products/:slug/:subcategorySlug?",
+    element: <FilterPage />,
   },
   {
     path: "/subcategories/:slug",

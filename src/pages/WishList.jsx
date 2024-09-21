@@ -23,8 +23,8 @@ fetchProducts
   function addToBag() {
     const updatedCarts = [...carts];
     favoritesProducts.map((product) => {
-      if (!updatedCarts.includes(product.id)) {
-        updatedCarts.push(product.id);
+      if (!updatedCarts.includes(product.product_id)) {
+        updatedCarts.push(product.product_id);
       }
     });
     saveCart(updatedCarts);

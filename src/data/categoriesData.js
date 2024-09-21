@@ -6,92 +6,53 @@ const data = {
       "subkateqoriyalar": [
         {
           "subkateqoriya_id": 1,
-          "subkateqoriya_adı": "Köynək",
+          "subkateqoriya_adı": "Bluz",
           "məhsullar": [
             {
               "product_id": 1,
-              "product_name": "Qadın Köynək 1",
+              "product_name": "Qadın Bluz 1",
               "price": 50.0,
               "original_price": 70.0,
               "discount": 10,
-              "image_url": "https://example.com/products/women-shirt1.jpg",
-              "description": "Qadın üçün şık köynək.",
-              "colors": ["Red","White", "Black"],
+              "salesCount": 150,
+              "image_url": "https://example.com/products/women-blouse1.jpg",
+              "description": "Qadın üçün şık bluz.",
+              "colors": ["Red", "White", "Black"],
               "sizes": ["S", "M", "L"],
               "reviews": [
                 {
                   "review_id": 1,
                   "rating": 4.0,
-                  "comment": "Çox gözəl köynək.",
-                }
-              ]
-            },
-            // {
-            //   "product_id": 2,
-            //   "product_name": "Qadın Köynək 2",
-            //   "price": 60.0,
-            //   "original_price": 80.0,
-            //   "discount": 15,
-            //   "image_url": "https://example.com/products/women-shirt2.jpg",
-            //   "description": "Rəngarəng və rahat köynək.",
-            //   "colors": ["Red", "Blue"],
-            //   "sizes": ["M", "L", "XL"],
-            //   "reviews": [
-            //     {
-            //       "review_id": 2,
-            //       "rating": 5.0,
-            //       "comment": "Çox rahat və şıx!"
-            //     },
-            //     {
-            //       "review_id": 3,
-            //       "rating": 4.5,
-            //       "comment": "Rəngi çox gözəl, amma ölçü kiçik."
-            //     }
-            //   ]
-            // },
-            {
-              "product_id": 5,
-              "product_name": "Qadın Köynək 3",
-              "price": 70.0,
-              "original_price": 90.0,
-              "discount": 22,
-              "image_url": "https://example.com/products/women-shirt3.jpg",
-              "description": "Ən son moda köynək.",
-              "colors": ["Pink", "Purple"],
-              "sizes": ["S", "M", "L"],
-              "reviews": [
-                {
-                  "review_id": 7,
-                  "rating": 4.6,
-                  "comment": "Gözəl və müasir dizayn."
+                  "comment": "Çox gözəl bluz."
                 },
                 {
-                  "review_id": 8,
-                  "rating": 4.3,
-                  "comment": "Təsvir olunduğu kimi deyil, amma yaxşıdır."
+                  "review_id": 11,
+                  "rating": 4.5,
+                  "comment": "Materialı yüksək keyfiyyətlidir."
                 }
               ]
             },
             {
-              "product_id": 6,
-              "product_name": "Qadın Köynək 4",
-              "price": 65.0,
-              "original_price": 85.0,
-              "discount": 25,
-              "image_url": "https://example.com/products/women-shirt4.jpg",
-              "description": "Dəri kimi yumuşaq köynək.",
-              "colors": ["Green", "Beige"],
+              "product_id": 2,
+              "product_name": "Qadın Bluz 2",
+              "price": 60.0,
+              "original_price": 80.0,
+              "discount": 15,
+              "salesCount": 100,
+              "image_url": "https://example.com/products/women-blouse2.jpg",
+              "description": "Rəngarəng və rahat bluz.",
+              "colors": ["Red", "Blue"],
               "sizes": ["M", "L", "XL"],
               "reviews": [
                 {
-                  "review_id": 9,
-                  "rating": 4.9,
-                  "comment": "Süper rahat və keyfiyyətli."
+                  "review_id": 2,
+                  "rating": 5.0,
+                  "comment": "Çox rahat və şıx!"
                 },
                 {
-                  "review_id": 10,
-                  "rating": 4.4,
-                  "comment": "Bir az bahalı, amma dəyər."
+                  "review_id": 3,
+                  "rating": 4.5,
+                  "comment": "Rəngi çox gözəl, amma ölçü kiçik."
                 }
               ]
             }
@@ -99,23 +60,29 @@ const data = {
         },
         {
           "subkateqoriya_id": 2,
-          "subkateqoriya_adı": "Jaket",
+          "subkateqoriya_adı": "Qadın Jaketi",
           "məhsullar": [
             {
-              "product_id": 2,
+              "product_id": 5,
               "product_name": "Qadın Jaket 1",
               "price": 80.0,
               "original_price": 100.0,
-              "discount": 20,
+              "discount": 0,
+              "salesCount": 90,
               "image_url": "https://example.com/products/women-jacket1.jpg",
               "description": "Qış üçün isti jaket.",
               "colors": ["Grey", "Navy"],
               "sizes": ["M", "L", "XL"],
               "reviews": [
                 {
-                  "review_id": 2,
+                  "review_id": 12,
                   "rating": 4.5,
-                  "comment": "Çox rahat və isti.",
+                  "comment": "Çox rahat və isti."
+                },
+                {
+                  "review_id": 13,
+                  "rating": 4.2,
+                  "comment": "Keyfiyyətli material, amma qiyməti bir az yüksəkdir."
                 }
               ]
             }
@@ -123,23 +90,29 @@ const data = {
         },
         {
           "subkateqoriya_id": 3,
-          "subkateqoriya_adı": "Cins Şalvar",
+          "subkateqoriya_adı": "Cins",
           "məhsullar": [
             {
-              "product_id": 3,
+              "product_id": 7,
               "product_name": "Cins Şalvar 1",
               "price": 60.0,
               "original_price": 80.0,
               "discount": 15,
+              "salesCount": 160,
               "image_url": "https://example.com/products/jeans1.jpg",
               "description": "Rahat və şık cins şalvar.",
               "colors": ["Blue", "Black"],
               "sizes": ["S", "M", "L"],
               "reviews": [
                 {
-                  "review_id": 3,
+                  "review_id": 15,
                   "rating": 4.2,
-                  "comment": "Çox rahat və yaxşı keyfiyyət.",
+                  "comment": "Çox rahat və yaxşı keyfiyyət."
+                },
+                {
+                  "review_id": 16,
+                  "rating": 4.0,
+                  "comment": "Gözəl görünür, amma bir az dar."
                 }
               ]
             }
@@ -148,37 +121,182 @@ const data = {
         {
           "subkateqoriya_id": 4,
           "subkateqoriya_adı": "Şortik",
-          "məhsullar": []
+          "məhsullar": [
+            {
+              "product_id": 9,
+              "product_name": "Yay Şortiki",
+              "price": 40.0,
+              "original_price": 50.0,
+              "discount": 20,
+              "salesCount": 85,
+              "image_url": "https://example.com/products/summer-shorts.jpg",
+              "description": "Rahat və sərin yay şortiki.",
+              "colors": ["White", "Khaki", "Navy"],
+              "sizes": ["XS", "S", "M", "L"],
+              "reviews": [
+                {
+                  "review_id": 18,
+                  "rating": 4.3,
+                  "comment": "Çox rahat, amma ölçüsü biraz böyük."
+                }
+              ]
+            }
+          ]
         },
         {
           "subkateqoriya_id": 5,
-          "subkateqoriya_adı": "Palto",
-          "məhsullar": []
+          "subkateqoriya_adı": "Qadın Paltosu",
+          "məhsullar": [
+            {
+              "product_id": 10,
+              "product_name": "Qış Paltosu",
+              "price": 150.0,
+              "original_price": 180.0,
+              "discount": 0,
+              "salesCount": 50,
+              "image_url": "https://example.com/products/winter-coat.jpg",
+              "description": "İsti və stilli qış paltosu.",
+              "colors": ["Black", "Camel"],
+              "sizes": ["S", "M", "L", "XL"],
+              "reviews": [
+                {
+                  "review_id": 19,
+                  "rating": 4.9,
+                  "comment": "Mükəmməl keyfiyyət və dizayn!"
+                }
+              ]
+            }
+          ]
         },
         {
           "subkateqoriya_id": 6,
-          "subkateqoriya_adı": "Pencək",
-          "məhsullar": []
+          "subkateqoriya_adı": "Qadın Pencəyi",
+          "məhsullar": [
+            {
+              "product_id": 11,
+              "product_name": "Klassik Pencək",
+              "price": 90.0,
+              "original_price": 110.0,
+              "discount": 5,
+              "salesCount": 70,
+              "image_url": "https://example.com/products/classic-blazer.jpg",
+              "description": "Ofis və gündəlik istifadə üçün şık pencək.",
+              "colors": ["Black", "Navy", "Grey"],
+              "sizes": ["S", "M", "L"],
+              "reviews": [
+                {
+                  "review_id": 20,
+                  "rating": 4.6,
+                  "comment": "Çox şık və keyfiyyətli."
+                }
+              ]
+            }
+          ]
         },
         {
           "subkateqoriya_id": 7,
-          "subkateqoriya_adı": "Pijama",
-          "məhsullar": []
+          "subkateqoriya_adı": "Yataq Geyimi",
+          "məhsullar": [
+            {
+              "product_id": 12,
+              "product_name": "İpək Pijama Dəsti",
+              "price": 75.0,
+              "original_price": 90.0,
+              "discount": 10,
+              "salesCount": 100,
+              "image_url": "https://example.com/products/silk-pajama-set.jpg",
+              "description": "Lüks və rahat ipək pijama dəsti.",
+              "colors": ["Pink", "Lavender", "Champagne"],
+              "sizes": ["S", "M", "L"],
+              "reviews": [
+                {
+                  "review_id": 21,
+                  "rating": 4.8,
+                  "comment": "Çox rahat və lüks hiss etdirir."
+                }
+              ]
+            }
+          ]
         },
         {
           "subkateqoriya_id": 8,
-          "subkateqoriya_adı": "Çanta",
-          "məhsullar": []
+          "subkateqoriya_adı": "Qadın Çantası",
+          "məhsullar": [
+            {
+              "product_id": 13,
+              "product_name": "Dəri Çiyin Çantası",
+              "price": 120.0,
+              "original_price": 150.0,
+              "discount": 0,
+              "salesCount": 80,
+              "image_url": "https://example.com/products/leather-shoulder-bag.jpg",
+              "description": "Keyfiyyətli dəridən hazırlanmış şık çiyin çantası.",
+              "colors": ["Black", "Brown", "Tan"],
+              "sizes": ["One Size"],
+              "reviews": [
+                {
+                  "review_id": 22,
+                  "rating": 4.7,
+                  "comment": "Gözəl dizayn və yüksək keyfiyyət."
+                }
+              ]
+            }
+          ]
         },
         {
           "subkateqoriya_id": 9,
-          "subkateqoriya_adı": "Makiyaj",
-          "məhsullar": []
+          "subkateqoriya_adı": "Kosmetika",
+          "məhsullar": [
+            {
+              "product_id": 14,
+              "product_name": "Göz Kölgəsi Paleti",
+              "price": 45.0,
+              "original_price": 55.0,
+              "discount": 18,
+              "salesCount": 200,
+              "image_url": "https://example.com/products/eyeshadow-palette.jpg",
+              "description": "12 rəngli lüks göz kölgəsi paleti.",
+              "colors": ["Multi"],
+              "sizes": ["One Size"],
+              "reviews": [
+                {
+                  "review_id": 23,
+                  "rating": 4.5,
+                  "comment": "Rənglər çox gözəl və pigmentlidir."
+                }
+              ]
+            }
+          ]
         },
         {
           "subkateqoriya_id": 10,
-          "subkateqoriya_adı": "Pul Kisəsi",
-          "məhsullar": []
+          "subkateqoriya_adı": "Aksesuarlar",
+          "məhsullar": [
+            {
+              "product_id": 15,
+              "product_name": "Kompakt Dəri Pul Kisəsi",
+              "price": 35.0,
+              "original_price": 45.0,
+              "discount": 22,
+              "salesCount": 150,
+              "image_url": "https://example.com/products/compact-leather-wallet.jpg",
+              "description": "İncə və funksional dəri pul kisəsi.",
+              "colors": ["Black", "Red", "Navy"],
+              "sizes": ["One Size"],
+              "reviews": [
+                {
+                  "review_id": 1001,
+                  "rating": 4.4,
+                  "comment": "Kiçik, amma çox funksional."
+                },
+                {
+                  "review_id": 1002,
+                  "rating": 4.6,
+                  "comment": "Keyfiyyətli dəri və gözəl dizayn."
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -196,7 +314,7 @@ const data = {
           "subkateqoriya_adı": "Köynək",
           "məhsullar": [
             {
-              "product_id": 2,
+              "product_id": 19,
               "product_name": "Kişi Köynək 1",
               "price": 60.0,
               "original_price": 80.0,
@@ -212,18 +330,17 @@ const data = {
                   "comment": "Keyfiyyətli və rahat köynək."
                 }
               ]
-            },
+            }
           ]
-          
         },
         {
           "subkateqoriya_id": 3,
-          "subkateqoriya_adı": "Jaket",
+          "subkateqoriya_adı": "Kişi Gödəkçəsi",
           "məhsullar": []
         },
         {
           "subkateqoriya_id": 4,
-          "subkateqoriya_adı": "Pencək",
+          "subkateqoriya_adı": "Kişi Kostyumu",
           "məhsullar": []
         },
         {
@@ -233,12 +350,12 @@ const data = {
         },
         {
           "subkateqoriya_id": 6,
-          "subkateqoriya_adı": "Çanta",
+          "subkateqoriya_adı": "Kişi Çantası",
           "məhsullar": []
         },
         {
           "subkateqoriya_id": 7,
-          "subkateqoriya_adı": "Papaq",
+          "subkateqoriya_adı": "Baş Geyimləri",
           "məhsullar": []
         },
         {
@@ -248,12 +365,12 @@ const data = {
         },
         {
           "subkateqoriya_id": 9,
-          "subkateqoriya_adı": "Günəş Eynəyi",
+          "subkateqoriya_adı": "Eynək",
           "məhsullar": []
         },
         {
           "subkateqoriya_id": 10,
-          "subkateqoriya_adı": "Qalustuk",
+          "subkateqoriya_adı": "Qalstuk",
           "məhsullar": []
         },
         {

@@ -4,15 +4,21 @@ import { useContextApp } from "../../context/AppContext";
 
 export default function BestSellers() {
 
-  const { products } = useContextApp();
+  const { sortedSellerProducts } = useContextApp();
+  const slicedArr=sortedSellerProducts.slice(0,4)
   return (
     <div>
       <TitleSubtitle subtitle="Bu ay" title="Ən çox satılanlar">
-        <button className="h-[56px] w-[159px] bg-[#FF7518] hover:bg-[#e07575] rounded-md text-[#FAFAFA] text-[16px] font-medium text-center">
-          Hamısını göstər
-        </button>
+      <div className="space-x-[8px] flex items-center">
+          <figure className="bg-[#F5F5F5] size-[46px] rounded-full text-black flex justify-center items-center cursor-pointer">
+            <img src="/icons_arrow-left.svg" alt="Previous" />
+          </figure>
+          <figure className="bg-[#F5F5F5] size-[46px] rounded-full text-black flex justify-center items-center cursor-pointer">
+            <img src="/icons_arrow-right.svg" alt="Next" />
+          </figure>
+        </div>
       </TitleSubtitle>
-      <ProductList products={products} />
+      <ProductList products={slicedArr} />
     </div>
   );
 }

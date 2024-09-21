@@ -1,16 +1,23 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CartItem from "./CartItem";
+import { useContextApp } from "../../context/AppContext";
 
-export default function CartList({ products }) {
-  // Initializing count state for each product
-  const [productCounts, setProductCounts] = useState(
-    products.reduce((acc, product) => {
-      acc[product.id] = 1; // Initialize with 1 or the actual count if available
-      return acc;
-    }, {})
-  );
+export default function CartList() {
+  const { carts, products, fetchCartProducts } = useContextApp();
+  
+  const [productCounts, setProductCounts] = useState({});
+  const [cartProducts, setCartProducts] = useState([]);
 
-  // Update count for a specific product
+  useEffect(() => {
+    setCartProducts(fetchCartProducts());
+    setProductCounts(
+      fetchCartProducts().reduce((acc, product) => {
+        acc[product.product_id] = 1;
+        return acc;
+      }, {})
+    );
+  }, [carts]);
+
   const updateProductCount = (id, newCount) => {
     setProductCounts((prevCounts) => ({
       ...prevCounts,
@@ -27,17 +34,17 @@ export default function CartList({ products }) {
         <div className="text-center">Subtotal</div>
         <div className="text-center">Delete</div>
       </div>
-      {products.length > 0 &&
-        products.map((product) => (
+      {cartProducts.length > 0 &&
+        cartProducts.map((product) => (
           <CartItem
-            key={product.id}
+            key={product.product_id}
             product={product}
-            count={productCounts[product.id] || 1} // Default to 1 if not available
-            setCount={(newCount) => updateProductCount(product.id, newCount)}
+            count={productCounts[product.product_id] || 1}
+            setCount={(newCount) => updateProductCount(product.product_id, newCount)}
             updateProductCount={updateProductCount}
           />
         ))}
-      {products.length === 0 && (
+      {cartProducts.length === 0 && (
         <div className="flex justify-center items-center h-80 rounded-lg">
           <p className="text-gray-600 text-lg font-semibold">
             Your Cart Is Empty

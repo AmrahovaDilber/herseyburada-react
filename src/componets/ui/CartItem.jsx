@@ -6,13 +6,13 @@ export default function CartItem({ product, count, setCount, updateProductCount 
   function handleDecrease() {
     if (count > 1) {
       setCount(count - 1);
-      updateProductCount(product.id, count - 1); 
+      updateProductCount(product.product_id, count - 1); 
     }
   }
 
   function handleIncrease() {
     setCount(count + 1);
-    updateProductCount(product.id, count + 1); 
+    updateProductCount(product.product_id, count + 1); 
   }
 
   return (
@@ -22,15 +22,15 @@ export default function CartItem({ product, count, setCount, updateProductCount 
           <img
             className="w-full h-full object-cover rounded-md"
             src={product.imageUrl}
-            alt={product.name}
+            alt={product.product_name}
           />
         </figure>
         <span className="text-lg font-semibold text-gray-800">
-          {product.name}
+          {product.product_name}
         </span>
       </div>
 
-      <div className="text-gray-600 font-medium">${product.originalPrice}</div>
+      <div className="text-gray-600 font-medium">${product.price}</div>
 
       <div className="flex items-center space-x-1 border border-gray-300 rounded-lg p-1 w-28">
         <button
@@ -51,12 +51,12 @@ export default function CartItem({ product, count, setCount, updateProductCount 
       </div>
 
       <div className="text-gray-800 font-medium text-center">
-        ${count * product.originalPrice}
+        ${count * product.price}
       </div>
 
       <button
         className="text-red-600 hover:text-red-800 transition-colors duration-200"
-        onClick={() => removeFromCart(product.id)}
+        onClick={() => removeFromCart(product.product_id)}
       >
         <i className="fa-solid fa-trash text-lg"></i>
       </button>

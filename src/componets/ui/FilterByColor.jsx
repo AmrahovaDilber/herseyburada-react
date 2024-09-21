@@ -1,17 +1,17 @@
 import { useContextApp } from "../../context/AppContext";
 
 const colors = [
-  { bgColorClass: "bg-red-600", name: "Red", count: 10 },
-  { bgColorClass: "bg-blue-600", name: "Blue", count: 14 },
-  { bgColorClass: "bg-orange-500", name: "Orange", count: 8 },
-  { bgColorClass: "bg-black", name: "Black", count: 9 },
-  { bgColorClass: "bg-green-600", name: "Green", count: 4 },
-  { bgColorClass: "bg-yellow-500", name: "Yellow", count: 2 },
+  { bgColorClass: "bg-red-600", name: "Red" },
+  { bgColorClass: "bg-blue-600", name: "Blue" },
+  { bgColorClass: "bg-orange-500", name: "Orange" },
+  { bgColorClass: "bg-black", name: "Black" },
+  { bgColorClass: "bg-green-600", name: "Green" },
+  { bgColorClass: "bg-yellow-500", name: "Yellow" },
 ];
 
 const FilterByColor = () => {
-  const { handleFilterColor, selectedColor } = useContextApp();
-
+  // const { handleFilterColor, selectedColor } = useContextApp();
+  const { handleColorChange, selectedColors } = useContextApp();
   return (
     <div>
       <h2 className="font-bold mb-2">Filter by Color</h2>
@@ -22,8 +22,8 @@ const FilterByColor = () => {
               <input
                 type="checkbox"
                 className="mr-2 cursor-pointer"
-                checked={selectedColor.toLowerCase() === name.toLowerCase()}
-                onChange={() => handleFilterColor(name)}
+                checked={selectedColors.includes(name)}
+                onChange={() => handleColorChange(name)}
               />
               <span className={`w-4 h-4 rounded mr-2 ${bgColorClass}`} />
               {name} ({count})
