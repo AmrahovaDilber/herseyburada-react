@@ -2,7 +2,7 @@ function ProductInfo({findProduct}) {
     return (
       <div>
         <div className="text-[24px] font-[600] mb-[16px]">
-         {findProduct.name}
+         {findProduct.product_name}
         </div>
         <div className="flex items-center mb-[16px] gap-x-[16px]">
           <div className="inline-flex text-[16px] gap-x[5px]">
@@ -12,9 +12,12 @@ function ProductInfo({findProduct}) {
             <i className="fa-regular fa-star" />
             <i className="fa-regular fa-star" />
           </div>
-          <div className="text-[14px]">
-            <span className="opacity-50 text-[14px]">{findProduct.reviewCount} review</span>
+          {findProduct.reviews.map((review,index) => (
+            <div className="text-[14px]" key={index}>
+            <span className="opacity-50 text-[14px]">{review.rating} review</span>
           </div>
+          ))}
+          
           <div className="text-[#00FF66] text-[14px] border-l-[1px]">
             <span className="ml-[16px]">{findProduct.stockStatus}</span>
           </div>

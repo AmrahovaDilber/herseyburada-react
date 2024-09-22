@@ -22,7 +22,7 @@ const ContactForm = () => {
   }
 
   return (
-    <form ref={formRef} onSubmit={handleSubmit(onSubmit)} className="py-[40px] px-[30px] space-y-[32px] border border-gray-100 shadow-md rounded-[4px]">
+    <form ref={formRef} onSubmit={handleSubmit(onSubmit)} className="py-[47px] px-[30px] space-y-[32px] border border-gray-100 shadow-md rounded-[4px]">
       <div className="grid grid-cols-3 gap-[16px]">
         <div>
           <input

@@ -3,8 +3,7 @@ import { useContextApp } from "../../context/AppContext";
 import { useState } from "react";
 import { doCreateUserWithEmailAndPassword } from "../../firebase/auth";
 import { useForm } from "react-hook-form";
-
-import { db} from '../../firebase/firebase';
+import { db } from "../../firebase/firebase";
 
 const SignupForm = () => {
   const [isRegistering, setIsRegistering] = useState(false);
@@ -51,9 +50,9 @@ const SignupForm = () => {
   return (
     <>
       {userLoggedIn && <Navigate to={"/"} replace={true} />}
-      <main className="flex items-center justify-center w-full min-h-screen">
-        <div className="flex items-center overflow-hidden w-full max-w-[1200px]">
-          <figure className="w-1/2 h-full hidden lg:block">
+      <main className="flex items-center justify-center w-full min-h-screen px-4">
+        <div className="flex flex-col-reverse lg:flex-row items-center w-full max-w-[1200px]  rounded-lg overflow-hidden">
+          <figure className="hidden lg:block w-full lg:w-1/2 h-64 lg:h-auto">
             <img
               className="w-full h-full object-cover"
               src="/login-register.svg"
@@ -62,12 +61,12 @@ const SignupForm = () => {
           </figure>
           <div className="w-full lg:w-1/2 p-8">
             <h1
-              className="text-4xl font-semibold mb-6 text-gray-800 text-center"
+              className="text-3xl lg:text-4xl font-semibold mb-6 text-gray-800 text-center"
               style={{ fontFamily: "'Inter', sans-serif" }}
             >
               Hesab yaradın
             </h1>
-            <h3 className="text-lg mb-8 text-gray-600 text-center">
+            <h3 className="text-md lg:text-lg mb-8 text-gray-600 text-center">
               Məlumatlarınızı aşağıda qeyd edin
             </h3>
             <form

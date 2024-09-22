@@ -12,10 +12,10 @@ export default function ProductDetail() {
 
   return (
     <div className="flex justify-between my-[50px] w-[1200px] ">
-      <div className="flex gap-x-[43px]">
+      <div className="flex ">
         {/* ThumbnailList */}
-        <div className="flex flex-col gap-y-[8px]">
-          {/* Example thumbnails */}
+        {/* <div className="flex flex-col gap-y-[8px]">
+        
           <figure className="w-[170px] flex-1 rounded-[4px] border cursor-pointer">
             <img
               src="https://images-na.ssl-images-amazon.com/images/I/51zyUeBrFgL._AC_UL600_SR600,600_.jpg"
@@ -44,7 +44,7 @@ export default function ProductDetail() {
               className="w-full object-cover"
             />
           </figure>
-        </div>
+        </div> */}
 
         {/* ProductImages */}
         <div className="w-[500px] border rounded-[4px]">
@@ -56,16 +56,17 @@ export default function ProductDetail() {
           </figure>
         </div>
       </div>
-      <div className="w-[400px]">
+
+      <div className="w-[500px]">
         <ProductInfo findProduct={findProduct} />
 
         {/* ProductPrice */}
         <div>
           <div className="text-[24px] mb-[24px]">
-            {findProduct.originalPrice}
+            {findProduct.original_price}
           </div>
           <div className="text-[14px] mb-[24px] border-b-[1px]">
-            <p className="mb-[24px]">{findProduct.about}</p>
+            <p className="mb-[24px]">{findProduct.description}</p>
           </div>
         </div>
 
@@ -73,14 +74,14 @@ export default function ProductDetail() {
         <div className="flex gap-[16px]  items-center">
           {/* BuyNowButton */}
           <button
-            onClick={()=>addToCart(findProduct.id)}
+            onClick={()=>addToCart(findProduct.product_id)}
             className="bg-[#FF7518] text-white py-2 px-4 rounded">
             Add To Cart
           </button>
 
           {/* WishlistButton */}
           <button
-          onClick={()=>addToFavorites(findProduct.id)}
+          onClick={()=>addToFavorites(findProduct.product_id)}
             className="bg-gray-200 text-gray-800 py-2 px-4 rounded">
             Add to Wishlist
           </button>

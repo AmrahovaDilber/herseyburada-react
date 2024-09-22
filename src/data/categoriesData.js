@@ -12,6 +12,7 @@ const data = {
               "product_id": 1,
               "product_name": "Qadın Bluz 1",
               "price": 50.0,
+              "slug":'qadın_bluz_1',
               "original_price": 70.0,
               "discount": 10,
               "salesCount": 150,
@@ -63,7 +64,7 @@ const data = {
           "subkateqoriya_adı": "Qadın Jaketi",
           "məhsullar": [
             {
-              "product_id": 5,
+              "product_id": 3,
               "product_name": "Qadın Jaket 1",
               "price": 80.0,
               "original_price": 100.0,
@@ -93,7 +94,7 @@ const data = {
           "subkateqoriya_adı": "Cins",
           "məhsullar": [
             {
-              "product_id": 7,
+              "product_id": 4,
               "product_name": "Cins Şalvar 1",
               "price": 60.0,
               "original_price": 80.0,
@@ -123,7 +124,7 @@ const data = {
           "subkateqoriya_adı": "Şortik",
           "məhsullar": [
             {
-              "product_id": 9,
+              "product_id": 5,
               "product_name": "Yay Şortiki",
               "price": 40.0,
               "original_price": 50.0,
@@ -148,7 +149,7 @@ const data = {
           "subkateqoriya_adı": "Qadın Paltosu",
           "məhsullar": [
             {
-              "product_id": 10,
+              "product_id":6,
               "product_name": "Qış Paltosu",
               "price": 150.0,
               "original_price": 180.0,
@@ -173,7 +174,7 @@ const data = {
           "subkateqoriya_adı": "Qadın Pencəyi",
           "məhsullar": [
             {
-              "product_id": 11,
+              "product_id": 7,
               "product_name": "Klassik Pencək",
               "price": 90.0,
               "original_price": 110.0,
@@ -198,7 +199,7 @@ const data = {
           "subkateqoriya_adı": "Yataq Geyimi",
           "məhsullar": [
             {
-              "product_id": 12,
+              "product_id": 8,
               "product_name": "İpək Pijama Dəsti",
               "price": 75.0,
               "original_price": 90.0,
@@ -223,7 +224,7 @@ const data = {
           "subkateqoriya_adı": "Qadın Çantası",
           "məhsullar": [
             {
-              "product_id": 13,
+              "product_id": 9,
               "product_name": "Dəri Çiyin Çantası",
               "price": 120.0,
               "original_price": 150.0,
@@ -248,7 +249,7 @@ const data = {
           "subkateqoriya_adı": "Kosmetika",
           "məhsullar": [
             {
-              "product_id": 14,
+              "product_id": 10,
               "product_name": "Göz Kölgəsi Paleti",
               "price": 45.0,
               "original_price": 55.0,
@@ -273,7 +274,7 @@ const data = {
           "subkateqoriya_adı": "Aksesuarlar",
           "məhsullar": [
             {
-              "product_id": 15,
+              "product_id": 11,
               "product_name": "Kompakt Dəri Pul Kisəsi",
               "price": 35.0,
               "original_price": 45.0,
@@ -383,7 +384,7 @@ const data = {
           "subkateqoriya_adı": "Saat",
           "məhsullar": [
             {
-              "product_id": 11,
+              "product_id": 20,
               "product_name": "Sony WH-1000XM4",
               "price": 950.0,
               "original_price": 1000.0,
@@ -529,7 +530,7 @@ const data = {
           "subkateqoriya_adı": "Oyuncaq",
           "məhsullar": [
             {
-              "product_id": 11,
+              "product_id": 21,
               "product_name": "LEGO Technic Car",
               "price": 950.0,
               "original_price": 1000.0,

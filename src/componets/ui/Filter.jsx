@@ -10,7 +10,7 @@ function Filter() {
       {/* Main Content */}
       <div className="flex-1 ml-8">
         {/* Results Summary and Sorting */}
-        <div className="flex justify-between items-center mb-8 border border-gray-300 shadow-lg p-4 rounded-lg bg-white">
+        {/* <div className="flex justify-between items-center mb-8 border border-gray-300 shadow-lg p-4 rounded-lg bg-white">
           <div className="text-gray-600 flex items-center">
             <img src="/grid.svg" alt="Grid Icon" className="mr-2" />
             <span className="font-medium">
@@ -59,7 +59,7 @@ function Filter() {
               </li>
             </ul>
           </div>
-        </div>
+        </div> */}
 
         {/* Product Listing */}
         <Products></Products>

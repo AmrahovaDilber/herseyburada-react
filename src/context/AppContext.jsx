@@ -105,13 +105,16 @@ export const AppContextProvider = ({ children }) => {
   };
 
   const fetchProducts = (updatedBaskets) => {
-    const updatedProducts = products.map((product) => ({
-      ...product,
-      isBasket: updatedBaskets.includes(product.product_id),
-    }));
+    const updatedProducts = allData.kateqoriyalar.flatMap((category) =>
+      category.subkateqoriyalar.flatMap((subcategory) =>
+        subcategory.məhsullar.map((product) => ({
+          ...product,
+          isBasket: updatedBaskets.includes(product.product_id),
+        }))
+      )
+    );
     setProducts(updatedProducts);
   };
-
   const fetchCartProducts = () => {
     return products.filter((product) => carts.includes(product.product_id));
   };
@@ -234,22 +237,22 @@ export const AppContextProvider = ({ children }) => {
     setQuery(e.target.value);
   }
 
-  const filteredInputItems = allData.kateqoriyalar
-    .map((category) => ({
-      ...category,
-      subkateqoriyalar: category.subkateqoriyalar
-        .map((subcategory) => ({
-          ...subcategory,
-          // Check if mahsullar exists before filtering
-          mahsullar: Array.isArray(subcategory.mahsullar)
-            ? subcategory.mahsullar.filter((product) =>
-                product.product_name.toLowerCase().includes(query.toLowerCase())
-              )
-            : [],
-        }))
-        .filter((subcategory) => subcategory.mahsullar.length > 0),
-    }))
-    .filter((category) => category.subkateqoriyalar.length > 0);
+  // const filteredInputItems = allData.kateqoriyalar
+  //   .map((category) => ({
+  //     ...category,
+  //     subkateqoriyalar: category.subkateqoriyalar
+  //       .map((subcategory) => ({
+  //         ...subcategory,
+  //         // Check if mahsullar exists before filtering
+  //         mahsullar: Array.isArray(subcategory.mahsullar)
+  //           ? subcategory.mahsullar.filter((product) =>
+  //               product.product_name.toLowerCase().includes(query.toLowerCase())
+  //             )
+  //           : [],
+  //       }))
+  //       .filter((subcategory) => subcategory.mahsullar.length > 0),
+  //   }))
+  //   .filter((category) => category.subkateqoriyalar.length > 0);
 
   const values = {
     products,
@@ -284,7 +287,7 @@ export const AppContextProvider = ({ children }) => {
     handleFilterCategory,
     query,
     handleInputChange,
-    filteredInputItems,
+    // filteredInputItems,
     selectedCategories,
     // handleFilterColor,
     handleFilterPrice,
