@@ -1,14 +1,11 @@
 import CartList from "../componets/ui/CartList";
-import Coupon from "../componets/ui/Coupan";
-import CartTotal from "../componets/ui/CartTotal";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useContextApp } from "../context/AppContext";
 
 export default function CartPage() {
   const [cartProducts, setCartProducts] = useState([]);
-  const { fetchCartProducts, saveCart ,fetchProducts} = useContextApp();
-  const [count, setCount] = useState(0);
+  const { fetchCartProducts, saveCart, fetchProducts } = useContextApp();
   const [text, setText] = useState("");
   const [shipping, setShipping] = useState(25);
 
@@ -18,7 +15,7 @@ export default function CartPage() {
 
   function subtotal() {
     return cartProducts.reduce(
-      (acc, product) => acc + product.originalPrice * count,
+      (acc, product) => acc + product.originalPrice * product.quantity,
       0
     );
   }
@@ -33,9 +30,19 @@ export default function CartPage() {
 
   function handleUpdateCart() {
     setCartProducts([]);
-    const arr=[]
+    const arr = []
     saveCart([]);
     fetchProducts(arr);
+  }
+
+  function updateProductQuantity(productId, newQuantity) {
+    setCartProducts(prevProducts =>
+      prevProducts.map(product =>
+        product.id === productId
+          ? { ...product, quantity: newQuantity }
+          : product
+      )
+    );
   }
 
   return (
@@ -57,7 +64,13 @@ export default function CartPage() {
       </div>
 
       <div className="mb-[80px]">
-        <CartList count={count} setCount={setCount} products={cartProducts} />
+        <CartList 
+          total={total}
+          handleApply={handleApply}
+          products={cartProducts} 
+          setText={setText}
+          updateProductQuantity={updateProductQuantity}
+        />
 
         <div className="mt-[24px] flex justify-between">
           <Link
@@ -75,10 +88,7 @@ export default function CartPage() {
         </div>
       </div>
 
-      <div className="flex justify-between">
-        <Coupon handleApply={handleApply} text={text} setText={setText} />
-        <CartTotal subtotal={`$${subtotal()}`} total={`$${total}`} />
-      </div>
+
     </main>
   );
 }

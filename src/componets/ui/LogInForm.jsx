@@ -8,6 +8,7 @@ import {
 import { useState } from "react";
 import google from "../../../public/google.png";
 import { notification } from "../../utils/helper";
+
 const LoginForm = () => {
   const [isSigningIn, setIsSigningIn] = useState(false);
   const [forgotPasswordEmail, setForgotPasswordEmail] = useState("");
@@ -42,7 +43,6 @@ const LoginForm = () => {
     }
   };
 
-  // Forgot Password Functionality
   const handleForgotPassword = async () => {
     if (forgotPasswordEmail) {
       try {
@@ -55,17 +55,18 @@ const LoginForm = () => {
       notification("Please enter your email to reset the password.");
     }
   };
+
   return (
     <>
       {userLoggedIn && <Navigate to={"/"} replace={true} />}
-      <main className="main-content flex space-x-[50px] items-center w-[1200px] mx-auto">
+      <main className="main-content flex flex-col lg:flex-row lg:space-x-[50px] items-center w-full max-w-7xl mx-auto px-4 sm:px-0 py-8">
         <form
           onSubmit={handleLoginSubmit(onSubmit)}
-          className="login-form flex flex-col justify-self-start w-[50%]"
+          className="login-form flex flex-col justify-self-start w-full lg:w-1/2 mb-8 lg:mb-0"
           method="post"
         >
           <h1
-            className="form-title text-[36px] font-[500] mb-[26px] text-center"
+            className="form-title text-2xl lg:text-[36px] font-[500] mb-6 lg:mb-[26px] text-center"
             style={{ fontFamily: "'Inter', sans-serif" }}
           >
             <span style={{ fontFamily: "Comfortaa, sans-serif" }}>
@@ -74,8 +75,7 @@ const LoginForm = () => {
             -ya daxil ol
           </h1>
 
-          {/* Email Input Block */}
-          <div className="input-group mb-[40px]">
+          <div className="input-group mb-6 lg:mb-[40px]">
             <input
               type="text"
               {...loginUser("email", {
@@ -93,8 +93,7 @@ const LoginForm = () => {
             </p>
           </div>
 
-          {/* Password Input Block */}
-          <div className="input-group mb-[40px]">
+          <div className="input-group mb-6 lg:mb-[40px]">
             <input
               type="password"
               {...loginUser("password", {
@@ -112,25 +111,23 @@ const LoginForm = () => {
             </p>
           </div>
 
-          {/* Submit Button and Forgot Password Link */}
-          <div className="form-submit flex items-center gap-[87px]">
+          <div className="form-submit flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6">
             <button
-              className="submit-btn bg-[#FF7518] hover:bg-[#e07575] text-[#ffffff] px-[48px] h-[56px] mb-[16px] rounded-[4px] cursor-pointer transition-colors"
+              className="submit-btn bg-[#FF7518] hover:bg-[#e07575] text-[#ffffff] px-[48px] h-[56px] mb-4 sm:mb-0 rounded-[4px] cursor-pointer transition-colors w-full sm:w-auto"
               type="submit"
             >
               Daxil ol
             </button>
             <p
               onClick={() => setForgotPasswordEmail(email)}
-              className="text-[#FF7518] hover:text-[#e07575] text-[16px] cursor-pointer transition-colors"
+              className="text-[#FF7518] hover:text-[#e07575] text-[16px] cursor-pointer transition-colors text-center sm:text-right"
               onDoubleClick={handleForgotPassword}
             >
               Parolu unutmusan?
             </p>
           </div>
 
-          {/* Google Sign-In Button */}
-          <div className="google-signin mt-6">
+          <div className="google-signin mb-6">
             <button
               onClick={onGoogleSignIn}
               className="w-full flex items-center justify-center gap-2 bg-white border border-gray-300 py-2 px-4 rounded hover:bg-gray-100 transition"
@@ -144,8 +141,7 @@ const LoginForm = () => {
             </button>
           </div>
 
-          {/* Signup Prompt */}
-          <p className="form-bottom opacity-70 mt-6">
+          <p className="form-bottom opacity-70 text-center sm:text-left">
             Hesabın yoxdur?
             <Link
               to={"/signup"}
@@ -156,8 +152,7 @@ const LoginForm = () => {
           </p>
         </form>
 
-        {/* Image Section */}
-        <figure className="w-[600px] h-[650px]">
+        <figure className="w-full lg:w-1/2 h-[300px] lg:h-[650px]">
           <img
             className="w-full h-full object-cover"
             src="/login-register.svg"

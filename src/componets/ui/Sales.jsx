@@ -1,53 +1,63 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from 'swiper/modules';
-
-import "swiper/swiper-bundle.css"; // Ensure you import Swiper's CSS
+import { useState, useEffect } from "react";
 import { useContextApp } from "../../context/AppContext";
 import ProductItem from "./ProductItem";
 import TitleSubtitle from "./TitleSubtitle";
-import { useRef } from "react";
 
 export default function Sales() {
   const { sortedDiscountedProducts } = useContextApp();
-  const slicedArr = sortedDiscountedProducts.slice(0, 4);
+  const [startIndex, setStartIndex] = useState(0);
+  const [perIndex, setPerIndex] = useState(4);
 
-  const btnLeft = useRef(null)
-  const btnRight=useRef(null)
+  // Function to update perIndex based on screen width
+  function updatePerIndex() {
+    const width = window.innerWidth;
+    if (width >= 1024) {
+      setPerIndex(4); // Desktop
+    } else if (width >= 640) {
+      setPerIndex(3); // Tablet
+    } else {
+      setPerIndex(2); // Mobile
+    }
+  }
+
+  // Call updatePerIndex on component mount and on window resize
+  useEffect(() => {
+    updatePerIndex();
+    window.addEventListener("resize", updatePerIndex);
+    return () => window.removeEventListener("resize", updatePerIndex);
+  }, []);
+
+  function handlePrev() {
+    setStartIndex((prevIndex) =>
+      prevIndex > 0 ? prevIndex - perIndex : sortedDiscountedProducts.length - perIndex
+    );
+  }
+
+  function handleNext() {
+    setStartIndex((prevIndex) =>
+      prevIndex + perIndex < sortedDiscountedProducts.length ? prevIndex + perIndex : 0
+    );
+  }
+
   return (
-    <div>
-      <TitleSubtitle subtitle="Trendde" title="Endirimler">
+    <div className="px-4 sm:px-6 lg:px-8">
+      <TitleSubtitle subtitle="Bu ay" title="Endirimler">
         <div className="space-x-[8px] flex items-center">
-          <figure ref={btnLeft}  className="bg-[#F5F5F5] disabled:opacity-20 size-[46px] rounded-full text-black flex justify-center items-center cursor-pointer">
+          <figure onClick={handlePrev} className="bg-[#F5F5F5] size-[46px] rounded-full text-black flex justify-center items-center cursor-pointer">
             <img src="/icons_arrow-left.svg" alt="Previous" />
           </figure>
-          <figure ref={btnRight} className="bg-[#F5F5F5] disabled:opacity-20 size-[46px] rounded-full text-black flex justify-center items-center cursor-pointer">
+          <figure onClick={handleNext} className="bg-[#F5F5F5] size-[46px] rounded-full text-black flex justify-center items-center cursor-pointer">
             <img src="/icons_arrow-right.svg" alt="Next" />
           </figure>
         </div>
       </TitleSubtitle>
-      <Swiper
-        slidesPerView={4}
-        spaceBetween={35}
-        // navigation={true}
-        // navigation={{
-        //   prevEl: btnLeft.current,
-        //   nextEl: btnRight.current,
-        // }}
-        modules={[Navigation]}
-        className="mySwiper"
-        onBeforeInit={(swiper) => {
-          swiper.params.navigation.prevEl = btnLeft.current;
-          swiper.params.navigation.nextEl = btnRight.current;
-     }}
-      >
-        {slicedArr.map((product, index) => (
-          <SwiperSlide key={index}>
-            <ProductItem key={index} product={product} />
-          </SwiperSlide>
-        ))}  
-      </Swiper>
-      <div className="mx-auto w-[234px] my-[60px]">
-        {/* <button className="h-[56px] w-[234px] bg-[#FF7518] hover:bg-[#e07575] rounded-md text-[#FAFAFA] text-[16px] font-medium text-center">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-[35px]">
+        {sortedDiscountedProducts.slice(startIndex, startIndex + perIndex).map((product, index) => (
+          <ProductItem key={index} product={product} />
+        ))}
+      </div>
+      <div className="mx-auto w-full sm:w-[234px] my-[30px] sm:my-[60px]">
+        {/* <button className="w-full sm:w-[234px] h-[56px] bg-[#FF7518] hover:bg-[#e07575] rounded-md text-[#FAFAFA] text-[16px] font-medium text-center">
           Hamısını göstər
         </button> */}
       </div>

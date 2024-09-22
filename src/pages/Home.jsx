@@ -10,11 +10,11 @@ import ExploreProducts from "../componets/ui/ExploreProducts";
 export default function Home() {
   return (
     <div>
-      <CategorySection></CategorySection>
+       <CategorySection></CategorySection> 
       <Sales></Sales>
-    
 
-      <BestSellers></BestSellers>
+
+      <BestSellers></BestSellers> 
       <MusicExperience></MusicExperience>
       <ExploreProducts></ExploreProducts>
       <Services></Services>

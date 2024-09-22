@@ -1,65 +1,55 @@
+import React from 'react';
 import { useContextApp } from "../../context/AppContext";
 
-export default function CartItem({ product, count, setCount, updateProductCount }) {
+export default function CartItem({ product, count, setCount, updateProductCount, subtotal }) {
   const { removeFromCart } = useContextApp();
 
-  function handleDecrease() {
-    if (count > 1) {
-      setCount(count - 1);
-      updateProductCount(product.product_id, count - 1); 
-    }
-  }
+  const handleIncrement = () => {
+    const newCount = count + 1;
+    setCount(newCount);
+    updateProductCount(product.product_id, newCount);
+  };
 
-  function handleIncrease() {
-    setCount(count + 1);
-    updateProductCount(product.product_id, count + 1); 
-  }
+  const handleDecrement = () => {
+    if (count > 1) {
+      const newCount = count - 1;
+      setCount(newCount);
+      updateProductCount(product.product_id, newCount);
+    }
+  };
+
+  const handleRemove = () => {
+    removeFromCart(product.product_id);
+  };
+
+  console.log(`Rendering CartItem for product ${product.product_id}: count=${count}, subtotal=${subtotal}`);
 
   return (
-    <div className="grid grid-cols-[2fr_1fr_1fr_1fr_1fr] gap-4 items-center p-4 bg-white border border-gray-200 rounded-lg shadow-md mb-4">
-      <div className="flex items-center space-x-4 col-span-1">
-        <figure className="w-16 h-16">
-          <img
-            className="w-full h-full object-cover rounded-md"
-            src={product.imageUrl}
-            alt={product.product_name}
-          />
-        </figure>
-        <span className="text-lg font-semibold text-gray-800">
-          {product.product_name}
-        </span>
+    <div className="grid grid-cols-[2fr_1fr_1fr_1fr_1fr] gap-4 items-center border border-gray-100 shadow-sm px-4 py-2">
+      <div className="flex items-center gap-2">
+        <img src={product.image_url} alt={product.product_name} className="w-16 h-16 object-cover" />
+        <span>{product.product_name}</span>
       </div>
-
-      <div className="text-gray-600 font-medium">${product.price}</div>
-
-      <div className="flex items-center space-x-1 border border-gray-300 rounded-lg p-1 w-28">
-        <button
-          onClick={handleDecrease}
-          className="px-1 py-0.5 text-gray-600 hover:text-black transition-colors duration-200"
-        >
-          <i className="fa-solid fa-chevron-down text-sm"></i>
-        </button>
-        <span className="px-1 py-0.5 text-gray-800 text-sm w-12 text-center">
-          {count}
-        </span>
-        <button
-          onClick={handleIncrease}
-          className="px-1 py-0.5 text-gray-600 hover:text-black transition-colors duration-200"
-        >
-          <i className="fa-solid fa-chevron-up text-sm"></i>
-        </button>
+      <div>${parseFloat(product.original_price).toFixed(2)}</div>
+      <div className="flex items-center gap-2">
+        <button onClick={handleDecrement}>-</button>
+        <input
+          type="number"
+          min="1"
+          value={count}
+          onChange={(e) => {
+            const newCount = Math.max(1, parseInt(e.target.value) || 1);
+            setCount(newCount);
+            updateProductCount(product.product_id, newCount);
+          }}
+          className="w-12 text-center"
+        />
+        <button onClick={handleIncrement}>+</button>
       </div>
-
-      <div className="text-gray-800 font-medium text-center">
-        ${count * product.price}
+      <div className="text-center">${subtotal}</div>
+      <div className="text-center">
+        <button onClick={handleRemove}>Remove</button>
       </div>
-
-      <button
-        className="text-red-600 hover:text-red-800 transition-colors duration-200"
-        onClick={() => removeFromCart(product.product_id)}
-      >
-        <i className="fa-solid fa-trash text-lg"></i>
-      </button>
     </div>
   );
 }
