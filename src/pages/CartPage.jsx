@@ -5,13 +5,13 @@ import { useContextApp } from "../context/AppContext";
 
 export default function CartPage() {
   const [cartProducts, setCartProducts] = useState([]);
-  const { fetchCartProducts, saveCart, fetchProducts } = useContextApp();
+  const { fetchCartProducts, carts, setCarts, updateUserData, fetchProducts } = useContextApp();
   const [text, setText] = useState("");
   const [shipping, setShipping] = useState(25);
 
   useEffect(() => {
     setCartProducts(fetchCartProducts());
-  }, [fetchCartProducts]);
+  }, [fetchCartProducts, carts]);
 
   function subtotal() {
     return cartProducts.reduce(
@@ -28,17 +28,24 @@ export default function CartPage() {
     }
   }
 
-  function handleUpdateCart() {
+  async function handleUpdateCart() {
+    // Clear the cart completely
+    setCarts([]);
+    
+    // Update local state
     setCartProducts([]);
-    const arr = []
-    saveCart([]);
-    fetchProducts(arr);
+    
+    // Update user data in backend/localStorage
+    await updateUserData([], []); // Assuming the second array is for favorites
+    
+    // Fetch updated products (this will reflect the empty cart)
+    fetchProducts([]);
   }
 
   function updateProductQuantity(productId, newQuantity) {
     setCartProducts(prevProducts =>
       prevProducts.map(product =>
-        product.id === productId
+        product.product_id === productId
           ? { ...product, quantity: newQuantity }
           : product
       )
@@ -46,7 +53,7 @@ export default function CartPage() {
   }
 
   return (
-    <main className="w-[1200px] mx-auto pt-[40px] font-poppins">
+    <main className=" mx-auto pt-[40px] font-poppins">
       <div className="mb-[40px] text-gray-500">
         <Link
           to="/"
@@ -64,10 +71,10 @@ export default function CartPage() {
       </div>
 
       <div className="mb-[80px]">
-        <CartList 
+        <CartList
           total={total}
           handleApply={handleApply}
-          products={cartProducts} 
+          products={cartProducts}
           setText={setText}
           updateProductQuantity={updateProductQuantity}
         />
@@ -87,8 +94,6 @@ export default function CartPage() {
           </button>
         </div>
       </div>
-
-
     </main>
   );
 }

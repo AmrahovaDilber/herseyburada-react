@@ -55,7 +55,7 @@ const SignupForm = () => {
           <figure className="hidden lg:block w-full lg:w-1/2 h-64 lg:h-auto">
             <img
               className="w-full h-full object-cover"
-              src="/login-register.svg"
+              src=""
               alt="Signup Illustration"
             />
           </figure>

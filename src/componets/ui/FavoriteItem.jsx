@@ -22,10 +22,10 @@ export default function FavoriteItem({ product,index }) {
             to={`/productdetails/${product.slug}`}
             className="absolute inset-0 flex justify-center items-center"
           >
-            <figure className="w-[190px] h-[180px]">
+            <figure className="w-full h-full">
               <img
-                src={product.imageUrl}
-                className="object-cover"
+                src={product.image_url}
+                className="w-full h-full object-cover"
                 alt={product.product_name}
               />
             </figure>
@@ -71,7 +71,7 @@ export default function FavoriteItem({ product,index }) {
         </div>
 
         <div className="p-4">
-          <p className="text-lg font-semibold text-gray-800 mb-2">
+          <p className="text-lg font-semibold text-gray-800 mb-2 line-clamp-1">
             {product.product_name}
           </p>
           <div className="flex items-center mb-2">

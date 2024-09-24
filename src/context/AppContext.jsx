@@ -1,9 +1,11 @@
 import { useState, createContext, useContext, useEffect } from "react";
 import { notification } from "../utils/helper";
-import {  useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../firebase/firebase";
 import data from "../data/categoriesData";
+import { getFirestore, doc, setDoc, getDoc, updateDoc } from "firebase/firestore";
+
 export const AppContext = createContext();
 
 export const AppContextProvider = ({ children }) => {
@@ -13,16 +15,87 @@ export const AppContextProvider = ({ children }) => {
       category.subkateqoriyalar.flatMap((subcategory) => subcategory.məhsullar)
     )
   );
-  // !!!!!!!!!!!!!!!!!!!!!!Product Filtering!!!!!!!!!!!!!!!
+
+  const [carts, setCarts] = useState([]);
+  const [favorites, setFavorites] = useState([]);
+
+  // Filter states
   const [selectedPrice, setSelectedPrice] = useState([0, 2000]);
   const [selectedColors, setSelectedColors] = useState([]);
   const [selectedSizes, setSelectedSizes] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("Qadın");
-
   const [query, setQuery] = useState("");
   const [selectedCategories, setSelectedCategories] = useState([]);
-
   const [maxPrice, setMaxPrice] = useState(2000);
+
+  const [currentUser, setCurrentUser] = useState(null);
+  const [userLoggedIn, setUserLoggedIn] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  const db = getFirestore();
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, initializeUser);
+    return unsubscribe;
+  }, []);
+  useEffect(() => {
+    if (!userLoggedIn) {
+      const localCarts = JSON.parse(localStorage.getItem('carts')) || [];
+      const localFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
+      setCarts(localCarts);
+      setFavorites(localFavorites);
+    }
+  }, [userLoggedIn]);
+
+  async function initializeUser(user) {
+    if (user) {
+      setCurrentUser({ ...user });
+      setUserLoggedIn(true);
+      await fetchUserData(user.uid);
+    } else {
+      setCurrentUser(null);
+      setUserLoggedIn(false);
+      const localCarts = JSON.parse(localStorage.getItem('carts')) || [];
+      const localFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
+      setCarts(localCarts);
+      setFavorites(localFavorites);
+    }
+    setLoading(false);
+  }
+
+  const fetchUserData = async (userId) => {
+    try {
+      const userDocRef = doc(db, 'users', userId);
+      const userDoc = await getDoc(userDocRef);
+      if (userDoc.exists()) {
+        const userData = userDoc.data();
+        setCarts(userData.carts || []);
+        setFavorites(userData.favorites || []);
+      } else {
+        await setDoc(userDocRef, { carts: [], favorites: [] });
+      }
+    } catch (error) {
+      console.error("Error fetching user data:", error);
+      notification("Error fetching user data. Please try again.");
+    }
+  };
+
+  const updateUserData = async (newCarts, newFavorites) => {
+    if (userLoggedIn && currentUser) {
+      try {
+        const userDocRef = doc(db, 'users', currentUser.uid);
+        await updateDoc(userDocRef, {
+          carts: newCarts,
+          favorites: newFavorites
+        });
+      } catch (error) {
+        console.error("Error updating user data:", error);
+        notification("Error updating data. Please try again.");
+      }
+    } else {
+      localStorage.setItem('carts', JSON.stringify(newCarts));
+      localStorage.setItem('favorites', JSON.stringify(newFavorites));
+    }
+  };
 
   const handleFilterPrice = (price) => {
     setMaxPrice(price);
@@ -36,7 +109,6 @@ export const AppContextProvider = ({ children }) => {
     );
   };
 
-  // Filter For the Categories
   const handleFilterCategory = () => {
     if (selectedCategories.length === 0) {
       return products;
@@ -52,36 +124,19 @@ export const AppContextProvider = ({ children }) => {
       );
   };
 
-  const [carts, setCarts] = useState(
-    localStorage.getItem("carts")
-      ? JSON.parse(localStorage.getItem("carts"))
-      : []
-  );
-
-  const [favorites, setFavorites] = useState(
-    localStorage.getItem("favorites")
-      ? JSON.parse(localStorage.getItem("favorites"))
-      : []
-  );
-
-  const saveFavorites = (items) => {
-    localStorage.setItem("favorites", JSON.stringify(items));
-    setFavorites(items);
-  };
-
-  const saveCart = (items) => {
-    localStorage.setItem("carts", JSON.stringify(items));
-    setCarts(items);
-  };
-
-  const addToCart = (id) => {
+  const addToCart = async (id) => {
+    if (!userLoggedIn) {
+      notification('You must be logged in to add items to the cart');
+      return;
+    }
+  
     const product = products.find((prod) => prod.product_id === id);
-
+  
     if (product) {
       if (!carts.includes(id)) {
-        const updatedBaskets = [...carts, id];
-        saveCart(updatedBaskets);
-        fetchProducts(updatedBaskets);
+        const newCarts = [...carts, id];
+        setCarts(newCarts);
+        await updateUserData(newCarts, favorites);
         notification(`${product.product_name} added to cart`);
       } else {
         notification(`${product.product_name} is already in the cart`);
@@ -90,62 +145,71 @@ export const AppContextProvider = ({ children }) => {
       notification(`Product not found`);
     }
   };
-
-  const removeFromCart = (id) => {
-    const updatedBaskets = carts.filter((item) => item !== id);
+  
+ 
+ 
+  
+  const removeFromCart = async (id) => {
+    const newCarts = carts.filter((item) => item !== id);
+    setCarts(newCarts);
+    
     const product = products.find((prod) => prod.product_id === id);
-
+  
     if (product) {
-      saveCart(updatedBaskets);
-      fetchProducts(updatedBaskets);
+      await updateUserData(newCarts, favorites);
       notification(`${product.product_name} removed from cart`);
     } else {
       notification(`Product not found`);
     }
   };
-
-  const fetchProducts = (updatedBaskets) => {
+  
+  const fetchProducts = (updatedCarts) => {
     const updatedProducts = allData.kateqoriyalar.flatMap((category) =>
       category.subkateqoriyalar.flatMap((subcategory) =>
         subcategory.məhsullar.map((product) => ({
           ...product,
-          isBasket: updatedBaskets.includes(product.product_id),
+          isBasket: updatedCarts.includes(product.product_id),
         }))
       )
     );
     setProducts(updatedProducts);
   };
+
   const fetchCartProducts = () => {
     return products.filter((product) => carts.includes(product.product_id));
   };
 
-  const addToFavorites = (id) => {
+  const addToFavorites = async (id) => {
+    if (!userLoggedIn) {
+      notification('You must be logged in to add items to your favorites');
+      return;
+    }
+  
     const findProduct = products.find((product) => product.product_id === id);
-
+  
     if (findProduct) {
       if (!favorites.includes(id)) {
-        const updatedFavorites = [...favorites, id];
-        saveFavorites(updatedFavorites);
-        notification(
-          `${findProduct.product_name} adlı məhsul sevimlilərə əlavə olundu`
-        );
+        const newFavorites = [...favorites, id];
+        setFavorites(newFavorites);
+        await updateUserData(carts, newFavorites);
+        notification(`${findProduct.product_name} added to favorites`);
+      } else {
+        notification(`${findProduct.product_name} is already in favorites`);
       }
     } else {
       notification(`Product not found`);
     }
   };
-
-  const removeFromFavorites = (id) => {
+  
+  const removeFromFavorites = async (id) => {
+    const newFavorites = favorites.filter((favoriteId) => favoriteId !== id);
+    setFavorites(newFavorites);
+    
     const findProduct = products.find((product) => product.product_id === id);
-
+  
     if (findProduct) {
-      const updatedFavorites = favorites.filter(
-        (productId) => productId !== id
-      );
-      saveFavorites(updatedFavorites);
-      notification(
-        `${findProduct.product_name} adlı məhsul sevimlilərdən çıxarıldı`
-      );
+      await updateUserData(carts, newFavorites);
+      notification(`${findProduct.product_name} removed from favorites`);
     } else {
       notification(`Product not found`);
     }
@@ -159,7 +223,7 @@ export const AppContextProvider = ({ children }) => {
     return favorites.includes(id);
   };
 
-  // Endirimler
+  // Discounted products
   const discountedProducts = products.filter(
     (item) => item && item.discount > 0
   );
@@ -168,46 +232,23 @@ export const AppContextProvider = ({ children }) => {
   );
 
   // Best sellers
-
   const sellerProducts = products.filter((item) => item && item.salesCount > 0);
   const sortedSellerProducts = [...sellerProducts].sort(
     (a, b) => b.salesCount - a.salesCount
   );
 
-  //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Register!!!!!!!!!!!!!!!!!!!!!!!!!
-  const [currentUser, setCurrentUser] = useState(null);
-  const [userLoggedIn, setUserLoggedIn] = useState(false);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, initializeUser);
-    return unsubscribe;
-  }, []);
-
-  async function initializeUser(user) {
-    if (user) {
-      setCurrentUser({ ...user });
-      setUserLoggedIn(true);
-    } else {
-      setCurrentUser(null);
-      setUserLoggedIn(false);
-    }
-    setLoading(false);
-  }
+  // Form hooks
   const registerForm = useForm();
   const {
     register: registerUser,
     handleSubmit: handleRegisterSubmit,
     formState: registerFormState,
     watch: watchRegister,
-    // setValue: setRegisterValue,
   } = registerForm;
 
   const { errors: registerErrors } = registerFormState;
 
-  //!!!!!!!!!!!!!!!!!!!!!!!!!!!1!! Login Form Hook!!!!!!!!!!!!!!!!!!!!!!
   const loginForm = useForm();
-
   const {
     register: loginUser,
     handleSubmit: handleLoginSubmit,
@@ -217,42 +258,22 @@ export const AppContextProvider = ({ children }) => {
 
   const { errors: loginErrors } = loginFormState;
 
-  // new
-  // Filter for the colors
+  // Filter functions
   const handleColorChange = (color) => {
     setSelectedColors((prev) =>
       prev.includes(color) ? prev.filter((c) => c !== color) : [...prev, color]
     );
   };
 
-  // Filter for the Size
   const handleSizeChange = (size) => {
     setSelectedSizes((prev) =>
       prev.includes(size) ? prev.filter((s) => s !== size) : [...prev, size]
     );
   };
 
-  // FILTER FOR THE INPUT
   function handleInputChange(e) {
     setQuery(e.target.value);
   }
-
-  // const filteredInputItems = allData.kateqoriyalar
-  //   .map((category) => ({
-  //     ...category,
-  //     subkateqoriyalar: category.subkateqoriyalar
-  //       .map((subcategory) => ({
-  //         ...subcategory,
-  //         // Check if mahsullar exists before filtering
-  //         mahsullar: Array.isArray(subcategory.mahsullar)
-  //           ? subcategory.mahsullar.filter((product) =>
-  //               product.product_name.toLowerCase().includes(query.toLowerCase())
-  //             )
-  //           : [],
-  //       }))
-  //       .filter((subcategory) => subcategory.mahsullar.length > 0),
-  //   }))
-  //   .filter((category) => category.subkateqoriyalar.length > 0);
 
   const values = {
     products,
@@ -268,7 +289,6 @@ export const AppContextProvider = ({ children }) => {
     removeFromFavorites,
     isFavorited,
     fetchFavoritesProducts,
-    saveCart,
     // register
     registerUser,
     handleRegisterSubmit,
@@ -282,20 +302,16 @@ export const AppContextProvider = ({ children }) => {
     userLoggedIn,
     watchLogin,
     loading,
-
     // FILTER
     handleFilterCategory,
     query,
     handleInputChange,
-    // filteredInputItems,
     selectedCategories,
-    // handleFilterColor,
     handleFilterPrice,
     maxPrice,
     handleCategoryChange,
     sortedDiscountedProducts,
     sortedSellerProducts,
-
     // new
     selectedColors,
     setSelectedColors,
@@ -307,6 +323,7 @@ export const AppContextProvider = ({ children }) => {
     setSelectedPrice,
     selectedCategory,
     setSelectedCategory,
+    setCarts
   };
 
   return <AppContext.Provider value={values}>{children}</AppContext.Provider>;

@@ -14,7 +14,7 @@ export default function ProductItem({ product }) {
 
   return (
     <div>
-      <div className="h-[360px] relative shadow-lg">
+      <div className="h-auto relative shadow-lg rounded-lg overflow-hidden">
         <div className="relative flex items-center justify-center h-[250px] bg-[#F5F5F5] group">
           <div className="w-[55px] h-[26px] bg-[#FF7518] rounded-md absolute top-[12px] left-[12px]">
             <p className="font-normal text-[12px] text-center py-1 text-[#FAFAFA]">
@@ -22,13 +22,13 @@ export default function ProductItem({ product }) {
             </p>
           </div>
           <Link
-            className="absolute inset-0  flex justify-center items-center "
+            className="absolute inset-0 flex justify-center items-center"
             to={`/productdetails/${product.slug}`}
           >
-            <figure className="w-[190px] h-[180px]">
+            <figure className="w-full h-full">
               <img
-                src={product.imageUrl}
-                className="object-cover"
+                src={product.image_url}
+                className="w-full h-full object-cover"
                 alt={product.product_name}
               />
             </figure>
@@ -51,7 +51,6 @@ export default function ProductItem({ product }) {
               </button>
             )}
           </figure>
-
           <div className="absolute bottom-0 py-[8px] hidden group-hover:flex space-x-[3px] items-center justify-center w-full bg-[#000000]">
             <figure className="size-[24px] text-white">
               <img src="/sebet.svg" className="object-cover" />
@@ -75,31 +74,33 @@ export default function ProductItem({ product }) {
         </div>
 
         <div className="p-3 flex flex-col">
-          <p className="font-medium text-[16px] text-[#000000] mb-[8px]">
+          <p className="font-medium text-[14px] md:text-[16px] text-[#000000] mb-[8px] line-clamp-1">
             {product.product_name}
           </p>
-          <div className="space-x-[12px] flex items-center mb-[8px]">
-            <p className="text-[16px] font-medium text-[#FF7518]">
+          <div className="space-x-[8px] md:space-x-[12px] flex items-center mb-[8px]">
+            <p className="text-[14px] md:text-[16px] font-medium text-[#FF7518]">
               ${product.price}
             </p>
-            <p className="text-[16px] font-medium text-[#7F7F7F] line-through">
+            <p className="text-[14px] md:text-[16px] font-medium text-[#7F7F7F] line-through">
               ${product.original_price}
             </p>
           </div>
           <div className="flex space-x-[8px] items-center">
-            <div className="w-[100px] flex space-x-[8px]">
+            <div className="w-[70px] md:w-[100px] flex space-x-[4px] md:space-x-[8px]">
               {Array.from({ length: 5 }, (_, index) => (
                 <div key={index} className="w-[10px]">
-                  <i className="text-[14px] fa-regular fa-star"></i>
+                  <i className="text-[12px] md:text-[14px] fa-regular fa-star"></i>
                 </div>
               ))}
             </div>
-            {product.reviews.map((rew,index) => (
-                <p key={index} className="text-[#7F7F7F] font-semibold">
+            {product.reviews.map((rew, index) => (
+              <p
+                key={index}
+                className="text-[12px] md:text-[14px] text-[#7F7F7F] font-semibold"
+              >
                 ({rew.rating})
               </p>
             ))}
-          
           </div>
         </div>
       </div>

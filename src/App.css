@@ -1,4 +1,4 @@
-/* Add custom bullet styles */
+
 .custom-bullet {
     width: 10px;
     height: 10px;
@@ -8,10 +8,13 @@
     transition: background-color 0.3s ease;
   }
   
-  /* Style the active bullet */
+
   .swiper-pagination-bullet-active.custom-bullet {
-    background-color: #ff7f50; /* Highlight active bullet with a different color */
-    transform: scale(1.2); /* Slightly enlarge the active bullet */
+    background-color: #ff7f50; 
+    transform: scale(1.2); 
     box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
   }
   
+  body{
+    overflow-x: hidden;
+  }

@@ -24,7 +24,7 @@ export default function Slider() {
     >
       {/* Slide 1 */}
       <SwiperSlide>
-        <div className="relative text-white  bg-black w-full max-w-[992px] h-[344px] overflow-hidden z-10">
+        <div className="relative text-white  bg-black w-full h-[344px] overflow-hidden z-10">
           <div className="flex space-x-[40px]">
             <div className="w-[294px] flex flex-col pt-[58px] pl-[64px]">
               <div className="flex space-x-[14px] mb-[10px] items-center">
@@ -49,7 +49,7 @@ export default function Slider() {
 
       {/* Slide 2 */}
       <SwiperSlide>
-        <div className="relative text-white  bg-black w-full max-w-[992px] h-[344px] overflow-hidden z-10">
+        <div className="relative text-white  bg-black w-full m h-[344px] overflow-hidden z-10">
           <div className="flex space-x-[40px]">
             <div className="w-[294px] flex flex-col pt-[58px] pl-[64px]">
               <div className="flex space-x-[14px] mb-[10px] items-center">

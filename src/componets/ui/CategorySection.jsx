@@ -1,55 +1,91 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { useState } from "react";
 import data from "../../data/categoriesData";
 import Slider from "./Slider";
+import { useContextApp } from "../../context/AppContext";
 
 export default function CategorySection() {
-  return (
-    <section>
-      <div className="mt-[40px] mb-[100px] flex justify-between">
-        {/* LEFTBOX */}
-        <div className="mr-[16px] w-[217px] relative h-[344px]">
-          <ul>
-            {data.kateqoriyalar.map((item, index) => (
-              <div
-                key={index}
-                className="relative group flex items-center justify-between py-[13px] hover:bg-gray-100 px-[5px]"
-              >
-                <div className="flex justify-between items-center cursor-pointer w-[217px]">
-                  <Link to={`/products/${item.kateqoriya_adı}`}>
-                    <li className="text-[16px] text-center text-[#000000] font-normal">
-                      {item.kateqoriya_adı}
-                    </li>
-                  </Link>
+  const location = useLocation();
+  const currentPath = location.pathname;
+  const { selectedCategories, handleCategoryChange } = useContextApp();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState(null);
 
-                  <figure>
+  return (
+    <section className=" mx-auto ">
+      <div className="mt-8 lg:mt-[40px] mb-8 lg:mb-[100px] flex flex-col lg:flex-row">
+        {/* LEFTBOX */}
+        <div className="w-full lg:w-[417px] lg:mr-[36px] mb-6 lg:mb-0">
+          <button
+            className="lg:hidden w-full bg-[#FF7518] text-white py-2 px-4 rounded mb-4"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? "Close Categories" : "Open Categories"}
+          </button>
+          <ul className={`${mobileMenuOpen ? 'block' : 'hidden'} lg:block bg-white shadow-md lg:shadow-none rounded-lg lg:rounded-none`}>
+            {data.kateqoriyalar.map((item, index) => {
+              const isActive = currentPath.includes(`/products/${item.kateqoriya_adı}`) ||
+                selectedCategories.includes(item.kateqoriya_adı);
+              return (
+                <div
+                  key={index}
+                  className="relative group"
+                  onMouseEnter={() => setActiveDropdown(index)}
+                  onMouseLeave={() => setActiveDropdown(null)}
+                >
+                  <div className={`flex items-center justify-between py-3 pr-4 hover:bg-gray-100 cursor-pointer ${
+                    isActive ? 'bg-blue-100' : ''
+                  }`}>
+                    <Link 
+                      to={`/products/${item.kateqoriya_adı}`}
+                      onClick={() => handleCategoryChange(item.kateqoriya_adı)}
+                    >
+                      <li className={`text-sm lg:text-base ${
+                        isActive ? 'text-blue-600 font-semibold' : 'text-[#000000] font-normal'
+                      }`}>
+                        {item.kateqoriya_adı}
+                      </li>
+                    </Link>
                     <img
                       src="/right.svg"
-                      className="object-cover cursor-pointer"
+                      className="w-4 h-4 object-contain"
+                      alt="Right arrow"
                     />
-                  </figure>
-                </div>
-
-                {/* Dropdown content */}
-                <div className="absolute left-[217px] top-0 w-[1000px] p-[10px] bg-white border border-gray-300 shadow-lg hidden group-hover:block z-30 rounded-lg">
-                  <div className="grid grid-cols-4 gap-6">
-                    {item.subkateqoriyalar.map((subkateqoriya, subIndex) => (
-                      <Link
-                        to={`/products/${item.kateqoriya_adı}/${subkateqoriya.subkateqoriya_adı}`}
-                        key={subIndex}
-                        className="px-4 py-3 w-full text-[14px] text-[#333] hover:bg-gray-100 hover:text-[#007BFF] transition-all duration-300 ease-in-out cursor-pointer rounded-md shadow-sm"
-                      >
-                        {subkateqoriya.subkateqoriya_adı}
-                      </Link>
-                    ))}
                   </div>
+                  
+                  {/* Dropdown content */}
+                  {(activeDropdown === index || (mobileMenuOpen && isActive)) && (
+                    <div className="lg:absolute lg:left-full lg:top-0 w-full lg:w-[calc(100vw-280px)] max-w-[980px] p-4 bg-white border border-gray-300 shadow-lg z-30 rounded-lg">
+                      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+                        {item.subkateqoriyalar.map((subkateqoriya, subIndex) => {
+                          const isSubActive = currentPath.includes(`/products/${item.kateqoriya_adı}/${subkateqoriya.subkateqoriya_adı}`);
+                          return (
+                            <Link
+                              to={`/products/${item.kateqoriya_adı}/${subkateqoriya.subkateqoriya_adı}`}
+                              key={subIndex}
+                              className={`px-3 py-2 text-xs lg:text-sm ${
+                                isSubActive
+                                  ? 'bg-blue-100 text-[#FF7518] font-semibold'
+                                  : 'text-[#333] hover:bg-gray-100 hover:text-[#FF7518]'
+                              } transition-all duration-300 ease-in-out cursor-pointer rounded-md shadow-sm`}
+                            >
+                              {subkateqoriya.subkateqoriya_adı}
+                            </Link>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  )}
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </ul>
         </div>
-
+        
         {/* RIGHTBOX */}
-        <Slider></Slider>
+        <div className="max-w-[930px] lg:flex-grow">
+          <Slider />
+        </div>
       </div>
     </section>
   );

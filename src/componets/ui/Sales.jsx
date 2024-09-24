@@ -12,7 +12,7 @@ export default function Sales() {
   function updatePerIndex() {
     const width = window.innerWidth;
     if (width >= 1024) {
-      setPerIndex(4); // Desktop
+      setPerIndex(5); // Desktop
     } else if (width >= 640) {
       setPerIndex(3); // Tablet
     } else {
@@ -40,7 +40,7 @@ export default function Sales() {
   }
 
   return (
-    <div className="px-4 sm:px-6 lg:px-8">
+    <div className="">
       <TitleSubtitle subtitle="Bu ay" title="Endirimler">
         <div className="space-x-[8px] flex items-center">
           <figure onClick={handlePrev} className="bg-[#F5F5F5] size-[46px] rounded-full text-black flex justify-center items-center cursor-pointer">
@@ -51,7 +51,7 @@ export default function Sales() {
           </figure>
         </div>
       </TitleSubtitle>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-[35px]">
+      <div className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-[35px]">
         {sortedDiscountedProducts.slice(startIndex, startIndex + perIndex).map((product, index) => (
           <ProductItem key={index} product={product} />
         ))}

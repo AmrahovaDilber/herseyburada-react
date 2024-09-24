@@ -7,7 +7,7 @@ import ProductItem from "./ProductItem";
 export default function BestSellers() {
   const { sortedSellerProducts } = useContextApp();
   const [startIndex, setStartIndex] = useState(0);
-  const perIndex = 4;
+  const perIndex = 5;
 
   function handlePrev() {
     setStartIndex((prevIndex) =>
@@ -22,7 +22,7 @@ export default function BestSellers() {
   }
 
   return (
-    <div className="container mx-auto px-4">
+    <div className="container mx-auto ">
       <TitleSubtitle subtitle="Bu ay" title="Ən çox satılanlar">
       <div className="space-x-2 flex items-center">
   <button
@@ -39,7 +39,7 @@ export default function BestSellers() {
   </button>
 </div>
       </TitleSubtitle>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-[35px]">
+      <div className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-[35px]">
         {sortedSellerProducts.slice(startIndex, startIndex + perIndex).map((product, index) => (
           <ProductItem key={index} product={product} />
         ))}

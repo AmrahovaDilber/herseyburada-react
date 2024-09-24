@@ -8,7 +8,11 @@ export default function Footer() {
           <div className="mb-8 md:mb-0">
             <div className="space-y-4">
               <Link to="/">
-                <img src="/hərşeyburada2.svg" alt="Logo" className="w-32 md:w-40" />
+                <img
+                  src="/hərşeyburada2.svg"
+                  alt="Logo"
+                  className="w-32 md:w-40"
+                />
               </Link>
               <div>
                 <Link
@@ -25,9 +29,13 @@ export default function Footer() {
                 <Link to="/" target="_blank">
                   <i className="text-lg md:text-xl opacity-70 hover:opacity-100 fa-brands fa-twitter"></i>
                 </Link>
-                <a href="https://www.instagram.com/herseyburadaz/" target="_blank">
+                <a
+                  href="https://www.instagram.com/herseyburadaz/"
+                  target="_blank"
+                >
                   <i className="text-lg md:text-xl opacity-70 hover:opacity-100 fa-brands fa-instagram"></i>
                 </a>
+            
                 <a href="#" target="_blank">
                   <i className="text-lg md:text-xl opacity-70 hover:opacity-100 fa-brands fa-linkedin-in"></i>
                 </a>
@@ -38,18 +46,23 @@ export default function Footer() {
           <div className="mb-8 md:mb-0">
             <h3 className="font-medium text-lg md:text-xl mb-6">Dəstək</h3>
             <p className="text-base md:text-lg mb-4">Bakı, Azərbaycan</p>
-            <p className="text-base md:text-lg mb-4">herseyburadacomp@gmail.com</p>
-            <p className="text-base md:text-lg mb-4">+994 (55) 777 88 85</p>
+
+            <p className="text-base md:text-lg mb-4">+994 (51) 548 92 72</p>
+            <a href="mailto:herseyburadaz28@gmail.com">
+                  <p className="text-base md:text-lg mb-4">
+                    herseyburadaz28@gmail.com
+                  </p>
+                </a>
           </div>
 
           <div className="mb-8 md:mb-0 flex flex-col">
-            <h3 className="font-medium text-lg md:text-xl mb-6">Hesab</h3>
+            {/* <h3 className="font-medium text-lg md:text-xl mb-6">Hesab</h3>
             <Link
               to="/account"
               className="text-base md:text-lg mb-4 opacity-70 hover:opacity-100 hover:underline"
             >
               Hesabım
-            </Link>
+            </Link> */}
             <Link
               to="/signup"
               className="text-base md:text-lg mb-4 opacity-70 hover:opacity-100 hover:underline"
@@ -67,6 +80,12 @@ export default function Footer() {
               className="text-base md:text-lg mb-4 opacity-70 hover:opacity-100 hover:underline"
             >
               Sevimlilər
+            </Link>
+            <Link
+              to="/about"
+              className="text-base md:text-lg mb-4 opacity-70 hover:opacity-100 hover:underline"
+            >
+              Haqqımızda
             </Link>
           </div>
 
@@ -90,12 +109,7 @@ export default function Footer() {
             >
               Əlaqə
             </Link>
-            <Link
-              to="/about"
-              className="text-base md:text-lg mb-4 opacity-70 hover:opacity-100 hover:underline"
-            >
-              Haqqımızda
-            </Link>
+         
           </div>
         </div>
 

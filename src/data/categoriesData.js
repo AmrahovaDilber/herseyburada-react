@@ -1,1011 +1,3876 @@
 const data = {
-  "kateqoriyalar": [
+  kateqoriyalar: [
     {
-      "kateqoriya_id": 1,
-      "kateqoriya_adı": "Qadın",
-      "subkateqoriyalar": [
+      kateqoriya_id: 1,
+      kateqoriya_adı: "Qadın",
+      subkateqoriyalar: [
         {
-          "subkateqoriya_id": 1,
-          "subkateqoriya_adı": "Bluz",
-          "məhsullar": [
+          subkateqoriya_id: 1,
+          subkateqoriya_adı: "Bluz",
+          məhsullar: [
             {
-              "product_id": 1,
-              "product_name": "Qadın Bluz 1",
-              "price": 50.0,
-              "slug":'qadın_bluz_1',
-              "original_price": 70.0,
-              "discount": 10,
-              "salesCount": 150,
-              "image_url": "https://example.com/products/women-blouse1.jpg",
-              "description": "Qadın üçün şık bluz.",
-              "colors": ["Red", "White", "Black"],
-              "sizes": ["S", "M", "L"],
+              product_id: 1,
+              product_name: "Şifon Bluz",
+              price: 50.0,
+              slug: "sifon_bluz",
+              original_price: 70.0,
+              discount: 10, // Endirim faizi
+              salesCount: 150,
+              image_url: "https://akn-lmb-adl.a-cdn.akinoncdn.com/products/2024/03/09/464351/9a71f373-cc54-4b9a-9f26-f6fe33a44aa6_size900x1350_quality100_cropTop.jpg",
+              description: "Yay üçün yüngül və rahat şifon bluz.",
+              colors: ["Sarı"],
+              sizes: ["S", "M", "L"],
+              reviews: [
+                {
+                  review_id: 1,
+                  rating: 4.0,
+                  comment: "Çox gözəl və rahatdır."
+                },
+                {
+                  review_id: 2,
+                  rating: 4.5,
+                  comment: "Materialı keyfiyyətlidir."
+                }
+              ]
+            },            
+            {
+              product_id: 2,
+              product_name: "Rahat Bluz",
+              price: 60.0,
+              original_price: 80.0,
+              discount: 15,
+              salesCount: 100,
+              image_url:
+                "https://akn-lmb-adl.a-cdn.akinoncdn.com/products/2024/03/09/464426/1baeeeea-e475-4a97-86f4-3d7ac02bcff7_size900x1350_quality100_cropTop.jpg",
+              description: "Gündəlik istifadə üçün ideal rahat bluz.",
+              colors: ["Ağ"],
+              sizes: ["M", "L", "XL"],
+              reviews: [
+                {
+                  review_id: 3,
+                  rating: 5.0,
+                  comment: "Hər gün geyinmək üçün əla!",
+                },
+                {
+                  review_id: 4,
+                  rating: 4.5,
+                  comment: "Rəngi gözəldir, amma ölçü kiçikdir.",
+                },
+              ],
+              slug: "rahat-bluz",
+            },
+            {
+              product_id: 3,
+              product_name: "Klassik Bluz",
+              price: 60.0,
+              original_price: 80.0,
+              discount: 15,
+              salesCount: 100,
+              image_url:
+                "https://akn-lmb-adl.a-cdn.akinoncdn.com/products/2024/02/26/464578/ed014a5b-9a5f-4894-aa7d-1ccfb974e0b9_size900x1350_quality100_cropTop.jpg",
+              description: "Klassik kəsimlə hazırlanmış bluz.",
+              colors: ["Ağ"],
+              sizes: ["M", "L", "XL"],
+              reviews: [
+                {
+                  review_id: 5,
+                  rating: 5.0,
+                  comment: "Klassik stil, hər cür geyimlə uyğun gəlir.",
+                },
+                {
+                  review_id: 6,
+                  rating: 4.5,
+                  comment: "Geyimi çox rahatdır.",
+                },
+              ],
+              slug: "klassik-bluz",
+            },
+            {
+              product_id: 4,
+              product_name: "Sport Bluz",
+              price: 65.0,
+              original_price: 85.0,
+              discount: 20,
+              salesCount: 120,
+              image_url:
+                "https://akn-lmb-adl.a-cdn.akinoncdn.com/products/2024/03/10/463871/ca3c7c2c-d1df-4d0d-947b-609614fa21c0_size900x1350_quality100_cropTop.jpg",
+              description: "İdman və gündəlik istifadə üçün ideal bluz.",
+              colors: ["Qara"],
+              sizes: ["S", "M", "L"],
+              reviews: [
+                {
+                  review_id: 7,
+                  rating: 5.0,
+                  comment: "İdman zamanı çox rahatdır.",
+                },
+                {
+                  review_id: 8,
+                  rating: 4.0,
+                  comment: "Bəyəndim, amma biraz sıxdır.",
+                },
+              ],
+              slug: "sport-bluz",
+            },
+            {
+              product_id: 5,
+              product_name: "Qadın Bluz - Qara",
+              price: 60.0,
+              original_price: 80.0,
+              discount: 15,
+              salesCount: 100,
+              image_url:
+                "https://akn-lmb-adl.a-cdn.akinoncdn.com/products/2024/04/24/469044/5d1f172d-8a7e-4009-9814-0cfb25d8982b_size900x1350_quality100_cropTop.jpg",
+              description: "Rəngarəng və rahat bluz.",
+              colors: ["Qara"],
+              sizes: ["M", "L", "XL"],
+              reviews: [
+                { review_id: 2, rating: 5.0, comment: "Çox rahat və şıx!" },
+                {
+                  review_id: 3,
+                  rating: 4.5,
+                  comment: "Rəngi çox gözəl, amma ölçü kiçik.",
+                },
+              ],
+              slug: "qadin-bluz-qara",
+            },
+            {
+              product_id: 6,
+              product_name: "Qadın Bluz - Qırmızı",
+              price: 60.0,
+              original_price: 80.0,
+              discount: 15,
+              salesCount: 100,
+              image_url:
+                "https://akn-lmb-adl.a-cdn.akinoncdn.com/products/2024/06/25/476959/c46b4da4-9370-47cb-900a-e8387fadb9f6_size900x1350_quality100_cropTop.jpg",
+              description: "Rəngarəng və rahat bluz.",
+              colors: ["Qırmızı"],
+              sizes: ["M", "L", "XL"],
+              reviews: [
+                { review_id: 2, rating: 5.0, comment: "Çox rahat və şıx!" },
+                {
+                  review_id: 3,
+                  rating: 4.5,
+                  comment: "Rəngi çox gözəl, amma ölçü kiçik.",
+                },
+              ],
+              slug: "qadin-bluz-qirmizi",
+            },
+            {
+              product_id: 7,
+              product_name: "Qadın Bluz Qirmizi",
+              price: 60.0,
+              original_price: 80.0,
+              discount: 15,
+              salesCount: 100,
+              image_url:
+                "https://akn-lmb-adl.a-cdn.akinoncdn.com/products/2024/02/12/463996/4500e7f1-5ab5-45a4-82a2-45be7c3881c4_size900x1350_quality100_cropTop.jpg",
+              description: "Rəngarəng və rahat bluz.",
+              colors: ["Qırmızı"],
+              sizes: ["M", "L", "XL"],
+              reviews: [
+                { review_id: 2, rating: 5.0, comment: "Çox rahat və şıx!" },
+                {
+                  review_id: 3,
+                  rating: 4.5,
+                  comment: "Rəngi çox gözəl, amma ölçü kiçik.",
+                },
+              ],
+              slug: "qadin-bluz-mavi",
+            },
+            {
+              product_id: 8,
+              product_name: "Qadın Bluz - Sarı",
+              price: 60.0,
+              original_price: 80.0,
+              discount: 15,
+              salesCount: 100,
+              image_url:
+                "https://akn-lmb-adl.a-cdn.akinoncdn.com/products/2024/08/15/481380/99e21cec-5047-4743-905d-01ad00868c62_size900x1350_quality100_cropTop.jpg",
+              description: "Rəngarəng və rahat bluz.",
+              colors: ["Sarı"],
+              sizes: ["M", "L", "XL"],
+              reviews: [
+                { review_id: 2, rating: 5.0, comment: "Çox rahat və şıx!" },
+                {
+                  review_id: 3,
+                  rating: 4.5,
+                  comment: "Rəngi çox gözəl, amma ölçü kiçik.",
+                },
+              ],
+              slug: "qadin-bluz-sari",
+            },
+            {
+              product_id: 9,
+              product_name: "Qadın Bluz - Yaşıl",
+              price: 60.0,
+              original_price: 80.0,
+              discount: 15,
+              salesCount: 100,
+              image_url:
+                "https://akn-lmb-adl.a-cdn.akinoncdn.com/products/2024/08/15/481659/5d71ad75-4787-4c0e-9227-fecefe97577f_size900x1350_quality100_cropTop.jpg",
+              description: "Rəngarəng və rahat bluz.",
+              colors: ["Mavi"],
+              sizes: ["M", "L", "XL"],
+              reviews: [
+                { review_id: 2, rating: 5.0, comment: "Çox rahat və şıx!" },
+                {
+                  review_id: 3,
+                  rating: 4.5,
+                  comment: "Rəngi çox gözəl, amma ölçü kiçik.",
+                },
+              ],
+              slug: "qadin-bluz-yasil",
+            },
+            {
+              product_id: 10,
+              product_name: "Qadın Bluz - Yaşıl Tünd",
+              price: 60.0,
+              original_price: 80.0,
+              discount: 15,
+              salesCount: 100,
+              image_url:
+                "https://akn-lmb-adl.a-cdn.akinoncdn.com/products/2023/02/06/405941/208e3ad5-d58e-4b50-afd5-a578dffefdac_size900x1350_quality100_cropTop.jpg",
+              description: "Rəngarəng və rahat bluz.",
+              colors: ["Sarı"],
+              sizes: ["M", "L", "XL"],
+              reviews: [
+                { review_id: 2, rating: 5.0, comment: "Çox rahat və şıx!" },
+                {
+                  review_id: 3,
+                  rating: 4.5,
+                  comment: "Rəngi çox gözəl, amma ölçü kiçik.",
+                },
+              ],
+              slug: "qadin-bluz-yasil-tund",
+            },
+            {
+              product_id: 11,
+              product_name: "Qadın Bluz - Açıq Mavi",
+              price: 60.0,
+              original_price: 80.0,
+              discount: 15,
+              salesCount: 100,
+              image_url:
+                "https://akn-lmb-adl.a-cdn.akinoncdn.com/products/2024/03/29/469057/96852243-7c3e-48a3-a8a0-388d1195f4e7_size900x1350_quality100_cropTop.jpg",
+              description: "Rəngarəng və rahat bluz.",
+              colors: ["Yaşıl"],
+              sizes: ["M", "L", "XL"],
+              reviews: [
+                { review_id: 2, rating: 5.0, comment: "Çox rahat və şıx!" },
+                {
+                  review_id: 3,
+                  rating: 4.5,
+                  comment: "Rəngi çox gözəl, amma ölçü kiçik.",
+                },
+              ],
+              slug: "qadin-bluz-aq-mavi",
+            },
+            {
+              product_id: 12,
+              product_name: "Qadın Bluz - Tünd Yaşıl",
+              price: 60.0,
+              original_price: 80.0,
+              discount: 15,
+              salesCount: 100,
+              image_url:
+                "https://akn-lmb-adl.a-cdn.akinoncdn.com/products/2024/03/07/464670/37d76b34-1847-44dd-ba1d-c5401c4c7eea_size900x1350_quality100_cropTop.jpg",
+              description: "Rəngarəng və rahat bluz.",
+              colors: ["Yaşıl"],
+              sizes: ["M", "L", "XL"],
+              reviews: [
+                { review_id: 2, rating: 5.0, comment: "Çox rahat və şıx!" },
+                {
+                  review_id: 3,
+                  rating: 4.5,
+                  comment: "Rəngi çox gözəl, amma ölçü kiçik.",
+                },
+              ],
+              slug: "qadin-bluz-tund-yasil",
+            },
+            {
+              product_id: 13,
+              product_name: "Qadın Bluz - Tünd Mavi",
+              price: 60.0,
+              original_price: 80.0,
+              discount: 15,
+              salesCount: 100,
+              image_url:
+                "https://cdn.dsmcdn.com/ty988/product/media/images/jpim-outputs/assets/product/media/images/20230820/13/405367009/979940253/2/2_org_zoom.jpg",
+              description: "Rəngarəng və rahat bluz.",
+              colors: ["Mavi"],
+              sizes: ["S", "M", "L"],
+              reviews: [
+                { review_id: 2, rating: 5.0, comment: "Çox rahat və şıx!" },
+                {
+                  review_id: 3,
+                  rating: 4.5,
+                  comment: "Rəngi çox gözəl, amma ölçü kiçik.",
+                },
+              ],
+              slug: "qadin-bluz-tund-mavi",
+            },
+            {
+              product_id: 14,
+              product_name: "Tül Astarlı Asimetrik Yaka Bluz",
+              price: 60.0,
+              original_price: 80.0,
+              discount: 15,
+              salesCount: 100,
+              image_url:
+                "https://cdn.dsmcdn.com/ty1519/product/media/images/prod/PIM/20240903/10/ece7366a-1187-4c25-bf2b-94b25c889c44/1_org_zoom.jpg",
+              description: "Rəngarəng və rahat bluz.",
+              colors: ["Mavi"],
+              sizes: ["M", "L", "XL"],
+              reviews: [
+                { review_id: 2, rating: 5.0, comment: "Çox rahat və şıx!" },
+                {
+                  review_id: 3,
+                  rating: 4.5,
+                  comment: "Rəngi çox gözəl, amma ölçü kiçik.",
+                },
+              ],
+              slug: "petrol-asimetrik-yaka-bluz",
+            },
+            {
+              product_id: 15,
+              product_name:
+                "Qadın Sandy Kumaş Çapraz Büzgü Detaylı Uzun Kollu Bluz",
+              price: 60.0,
+              original_price: 80.0,
+              discount: 15,
+              salesCount: 100,
+              image_url:
+                "https://cdn.dsmcdn.com/ty1523/product/media/images/prod/QC/20240819/17/7336f9f7-bf29-3167-be92-a0ef63717845/1_org_zoom.jpg",
+              description: "Rəngarəng və rahat bluz.",
+              colors: ["Mavi"],
+              sizes: ["S", "M", "L"],
+              reviews: [
+                { review_id: 2, rating: 5.0, comment: "Çox rahat və şıx!" },
+                {
+                  review_id: 3,
+                  rating: 4.5,
+                  comment: "Rəngi çox gözəl, amma ölçü kiçik.",
+                },
+              ],
+              slug: "qadin-sandy-kumas-buzgu-bluz",
+            },
+            {
+              product_id: 16,
+              product_name: "Turuncu Fitilli Triko Bluz",
+              price: 60.0,
+              original_price: 80.0,
+              discount: 15,
+              salesCount: 100,
+              image_url:
+                "    https://cdn.dsmcdn.com/ty333/product/media/images/20220218/12/53018736/135589345/2/2_org_zoom.jpg",
+              description: "Rəngarəng və rahat bluz.",
+              colors: ["Narinci"],
+              sizes: ["S", "M", "L"],
+              reviews: [
+                { review_id: 2, rating: 5.0, comment: "Çox rahat və şıx!" },
+                {
+                  review_id: 3,
+                  rating: 4.5,
+                  comment: "Rəngi çox gözəl, amma ölçü kiçik.",
+                },
+              ],
+              slug: "turuncu-fitilli-triko-bluz",
+            },
+            {
+              product_id: 17,
+              product_name:
+                "Turuncu Kare Yaka Korse Görünümlü Fitilli Kadın Crop Bluz",
+              price: 70.0,
+              original_price: 90.0,
+              discount: 22,
+              salesCount: 140,
+              image_url:
+                "   https://cdn.dsmcdn.com/ty946/product/media/images/20230608/1/383057233/965419607/1/1_org_zoom.jpg",
+              description: "Rəngarəng və rahat bluz.",
+              colors: ["Narinci"],
+              sizes: ["S", "M", "L"],
+              reviews: [
+                { review_id: 2, rating: 5.0, comment: "Çox rahat və şıx!" },
+                {
+                  review_id: 3,
+                  rating: 4.5,
+                  comment: "Rəngi çox gözəl, amma ölçü kiçik.",
+                },
+              ],
+              slug: "turuncu-kare-yaka-korse-gorunumlu-fitilli-kadin-crop-bluz",
+            },
+            {
+              product_id: 18,
+              product_name: "Kadın Kırmızı Omuzları Açık Büzgü Detaylı Bluz",
+              price: 80.0,
+              original_price: 100.0,
+              discount: 20,
+              salesCount: 100,
+              image_url:
+                "https://cdn.dsmcdn.com/ty1239/product/media/images/prod/PIM/20240402/21/ab061de2-6758-4048-ad61-8da1eb49f01d/1_org_zoom.jpg",
+              description: "Büzgü detaylı, omuzları açık kırmızı bluz.",
+              colors: ["Qırmızı"],
+              sizes: ["S", "M", "L"],
+              reviews: [
+                { review_id: 2, rating: 5.0, comment: "Çox rahat və şıx!" },
+                {
+                  review_id: 3,
+                  rating: 4.5,
+                  comment: "Rəngi çox gözəl, amma ölçü kiçik.",
+                },
+              ],
+              slug: "kadin-kirmizi-omuzlari-acik-buzgu-detayli-bluz",
+            },
+            {
+              product_id: 19,
+              product_name:
+                "Qadın Kırmızı Fermuarlı Dik Yaka Fitilli Triko Bluz",
+              price: 90.0,
+              original_price: 120.0,
+              discount: 25,
+              salesCount: 100,
+              image_url:
+                "    https://cdn.dsmcdn.com/ty983/product/media/images/20230808/14/401258721/987672830/2/2_org_zoom.jpg",
+              description: "Rəngarəng və rahat bluz.",
+              colors: ["Qırmızı"],
+              sizes: ["S", "M", "L"],
+              reviews: [
+                { review_id: 2, rating: 5.0, comment: "Çox rahat və şıx!" },
+                {
+                  review_id: 3,
+                  rating: 4.5,
+                  comment: "Rəngi çox gözəl, amma ölçü kiçik.",
+                },
+              ],
+              slug: "qadin-kirmizi-fermuarli-dik-yaka-fitilli-triko-bluz-bv00093",
+            },
+            {
+              product_id: 20,
+              product_name: "Qadın Ajurlu Triko Bluz",
+              price: 85.0,
+              original_price: 110.0,
+              discount: 23,
+              salesCount: 120,
+              image_url:
+                "https://cdn.dsmcdn.com/ty1332/product/media/images/prod/QC/20240515/17/4c7d4bf8-a367-38ee-8991-9ffdb482d60d/1_org_zoom.jpg",
+              description: "Rəngarəng və rahat bluz.",
+              colors: ["Narinci"],
+              sizes: ["S", "M", "L"],
+              reviews: [
+                { review_id: 2, rating: 5.0, comment: "Çox rahat və şıx!" },
+                {
+                  review_id: 3,
+                  rating: 4.5,
+                  comment: "Rəngi çox gözəl, amma ölçü kiçik.",
+                },
+              ],
+              slug: "qadin-ajurlu-triko-bluz",
+            },
+            {
+              product_id: 21,
+              product_name:
+                "Qadın Kırmızı Sandy Kumaş Çapraz Büzgü Detaylı Kısa Kol Şık Bluz",
+              price: 70.0,
+              original_price: 90.0,
+              discount: 22,
+              salesCount: 150,
+              image_url:
+                " https://cdn.dsmcdn.com/ty1354/product/media/images/prod/QC/20240609/20/75ba33e9-5c7e-3684-a699-a90c3067ccbf/1_org_zoom.jpg",
+              description: "Rəngarəng və rahat bluz.",
+              colors: ["Qırmızı"],
+              sizes: ["S", "M", "L"],
+              reviews: [
+                { review_id: 2, rating: 5.0, comment: "Çox rahat və şıx!" },
+                {
+                  review_id: 3,
+                  rating: 4.5,
+                  comment: "Rəngi çox gözəl, amma ölçü kiçik.",
+                },
+              ],
+              slug: "qadin-kirmizi-sandy-kumas-buzgu-detayli-kisa-kol-bluz",
+            },
+            {
+              product_id: 22,
+              product_name: "Çıxma Detaylı Fitilli Örme Bluz",
+              price: 70.0,
+              original_price: 90.0,
+              salesCount: 150,
+              image_url:
+                "https://cdn.dsmcdn.com/ty1464/product/media/images/prod/QC/20240806/01/2dda1ae8-93aa-311a-b3d1-2048509d49f4/1_org_zoom.jpg",
+              description: "Rəngarəng və rahat bluz.",
+              colors: ["Ağ"],
+              sizes: ["S", "M", "L"],
+              reviews: [
+                { review_id: 2, rating: 5.0, comment: "Çox rahat və şıx!" },
+                {
+                  review_id: 3,
+                  rating: 4.5,
+                  comment: "Rəngi çox gözəl, amma ölçü kiçik.",
+                },
+              ],
+              slug: "cixma-detayli-fitilli-orme-bluz",
+            },
+            {
+              product_id: 23,
+              product_name: "Qadın Ağ Parmak Detaylı Body",
+              price: 75.0,
+              original_price: 95.0,
+              salesCount: 120,
+              image_url:
+                " https://cdn.dsmcdn.com/ty619/product/media/images/20221201/14/225404351/636769191/1/1_org_zoom.jpg",
+              description: "Rahat və şık parmak detaylı body.",
+              colors: ["Ağ"],
+              sizes: ["S", "M", "L"],
+              reviews: [
+                { review_id: 2, rating: 5.0, comment: "Çox rahat və şıx!" },
+                {
+                  review_id: 3,
+                  rating: 4.5,
+                  comment: "Rəngi çox gözəl, amma ölçü kiçik.",
+                },
+              ],
+              slug: "qadin-ag-parmak-detayli-body",
+            },
+            {
+              product_id: 24,
+              product_name: "Qadın Ağ Cut Out Detaylı Fitilli Örme Bluz",
+              price: 80.0,
+              original_price: 100.0,
+              salesCount: 110,
+              image_url:
+                "https://cdn.dsmcdn.com/ty866/product/media/images/20230505/14/340388812/928173859/2/2_org_zoom.jpg",
+              description: "Rəngarəng və rahat bluz.",
+              colors: ["Ağ"],
+              sizes: ["S", "M", "L"],
+              reviews: [
+                { review_id: 2, rating: 5.0, comment: "Çox rahat və şıx!" },
+                {
+                  review_id: 3,
+                  rating: 4.5,
+                  comment: "Rəngi çox gözəl, amma ölçü kiçik.",
+                },
+              ],
+              slug: "qadin-ag-cut-out-detayli-fitilli-orne-bluz",
+            },
+            {
+              product_id: 25,
+              product_name: "Ağ Kare Yaka Viskon Örme Bluz",
+              price: 75.0,
+              original_price: 95.0,
+              salesCount: 90,
+
+              image_url:
+                " https://cdn.dsmcdn.com/ty1304/product/media/images/prod/PIM/20240508/14/dea95a2b-9d17-404b-98f9-0353b9f12e5e/1_org_zoom.jpg",
+              description: "Rəngarəng və rahat bluz.",
+              colors: ["Ağ"],
+              sizes: ["S", "M", "L"],
+              reviews: [
+                { review_id: 2, rating: 5.0, comment: "Çox rahat və şıx!" },
+                {
+                  review_id: 3,
+                  rating: 4.5,
+                  comment: "Rəngi çox gözəl, amma ölçü kiçik.",
+                },
+              ],
+              slug: "ag-kare-yaka-viskon-orne-bluz",
+            },
+            {
+              product_id: 26,
+              product_name:
+                "Haki Kayık Yaka Fitilli Esnek Regular Fit Uzun Kollu Düğme Detaylı Örme Bluz",
+              price: 75.0,
+              original_price: 95.0,
+              salesCount: 80,
+              image_url:
+                " https://cdn.dsmcdn.com/ty996/product/media/images/prod/PIM/20230913/06/dfb9065f-9232-469a-b863-93d21b8569fb/1_org_zoom.jpg",
+              description: "Rəngarəng və rahat bluz.",
+              colors: ["Yaşıl"],
+              sizes: ["S", "M", "XL"],
+              reviews: [
+                {
+                  review_id: 1,
+                  rating: 5.0,
+                  comment: "Çox rahatdır, hər zaman geyinirəm!",
+                },
+                {
+                  review_id: 2,
+                  rating: 4.0,
+                  comment: "Gözəl dizayn, amma düymələr biraz dar.",
+                },
+              ],
+
+              slug: "haki-kayik-yaka-fitilli-esnek-uzun-kollu-bluz",
+            },
+          ],
+        },
+        {
+          subkateqoriya_id: 2,
+          subkateqoriya_adı: "Qadın Ust Geyimi",
+          məhsullar: [
+            {
+              product_id: 100,
+              product_name: " Geniş Cepli Crop Ceket",
+              price: 80.0,
+              original_price: 100.0,
+              discount: 0,
+              salesCount: 90,
+              image_url:
+                "https://img2-ipekyol.mncdn.com/mnresize/1200/-//ipekyol/products/FW2425/Koleksiyon/IW6240005052001.jpg",
+              description: "Geniş cepli crop ceket",
+              colors: ["Qara"],
+              sizes: ["M", "L", "XL"],
+              reviews: [
+                {
+                  review_id: 12,
+                  rating: 4.5,
+                  comment: "Çox rahat və isti.",
+                },
+                {
+                  review_id: 13,
+                  rating: 4.2,
+                  comment:
+                    "Keyfiyyətli material, amma qiyməti bir az yüksəkdir.",
+                },
+              ],
+              slug: "qadin-jaket-genis-cepli-crop-ceket",
+            },
+            {
+              product_id: 101,
+              product_name: "Düğme Aksesuarlı Ceket",
+              price: 80.0,
+              original_price: 100.0,
+              discount: 0,
+              salesCount: 90,
+              image_url:
+                "https://img2-ipekyol.mncdn.com/mnresize/1200/-//ipekyol/products/FW2425/Koleksiyon/IW6240005086001.jpg",
+              description: "Düğme aksesuarlı ceket",
+              colors: ["Qara"],
+              sizes: ["M", "L", "XL"],
+              reviews: [
+                {
+                  review_id: 12,
+                  rating: 4.5,
+                  comment: "Çox rahat və isti.",
+                },
+                {
+                  review_id: 13,
+                  rating: 4.2,
+                  comment:
+                    "Keyfiyyətli material, amma qiyməti bir az yüksəkdir.",
+                },
+              ],
+              slug: "qadin-jaket-dugme-aksesuariyla",
+            },
+            {
+              product_id: 102,
+              product_name: " Diyagonal Metal Fermuarlı Ceket",
+              price: 80.0,
+              original_price: 100.0,
+              discount: 0,
+              salesCount: 90,
+              image_url:
+                "https://img2-ipekyol.mncdn.com/mnresize/1200/-//ipekyol/products/FW2425/Koleksiyon/IW6240005090001.JPG",
+              description: "Diyagonal metal fermuarlı ceket",
+              colors: ["Qara"],
+              sizes: ["M", "L", "XL"],
+              reviews: [
+                {
+                  review_id: 12,
+                  rating: 4.5,
+                  comment: "Çox rahat və isti.",
+                },
+                {
+                  review_id: 13,
+                  rating: 4.2,
+                  comment:
+                    "Keyfiyyətli material, amma qiyməti bir az yüksəkdir.",
+                },
+              ],
+              slug: "qadin-jaket-diyagonal-metal-fermuar",
+            },
+            {
+              product_id: 103,
+              product_name: " Keten Kruvaze Blazer",
+              price: 80.0,
+              original_price: 100.0,
+              discount: 0,
+              salesCount: 90,
+              image_url:
+                "https://img2-ipekyol.mncdn.com/mnresize/1200/-//ipekyol/products/SS24/Koleksiyon/IS1240106040096.JPG",
+              description: "Keten kruvaze blazer",
+              colors: ["Ağ"],
+              sizes: ["M", "L", "XL"],
+              reviews: [
+                {
+                  review_id: 12,
+                  rating: 4.5,
+                  comment: "Çox rahat və isti.",
+                },
+                {
+                  review_id: 13,
+                  rating: 4.2,
+                  comment:
+                    "Keyfiyyətli material, amma qiyməti bir az yüksəkdir.",
+                },
+              ],
+              slug: "qadin-jaket-keten-kruvaze-blazer",
+            },
+            {
+              product_id: 104,
+              product_name: "Kuşaklı Kruvaze Blazer",
+              price: 80.0,
+              original_price: 100.0,
+              discount: 0,
+              salesCount: 90,
+              image_url:
+                "https://img2-ipekyol.mncdn.com/mnresize/1200/-//ipekyol/products/SS24/Koleksiyon/IS1240106012070.jpg",
+              description: "Kuşaklı kruvaze blazer",
+              colors: ["Yaşıl"],
+              sizes: ["M", "L", "XL"],
+              reviews: [
+                {
+                  review_id: 12,
+                  rating: 4.5,
+                  comment: "Çox rahat və isti.",
+                },
+                {
+                  review_id: 13,
+                  rating: 4.2,
+                  comment:
+                    "Keyfiyyətli material, amma qiyməti bir az yüksəkdir.",
+                },
+              ],
+              slug: "qadin-jaket-kusakli-kruvaze-blazer",
+            },
+            {
+              product_id: 105,
+              product_name: "Çoxfunksiyalı Ceket",
+              price: 80.0,
+              original_price: 100.0,
+              discount: 0,
+              salesCount: 90,
+              image_url:
+                "https://img2-ipekyol.mncdn.com/mnresize/1200/-//ipekyol/products/FW2425/Koleksiyon/IW6240005090001.JPG",
+              description: "Çoxfunksiyalı ceket",
+              colors: ["Qara"],
+              sizes: ["M", "L", "XL"],
+              reviews: [
+                {
+                  review_id: 12,
+                  rating: 4.5,
+                  comment: "Çox rahat və isti.",
+                },
+                {
+                  review_id: 13,
+                  rating: 4.2,
+                  comment:
+                    "Keyfiyyətli material, amma qiyməti bir az yüksəkdir.",
+                },
+              ],
+              slug: "qadin-jaket-coxfunksiyali",
+            },
+
+            {
+              product_id: 106,
+              product_name: "Kemerli Oversize Crop Deri Ceket",
+              price: 90.0,
+              original_price: 120.0,
+              discount: 0,
+              salesCount: 60,
+              image_url:
+                "https://cdn.dsmcdn.com/ty1253/product/media/images/prod/SPM/PIM/20240411/20/f88ca68e-eafd-37b1-b5fa-b1ec3ffb9cbb/1_org_zoom.jpg",
+              description: "Çoxfunksiyalı ceket",
+              colors: ["Qara"],
+              sizes: ["M", "L", "XL"],
+              reviews: [
+                {
+                  review_id: 12,
+                  rating: 4.5,
+                  comment: "Çox rahat və isti.",
+                },
+                {
+                  review_id: 13,
+                  rating: 4.2,
+                  comment:
+                    "Keyfiyyətli material, amma qiyməti bir az yüksəkdir.",
+                },
+              ],
+              slug: "kemerli-oversize-crop-deri-ceket",
+            },
+            {
+              product_id: 107,
+              product_name: "Unisex Siyah Oversize Bomber Ceket",
+              price: 80.0,
+              original_price: 100.0,
+              discount: 0,
+              salesCount: 90,
+              image_url:
+                "https://cdn.dsmcdn.com/ty1554/product/media/images/ty1554/prod/QC/20240918/20/34ea9285-ad6f-31b9-b2db-db4fae29b4bd/1_org_zoom.jpg",
+              description: "Çoxfunksiyalı ceket.",
+              colors: ["Qara"],
+              sizes: ["M", "L", "XL"],
+              reviews: [
+                {
+                  review_id: 12,
+                  rating: 4.5,
+                  comment: "Çox rahat və isti.",
+                },
+                {
+                  review_id: 13,
+                  rating: 4.2,
+                  comment:
+                    "Keyfiyyətli material, amma qiyməti bir az yüksəkdir.",
+                },
+              ],
+              slug: "unisex-siyah-oversize-bomber-ceket",
+            },
+            {
+              product_id: 108,
+              product_name: "Siyah Çengel Detaylı Tasarım Blazer Ceket",
+              price: 80.0,
+              original_price: 100.0,
+              discount: 0,
+              salesCount: 90,
+              image_url:
+                "https://cdn.dsmcdn.com/ty1336/product/media/images/prod/QC/20240520/13/a20f3d77-cd7e-3d8f-9e79-045a175c5d76/1_org_zoom.jpg",
+              description: "Çoxfunksiyalı ceket.",
+              colors: ["Qara"],
+              sizes: ["M", "L", "XL"],
+              reviews: [
+                {
+                  review_id: 12,
+                  rating: 4.5,
+                  comment: "Çox rahat və isti.",
+                },
+                {
+                  review_id: 13,
+                  rating: 4.2,
+                  comment:
+                    "Keyfiyyətli material, amma qiyməti bir az yüksəkdir.",
+                },
+              ],
+              slug: "siyah-cengel-detayli-tasarim-blazer-ceket",
+            },
+            {
+              product_id: 109,
+              product_name:
+                "Limited Edition Mint Regular Astarlı Dokuma Blazer Ceket",
+              price: 80.0,
+              original_price: 100.0,
+              discount: 0,
+              salesCount: 90,
+              image_url:
+                "https://cdn.dsmcdn.com/ty1090/product/media/images/prod/PIM/20231215/14/9e4f41fa-cfbb-45dd-81bd-4e08fe535bbf/1_org_zoom.jpg",
+              description: "Çoxfunksiyalı ceket.",
+              colors: ["Yaşıl"],
+              sizes: ["M", "L", "XL"],
+              reviews: [
+                {
+                  review_id: 12,
+                  rating: 4.5,
+                  comment: "Çox rahat və isti.",
+                },
+                {
+                  review_id: 13,
+                  rating: 4.2,
+                  comment:
+                    "Keyfiyyətli material, amma qiyməti bir az yüksəkdir.",
+                },
+              ],
+              slug: "limited-edition-mint-regular-astarli-dokuma-blazer-ceket",
+            },
+
+            {
+              product_id: 110,
+              product_name: "Unisex Siyah Oversize Bomber Ceket",
+              price: 80.0,
+              original_price: 100.0,
+              discount: 0,
+              salesCount: 90,
+              image_url:
+                "https://cdn.dsmcdn.com/ty1554/product/media/images/ty1554/prod/QC/20240918/20/34ea9285-ad6f-31b9-b2db-db4fae29b4bd/1_org_zoom.jpg",
+              description: "Çoxfunksiyalı ceket",
+              colors: ["Qara"],
+              sizes: ["M", "L", "XL"],
+              reviews: [
+                {
+                  review_id: 12,
+                  rating: 4.5,
+                  comment: "Çox rahat və isti.",
+                },
+                {
+                  review_id: 13,
+                  rating: 4.2,
+                  comment:
+                    "Keyfiyyətli material, amma qiyməti bir az yüksəkdir.",
+                },
+              ],
+              slug: "qadin-jaket-coxfunksiyali",
+            },
+
+            {
+              product_id: 111,
+              product_name:
+                "Qadın Kırık Beyaz Hakim Yaka Çift Cepli Dalgıç Ceket",
+              price: 80.0,
+              original_price: 100.0,
+              discount: 0,
+              salesCount: 90,
+              image_url:
+                "https://cdn.dsmcdn.com/ty1512/product/media/images/prod/PIM/20240829/18/e7917c0e-fbc0-41b0-bfcd-c67a6a1b84d6/1_org_zoom.jpg",
+              description: "Çoxfunksiyalı ceket.",
+              colors: ["Ağ"],
+              sizes: ["M", "L", "XL"],
+              reviews: [
+                {
+                  review_id: 12,
+                  rating: 4.5,
+                  comment: "Çox rahat və isti.",
+                },
+                {
+                  review_id: 13,
+                  rating: 4.2,
+                  comment:
+                    "Keyfiyyətli material, amma qiyməti bir az yüksəkdir.",
+                },
+              ],
+              slug: "qadin-kirik-beyaz-hakim-yaka-cift-cepli-dalgic-ceket",
+            },
+            {
+              product_id: 112,
+              product_name: "Jeans Qadın Bomber Ceket",
+              price: 80.0,
+              original_price: 100.0,
+              discount: 0,
+              salesCount: 90,
+              image_url:
+                "https://cdn.dsmcdn.com/ty1566/product/media/images/ty1554/prod/QC/20240918/12/5fca1e35-8a05-324c-a5d2-a91c4e2ea858/1_org_zoom.jpg",
+              description: "Çoxfunksiyalı ceket.",
+              colors: ["Yaşıl"],
+              sizes: ["M", "L", "XL"],
+              reviews: [
+                {
+                  review_id: 12,
+                  rating: 4.5,
+                  comment: "Çox rahat və isti.",
+                },
+                {
+                  review_id: 13,
+                  rating: 4.2,
+                  comment:
+                    "Keyfiyyətli material, amma qiyməti bir az yüksəkdir.",
+                },
+              ],
+              slug: "jeans-qadin-bomber-jaket",
+            },
+            {
+              product_id: 113,
+              product_name: "Tək Düğmeli Blazer Model Ceket",
+              price: 80.0,
+              original_price: 100.0,
+              discount: 0,
+              salesCount: 90,
+              image_url:
+                "https://cdn.dsmcdn.com/ty1148/product/media/images/prod/SPM/PIM/20240126/19/6305fe87-63f7-3d77-89c9-c2d2ee6be395/1_org_zoom.jpg",
+              description: "Çoxfunksiyalı ceket.",
+              colors: ["Ağ"],
+              sizes: ["M", "L", "XL"],
+              reviews: [
+                {
+                  review_id: 12,
+                  rating: 4.5,
+                  comment: "Çox rahat və isti.",
+                },
+                {
+                  review_id: 13,
+                  rating: 4.2,
+                  comment:
+                    "Keyfiyyətli material, amma qiyməti bir az yüksəkdir.",
+                },
+              ],
+              slug: "tek-duymeli-blazer-model-jaket",
+            },
+            {
+              product_id: 114,
+              product_name: "Ağ Çizgili Oversize Blazer Ceket",
+              price: 80.0,
+              original_price: 100.0,
+              discount: 0,
+              salesCount: 90,
+              image_url:
+                "https://cdn.dsmcdn.com/ty1447/product/media/images/prod/QC/20240729/01/f75b9b06-2334-3df0-ac28-61dd0a80f990/1_org_zoom.jpg",
+              description: "Çoxfunksiyalı ceket.",
+              colors: ["Ağ"],
+              sizes: ["M", "L", "XL"],
+              reviews: [
+                {
+                  review_id: 12,
+                  rating: 4.5,
+                  comment: "Çox rahat və isti.",
+                },
+                {
+                  review_id: 13,
+                  rating: 4.2,
+                  comment:
+                    "Keyfiyyətli material, amma qiyməti bir az yüksəkdir.",
+                },
+              ],
+              slug: "ag-cizgili-oversize-blazer-jaket",
+            },
+            {
+              product_id: 115,
+              product_name: "Göy Mavisi Qadın Palto",
+              price: 80.0,
+              original_price: 100.0,
+              discount: 0,
+              salesCount: 90,
+              image_url:
+                "https://cdn.dsmcdn.com/ty1306/product/media/images/prod/PIM/20240510/13/b9de2f33-6112-42af-b165-e984f6e25122/1_org_zoom.jpg",
+              description: "Çoxfunksiyalı palto.",
+              colors: ["Mavi"],
+              sizes: ["M", "L", "XL"],
+              reviews: [
+                {
+                  review_id: 12,
+                  rating: 4.5,
+                  comment: "Çox rahat və isti.",
+                },
+                {
+                  review_id: 13,
+                  rating: 4.2,
+                  comment:
+                    "Keyfiyyətli material, amma qiyməti bir az yüksəkdir.",
+                },
+              ],
+              slug: "goy-mavisi-qadin-palto",
+            },
+            {
+              product_id: 116,
+              product_name: "Kaban Oversize",
+              price: 80.0,
+              original_price: 100.0,
+              discount: 0,
+              salesCount: 90,
+              image_url:
+                "https://cdn.dsmcdn.com/ty1463/product/media/images/prod/QC/20240805/16/b1ff574b-216d-314a-b3ba-2ee368d5dbdb/1_org_zoom.jpg",
+              description: "Çoxfunksiyalı kaban.",
+              colors: ["Qırmızı"],
+              sizes: ["M", "L", "XL"],
+              reviews: [
+                {
+                  review_id: 12,
+                  rating: 4.5,
+                  comment: "Çox rahat və isti.",
+                },
+                {
+                  review_id: 13,
+                  rating: 4.2,
+                  comment:
+                    "Keyfiyyətli material, amma qiyməti bir az yüksəkdir.",
+                },
+              ],
+              slug: "kaban-oversize",
+            },
+            {
+              product_id: 117,
+              product_name: "Uzun Dəri Kaban",
+              price: 80.0,
+              original_price: 100.0,
+              discount: 0,
+              salesCount: 90,
+              image_url:
+                "https://cdn.dsmcdn.com/ty1536/product/media/images/prod/QC/20240827/06/70d72d2d-0017-3f8e-90bf-aabe0bb9b5a8/1_org_zoom.jpg",
+              description: "Çoxfunksiyalı kaban.",
+              colors: ["Mavi"],
+              sizes: ["M", "L", "XL"],
+              reviews: [
+                {
+                  review_id: 12,
+                  rating: 4.5,
+                  comment: "Çox rahat və isti.",
+                },
+                {
+                  review_id: 13,
+                  rating: 4.2,
+                  comment:
+                    "Keyfiyyətli material, amma qiyməti bir az yüksəkdir.",
+                },
+              ],
+              slug: "uzun-deri-kaban",
+            },
+            {
+              product_id: 118,
+              product_name: "Düğmeli Uzun Dəri Kaban",
+              price: 80.0,
+              original_price: 100.0,
+              discount: 0,
+              salesCount: 90,
+              image_url:
+                "https://cdn.dsmcdn.com/ty1567/product/media/images/ty1556/prod/QC/20240918/15/9fe09332-598b-3989-bf18-9cff561d7688/1_org_zoom.jpg",
+              description: "Çoxfunksiyalı kaban.",
+              colors: ["Mavi"],
+              sizes: ["M", "L"],
+              reviews: [
+                {
+                  review_id: 12,
+                  rating: 4.5,
+                  comment: "Çox rahat və isti.",
+                },
+                {
+                  review_id: 13,
+                  rating: 4.2,
+                  comment:
+                    "Keyfiyyətli material, amma qiyməti bir az yüksəkdir.",
+                },
+              ],
+              slug: "dugmeli-uzun-deri-kaban",
+            },
+            {
+              product_id: 119,
+              product_name:
+                "Bordo Regular Astarlı Kruvaze Kapama Dokuma Blazer Ceket",
+              price: 80.0,
+              original_price: 100.0,
+              discount: 0,
+              salesCount: 90,
+              image_url:
+                "https://cdn.dsmcdn.com/ty1468/product/media/images/prod/PIM/20240807/01/60345dc3-a350-4692-8f47-f66767b029f7/1_org_zoom.jpg",
+              description: "Çoxfunksiyalı kaban.",
+              colors: ["Qırmızı"],
+              sizes: ["M", "L", "XL"],
+              reviews: [
+                {
+                  review_id: 12,
+                  rating: 4.5,
+                  comment: "Çox rahat və isti.",
+                },
+                {
+                  review_id: 13,
+                  rating: 4.2,
+                  comment:
+                    "Keyfiyyətli material, amma qiyməti bir az yüksəkdir.",
+                },
+              ],
+              slug: "bordo-regular-astarli-kruvaze-kapama-dokuma-blazer-ceket",
+            },
+          ],
+        },
+        {
+          subkateqoriya_id: 3,
+          subkateqoriya_adı: "Salvar",
+          məhsullar: [
+            {
+              product_id: 200,
+              product_name: "Yüksək Bel Palazzo Şalvar",
+              price: 60.0,
+              original_price: 80.0,
+              discount: 15,
+              salesCount: 160,
+              image_url:
+                "https://cdn.dsmcdn.com/ty1482/product/media/images/prod/QC/20240815/12/7c71e3ea-2810-33ed-85da-9b75c948fe3d/1_org_zoom.jpg",
+              description:
+                "Qadın Bol Paça Yüksək Bel Rahat Esnek Trend Palazzo Dokuma Pantolon",
+              colors: ["Yaşıl"],
+              sizes: ["S", "M", "L"],
+              reviews: [
+                {
+                  review_id: 15,
+                  rating: 4.2,
+                  comment: "Çox rahat və yaxşı keyfiyyət.",
+                },
+                {
+                  review_id: 16,
+                  rating: 4.0,
+                  comment: "Gözəl görünür, amma bir az dar.",
+                },
+              ],
+              slug: "mavi-yuksek-bel-palazzo-salvar",
+            },
+            {
+              product_id: 201,
+              product_name: "Havuç Kalıbı Şalvar",
+              price: 60.0,
+              original_price: 80.0,
+              discount: 15,
+              salesCount: 160,
+              image_url:
+                "https://cdn.dsmcdn.com/ty1130/product/media/images/prod/PIM/20240110/06/ca521c98-f83a-4583-89d3-b52b2e2b60e4/1_org_zoom.jpg",
+              description:
+                "Haki Pamuklu Havuç Kalıp Şerit Detaylı Dokuma Pantolon",
+              colors: ["Yaşıl"],
+              sizes: ["S", "M", "L"],
+              reviews: [
+                {
+                  review_id: 15,
+                  rating: 4.2,
+                  comment: "Çox rahat və yaxşı keyfiyyət.",
+                },
+                {
+                  review_id: 16,
+                  rating: 4.0,
+                  comment: "Gözəl görünür, amma bir az dar.",
+                },
+              ],
+              slug: "haki-havuc-kalibi-salvar",
+            },
+            {
+              product_id: 202,
+              product_name: "Parlaq Keten Şalvar",
+              price: 60.0,
+              original_price: 80.0,
+              discount: 15,
+              salesCount: 160,
+              image_url:
+                "https://cdn.dsmcdn.com/ty1474/product/media/images/prod/QC/20240622/11/4892261c-2621-3b78-969b-497bb953c1d8/1_org_zoom.jpg",
+              description: "Parlak Keten Cepli Beli Lastikli Pantolon - Haki",
+              colors: ["Yaşıl"],
+              sizes: ["S", "M", "L"],
+              reviews: [
+                {
+                  review_id: 15,
+                  rating: 4.2,
+                  comment: "Çox rahat və yaxşı keyfiyyət.",
+                },
+                {
+                  review_id: 16,
+                  rating: 4.0,
+                  comment: "Gözəl görünür, amma bir az dar.",
+                },
+              ],
+              slug: "parlaq-keten-salvar",
+            },
+            {
+              product_id: 203,
+              product_name: "Mavi Yüksək Bel Şalvar",
+              price: 60.0,
+              original_price: 80.0,
+              discount: 15,
+              salesCount: 160,
+              image_url:
+                "https://cdn.sorsware.com/oxxo/ContentImages/Product/23y/23YOX-AMELIATALL/yuksek-bel-wide-leg-pantolon_light-denim-mavi_1_buyuk.jpg",
+              description: "Mavi Yüksək Bel Wide Leg Pantolon",
+              colors: ["Mavi"],
+              sizes: ["S", "M", "L"],
+              reviews: [
+                {
+                  review_id: 15,
+                  rating: 4.2,
+                  comment: "Çox rahat və yaxşı keyfiyyət.",
+                },
+                {
+                  review_id: 16,
+                  rating: 4.0,
+                  comment: "Gözəl görünür, amma bir az dar.",
+                },
+              ],
+              slug: "mavi-yuksek-bel-salvar",
+            },
+            {
+              product_id: 204,
+              product_name: "Mavi Düz Kəsim Şalvar",
+              price: 60.0,
+              original_price: 80.0,
+              discount: 15,
+              salesCount: 160,
+              image_url:
+                "https://cdn.sorsware.com/oxxo/ContentImages/Product/22y/22YOX-ELAINE/yuksek-bel-straight-fit-denim-pantolon_rodeo-denim-mavi_1_detay.jpg",
+              description: "Mavi Düz Kəsim Denim Pantolon",
+              colors: ["Mavi"],
+              sizes: ["S", "M", "L"],
+              reviews: [
+                {
+                  review_id: 15,
+                  rating: 4.2,
+                  comment: "Çox rahat və yaxşı keyfiyyət.",
+                },
+                {
+                  review_id: 16,
+                  rating: 4.0,
+                  comment: "Gözəl görünür, amma bir az dar.",
+                },
+              ],
+              slug: "mavi-duz-kesim-salvar",
+            },
+            {
+              product_id: 205,
+              product_name: "Narıncı Rahat Şalvar",
+              price: 60.0,
+              original_price: 80.0,
+              discount: 15,
+              salesCount: 160,
+              image_url:
+                "https://cdn.sorsware.com/oxxo/ContentImages/Product/21y/21YOX-PAVBELPAN21Y/carrot-fit-bagcikli-pantolon_aragonite-turuncu_1_detay.jpg",
+              description: "Narıncı Rahat Yumşaq Teksturalı Şalvar",
+              colors: ["Narıncı"],
+              sizes: ["S", "M", "L"],
+              reviews: [
+                {
+                  review_id: 15,
+                  rating: 4.2,
+                  comment: "Çox rahat və yaxşı keyfiyyət.",
+                },
+                {
+                  review_id: 16,
+                  rating: 4.0,
+                  comment: "Gözəl görünür, amma bir az dar.",
+                },
+              ],
+              slug: "narinci-rahat-salvar",
+            },
+            {
+              product_id: 206,
+              product_name: "Narıncı Skinny Şalvar",
+              price: 60.0,
+              original_price: 80.0,
+              discount: 15,
+              salesCount: 160,
+              image_url:
+                "https://cdn.sorsware.com/oxxo/ContentImages/Product/19y/19YOX-WELMIDPAN19Y/orta-bel-dar-paca-pantolon_antik-arizona-turuncu_1_detay.jpg",
+              description: "Narıncı Orta Bel Skinny Pantolon",
+              colors: ["Narıncı"],
+              sizes: ["S", "M", "L"],
+              reviews: [
+                {
+                  review_id: 15,
+                  rating: 4.2,
+                  comment: "Çox rahat və yaxşı keyfiyyət.",
+                },
+                {
+                  review_id: 16,
+                  rating: 4.0,
+                  comment: "Gözəl görünür, amma bir az dar.",
+                },
+              ],
+              slug: "narinci-skinny-salvar",
+            },
+            {
+              product_id: 207,
+              product_name: "Narıncı Jogger Şalvar",
+              price: 60.0,
+              original_price: 80.0,
+              discount: 15,
+              salesCount: 160,
+              image_url:
+                "https://cdn.sorsware.com/oxxo/ContentImages/Product/22y/22YOX-NEMSPANJOG2/yumusak-dokulu-jogger-pantolon--tencel-_antik-tangerine-tango-turuncu_1_detay.jpg",
+              description: "Narıncı Jogger Pantolon",
+              colors: ["Narıncı"],
+              sizes: ["S", "M", "L"],
+              reviews: [
+                {
+                  review_id: 15,
+                  rating: 4.2,
+                  comment: "Çox rahat və yaxşı keyfiyyət.",
+                },
+                {
+                  review_id: 16,
+                  rating: 4.0,
+                  comment: "Gözəl görünür, amma bir az dar.",
+                },
+              ],
+              slug: "narinci-jogger-salvar",
+            },
+            {
+              product_id: 208,
+              product_name: "Haki Cargo Şalvar",
+              price: 60.0,
+              original_price: 80.0,
+              discount: 15,
+              salesCount: 160,
+              image_url:
+                "https://cdn.sorsware.com/oxxo/ContentImages/Product/23y/23YOX-YEARO/yüksek-bel-cargo-pantolon_haki_1_detay.jpg",
+              description: "Haki Yüksek Bel Cargo Pantolon",
+              colors: ["Yaşıl"],
+              sizes: ["S", "M", "L"],
+              reviews: [
+                {
+                  review_id: 15,
+                  rating: 4.2,
+                  comment: "Çox rahat və yaxşı keyfiyyət.",
+                },
+                {
+                  review_id: 16,
+                  rating: 4.0,
+                  comment: "Gözəl görünür, amma bir az dar.",
+                },
+              ],
+              slug: "haki-cargo-salvar",
+            },
+            {
+              product_id: 209,
+              product_name: "Gri Casual Şalvar",
+              price: 60.0,
+              original_price: 80.0,
+              discount: 15,
+              salesCount: 160,
+              image_url:
+                "https://cdn.dsmcdn.com/ty1474/product/media/images/prod/QC/20240814/10/773f1a8d-4389-3489-bf6e-1db99dcf3f92/1_org_zoom.jpg",
+              description: "Gri Casual Havuç Kalıbı Pantolon",
+              colors: ["Gri"],
+              sizes: ["S", "M", "L"],
+              reviews: [
+                {
+                  review_id: 15,
+                  rating: 4.2,
+                  comment: "Çox rahat və yaxşı keyfiyyət.",
+                },
+                {
+                  review_id: 16,
+                  rating: 4.0,
+                  comment: "Gözəl görünür, amma bir az dar.",
+                },
+              ],
+              slug: "gri-casual-salvar",
+            },
+            {
+              product_id: 210,
+              product_name: "Qara Düz Kəsim Şalvar",
+              price: 60.0,
+              original_price: 80.0,
+              discount: 15,
+              salesCount: 160,
+              image_url:
+                "https://cdn.dsmcdn.com/ty1537/product/media/images/ty1536/prod/QC/20240911/18/e6aecfa4-08d6-3842-af91-78bbc59e3c36/1_org_zoom.jpg",
+              description: "Qara Düz Kəsim Slim Fit Pantolon",
+              colors: ["Qara"],
+              sizes: ["S", "M", "L"],
+              reviews: [
+                {
+                  review_id: 15,
+                  rating: 4.2,
+                  comment: "Çox rahat və yaxşı keyfiyyət.",
+                },
+                {
+                  review_id: 16,
+                  rating: 4.0,
+                  comment: "Gözəl görünür, amma bir az dar.",
+                },
+              ],
+              slug: "qara-duz-kesim-salvar",
+            },
+            {
+              product_id: 211,
+              product_name: "Siyah Suni Deri Pantolon",
+              price: 60.0,
+              original_price: 80.0,
+              discount: 15,
+              salesCount: 160,
+              image_url:
+                "https://cdn.dsmcdn.com/ty990/product/media/images/jpim-outputs/assets/product/media/images/20230828/11/408464523/965283557/3/3_org_zoom.jpg",
+              description: "Siyah Suni Deri Wide Leg Cep Detaylı Örme Pantolon",
+              colors: ["Qara"],
+              sizes: ["S", "M", "L"],
+              reviews: [
+                {
+                  review_id: 15,
+                  rating: 4.2,
+                  comment: "Çox rahat və yaxşı keyfiyyət.",
+                },
+                {
+                  review_id: 16,
+                  rating: 4.0,
+                  comment: "Gözəl görünür, amma bir az dar.",
+                },
+              ],
+            },
+            {
+              product_id: 212,
+              product_name: "Beyaz Palazzo Pantolon",
+              price: 60.0,
+              original_price: 80.0,
+              discount: 15,
+              salesCount: 160,
+              image_url:
+                "https://cdn.dsmcdn.com/ty1526/product/media/images/prod/QC/20240905/23/f426d926-332b-32f5-8e35-c2df5e6333f7/1_org_zoom.jpg",
+              description: "Kadın Pileli Kumaş yüksek bel Palazzo Pantolon",
+              colors: ["Ağ"],
+              sizes: ["S", "M", "L"],
+              reviews: [
+                {
+                  review_id: 15,
+                  rating: 4.2,
+                  comment: "Çox rahat və yaxşı keyfiyyət.",
+                },
+                {
+                  review_id: 16,
+                  rating: 4.0,
+                  comment: "Gözəl görünür, amma bir az dar.",
+                },
+              ],
+            },
+            {
+              product_id: 213,
+              product_name: "Korse Detaylı Pantolon",
+              price: 60.0,
+              original_price: 80.0,
+              discount: 15,
+              salesCount: 160,
+              image_url:
+                "https://cdn.dsmcdn.com/ty733/product/media/images/20230216/9/282033805/644547521/1/1_org_zoom.jpg",
+              description: "Siyah Korse Detaylı Dokuma Pantolon",
+              colors: ["Qara"],
+              sizes: ["S", "M", "L"],
+              reviews: [
+                {
+                  review_id: 15,
+                  rating: 4.2,
+                  comment: "Çox rahat və yaxşı keyfiyyət.",
+                },
+                {
+                  review_id: 16,
+                  rating: 4.0,
+                  comment: "Gözəl görünür, amma bir az dar.",
+                },
+              ],
+            },
+            {
+              product_id: 214,
+              product_name: "Kırmızı Bol Paça Pantolon",
+              price: 60.0,
+              original_price: 80.0,
+              discount: 15,
+              salesCount: 160,
+              image_url:
+                "https://cdn.dsmcdn.com/ty1298/product/media/images/prod/PIM/20240506/14/5afac34d-efc3-4b3e-af80-0eba8360566c/1_org_zoom.jpg",
+              description:
+                "Kadın Kırmızı Yüksek Bel Önü Çimalı Bol Paça Likralı Pantolon ALC-X9979",
+              colors: ["Qırmızı"],
+              sizes: ["S", "M", "L"],
+              reviews: [
+                {
+                  review_id: 15,
+                  rating: 4.2,
+                  comment: "Çox rahat və yaxşı keyfiyyət.",
+                },
+                {
+                  review_id: 16,
+                  rating: 4.0,
+                  comment: "Gözəl görünür, amma bir az dar.",
+                },
+              ],
+            },
+            {
+              product_id: 215,
+              product_name: "Kırmızı Keten Pantolon",
+              price: 60.0,
+              original_price: 80.0,
+              discount: 15,
+              salesCount: 160,
+              image_url:
+                "https://cdn.dsmcdn.com/ty1534/product/media/images/prod/QC/20240909/15/bf2b94a6-efce-3878-9775-01797b267cd5/1_org_zoom.jpg",
+              description: "Kırmızı Keten Pantolon",
+              colors: ["Qırmızı"],
+              sizes: ["S", "M", "L"],
+              reviews: [
+                {
+                  review_id: 15,
+                  rating: 4.2,
+                  comment: "Çox rahat və yaxşı keyfiyyət.",
+                },
+                {
+                  review_id: 16,
+                  rating: 4.0,
+                  comment: "Gözəl görünür, amma bir az dar.",
+                },
+              ],
+            },
+            {
+              product_id: 216,
+              product_name: "İspanyol Paça Kırmızı Pantolon",
+              price: 60.0,
+              original_price: 80.0,
+              discount: 15,
+              salesCount: 160,
+              image_url:
+                "https://cdn.dsmcdn.com/ty1412/product/media/images/prod/QC/20240529/00/fe71055d-4bf6-3d7a-b43f-dc08fc628da1/1_org_zoom.jpg",
+              description: "İspanyol Paça Pantolon Kırmızı",
+              colors: ["Qırmızı"],
+              sizes: ["S", "M", "L"],
+              reviews: [
+                {
+                  review_id: 15,
+                  rating: 4.2,
+                  comment: "Çox rahat və yaxşı keyfiyyət.",
+                },
+                {
+                  review_id: 16,
+                  rating: 4.0,
+                  comment: "Gözəl görünür, amma bir az dar.",
+                },
+              ],
+            },
+          ],
+        },
+        // {
+        //   subkateqoriya_id: 4,
+        //   subkateqoriya_adı: "Şortik",
+        //   məhsullar: [
+        //     {
+        //       product_id: 5,
+        //       product_name: "Yay Şortiki",
+        //       price: 40.0,
+        //       original_price: 50.0,
+        //       discount: 20,
+        //       salesCount: 85,
+        //       image_url: "https://example.com/products/summer-shorts.jpg",
+        //       description: "Rahat və sərin yay şortiki.",
+        //       colors: ["White", "Khaki", "Navy"],
+        //       sizes: ["XS", "S", "M", "L"],
+        //       reviews: [
+        //         {
+        //           review_id: 18,
+        //           rating: 4.3,
+        //           comment: "Çox rahat, amma ölçüsü biraz böyük.",
+        //         },
+        //       ],
+        //     },
+        //   ],
+        // },
+        // {
+        //   subkateqoriya_id: 5,
+        //   subkateqoriya_adı: "Qadın Paltosu",
+        //   məhsullar: [
+        //     {
+        //       product_id: 6,
+        //       product_name: "Qış Paltosu",
+        //       price: 150.0,
+        //       original_price: 180.0,
+        //       discount: 0,
+        //       salesCount: 50,
+        //       image_url: "https://example.com/products/winter-coat.jpg",
+        //       description: "İsti və stilli qış paltosu.",
+        //       colors: ["Black", "Camel"],
+        //       sizes: ["S", "M", "L", "XL"],
+        //       reviews: [
+        //         {
+        //           review_id: 19,
+        //           rating: 4.9,
+        //           comment: "Mükəmməl keyfiyyət və dizayn!",
+        //         },
+        //       ],
+        //     },
+        //   ],
+        // },
+        // {
+        //   subkateqoriya_id: 6,
+        //   subkateqoriya_adı: "Qadın Pencəyi",
+        //   məhsullar: [
+        //     {
+        //       product_id: 7,
+        //       product_name: "Klassik Pencək",
+        //       price: 90.0,
+        //       original_price: 110.0,
+        //       discount: 5,
+        //       salesCount: 70,
+        //       image_url: "https://example.com/products/classic-blazer.jpg",
+        //       description: "Ofis və gündəlik istifadə üçün şık pencək.",
+        //       colors: ["Black", "Navy", "Grey"],
+        //       sizes: ["S", "M", "L"],
+        //       reviews: [
+        //         {
+        //           review_id: 20,
+        //           rating: 4.6,
+        //           comment: "Çox şık və keyfiyyətli.",
+        //         },
+        //       ],
+        //     },
+        //   ],
+        // },
+        // {
+        //   subkateqoriya_id: 7,
+        //   subkateqoriya_adı: "Yataq Geyimi",
+        //   məhsullar: [
+        //     {
+        //       product_id: 8,
+        //       product_name: "İpək Pijama Dəsti",
+        //       price: 75.0,
+        //       original_price: 90.0,
+        //       discount: 10,
+        //       salesCount: 100,
+        //       image_url: "https://example.com/products/silk-pajama-set.jpg",
+        //       description: "Lüks və rahat ipək pijama dəsti.",
+        //       colors: ["Pink", "Lavender", "Champagne"],
+        //       sizes: ["S", "M", "L"],
+        //       reviews: [
+        //         {
+        //           review_id: 21,
+        //           rating: 4.8,
+        //           comment: "Çox rahat və lüks hiss etdirir.",
+        //         },
+        //       ],
+        //     },
+        //   ],
+        // },
+        {
+          subkateqoriya_id: 8,
+          subkateqoriya_adı: "Qadın Çantası",
+          məhsullar: [
+            {
+              product_id: 300,
+              product_name: "BUTIGO Qadın Çanta",
+              price: 25.0,
+              original_price: 50.0,
+              discount: 50, // (50 - 25) / 50 * 100 = 50%
+              salesCount: 80,
+              image_url:
+                "https://flostore.az/wp-content/uploads/2024/03/DHO-00065802-12-300x400.jpg",
+              description:
+                "Zərif və dayanıqlı materialdan hazırlanmış şık çiyin çantası.",
+              colors: ["Qara"],
+              sizes: ["ST"],
+              reviews: [
+                {
+                  review_id: 22,
+                  rating: 4.7,
+                  comment: "Gözəl dizayn və yüksək keyfiyyət.",
+                },
+              ],
+            },
+            {
+              product_id: 301,
+              product_name: "BUTIGO Qadın Çanta",
+              price: 40.0,
+              original_price: 70.0,
+              discount: 42.86, // (70 - 40) / 70 * 100 ≈ 42.86%
+              salesCount: 80,
+              image_url:
+                "https://flostore.az/wp-content/uploads/2024/02/DHO-00064124-600x900.jpg",
+              description: "Hər gün üçün uyğun olan şık çiyin çantası.",
+              colors: ["Qara"],
+              sizes: ["ST"],
+              reviews: [
+                {
+                  review_id: 22,
+                  rating: 4.7,
+                  comment: "Gözəl dizayn və yüksək keyfiyyət.",
+                },
+              ],
+            },
+            {
+              product_id: 302,
+              product_name: "BLUMBERJACK Qadın Çanta",
+              price: 200.0,
+              original_price: 230.0,
+              discount: 13.04, // (230 - 200) / 230 * 100 ≈ 13.04%
+              salesCount: 80,
+              image_url:
+                "https://flostore.az/wp-content/uploads/2024/02/DHO-00064120-600x900.jpg",
+              description:
+                "Gündəlik istifadə üçün mükəmməl rahatlıqda və şık dizayna malik çiyin çantası.",
+              colors: ["Qara"],
+              sizes: ["ST"],
+              reviews: [
+                {
+                  review_id: 22,
+                  rating: 4.7,
+                  comment: "Gözəl dizayn və yüksək keyfiyyət.",
+                },
+              ],
+            },
+            {
+              product_id: 303,
+              product_name: "BLUMBERJACK Qadın Çanta",
+              price: 200.0,
+              original_price: 250.0,
+              discount: 20, // (250 - 200) / 250 * 100 = 20%
+              salesCount: 80,
+              image_url:
+                "https://flostore.az/wp-content/uploads/2023/04/DHO-00059276-5-1.jpg",
+              description:
+                "Şık və minimal dizaynlı çiyin çantası, gündəlik istifadə üçün idealdır.",
+              colors: ["Ağ"],
+              sizes: ["ST"],
+              reviews: [
+                {
+                  review_id: 22,
+                  rating: 4.7,
+                  comment: "Gözəl dizayn və yüksək keyfiyyət.",
+                },
+              ],
+            },
+            {
+              product_id: 304,
+              product_name: "BLUMBERJACK Qadın Çanta",
+              price: 140.0,
+              original_price: 200.0,
+              discount: 30, // (200 - 140) / 200 * 100 = 30%
+              salesCount: 80,
+              image_url:
+                "https://flostore.az/wp-content/uploads/2023/03/DHO-00058154-5-600x900.jpg",
+              description:
+                "Gündəlik istifadə üçün mükəmməl olan şık və rahat çiyin çantası.",
+              colors: ["Mavi"],
+              sizes: ["ST"],
+              reviews: [
+                {
+                  review_id: 22,
+                  rating: 4.7,
+                  comment: "Gözəl dizayn və yüksək keyfiyyət.",
+                },
+              ],
+            },
+            {
+              product_id: 305,
+              product_name: "LUMBERJACK Qadın Çanta",
+              price: 130.0,
+              original_price: 150.0,
+              discount: 13.33, // (150 - 130) / 150 * 100 ≈ 13.33%
+              salesCount: 80,
+              image_url:
+                "https://flostore.az/wp-content/uploads/2023/02/DHO-00055187-4-600x900.jpg",
+              description:
+                "Hər gün üçün uyğun, şık və modern dizaynlı çiyin çantası.",
+              colors: ["Mavi"],
+              sizes: ["ST"],
+              reviews: [
+                {
+                  review_id: 22,
+                  rating: 4.7,
+                  comment: "Gözəl dizayn və yüksək keyfiyyət.",
+                },
+              ],
+            },
+            {
+              product_id: 306,
+              product_name: "LUMBERJACK Qadın Çanta",
+              price: 70.0,
+              original_price: 90.0,
+              discount: 22.22, // (90 - 70) / 90 * 100 ≈ 22.22%
+              salesCount: 80,
+              image_url:
+                "https://flostore.az/wp-content/uploads/2023/02/DHO-00057612-5-600x900.jpg",
+              description:
+                "Şık və rəngarəng dizayna malik çiyin çantası, gündəlik istifadə üçün idealdır.",
+              colors: ["Narinci"],
+              sizes: ["ST"],
+              reviews: [
+                {
+                  review_id: 22,
+                  rating: 4.7,
+                  comment: "Gözəl dizayn və yüksək keyfiyyət.",
+                },
+              ],
+            },
+            {
+              product_id: 307,
+              product_name: "Çiyin çantası W.D.Polo ağ",
+              price: 44.0,
+              original_price: 80.0,
+              discount: 45, // (80 - 44) / 80 * 100 = 45%
+              salesCount: 80,
+              image_url:
+                "https://strgimgr.umico.az/sized/840/679091-222b96bdb2b5465a66ea36118ae777c5.jpg",
+              description:
+                "Zərif və şık dizayna malik ağ çiyin çantası, hər gün üçün mükəmməl seçim.",
+              colors: ["Ağ"],
+              sizes: ["ST"],
+              reviews: [
+                {
+                  review_id: 22,
+                  rating: 4.7,
+                  comment: "Gözəl dizayn və yüksək keyfiyyət.",
+                },
+              ],
+            },
+            {
+              product_id: 308,
+              product_name: "Fendi",
+              price: 1900.0,
+              original_price: 2000.0,
+              discount: 5, // (2000 - 1900) / 2000 * 100 = 5%
+              salesCount: 80,
+              image_url:
+                "https://cdn2.emporium.az/i/p/500/232717-ccfd9ceae8987b3691a9c1745df65a9e.jpg",
+              description: "Dəri Sunshine kiçik çantası",
+              colors: ["Narinci"],
+              sizes: ["ST"],
+              reviews: [
+                {
+                  review_id: 22,
+                  rating: 4.7,
+                  comment: "Gözəl dizayn və yüksək keyfiyyət.",
+                },
+              ],
+            },
+            {
+              product_id: 309,
+              product_name: "Bottega Veneta",
+              price: 44.0,
+              original_price: 80.0,
+              discount: 45, // (80 - 44) / 80 * 100 = 45%
+              salesCount: 80,
+              image_url:
+                "https://cdn2.emporium.az/i/p/500/188969-58cd51496d6e35f03443c2459a84bb47.jpg",
+              description:
+                "Tünd-qırmızı rəngli dəri 'Cassette' aşırma çantası, göz oxşayan dizaynla.",
+              colors: ["Qırmızı"],
+              sizes: ["ST"],
+              reviews: [
+                {
+                  review_id: 22,
+                  rating: 4.7,
+                  comment: "Gözəl dizayn və yüksək keyfiyyət.",
+                },
+              ],
+            },
+            {
+              product_id: 310,
+              product_name: "Marc Jacobs",
+              price: 700.0,
+              original_price: 800.0,
+              discount: 12.5, // (800 - 700) / 800 * 100 = 12.5%
+              salesCount: 80,
+              image_url:
+                "https://cdn2.emporium.az/i/p/500/294061-8a1306b416f4bf5cd9d13c5e4225d061.jpg",
+              description:
+                "The Jelly Small Tote çantası, gündəlik istifadə üçün ideal seçim.",
+              colors: ["Qırmızı"],
+              sizes: ["ST"],
+              reviews: [
+                {
+                  review_id: 22,
+                  rating: 4.7,
+                  comment: "Gözəl dizayn və yüksək keyfiyyət.",
+                },
+              ],
+            },
+            {
+              product_id: 311,
+              product_name: "Tory Burch",
+              price: 540.0,
+              original_price: 560.0,
+              discount: 3.57, // (560 - 540) / 560 * 100 ≈ 3.57%
+              salesCount: 80,
+              image_url:
+                "https://cdn2.emporium.az/i/p/500/287736-43cc5f51e5ec2ca87bd2dec1b9b4d25c.jpg",
+              description:
+                "Loqo detallı mini çanta, zərif və funksional aksesuar.",
+              colors: ["Sarı"],
+              sizes: ["ST"],
+              reviews: [
+                {
+                  review_id: 22,
+                  rating: 4.7,
+                  comment: "Gözəl dizayn və yüksək keyfiyyət.",
+                },
+              ],
+            },
+
+            {
+              product_id: 312,
+              product_name: "Tory Burch",
+              price: 540.0,
+              original_price: 560.0,
+              discount: 3.57, // (560 - 540) / 560 * 100 ≈ 3.57%
+              salesCount: 80,
+              image_url:
+                "https://cdn2.emporium.az/i/p/500/248229-1b9621dbd58313178774d5622b021198.jpg",
+              description:
+                "Sırıqlı dizaynlı kiçik ölçülü çiyindən asma Fleming çantası.",
+              colors: ["Sarı"],
+              sizes: ["ST"],
+              reviews: [
+                {
+                  review_id: 22,
+                  rating: 4.7,
+                  comment: "Gözəl dizayn və yüksək keyfiyyət.",
+                },
+              ],
+            },
+            {
+              product_id: 313,
+              product_name: "Jimmy Choo",
+              price: 140.0,
+              original_price: 160.0,
+              discount: 12.5, // (160 - 140) / 160 * 100 = 12.5%
+              salesCount: 80,
+              image_url:
+                "https://cdn2.emporium.az/i/p/500/258772-59d1b6e65e8afc23ce53dba8326f77dc.jpg",
+              description: "Kristalla bəzədilmiş Bon Bon mini çantası.",
+              colors: ["Yaşıl"],
+              sizes: ["ST"],
+              reviews: [
+                {
+                  review_id: 22,
+                  rating: 4.7,
+                  comment: "Gözəl dizayn və yüksək keyfiyyət.",
+                },
+              ],
+            },
+          ],
+        },
+        {
+          subkateqoriya_id: 9,
+          subkateqoriya_adı: "Kosmetika",
+          məhsullar: [
+            {
+              product_id: 400,
+              product_name: "Estée Lauder",
+              price: 100.0,
+              original_price: 120.0,
+              discount: 16.67, // (120 - 100) / 120 * 100 ≈ 16.67%
+              salesCount: 200,
+              image_url:
+                "https://cdn2.emporium.az/i/p/500/169119-p1f1qpkrpq3g51qne1u811c455uq7.jpg",
+              description: "Double Wear qalıcı tonal kremi - 1N2 Ecru.",
+              colors: ["Sarı"],
+              reviews: [
+                {
+                  review_id: 23,
+                  rating: 4.5,
+                  comment: "Rənglər çox gözəl və pigmentlidir.",
+                },
+              ],
+            },
+            {
+              product_id: 401,
+              product_name: "MAC",
+              price: 80.0,
+              original_price: 80.0,
+              discount: 0, // (80 - 80) / 80 * 100 = 0%
+              salesCount: 200,
+              image_url:
+                "https://cdn2.emporium.az/i/p/500/266015-49b56201dbc97a18775c225d0ca4e4ba.jpg",
+              description:
+                "Kirşan və tonal əsas Studio Fix Powder Plus Foundation.",
+              colors: ["Sarı"],
+              reviews: [
+                {
+                  review_id: 23,
+                  rating: 4.5,
+                  comment: "Rənglər çox gözəl və pigmentlidir.",
+                },
+              ],
+            },
+            {
+              product_id: 402,
+              product_name: "Bobbi Brown",
+              price: 60.0,
+              original_price: 60.0,
+              discount: 0, // (60 - 60) / 60 * 100 = 0%
+              salesCount: 200,
+              image_url:
+                "https://cdn2.emporium.az/i/p/500/237401-b57947cf5b2f3ada78c2799b72b9ed33.jpg",
+              description: "Corrector Skin Full Cover Concealer - Warm Beige.",
+              colors: ["Sarı"],
+              reviews: [
+                {
+                  review_id: 23,
+                  rating: 4.5,
+                  comment: "Rənglər çox gözəl və pigmentlidir.",
+                },
+              ],
+            },
+            {
+              product_id: 403,
+              product_name: "Estée Lauder",
+              price: 135.0,
+              original_price: 135.0,
+              discount: 0, // (135 - 135) / 135 * 100 = 0%
+              salesCount: 200,
+              image_url:
+                "https://cdn2.emporium.az/i/p/500/224277-7fa7454bf2c96c53040891f4f026ffba.jpg",
+              description:
+                "Pure Color Envy göz kölgəsi paleti - 01 Rebel Petals.",
+              colors: ["Sarı"],
+              reviews: [
+                {
+                  review_id: 23,
+                  rating: 4.5,
+                  comment: "Rənglər çox gözəl və pigmentlidir.",
+                },
+              ],
+            },
+            {
+              product_id: 404,
+              product_name: "Bobbi Brown",
+              price: 65.0,
+              original_price: 65.0,
+              discount: 0, // (65 - 65) / 65 * 100 = 0%
+              salesCount: 200,
+              image_url:
+                "https://cdn2.emporium.az/i/p/500/231831-b014ffedae42a65c1a56bef7fcb815c1.jpg",
+              description:
+                "Natural Brow Shaper universal qaş geli - Espresso​.",
+              colors: ["Qara"],
+              reviews: [
+                {
+                  review_id: 23,
+                  rating: 4.5,
+                  comment: "Rənglər çox gözəl və pigmentlidir.",
+                },
+              ],
+            },
+            {
+              product_id: 405,
+              product_name: "Estée Lauder",
+              price: 90.0,
+              original_price: 90.0,
+              discount: 0, // (90 - 90) / 90 * 100 = 0%
+              salesCount: 200,
+              image_url:
+                "https://cdn2.emporium.az/i/p/500/216894-70f41834a5bfcfdaa4efdb7892612a5f.jpg",
+              description: "Nəmləndirici dodaq balzamı - 003 Sun Crystal​.",
+              colors: ["Qırmızı"],
+              reviews: [
+                {
+                  review_id: 23,
+                  rating: 4.5,
+                  comment: "Rənglər çox gözəl və pigmentlidir.",
+                },
+              ],
+            },
+            {
+              product_id: 406,
+              product_name: "MAC",
+              price: 60.0,
+              original_price: 60.0,
+              discount: 0, // (60 - 60) / 60 * 100 = 0%
+              salesCount: 200,
+              image_url:
+                "https://cdn2.emporium.az/i/p/500/288067-0fb61be53f863995a53d16280d861512.jpg",
+              description:
+                "M·A·Cximal Silky Matte Lipstick dodaq boyası - Ruby Woo.",
+              colors: ["Qırmızı"],
+              reviews: [
+                {
+                  review_id: 23,
+                  rating: 4.5,
+                  comment: "Rənglər çox gözəl və pigmentlidir.",
+                },
+              ],
+            },
+            {
+              product_id: 407,
+              product_name: "Bobbi Brown",
+              price: 80.0,
+              original_price: 80.0,
+              discount: 0, // (80 - 80) / 80 * 100 = 0%
+              salesCount: 200,
+              image_url:
+                "https://cdn2.emporium.az/i/p/500/282345-b0346e661d79e25ca4fcfdabf62263b6.jpg",
+              description: "Ənlik - Flame.",
+              colors: ["Qırmızı"],
+              reviews: [
+                {
+                  review_id: 23,
+                  rating: 4.5,
+                  comment: "Rənglər çox gözəl və pigmentlidir.",
+                },
+              ],
+            },
+            {
+              product_id: 408,
+              product_name: "MAC",
+              price: 50.0,
+              original_price: 50.0,
+              discount: 0, // (50 - 50) / 50 * 100 = 0%
+              salesCount: 200,
+              image_url:
+                "https://cdn2.emporium.az/i/p/500/199494-5025a18a47f320f68d14ab9877bbfcbd.jpg",
+              description:
+                "Dodaq boyası 'Retro Matte Liquid Lipcolour' - High Drama.",
+              colors: ["Qırmızı"],
+              reviews: [
+                {
+                  review_id: 23,
+                  rating: 4.5,
+                  comment: "Rənglər çox gözəl və pigmentlidir.",
+                },
+              ],
+            },
+            {
+              product_id: 409,
+              product_name: "MAC",
+              price: 45.0,
+              original_price: 45.0,
+              discount: 0, // (45 - 45) / 45 * 100 = 0%
+              salesCount: 200,
+              image_url:
+                "https://cdn2.emporium.az/i/p/500/267751-e19408c71f9fd8e1e6aab1103945be22.jpg",
+              description: "Göz kölgəsi - Mint Condition.",
+              colors: ["Yaşıl"],
+              reviews: [
+                {
+                  review_id: 23,
+                  rating: 4.5,
+                  comment: "Rənglər çox gözəl və pigmentlidir.",
+                },
+              ],
+            },
+            {
+              product_id: 410,
+              product_name: "MAC",
+              price: 50.0,
+              original_price: 50.0,
+              discount: 0, // (50 - 50) / 50 * 100 = 0%
+              salesCount: 200,
+              image_url:
+                "https://cdn2.emporium.az/i/p/500/238951-48ef0080c1f674754bec6b3592d64403.jpg",
+              description: "Göz üçun Colour excess layneri - Pool Shark.",
+              colors: ["Yaşıl"],
+              reviews: [
+                {
+                  review_id: 23,
+                  rating: 4.5,
+                  comment: "Rənglər çox gözəl və pigmentlidir.",
+                },
+              ],
+            },
+            {
+              product_id: 411,
+              product_name: "MAC",
+              price: 40.0,
+              original_price: 40.0,
+              discount: 0, // (40 - 40) / 40 * 100 = 0%
+              salesCount: 200,
+              image_url:
+                "https://cdn2.emporium.az/i/p/500/223799-0abce88b7163100a844caf5324f6e201.jpg",
+              description: "Mat effektli göz layneri - 'Eye kohl - Minted'.",
+              colors: ["Yaşıl"],
+              reviews: [
+                {
+                  review_id: 23,
+                  rating: 4.5,
+                  comment: "Rənglər çox gözəl və pigmentlidir.",
+                },
+              ],
+            },
+            {
+              product_id: 412,
+              product_name: "Lancôme",
+              price: 65.0,
+              original_price: 65.0,
+              discount: 0, // (65 - 65) / 65 * 100 = 0%
+              image_url:
+                "https://cdn2.emporium.az/i/p/500/289145-e7be2a652d9c252d7c4714c0bba704f1.jpg",
+              description: "Makiyaj təmizləyici süd Lait Galatee Confort.",
+              colors: ["Ağ"],
+              reviews: [
+                {
+                  review_id: 24,
+                  rating: 5.0,
+                  comment:
+                    "Bu məhsul makiyajı asanlıqla təmizləyir və dərimdə heç bir qıcıqlanma yaratmır. Çox məmnunam!",
+                },
+                {
+                  review_id: 25,
+                  rating: 4.8,
+                  comment:
+                    "Təhlükəsiz və yüngül formula, dərim üçün mükəmməl. Yenidən alacağam!",
+                },
+              ],
+            },
+            {
+              product_id: 413,
+              product_name: "Lancôme",
+              price: 70.0,
+              original_price: 70.0,
+              discount: 0, // (70 - 70) / 70 * 100 = 0%
+              salesCount: 100,
+              image_url:
+                "https://cdn2.emporium.az/i/p/500/164067-p1evk1juv71ol9e7kqb1gbo1t527.jpg",
+              description:
+                "Göz makiyajını silmək üçün vasitə 'Gentle Eye Makeup Remover'.",
+              colors: ["Mavi"],
+              reviews: [
+                {
+                  review_id: 26,
+                  rating: 4.7,
+                  comment:
+                    "Göz makiyajını rahatlıqla silir. Həqiqətən yüngül və təsirlidir.",
+                },
+                {
+                  review_id: 27,
+                  rating: 5.0,
+                  comment:
+                    "Bu məhsul gözlərimdəki makiyajı asanlıqla və sürətlə çıxarır. Çox sevirəm!",
+                },
+              ],
+            },
+            {
+              product_id: 414,
+              product_name: "Lancôme",
+              price: 75.0,
+              original_price: 75.0,
+              discount: 0, // (75 - 75) / 75 * 100 = 0%
+              salesCount: 60,
+              image_url:
+                "https://cdn2.emporium.az/i/p/500/165127-p1f016q2k91eli1hu21kmm5jjh0f7.jpg",
+              description:
+                "''Bi-Facil'' Iki hissəli göz üçün makiyaj təmizləyici vasitə.",
+              colors: ["Mavi"],
+              reviews: [
+                {
+                  review_id: 28,
+                  rating: 4.9,
+                  comment:
+                    "Hər dəfə istifadə etdiyimdə, göz makiyajım tamamilə təmizlənir. Tərifəlayiqdir!",
+                },
+                {
+                  review_id: 29,
+                  rating: 4.6,
+                  comment:
+                    "İki hissəli formula göz makiyajını asanlıqla və tez bir zamanda təmizləyir. Mükəmməl!",
+                },
+              ],
+            },
+          ],
+        },
+        {
+          subkateqoriya_id: 10,
+          subkateqoriya_adı: "Aksesuarlar",
+          məhsullar: [
+            {
+              product_id: 500,
+              product_name: "Les Nereides",
+              price: 80.0,
+              original_price: 90.0,
+              discount: 11.11, // Hesablanmış endirim
+              salesCount: 150,
+              image_url:
+                "https://cdn2.emporium.az/i/p/500/250253-c6c7c689503a6d122516953096a9c4b4.jpg",
+              description: "Pion gülü detallı boyunbaq.",
+              colors: ["Ağ"],
+              sizes: ["One Size"],
+              reviews: [
+                {
+                  review_id: 1001,
+                  rating: 5.0,
+                  comment:
+                    "Bu boyunbaq sadəcə gözəl deyil, həm də hər vəziyyətə uyğundur. Sevirəm!",
+                },
+                {
+                  review_id: 1002,
+                  rating: 4.8,
+                  comment:
+                    "Dizaynı və keyfiyyəti mükəmməl! Fırçalananda da parlaq qalır.",
+                },
+              ],
+              slug: "les-nereides", // Slug əlavə edildi
+            },
+            {
+              product_id: 501,
+              product_name: "Versace",
+              price: 80.0,
+              original_price: 190.0,
+              discount: 57.89, // Hesablanmış endirim
+              salesCount: 150,
+              image_url:
+                "https://cdn2.emporium.az/i/p/500/251321-bb8395ab6cca9aafac60febfcb5db5b8.jpg",
+              description: "Loqo detallı Medusa boyunbağısı.",
+              colors: ["Qara"],
+              sizes: ["One Size"],
+              reviews: [
+                {
+                  review_id: 1003,
+                  rating: 5.0,
+                  comment:
+                    "Zərif dizaynı ilə hər kəsin diqqətini çəkir. Hər kəsə tövsiyə edirəm!",
+                },
+                {
+                  review_id: 1004,
+                  rating: 4.7,
+                  comment:
+                    "Boyunbağı rahatdır və hər cür geyimlə gözəl görünür.",
+                },
+              ],
+              slug: "versace", // Slug əlavə edildi
+            },
+            {
+              product_id: 502,
+              product_name: "Damiani",
+              price: 3000.0,
+              original_price: 3200.0,
+              discount: 6.25, // Hesablanmış endirim
+              salesCount: 150,
+              image_url:
+                "https://cdn2.emporium.az/i/p/500/246446-19da2470fc86ac9f10ed74fa21797e2b.jpg",
+              description: "Brilyant və oniks daşlarla bəzədilmiş boyunbağı.",
+              colors: ["Qırmızı"],
+              sizes: ["One Size"],
+              reviews: [
+                {
+                  review_id: 1005,
+                  rating: 4.9,
+                  comment:
+                    "Möhtəşəm! Dəriyə qarşı yumşaqdır və parıltısı göz alıcıdır.",
+                },
+                {
+                  review_id: 1006,
+                  rating: 5.0,
+                  comment:
+                    "Dəyəri hər şeyə dəyər. Bu boyunbaq mükəmməl hədiyyədir!",
+                },
+              ],
+              slug: "damiani-1", // Slug əlavə edildi
+            },
+            {
+              product_id: 503,
+              product_name: "Damiani",
+              price: 3000.0,
+              original_price: 3200.0,
+              discount: 6.25, // Hesablanmış endirim
+              salesCount: 150,
+              image_url:
+                "https://cdn2.emporium.az/i/p/500/246446-19da2470fc86ac9f10ed74fa21797e2b.jpg",
+              description: "Brilyant və oniks daşlarla bəzədilmiş boyunbağı.",
+              colors: ["Qırmızı"],
+              sizes: ["One Size"],
+              reviews: [
+                {
+                  review_id: 1005,
+                  rating: 4.9,
+                  comment:
+                    "Möhtəşəm! Dəriyə qarşı yumşaqdır və parıltısı göz alıcıdır.",
+                },
+                {
+                  review_id: 1006,
+                  rating: 5.0,
+                  comment:
+                    "Dəyəri hər şeyə dəyər. Bu boyunbaq mükəmməl hədiyyədir!",
+                },
+              ],
+              slug: "damiani-2", // Slug əlavə edildi
+            },
+            {
+              product_id: 504,
+              product_name: "Chaumet",
+              price: 8000.0,
+              original_price: 8235.0,
+              discount: 6.25, // Hesablanmış endirim
+              salesCount: 150,
+              image_url:
+                "https://cdn2.emporium.az/i/p/500/233359-ebbe8099dd613d47bedfcfe7f4391a68.jpg",
+              description:
+                "Malaxit və brilyant daşlarla bəzədilmiş Jeux De Liens boyunbağısı",
+              colors: ["Yaşıl"],
+              sizes: ["One Size"],
+              reviews: [
+                {
+                  review_id: 1005,
+                  rating: 4.9,
+                  comment:
+                    "Möhtəşəm! Dəriyə qarşı yumşaqdır və parıltısı göz alıcıdır.",
+                },
+                {
+                  review_id: 1006,
+                  rating: 5.0,
+                  comment:
+                    "Dəyəri hər şeyə dəyər. Bu boyunbaq mükəmməl hədiyyədir!",
+                },
+              ],
+              slug: "chaumet", // Slug əlavə edildi
+            },
+          ],
+        },
+      ],
+    },
+
+    {
+      kateqoriya_id: 2,
+      kateqoriya_adı: "Kişi",
+      subkateqoriyalar: [
+        {
+          subkateqoriya_id: 1,
+          subkateqoriya_adı: "Kişi Ust Geyimi",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 2,
+          subkateqoriya_adı: "Kişi Ayaqqabı",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 3,
+          subkateqoriya_adı: "Kişi Aksesuarlari",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id:4,
+          subkateqoriya_adı: "Kişi Çantası",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id:5,
+          subkateqoriya_adı: "Kişi Koynek",
+          məhsullar: [],
+        },
+        // {
+        //   subkateqoriya_id: 8,
+        //   subkateqoriya_adı: "Kəmər",
+        //   məhsullar: [],
+        // },
+        // {
+        //   subkateqoriya_id: 9,
+        //   subkateqoriya_adı: "Eynək",
+        //   məhsullar: [],
+        // },
+        {
+          subkateqoriya_id: 6,
+          subkateqoriya_adı: "Qalstuk",
+          məhsullar: [],
+        },
+        // {
+        //   subkateqoriya_id: 11,
+        //   subkateqoriya_adı: "Pul Kisəsi",
+        //   məhsullar: [],
+        // },
+        // {
+        //   subkateqoriya_id: 12,
+        //   subkateqoriya_adı: "Saat",
+        //   məhsullar: [
+        //     {
+        //       product_id: 20,
+        //       product_name: "Sony WH-1000XM4",
+        //       price: 950.0,
+        //       original_price: 1000.0,
+        //       discount: 5,
+        //       image_url: "https://example.com/products/product-i.jpg",
+        //       description: "Sony WH-1000XM4 üçün təsvir.",
+        //       colors: ["Black", "Silver"],
+        //       sizes: ["L"],
+        //       reviews: [
+        //         {
+        //           review_id: 3,
+        //           rating: 4.5,
+        //           comment: "Mükəmməl səs keyfiyyəti.",
+        //         },
+        //       ],
+        //     },
+        //   ],
+        // },
+      ],
+    },
+
+    {
+      kateqoriya_id: 3,
+      kateqoriya_adı: "Elektronika",
+      subkateqoriyalar: [
+        {
+          subkateqoriya_id:50,
+          subkateqoriya_adı: "Telefon ve Kompüter",
+          məhsullar:  [
+              {
+                "product_id": 1201,
+                "product_name": "LENOVO IdeaPad 1 15IGL7 82V700CURK",
+                "price": 1500.0,
+                "slug": "oyun_noutbuku",
+                "original_price": 1800.0,
+                "discount": 20,
+                "salesCount": 200,
+                "image_url": "https://aztechshop.az/image/cache/webp/catalog/Lenovo/LENOVO%20IdeaPad%201%2015IGL7%20Cloud%20Grey%20(7)sayt%20-533x398.webp",
+                "description": "Oyun sevənlər üçün yüksək performanslı noutbuk.",
+                "colors": ["Qara"],
+                "sizes": ["15.6 düym", "17.3 düym"],
+                "reviews": [
+                  {
+                    "review_id": 1,
+                    "rating": 4.8,
+                    "comment": "Mükəmməl performans və qrafika."
+                  },
+                  {
+                    "review_id": 2,
+                    "rating": 4.2,
+                    "comment": "Puluna görə yaxşıdır."
+                  }
+                ]
+              },
+              {
+                "product_id": 1202,
+                "product_name": "Notbuk Chuwi GemiBook Plus K1",
+                "price": 1200.0,
+                "slug": "ultrabuk",
+                "original_price": 1400.0,
+                "discount": 15,
+                "salesCount": 180,
+                "image_url": "https://aztechshop.az/image/cache/webp/catalog/Lenovo/Lenovo%20Ideapad%20Slim%203%20(1)Sayt-1000x832.webp",
+                "description": "Peşəkarlar üçün yüngül və daşınan ultrabuk.",
+                "colors": [ "Qara"],
+                "sizes": ["13.3 düym", "14 düym"],
+                "reviews": [
+                  {
+                    "review_id": 1,
+                    "rating": 4.5,
+                    "comment": "Səyahət və iş üçün mükəmməldir."
+                  },
+                  {
+                    "review_id": 2,
+                    "rating": 4.7,
+                    "comment": "Sərfəli dizayn və sürətli performans."
+                  }
+                ]
+              },
+              {
+                "product_id": 1203,
+                "product_name": "Notbuk Acer A315-59-30Z5",
+                "price": 1000.0,
+                "slug": "cevrile_bilen_noutbuk",
+                "original_price": 1200.0,
+                "discount": 17,
+                "salesCount": 220,
+                "image_url": "https://aztechshop.az/image/cache/webp/catalog/Lenovo/LENOVO%20IdeaPad%20Slim%205%20Cloud%20Grey%20NoFinger(12)Sayt-533x398.webp",
+                "description": "Sensor ekranlı çoxfunksiyalı 2-1 noutbuk.",
+                "colors": ["Ağ"],
+                "sizes": ["14 düym"],
+                "reviews": [
+                  {
+                    "review_id": 1,
+                    "rating": 4.3,
+                    "comment": "Həm iş, həm də əyləncə üçün çox rahatdır."
+                  },
+                  {
+                    "review_id": 2,
+                    "rating": 4.1,
+                    "comment": "Yaxşı batareya ömrü və performans."
+                  }
+                ]
+            },
+              {
+                "product_id": 1204,
+                "product_name": "https://www.bakuelectronics.az/assets/cache_image/products/95872/a66716qumcjh8xbkr8zsxef313hq2ljz-%E2%80%94-kopiya_429x419far_efe.jpg",
+                "price": 1300.0,
+                "slug": "biznes_noutbuku",
+                "original_price": 1500.0,
+                "discount": 13,
+                "salesCount": 150,
+                "image_url": "https://www.bakuelectronics.az/assets/cache_image/products/95872/a66716qumcjh8xbkr8zsxef313hq2ljz-%E2%80%94-kopiya_429x419far_efe.jpg",
+                "description": "Ehtiyatlı təhlükəsizlik xüsusiyyətləri ilə etibarlı noutbuk.",
+                "colors": [ "Qara"],
+                "sizes": ["15 düym"],
+                "reviews": [
+                  {
+                    "review_id": 1,
+                    "rating": 4.6,
+                    "comment": "Biznes və çox iş üçün əla."
+                  },
+                  {
+                    "review_id": 2,
+                    "rating": 4.4,
+                    "comment": "Təhlükəsiz və sürətli."
+                  }
+                ]
+            },
+              
+              {
+                "product_id": 1205,
+                "product_name": "TELEFON XIAOMI 14 ULTRA ",
+                "price": 300.0,
+                "slug": "budce_smartfonu",
+                "original_price": 350.0,
+                "discount": 14,
+                "salesCount": 500,
+                "image_url": "https://www.bakuelectronics.az/assets/cache_image/products/150908/xiaomi-14-ultra-16gb512gb-6_260x204_adf.jpg",
+                "description": "Əsas xüsusiyyətlərlə əlverişli smartfon.",
+                "colors": ["Qara"],
+                "sizes": ["6.1 düym"],
+                "reviews": [
+                  {
+                    "review_id": 1,
+                    "rating": 4.0,
+                    "comment": "Puluna görə yaxşıdır."
+                  },
+                  {
+                    "review_id": 2,
+                    "rating": 3.8,
+                    "comment": "Sadə, amma etibarlı."
+                  }
+                ]
+              },
+              {
+                "product_id": 1206,
+                "product_name": "Smartfon Samsung Galaxy S24",
+                "price": 1000.0,
+                "slug": "flahqman_smartfon",
+                "original_price": 1200.0,
+                "discount": 17,
+                "salesCount": 320,
+                "image_url": "https://www.bakuelectronics.az/assets/cache_image/products/141434/samsung-galaxy-s24-1_260x204_adf.jpg",
+                "description": "Müasir xüsusiyyətlərə sahib premium smartfon.",
+                "colors": ["Qara"],
+                "sizes": ["6.7 düym"],
+                "reviews": [
+                  {
+                    "review_id": 1,
+                    "rating": 4.9,
+                    "comment": "Kamera və ekran əla."
+                  },
+                  {
+                    "review_id": 2,
+                    "rating": 4.7,
+                    "comment": "Yüksək performans."
+                  }
+                ]
+              },
+              {
+                "product_id": 1207,
+                "product_name": "Smartfon POCO M6 PRO ",
+                "price": 700.0,
+                "slug": "kompakt_smartfon",
+                "original_price": 800.0,
+                "discount": 12,
+                "salesCount": 280,
+                "image_url": "https://www.bakuelectronics.az/assets/cache_image/products/142093/smartfon-xiaomi-poco-m6-pro-12gb512-gb-blue-1_260x204_adf.jpg",
+                "description": "Yüksək səviyyəli texniki xüsusiyyətləri olan kiçik smartfon.",
+                "colors": ["Mavi"],
+                "sizes": ["5.8 düym"],
+                "reviews": [
+                  {
+                    "review_id": 1,
+                    "rating": 4.4,
+                    "comment": "Kompakt ölçüdə yüksək performans."
+                  },
+                  {
+                    "review_id": 2,
+                    "rating": 4.5,
+                    "comment": "Bir əl ilə istifadə üçün ideal."
+                  }
+                ]
+              },
+              {
+                "product_id": 1208,
+                "product_name": "Smartfon Xiaomi Redmi A1+",
+                "price": 900.0,
+                "slug": "oyun_smartfonu",
+                "original_price": 1100.0,
+                "discount": 18,
+                "salesCount": 340,
+                "image_url": "https://texnomart.az/wp-content/uploads/2022/10/texnomart-Xiaomi-Redmi-A1-Black-vsaubc09q8jpmeyrtn7x.jpg",
+                "description": "Yüksək tazələmə sürəti ilə oyun üçün optimallaşdırılmış smartfon.",
+                "colors": ["Qara"],
+                "sizes": ["6.5 düym"],
+                "reviews": [
+                  {
+                    "review_id": 1,
+                    "rating": 4.7,
+                    "comment": "Oyun üçün möhtəşəm performans."
+                  },
+                  {
+                    "review_id": 2,
+                    "rating": 4.6,
+                    "comment": "Oyun zamanı batareya bütün gün dayanır."
+                  }
+                ]
+              },
+              {
+                "product_id": 1209,
+                "product_name": "Smartfon Huawei Y70 64GB Blue",
+                "price": 800.0,
+                "slug": "styluslu_smartfon",
+                "original_price": 950.0,
+                "discount": 16,
+                "salesCount": 290,
+                "image_url": "https://texnomart.az/wp-content/uploads/2022/07/texnomart-Huawei-Y70-Blue-ag95vsif87m4wnxb1qr6-300x300.jpg",
+                "description": "İnteqrasiya edilmiş stylus ilə məhsuldarlıq üçün smartfon.",
+                "colors": ["Mavi"],
+                "sizes": ["6.4 düym"],
+                "reviews": [
+                  {
+                    "review_id": 1,
+                    "rating": 4.5,
+                    "comment": "Qeydlər üçün stylus çox faydalıdır."
+                  },
+                  {
+                    "review_id": 2,
+                    "rating": 4.3,
+                    "comment": "İş və yaradıcılıq tapşırıqları üçün əla."
+                  }
+                ]
+              },
+              {
+                "product_id": 1210,
+                "product_name": "Smartfon Samsung Galaxy S22",
+                "price": 2000.0,
+                "slug": "is_stansiyasi_noutbuku",
+                "original_price": 2400.0,
+                "discount": 17,
+                "salesCount": 100,
+                "image_url": "https://texnomart.az/wp-content/uploads/2022/07/texnomart-Xiaomi-Redmi-10A-Blue-qwgfpla0hivyes7omk81-300x300.jpg",
+                "description": "Güclü qrafik və hesablama gücünə malik iş stansiyası noutbuku.",
+                "colors": ["Mavi"],
+                "sizes": ["17 düym"],
+                "reviews": [
+                  {
+                    "review_id": 1,
+                    "rating": 4.8,
+                    "comment": "Güclü performans və mükəmməl ekran."
+                  },
+                  {
+                    "review_id": 2,
+                    "rating": 4.6,
+                    "comment": "Yüksək yükləmə altında belə dayanıqlıdır."
+                  }
+                ]
+              },
+              {
+                "product_id": 1211,
+                "product_name": "Notbuk Acer Aspire",
+                "price": 1100.0,
+                "slug": "multimedia_noutbuku",
+                "original_price": 1300.0,
+                "discount": 15,
+                "salesCount": 180,
+                "image_url": "https://www.bakuelectronics.az/assets/cache_image/products/147206/acer-aspire-5-1_429x419far_efe.jpg",
+                "description": "Film izləmək və musiqi dinləmək üçün ideal multimedia noutbuku.",
+                "colors": ["Boz"],
+                "sizes": ["15.6 düym"],
+                "reviews": [
+                  {
+                    "review_id": 1,
+                    "rating": 4.3,
+                    "comment": "Ekran keyfiyyəti əladır."
+                  },
+                  {
+                    "review_id": 2,
+                    "rating": 4.2,
+                    "comment": "Səs çıxışı çox yaxşıdır."
+                  }
+                ]
+            },
+           
+            {
+              "product_id": 1212,
+              "product_name": "Samsung Galaxy Tab A9 Planşet",
+              "price": 600.0,
+              "slug": "samsung-galaxy-tab-a9-planset",
+              "original_price": 700.0,
+              "discount": 14,
+              "salesCount": 400,
+              "image_url": "https://www.bakuelectronics.az/assets/cache_image/products/158312/samsung-galaxy-tab-a9-1_260x204_adf.jpg",
+              "description": "Həm iş, həm də əyləncə üçün nəzərdə tutulmuş Samsung Galaxy Tab A9 planşeti.",
+              "colors": ["Ağ"],
+              "sizes": ["10.1 düym"],
               "reviews": [
                 {
                   "review_id": 1,
-                  "rating": 4.0,
-                  "comment": "Çox gözəl bluz."
+                  "rating": 4.4,
+                  "comment": "Ekran keyfiyyəti və performans yaxşıdır."
                 },
                 {
-                  "review_id": 11,
-                  "rating": 4.5,
-                  "comment": "Materialı yüksək keyfiyyətlidir."
+                  "review_id": 2,
+                  "rating": 4.1,
+                  "comment": "Yüngül və daşınması asandır."
                 }
               ]
             },
             {
-              "product_id": 2,
-              "product_name": "Qadın Bluz 2",
-              "price": 60.0,
-              "original_price": 80.0,
-              "discount": 15,
-              "salesCount": 100,
-              "image_url": "https://example.com/products/women-blouse2.jpg",
-              "description": "Rəngarəng və rahat bluz.",
-              "colors": ["Red", "Blue"],
-              "sizes": ["M", "L", "XL"],
+              "product_id": 1213,
+              "product_name": "Samsung Galaxy Tab S6 Lite Uşaqlar üçün Planşet",
+              "price": 250.0,
+              "slug": "samsung-galaxy-tab-s6-lite-usaqlar-ucun-planset",
+              "original_price": 300.0,
+              "discount": 17,
+              "salesCount": 320,
+              "image_url": "https://www.bakuelectronics.az/assets/cache_image/products/148191/samsung-galaxy-tab-s6-lite-wi-fi-3_260x204_cd6.png",
+              "description": "Uşaqlar üçün təhlükəsiz və əyləncəli Samsung Galaxy Tab S6 Lite planşeti.",
+              "colors": ["Qara"],
+              "sizes": ["8 düym"],
               "reviews": [
+                {
+                  "review_id": 1,
+                  "rating": 4.5,
+                  "comment": "Uşaqlar üçün əla seçimdir."
+                },
                 {
                   "review_id": 2,
-                  "rating": 5.0,
-                  "comment": "Çox rahat və şıx!"
-                },
-                {
-                  "review_id": 3,
-                  "rating": 4.5,
-                  "comment": "Rəngi çox gözəl, amma ölçü kiçik."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subkateqoriya_id": 2,
-          "subkateqoriya_adı": "Qadın Jaketi",
-          "məhsullar": [
-            {
-              "product_id": 3,
-              "product_name": "Qadın Jaket 1",
-              "price": 80.0,
-              "original_price": 100.0,
-              "discount": 0,
-              "salesCount": 90,
-              "image_url": "https://example.com/products/women-jacket1.jpg",
-              "description": "Qış üçün isti jaket.",
-              "colors": ["Grey", "Navy"],
-              "sizes": ["M", "L", "XL"],
-              "reviews": [
-                {
-                  "review_id": 12,
-                  "rating": 4.5,
-                  "comment": "Çox rahat və isti."
-                },
-                {
-                  "review_id": 13,
-                  "rating": 4.2,
-                  "comment": "Keyfiyyətli material, amma qiyməti bir az yüksəkdir."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subkateqoriya_id": 3,
-          "subkateqoriya_adı": "Cins",
-          "məhsullar": [
-            {
-              "product_id": 4,
-              "product_name": "Cins Şalvar 1",
-              "price": 60.0,
-              "original_price": 80.0,
-              "discount": 15,
-              "salesCount": 160,
-              "image_url": "https://example.com/products/jeans1.jpg",
-              "description": "Rahat və şık cins şalvar.",
-              "colors": ["Blue", "Black"],
-              "sizes": ["S", "M", "L"],
-              "reviews": [
-                {
-                  "review_id": 15,
-                  "rating": 4.2,
-                  "comment": "Çox rahat və yaxşı keyfiyyət."
-                },
-                {
-                  "review_id": 16,
-                  "rating": 4.0,
-                  "comment": "Gözəl görünür, amma bir az dar."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subkateqoriya_id": 4,
-          "subkateqoriya_adı": "Şortik",
-          "məhsullar": [
-            {
-              "product_id": 5,
-              "product_name": "Yay Şortiki",
-              "price": 40.0,
-              "original_price": 50.0,
-              "discount": 20,
-              "salesCount": 85,
-              "image_url": "https://example.com/products/summer-shorts.jpg",
-              "description": "Rahat və sərin yay şortiki.",
-              "colors": ["White", "Khaki", "Navy"],
-              "sizes": ["XS", "S", "M", "L"],
-              "reviews": [
-                {
-                  "review_id": 18,
                   "rating": 4.3,
-                  "comment": "Çox rahat, amma ölçüsü biraz böyük."
+                  "comment": "Təhsil üçün yaxşı proqramlar var."
                 }
               ]
-            }
-          ]
-        },
-        {
-          "subkateqoriya_id": 5,
-          "subkateqoriya_adı": "Qadın Paltosu",
-          "məhsullar": [
+            },
             {
-              "product_id":6,
-              "product_name": "Qış Paltosu",
-              "price": 150.0,
-              "original_price": 180.0,
-              "discount": 0,
-              "salesCount": 50,
-              "image_url": "https://example.com/products/winter-coat.jpg",
-              "description": "İsti və stilli qış paltosu.",
-              "colors": ["Black", "Camel"],
-              "sizes": ["S", "M", "L", "XL"],
+              "product_id": 1214,
+              "product_name": "HP Pavilion Laptop",
+              "price": 1300.0,
+              "slug": "hp-pavilion-laptop",
+              "original_price": 1600.0,
+              "discount": 19,
+              "salesCount": 120,
+              "image_url": "https://irshad.az/cdn-cgi/image/width=315/storage/products/99636/a0ny5ea.png",
+              "description": "Performans və istifadə rahatlığı üçün nəzərdə tutulmuş HP Pavilion noutbuku.",
+              "colors": ["Ağ"],
+              "sizes": ["15.6 düym"],
               "reviews": [
                 {
-                  "review_id": 19,
-                  "rating": 4.9,
-                  "comment": "Mükəmməl keyfiyyət və dizayn!"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subkateqoriya_id": 6,
-          "subkateqoriya_adı": "Qadın Pencəyi",
-          "məhsullar": [
-            {
-              "product_id": 7,
-              "product_name": "Klassik Pencək",
-              "price": 90.0,
-              "original_price": 110.0,
-              "discount": 5,
-              "salesCount": 70,
-              "image_url": "https://example.com/products/classic-blazer.jpg",
-              "description": "Ofis və gündəlik istifadə üçün şık pencək.",
-              "colors": ["Black", "Navy", "Grey"],
-              "sizes": ["S", "M", "L"],
-              "reviews": [
-                {
-                  "review_id": 20,
-                  "rating": 4.6,
-                  "comment": "Çox şık və keyfiyyətli."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subkateqoriya_id": 7,
-          "subkateqoriya_adı": "Yataq Geyimi",
-          "məhsullar": [
-            {
-              "product_id": 8,
-              "product_name": "İpək Pijama Dəsti",
-              "price": 75.0,
-              "original_price": 90.0,
-              "discount": 10,
-              "salesCount": 100,
-              "image_url": "https://example.com/products/silk-pajama-set.jpg",
-              "description": "Lüks və rahat ipək pijama dəsti.",
-              "colors": ["Pink", "Lavender", "Champagne"],
-              "sizes": ["S", "M", "L"],
-              "reviews": [
-                {
-                  "review_id": 21,
-                  "rating": 4.8,
-                  "comment": "Çox rahat və lüks hiss etdirir."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subkateqoriya_id": 8,
-          "subkateqoriya_adı": "Qadın Çantası",
-          "məhsullar": [
-            {
-              "product_id": 9,
-              "product_name": "Dəri Çiyin Çantası",
-              "price": 120.0,
-              "original_price": 150.0,
-              "discount": 0,
-              "salesCount": 80,
-              "image_url": "https://example.com/products/leather-shoulder-bag.jpg",
-              "description": "Keyfiyyətli dəridən hazırlanmış şık çiyin çantası.",
-              "colors": ["Black", "Brown", "Tan"],
-              "sizes": ["One Size"],
-              "reviews": [
-                {
-                  "review_id": 22,
-                  "rating": 4.7,
-                  "comment": "Gözəl dizayn və yüksək keyfiyyət."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subkateqoriya_id": 9,
-          "subkateqoriya_adı": "Kosmetika",
-          "məhsullar": [
-            {
-              "product_id": 10,
-              "product_name": "Göz Kölgəsi Paleti",
-              "price": 45.0,
-              "original_price": 55.0,
-              "discount": 18,
-              "salesCount": 200,
-              "image_url": "https://example.com/products/eyeshadow-palette.jpg",
-              "description": "12 rəngli lüks göz kölgəsi paleti.",
-              "colors": ["Multi"],
-              "sizes": ["One Size"],
-              "reviews": [
-                {
-                  "review_id": 23,
+                  "review_id": 1,
                   "rating": 4.5,
-                  "comment": "Rənglər çox gözəl və pigmentlidir."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subkateqoriya_id": 10,
-          "subkateqoriya_adı": "Aksesuarlar",
-          "məhsullar": [
-            {
-              "product_id": 11,
-              "product_name": "Kompakt Dəri Pul Kisəsi",
-              "price": 35.0,
-              "original_price": 45.0,
-              "discount": 22,
-              "salesCount": 150,
-              "image_url": "https://example.com/products/compact-leather-wallet.jpg",
-              "description": "İncə və funksional dəri pul kisəsi.",
-              "colors": ["Black", "Red", "Navy"],
-              "sizes": ["One Size"],
-              "reviews": [
-                {
-                  "review_id": 1001,
-                  "rating": 4.4,
-                  "comment": "Kiçik, amma çox funksional."
+                  "comment": "Gündəlik işlər üçün əla seçimdir."
                 },
                 {
-                  "review_id": 1002,
+                  "review_id": 2,
                   "rating": 4.6,
-                  "comment": "Keyfiyyətli dəri və gözəl dizayn."
+                  "comment": "Yaxşı performans və ekran keyfiyyəti."
                 }
               ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "kateqoriya_id": 2,
-      "kateqoriya_adı": "Kişi",
-      "subkateqoriyalar": [
-        {
-          "subkateqoriya_id": 1,
-          "subkateqoriya_adı": "Şalvar",
-          "məhsullar": []
-        },
-        {
-          "subkateqoriya_id": 2,
-          "subkateqoriya_adı": "Köynək",
-          "məhsullar": [
+            },
             {
-              "product_id": 19,
-              "product_name": "Kişi Köynək 1",
-              "price": 60.0,
-              "original_price": 80.0,
-              "discount": 15,
-              "image_url": "https://example.com/products/men-shirt1.jpg",
-              "description": "Kişi üçün tərz köynək.",
-              "colors": ["Blue", "Gray"],
-              "sizes": ["M", "L", "XL"],
+              "product_id": 1215,
+              "product_name": "ASUS ROG Zephyrus G16 OLED",
+              "price": 2000.0,
+              "slug": "asus-rog-zephyrus-g16-oled",
+              "original_price": 2400.0,
+              "discount": 17,
+              "salesCount": 95,
+              "image_url": "https://irshad.az/cdn-cgi/image/width=315/storage/products/99633/asus-rog-zephyrus-g16.jpg",
+              "description": "Güclü oyun təcrübəsi üçün nəzərdə tutulmuş ASUS ROG Zephyrus G16 OLED noutbuku.",
+              "colors": ["Ağ"],
+              "sizes": ["16 düym"],
               "reviews": [
+                {
+                  "review_id": 1,
+                  "rating": 4.8,
+                  "comment": "Oyun üçün yüksək performans təqdim edir."
+                },
+                {
+                  "review_id": 2,
+                  "rating": 4.7,
+                  "comment": "OLED ekran mükəmməl görüntü verir."
+                }
+              ]
+            },
+
+            {
+              "product_id": 1216,
+              "product_name": "Smartfon Infinix Note 40 Pro",
+              "price": 2000.0,
+              "slug": "infinix-note-40-pro",
+              "original_price": 2400.0,
+              "discount": 17,
+              "salesCount": 95,
+              "image_url": "https://strgimgr.umico.az/sized/280/934365-6e52ec08edcdaada2356dc0909513263.jpg",
+              "description": "Infinix Note 40 Pro, yüksək performanslı və şık dizaynlı smartfondur.",
+              "colors": ["Boz"],
+              "sizes": ["6.8 düym"],
+              "reviews": [
+                {
+                  "review_id": 1,
+                  "rating": 4.8,
+                  "comment": "Yüksək performanslı və uzun batareya ömrü."
+                },
+                {
+                  "review_id": 2,
+                  "rating": 4.7,
+                  "comment": "Kamera keyfiyyəti çox yaxşıdır."
+                }
+              ]
+            },
+            {
+              "product_id": 1217,
+              "product_name": "Smartfon Xiaomi Redmi Note 12",
+              "price": 1700.0,
+              "slug": "xiaomi-redmi-note-12",
+              "original_price": 2000.0,
+              "discount": 15,
+              "salesCount": 120,
+              "image_url": "https://strgimgr.umico.az/sized/280/482552-13d88063226a34b2317c72b5204d333d.jpg",
+              "description": "Xiaomi Redmi Note 12, güclü performans və mükəmməl dizayn təklif edir.",
+              "colors": ["Qara"],
+              "sizes": ["6.67 düym"],
+              "reviews": [
+                {
+                  "review_id": 1,
+                  "rating": 4.6,
+                  "comment": "Qiymətə görə yaxşı performans."
+                },
                 {
                   "review_id": 2,
                   "rating": 4.5,
-                  "comment": "Keyfiyyətli və rahat köynək."
+                  "comment": "Ekran və kamera keyfiyyəti əladır."
                 }
               ]
-            }
-          ]
+            },
+
+            
+            ]
+            
+         
         },
         {
-          "subkateqoriya_id": 3,
-          "subkateqoriya_adı": "Kişi Gödəkçəsi",
-          "məhsullar": []
-        },
-        {
-          "subkateqoriya_id": 4,
-          "subkateqoriya_adı": "Kişi Kostyumu",
-          "məhsullar": []
-        },
-        {
-          "subkateqoriya_id": 5,
-          "subkateqoriya_adı": "Ayaqqabı",
-          "məhsullar": []
-        },
-        {
-          "subkateqoriya_id": 6,
-          "subkateqoriya_adı": "Kişi Çantası",
-          "məhsullar": []
-        },
-        {
-          "subkateqoriya_id": 7,
-          "subkateqoriya_adı": "Baş Geyimləri",
-          "məhsullar": []
-        },
-        {
-          "subkateqoriya_id": 8,
-          "subkateqoriya_adı": "Kəmər",
-          "məhsullar": []
-        },
-        {
-          "subkateqoriya_id": 9,
-          "subkateqoriya_adı": "Eynək",
-          "məhsullar": []
-        },
-        {
-          "subkateqoriya_id": 10,
-          "subkateqoriya_adı": "Qalstuk",
-          "məhsullar": []
-        },
-        {
-          "subkateqoriya_id": 11,
-          "subkateqoriya_adı": "Pul Kisəsi",
-          "məhsullar": []
-        },
-        {
-          "subkateqoriya_id": 12,
-          "subkateqoriya_adı": "Saat",
-          "məhsullar": [
+          subkateqoriya_id: 51,
+          subkateqoriya_adı: "Saat",
+          məhsullar: [
             {
-              "product_id": 20,
-              "product_name": "Sony WH-1000XM4",
-              "price": 950.0,
-              "original_price": 1000.0,
-              "discount": 5,
-              "image_url": "https://example.com/products/product-i.jpg",
-              "description": "Sony WH-1000XM4 üçün təsvir.",
-              "colors": ["Black", "Silver"],
-              "sizes": ["L"],
+              "product_id": 1300,
+              "product_name": "Smart saat Smart Watch HK9 Ultra 2 Black",
+              "price": 1500.0,
+              "slug": "smart-watch-hk9-ultra-2-black",
+              "original_price": 1800.0,
+              "discount": 17,
+              "salesCount": 200,
+              "image_url": "https://strgimgr.umico.az/sized/280/644331-1c031ac78caa69ff8434ef7f38a8296e.jpg",
+              "description": "Yüksək performanslı smart saat, sağlamlıq izləmə və bildiriş funksiyaları ilə.",
+              "colors": ["Qara"],
+              "sizes": ["44 mm"],
               "reviews": [
                 {
-                  "review_id": 3,
-                  "rating": 4.5,
-                  "comment": "Mükəmməl səs keyfiyyəti.",
+                  "review_id": 1,
+                  "rating": 4.8,
+                  "comment": "Dəqiq funksiyalar və yüksək keyfiyyət."
+                },
+                {
+                  "review_id": 2,
+                  "rating": 4.2,
+                  "comment": "Puluna görə yaxşıdır."
                 }
               ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "kateqoriya_id": 3,
-      "kateqoriya_adı": "Elektronika",
-      "subkateqoriyalar": [
-        {
-          "subkateqoriya_id": 1,
-          "subkateqoriya_adı": "Telefon",
-          "məhsullar": []
-        },
-        {
-          "subkateqoriya_id": 2,
-          "subkateqoriya_adı": "Kompüter",
-          "məhsullar": []
-        },
-        {
-          "subkateqoriya_id": 3,
-          "subkateqoriya_adı": "Planşet",
-          "məhsullar": []
-        },
-        {
-          "subkateqoriya_id": 4,
-          "subkateqoriya_adı": "Saat",
-          "məhsullar": []
-        },
-        {
-          "subkateqoriya_id": 5,
-          "subkateqoriya_adı": "Şarj Cihazları",
-          "məhsullar": []
-        },
-        {
-          "subkateqoriya_id": 6,
-          "subkateqoriya_adı": "Qulaqlıqlar",
-          "məhsullar": []
-        },
-        {
-          "subkateqoriya_id": 7,
-          "subkateqoriya_adı": "Klaviatura",
-          "məhsullar": []
-        },
-        {
-          "subkateqoriya_id": 8,
-          "subkateqoriya_adı": "Siçan",
-          "məhsullar": []
-        },
-        {
-          "subkateqoriya_id": 9,
-          "subkateqoriya_adı": "Ram",
-          "məhsullar": []
-        },
-        {
-          "subkateqoriya_id": 10,
-          "subkateqoriya_adı": "Ekran Kartı",
-          "məhsullar": []
-        },
-        {
-          "subkateqoriya_id": 11,
-          "subkateqoriya_adı": "Foto və Kamera",
-          "məhsullar": []
-        },
-        {
-          "subkateqoriya_id": 12,
-          "subkateqoriya_adı": "Printer və Skaner",
-          "məhsullar": []
-        },
-        {
-          "subkateqoriya_id": 13,
-          "subkateqoriya_adı": "Televiziya",
-          "məhsullar": []
-        },
-        {
-          "subkateqoriya_id": 14,
-          "subkateqoriya_adı": "Saç Qurudan",
-          "məhsullar": []
-        },
-        {
-          "subkateqoriya_id": 15,
-          "subkateqoriya_adı": "Təraş Maşını",
-          "məhsullar": []
-        },
-        {
-          "subkateqoriya_id": 16,
-          "subkateqoriya_adı": "Paltaryuyan Maşın",
-          "məhsullar": []
-        },
-        {
-          "subkateqoriya_id": 17,
-          "subkateqoriya_adı": "Qabyuyan Maşın",
-          "məhsullar": []
-        },
-        {
-          "subkateqoriya_id": 18,
-          "subkateqoriya_adı": "Quruducu",
-          "məhsullar": []
-        },
-        {
-          "subkateqoriya_id": 19,
-          "subkateqoriya_adı": "Kombi",
-          "məhsullar": []
-        },
-        {
-          "subkateqoriya_id": 20,
-          "subkateqoriya_adı": "Kondisioner",
-          "məhsullar": []
-        },
-        {
-          "subkateqoriya_id": 21,
-          "subkateqoriya_adı": "Mikrodalğalı Soba",
-          "məhsullar": []
-        },
-        {
-          "subkateqoriya_id": 22,
-          "subkateqoriya_adı": "Mikser və Mikser Dəsti",
-          "məhsullar": []
-        }
-      ]
-    },
-    {
-      "kateqoriya_id": 4,
-      "kateqoriya_adı": "Ev & Yaşam",
-      "subkateqoriyalar": [
-        {
-          "subkateqoriya_id": 1,
-          "subkateqoriya_adı": "Oyuncaq",
-          "məhsullar": [
+            },
             {
-              "product_id": 21,
-              "product_name": "LEGO Technic Car",
-              "price": 950.0,
-              "original_price": 1000.0,
-              "discount": 5,
-              "image_url": "https://example.com/products/lego-car.jpg",
-              "description": "LEGO Technic seriyasından yüksək detallı avtomobil oyuncağı.",
-              "colors": ["Red", "Blue"],
-              "sizes": ["L"],
+              "product_id": 1301,
+              "product_name": "Smart saat Smart Watch HK9 Pro Plus Black",
+              "price": 1500.0,
+              "slug": "smart-watch-hk9-pro-plus-black",
+              "original_price": 1800.0,
+              "discount": 17,
+              "salesCount": 180,
+              "image_url": "https://strgimgr.umico.az/sized/280/812148-c88b982ec13be2c24930389b368e2eb5.jpg",
+              "description": "Pro versiyası olan bu smart saat, əlavə sağlamlıq və fitnes funksiyaları təklif edir.",
+              "colors": ["Qara"],
+              "sizes": ["46 mm"],
               "reviews": [
                 {
-                  "review_id": 3,
-                  "rating": 4.5,
-                  "comment": "Çox əyləncəli və detallı bir modeldir."
+                  "review_id": 1,
+                  "rating": 4.7,
+                  "comment": "Əla batareya ömrü və funksionallıq."
+                },
+                {
+                  "review_id": 2,
+                  "rating": 4.4,
+                  "comment": "Ekran keyfiyyəti yüksəkdir."
                 }
               ]
-            }
-          ]
+            },
+            {
+              "product_id": 1302,
+              "product_name": "Qol saatı Lacoste LC",
+              "price": 1200.0,
+              "slug": "lacoste-lc",
+              "original_price": 1500.0,
+              "discount": 20,
+              "salesCount": 150,
+              "image_url": "https://strgimgr.umico.az/sized/280/683922-9975c5de06cf80f95be3aa0a9be58032.jpg",
+              "description": "Şık və sadə dizaynlı Lacoste qol saatı, gündəlik istifadə üçün idealdır.",
+              "colors": ["Yaşıl"],
+              "sizes": ["40 mm"],
+              "reviews": [
+                {
+                  "review_id": 1,
+                  "rating": 4.6,
+                  "comment": "Zərif dizayn və keyfiyyətli material."
+                },
+                {
+                  "review_id": 2,
+                  "rating": 4.3,
+                  "comment": "Gözəl görünüş, amma funksionallıq sadədir."
+                }
+              ]
+            },
+            {
+              "product_id": 1303,
+              "product_name": "Qol saatı Naviforce NF5032 SWRG",
+              "price": 1300.0,
+              "slug": "naviforce-nf5032-swrg",
+              "original_price": 1600.0,
+              "discount": 19,
+              "salesCount": 170,
+              "image_url": "https://strgimgr.umico.az/sized/840/775798-560ccea4c1c6f0759af601d570c4065e.jpg",
+              "description": "Naviforce qol saatı, suya davamlı və çox funksiyalı dizaynı ilə seçilir.",
+              "colors": ["Ağ"],
+              "sizes": ["42 mm"],
+              "reviews": [
+                {
+                  "review_id": 1,
+                  "rating": 4.7,
+                  "comment": "Yaxşı keyfiyyət və çox yönlü istifadə."
+                },
+                {
+                  "review_id": 2,
+                  "rating": 4.4,
+                  "comment": "Davamlı və suya qarşı müqavimətlidir."
+                }
+              ]
+            },
+            {
+              "product_id": 1304,
+              "product_name": "Qol saatı NaviForce NF9193 RGBB",
+              "price": 1400.0,
+              "slug": "naviforce-nf9193-rgbb",
+              "original_price": 1700.0,
+              "discount": 18,
+              "salesCount": 190,
+              "image_url": "https://strgimgr.umico.az/sized/280/579827-66df605d7ce966feea019d362b20eeb5.jpg",
+              "description": "Naviforce NF9193, dəbli dizaynı və yüksək keyfiyyəti ilə fərqlənir.",
+              "colors": ["Qara"],
+              "sizes": ["45 mm"],
+              "reviews": [
+                {
+                  "review_id": 1,
+                  "rating": 4.8,
+                  "comment": "Çox funksiyalı və dəbli dizayn."
+                },
+                {
+                  "review_id": 2,
+                  "rating": 4.5,
+                  "comment": "Material keyfiyyəti əladır."
+                }
+              ]
+            },
+
+       
+
+          ],
+        },
+        // {
+        //   subkateqoriya_id: 5,
+        //   subkateqoriya_adı: "Şarj Cihazları",
+        //   məhsullar: [],
+        // },
+        {
+          subkateqoriya_id:52,
+          subkateqoriya_adı: "Qulaqlıqlar",
+          məhsullar: [
+            {
+              "product_id": 1400,
+              "product_name": "Simsiz qulaqlıq P9 Black",
+              "price": 1500.0,
+              "slug": "wireless-earphones-p9-black",
+              "original_price": 1800.0,
+              "discount": 17,
+              "salesCount": 200,
+              "image_url": "https://strgimgr.umico.az/sized/280/659146-650d2d477940b0fd3d92505d2a052968.jpg",
+              "description": "Yüksək performanslı simsiz qulaqlıqlar, uzun müddətli batareya ömrü və rahat uyğunluq.",
+              "colors": ["Qara"],
+              "sizes": ["N/A"],
+              "reviews": [
+                {
+                  "review_id": 1,
+                  "rating": 4.8,
+                  "comment": "Dəqiq funksiyalar və yüksək keyfiyyət."
+                },
+                {
+                  "review_id": 2,
+                  "rating": 4.2,
+                  "comment": "Puluna görə mükəmməl seçim."
+                }
+              ]
+            },
+            {
+              "product_id": 1401,
+              "product_name": "Simsiz qulaqlıqlar P47 Blue",
+              "price": 1500.0,
+              "slug": "wireless-earphones-p47-blue",
+              "original_price": 1800.0,
+              "discount": 17,
+              "salesCount": 200,
+              "image_url": "https://strgimgr.umico.az/sized/280/257563-0a7a7d02e68258584f2a38e1a1be0dfe.jpg",
+              "description": "Güclü bass, mükəmməl səs keyfiyyəti və uzun müddətli rahatlıq.",
+              "colors": ["Mavi"],
+              "sizes": ["N/A"],
+              "reviews": [
+                {
+                  "review_id": 1,
+                  "rating": 4.8,
+                  "comment": "Mükəmməl səs keyfiyyəti!"
+                },
+                {
+                  "review_id": 2,
+                  "rating": 4.3,
+                  "comment": "Həqiqətən rahatdır."
+                }
+              ]
+            },
+            {
+              "product_id": 1402,
+              "product_name": "Simsiz qulaqlıq HUAWEI FreeBuds",
+              "price": 1500.0,
+              "slug": "huawei-freebuds",
+              "original_price": 1800.0,
+              "discount": 17,
+              "salesCount": 200,
+              "image_url": "https://www.bakuelectronics.az/assets/cache_image/products/152175/huawei-freebuds-6i-purple-5_429x419far_efe.jpg",
+              "description": "HUAWEI FreeBuds, optimal səs keyfiyyəti, ağıllı səs idarəsi və səs izolyasiyası.",
+              "colors": ["Ağ"],
+              "sizes": ["N/A"],
+              "reviews": [
+                {
+                  "review_id": 1,
+                  "rating": 4.8,
+                  "comment": "Sesi mükəmməl tənzimləyir."
+                },
+                {
+                  "review_id": 2,
+                  "rating": 4.5,
+                  "comment": "Çox rahat və yüngüldür."
+                }
+              ]
+            },
+            {
+              "product_id": 1403,
+              "product_name": "Simsiz qulaqlıq HUAWEI FreeBuds SE",
+              "price": 1500.0,
+              "slug": "huawei-freebuds-se",
+              "original_price": 1800.0,
+              "discount": 17,
+              "salesCount": 200,
+              "image_url": "https://www.bakuelectronics.az/assets/cache_image/products/142159/huawei-freebuds-se-2-8_429x419far_efe.jpg",
+              "description": "Yüksək səs keyfiyyəti, səs izolyasiyası və uzun müddətli batareya ömrü.",
+              "colors": ["Ağ"],
+              "sizes": ["N/A"],
+              "reviews": [
+                {
+                  "review_id": 1,
+                  "rating": 4.8,
+                  "comment": "Çox funksiyalı və istifadə üçün rahat."
+                },
+                {
+                  "review_id": 2,
+                  "rating": 4.4,
+                  "comment": "Süper səs keyfiyyəti!"
+                }
+              ]
+            },
+            {
+              "product_id": 1404,
+              "product_name": "Simsiz qulaqlıq HUAWEI FreeBuds SE 2",
+              "price": 1500.0,
+              "slug": "huawei-freebuds-se-2",
+              "original_price": 1800.0,
+              "discount": 17,
+              "salesCount": 200,
+              "image_url": "https://www.bakuelectronics.az/assets/cache_image/products/142145/huawei-freebuds-se-2-2_429x419far_efe.jpg",
+              "description": "Yüksək səs keyfiyyəti, rahat istifadə və yüksək performans.",
+              "colors": ["Mavi"],
+              "sizes": ["N/A"],
+              "reviews": [
+                {
+                  "review_id": 1,
+                  "rating": 4.8,
+                  "comment": "Mükəmməl və keyfiyyətli."
+                },
+                {
+                  "review_id": 2,
+                  "rating": 4.3,
+                  "comment": "Səs izolyasiyası çox yaxşıdır."
+                }
+              ]
+            },
+            {
+              "product_id": 1405,
+              "product_name": "Simsiz qulaqlıq YISON B3 BLACK",
+              "price": 1500.0,
+              "slug": "huawei-freebuds-se-2",
+              "original_price": 1800.0,
+              "discount": 17,
+              "salesCount": 200,
+              "image_url": "https://www.bakuelectronics.az/assets/cache_image/products/135992/YISON%20WIRELESS%20ON-EAR%20HEADPHONE%20B3%20BLACK_429x419far_efe.jpg",
+              "description": "Yüksək səs keyfiyyəti, rahat istifadə və yüksək performans.",
+              "colors": ["Qara"],
+              "sizes": ["N/A"],
+              "reviews": [
+                {
+                  "review_id": 1,
+                  "rating": 4.8,
+                  "comment": "Mükəmməl və keyfiyyətli."
+                },
+                {
+                  "review_id": 2,
+                  "rating": 4.3,
+                  "comment": "Səs izolyasiyası çox yaxşıdır."
+                }
+              ]
+            },
+            {
+              "product_id": 1406,
+              "product_name": "Simsiz qulaqlıq YISON B3 BLACK",
+              "price": 1500.0,
+              "slug": "huawei-freebuds-se-2",
+              "original_price": 1800.0,
+              "discount": 17,
+              "salesCount": 200,
+              "image_url": "https://www.bakuelectronics.az/assets/cache_image/products/135992/YISON%20WIRELESS%20ON-EAR%20HEADPHONE%20B3%20BLACK_429x419far_efe.jpg",
+              "description": "Yüksək səs keyfiyyəti, rahat istifadə və yüksək performans.",
+              "colors": ["Qara"],
+              "sizes": ["N/A"],
+              "reviews": [
+                {
+                  "review_id": 1,
+                  "rating": 4.8,
+                  "comment": "Mükəmməl və keyfiyyətli."
+                },
+                {
+                  "review_id": 2,
+                  "rating": 4.3,
+                  "comment": "Səs izolyasiyası çox yaxşıdır."
+                }
+              ]
+            },
+          ],
         },
         {
-          "subkateqoriya_id": 2,
-          "subkateqoriya_adı": "Divar Saatı",
-          "məhsullar": []
+          subkateqoriya_id: 4,
+          subkateqoriya_adı: "Klaviatura",
+          məhsullar: [],
+        },
+        // {
+        //   subkateqoriya_id: 8,
+        //   subkateqoriya_adı: "Siçan",
+        //   məhsullar: [],
+        // },
+        // {
+        //   subkateqoriya_id: 9,
+        //   subkateqoriya_adı: "Ram",
+        //   məhsullar: [],
+        // },
+        // {
+        //   subkateqoriya_id: 10,
+        //   subkateqoriya_adı: "Ekran Kartı",
+        //   məhsullar: [],
+        // },
+        {
+          subkateqoriya_id: 5,
+          subkateqoriya_adı: "Foto və Kamera",
+          məhsullar: [],
+        },
+        // {
+        //   subkateqoriya_id: 12,
+        //   subkateqoriya_adı: "Printer və Skaner",
+        //   məhsullar: [],
+        // },
+        {
+          subkateqoriya_id: 6,
+          subkateqoriya_adı: "Televiziya",
+          məhsullar: [],
         },
         {
-          "subkateqoriya_id": 3,
-          "subkateqoriya_adı": "Güzgü",
-          "məhsullar": []
+          subkateqoriya_id: 7,
+          subkateqoriya_adı: "Qabyuyan Maşın",
+          məhsullar: [],
+        },
+        // {
+        //   subkateqoriya_id: 8,
+        //   subkateqoriya_adı: "Quruducu",
+        //   məhsullar: [],
+        // },
+        // {
+        //   subkateqoriya_id: 19,
+        //   subkateqoriya_adı: "Kombi",
+        //   məhsullar: [],
+        // },
+        // {
+        //   subkateqoriya_id: 20,
+        //   subkateqoriya_adı: "Kondisioner",
+        //   məhsullar: [],
+        // },
+        // {
+        //   subkateqoriya_id: 21,
+        //   subkateqoriya_adı: "Mikrodalğalı Soba",
+        //   məhsullar: [],
+        // },
+        // {
+        //   subkateqoriya_id: 22,
+        //   subkateqoriya_adı: "Mikser və Mikser Dəsti",
+        //   məhsullar: [],
+        // },
+          // {
+        //   subkateqoriya_id: 14,
+        //   subkateqoriya_adı: "Saç Qurudan",
+        //   məhsullar: [],
+        // },
+        // {
+        //   subkateqoriya_id: 15,
+        //   subkateqoriya_adı: "Təraş Maşını",
+        //   məhsullar: [],
+        // },
+        // {
+        //   subkateqoriya_id: 16,
+        //   subkateqoriya_adı: "Paltaryuyan Maşın",
+        //   məhsullar: [],
+        // }
+      ],
+    },
+    {
+      kateqoriya_id: 4,
+      kateqoriya_adı: "Ev & Yaşam",
+      subkateqoriyalar: [
+        {
+          subkateqoriya_id: 1,
+          subkateqoriya_adı: "Oyuncaq",
+          məhsullar: [
+            {
+              product_id: 21,
+              product_name: "LEGO Technic Car",
+              price: 950.0,
+              original_price: 1000.0,
+              discount: 5,
+              image_url: "https://example.com/products/lego-car.jpg",
+              description:
+                "LEGO Technic seriyasından yüksək detallı avtomobil oyuncağı.",
+              colors: ["Red", "Blue"],
+              sizes: ["L"],
+              reviews: [
+                {
+                  review_id: 3,
+                  rating: 4.5,
+                  comment: "Çox əyləncəli və detallı bir modeldir.",
+                },
+              ],
+            },
+          ],
         },
         {
-          "subkateqoriya_id": 4,
-          "subkateqoriya_adı": "Pərdə",
-          "məhsullar": []
+          subkateqoriya_id: 2,
+          subkateqoriya_adı: "Divar Saatı",
+          məhsullar: [],
         },
         {
-          "subkateqoriya_id": 5,
-          "subkateqoriya_adı": "Divan Dəsti",
-          "məhsullar": []
+          subkateqoriya_id: 3,
+          subkateqoriya_adı: "Güzgü",
+          məhsullar: [],
         },
         {
-          "subkateqoriya_id": 6,
-          "subkateqoriya_adı": "Kreslo",
-          "məhsullar": []
+          subkateqoriya_id: 4,
+          subkateqoriya_adı: "Pərdə",
+          məhsullar: [],
         },
         {
-          "subkateqoriya_id": 7,
-          "subkateqoriya_adı": "İşıqlandırma",
-          "məhsullar": []
+          subkateqoriya_id: 5,
+          subkateqoriya_adı: "Divan Dəsti",
+          məhsullar: [],
         },
         {
-          "subkateqoriya_id": 8,
-          "subkateqoriya_adı": "Mətbəx Şkafı",
-          "məhsullar": []
+          subkateqoriya_id: 6,
+          subkateqoriya_adı: "Kreslo",
+          məhsullar: [],
         },
         {
-          "subkateqoriya_id": 9,
-          "subkateqoriya_adı": "Çaydan",
-          "məhsullar": []
+          subkateqoriya_id: 7,
+          subkateqoriya_adı: "İşıqlandırma",
+          məhsullar: [],
         },
         {
-          "subkateqoriya_id": 10,
-          "subkateqoriya_adı": "Dəsmal və Dəsmal Dəsti",
-          "məhsullar": []
+          subkateqoriya_id: 8,
+          subkateqoriya_adı: "Mətbəx Şkafı",
+          məhsullar: [],
         },
         {
-          "subkateqoriya_id": 11,
-          "subkateqoriya_adı": "Hamam Dəsti",
-          "məhsullar": []
+          subkateqoriya_id: 9,
+          subkateqoriya_adı: "Çaydan",
+          məhsullar: [],
         },
         {
-          "subkateqoriya_id": 12,
-          "subkateqoriya_adı": "Blazers",
-          "məhsullar": []
+          subkateqoriya_id: 10,
+          subkateqoriya_adı: "Dəsmal və Dəsmal Dəsti",
+          məhsullar: [],
         },
         {
-          "subkateqoriya_id": 13,
-          "subkateqoriya_adı": "Yataq Otağı",
-          "məhsullar": []
+          subkateqoriya_id: 11,
+          subkateqoriya_adı: "Hamam Dəsti",
+          məhsullar: [],
         },
         {
-          "subkateqoriya_id": 14,
-          "subkateqoriya_adı": "Yorğan",
-          "məhsullar": []
+          subkateqoriya_id: 12,
+          subkateqoriya_adı: "Blazers",
+          məhsullar: [],
         },
         {
-          "subkateqoriya_id": 15,
-          "subkateqoriya_adı": "Yataq Örtüyü",
-          "məhsullar": []
+          subkateqoriya_id: 13,
+          subkateqoriya_adı: "Yataq Otağı",
+          məhsullar: [],
         },
         {
-          "subkateqoriya_id": 16,
-          "subkateqoriya_adı": "Yastıq",
-          "məhsullar": []
+          subkateqoriya_id: 14,
+          subkateqoriya_adı: "Yorğan",
+          məhsullar: [],
         },
         {
-          "subkateqoriya_id": 17,
-          "subkateqoriya_adı": "Velosiped",
-          "məhsullar": []
+          subkateqoriya_id: 15,
+          subkateqoriya_adı: "Yataq Örtüyü",
+          məhsullar: [],
         },
         {
-          "subkateqoriya_id": 18,
-          "subkateqoriya_adı": "Termoslar",
-          "məhsullar": []
+          subkateqoriya_id: 16,
+          subkateqoriya_adı: "Yastıq",
+          məhsullar: [],
         },
         {
-          "subkateqoriya_id": 19,
-          "subkateqoriya_adı": "Kitablar",
-          "məhsullar": []
-        }
-      ]
-    },
-{ "kateqoriya_id": 5,
-  "kateqoriya_adı": "Supermarket",
-  "subkateqoriyalar": [
-    {
-      "subkateqoriya_id": 1,
-      "subkateqoriya_adı": "Yuyucu Toz",
-      "məhsullar": []
-    },
-    {
-      "subkateqoriya_id": 2,
-      "subkateqoriya_adı": "Qab Yuyucu",
-      "məhsullar": []
-    },
-    {
-      "subkateqoriya_id": 3,
-      "subkateqoriya_adı": "Otaq Ətri",
-      "məhsullar": []
-    },
-    {
-      "subkateqoriya_id": 4,
-      "subkateqoriya_adı": "Hamam Təmizləyiciləri",
-      "məhsullar": []
-    },
-    {
-      "subkateqoriya_id": 5,
-      "subkateqoriya_adı": "Tualet Kağızı",
-      "məhsullar": []
-    },
-    {
-      "subkateqoriya_id": 6,
-      "subkateqoriya_adı": "Kağız Dəsmal",
-      "məhsullar": []
-    },
-    {
-      "subkateqoriya_id": 7,
-      "subkateqoriya_adı": "Saça Qulluq",
-      "məhsullar": []
-    },
-    {
-      "subkateqoriya_id": 8,
-      "subkateqoriya_adı": "Ağız Baxımı",
-      "məhsullar": []
-    },
-    {
-      "subkateqoriya_id": 9,
-      "subkateqoriya_adı": "Dəriyə Qulluq",
-      "məhsullar": []
-    },
-    {
-      "subkateqoriya_id": 10,
-      "subkateqoriya_adı": "Elektrikli Diş Fırçaları",
-      "məhsullar": []
-    },
-    {
-      "subkateqoriya_id": 11,
-      "subkateqoriya_adı": "Təraş Məhsulları",
-      "məhsullar": []
-    },
-    {
-      "subkateqoriya_id": 12,
-      "subkateqoriya_adı": "Körpə Üçün Əlavə Qidalanma",
-      "məhsullar": []
-    },
-    {
-      "subkateqoriya_id": 13,
-      "subkateqoriya_adı": "Dəsmallar",
-      "məhsullar": []
-    },
-    {
-      "subkateqoriya_id": 14,
-      "subkateqoriya_adı": "Uşaq Kosmetikası",
-      "məhsullar": []
-    },
-    {
-      "subkateqoriya_id": 15,
-      "subkateqoriya_adı": "Uşaq Qidaları",
-      "məhsullar": []
-    },
-    {
-      "subkateqoriya_id": 16,
-      "subkateqoriya_adı": "Körpə Təmizləyici Pambıq",
-      "məhsullar": []
-    },
-    {
-      "subkateqoriya_id": 17,
-      "subkateqoriya_adı": "Uşaq Pudrası",
-      "məhsullar": []
-    },
-    {
-      "subkateqoriya_id": 18,
-      "subkateqoriya_adı": "Uşaq Şampunu",
-      "məhsullar": []
-    },
-    {
-      "subkateqoriya_id": 19,
-      "subkateqoriya_adı": "Çay",
-      "məhsullar": []
-    },
-    {
-      "subkateqoriya_id": 20,
-      "subkateqoriya_adı": "Qəlyanaltı",
-      "məhsullar": []
-    },
-    {
-      "subkateqoriya_id": 21,
-      "subkateqoriya_adı": "Quru Yemək",
-      "məhsullar": []
-    },
-    {
-      "subkateqoriya_id": 22,
-      "subkateqoriya_adı": "Qəhvə",
-      "məhsullar": []
-    },
-    {
-      "subkateqoriya_id": 23,
-      "subkateqoriya_adı": "Makaron",
-      "məhsullar": []
-    },
-    {
-      "subkateqoriya_id": 24,
-      "subkateqoriya_adı": "Duz və Ədviyyat",
-      "məhsullar": []
-    },
-    {
-      "subkateqoriya_id": 25,
-      "subkateqoriya_adı": "Şəkər",
-      "məhsullar": []
-    },
-    {
-      "subkateqoriya_id": 26,
-      "subkateqoriya_adı": "Süd",
-      "məhsullar": []
-    },
-    {
-      "subkateqoriya_id": 27,
-      "subkateqoriya_adı": "Bitki Çayları",
-      "məhsullar": []
-    },
-    {
-      "subkateqoriya_id": 28,
-      "subkateqoriya_adı": "Quru Meyvə",
-      "məhsullar": []
-    },
-    {
-      "subkateqoriya_id": 29,
-      "subkateqoriya_adı": "Şokolad",
-      "məhsullar": []
-    },
-    {
-      "subkateqoriya_id": 30,
-      "subkateqoriya_adı": "Biskvit",
-      "məhsullar": []
-    },
-    {
-      "subkateqoriya_id": 31,
-      "subkateqoriya_adı": "Çörək Məmulatları",
-      "məhsullar": []
-    },
-    {
-      "subkateqoriya_id": 32,
-      "subkateqoriya_adı": "Şirniyyat Məmulatları",
-      "məhsullar": []
-    },
-    {
-      "subkateqoriya_id": 33,
-      "subkateqoriya_adı": "Qoz-Fındıq",
-      "məhsullar": []
-    },
-    {
-      "subkateqoriya_id": 34,
-      "subkateqoriya_adı": "Yulaf",
-      "məhsullar": []
-    },
-    {
-      "subkateqoriya_id": 35,
-      "subkateqoriya_adı": "Maye Yağ",
-      "məhsullar": []
-    },
-    {
-      "subkateqoriya_id": 36,
-      "subkateqoriya_adı": "Zibil Qutusu",
-      "məhsullar": []
-    }
-      ]
-    },
-    {
-      "kateqoriya_id": 6,
-      "kateqoriya_adı": "İdman & Çöl",
-    "subkateqoriyalar": [
-      {
-        "subkateqoriya_id": 1,
-        "subkateqoriya_adı": "İdman Köynəyi",
-        "məhsullar": []
-      },
-      {
-        "subkateqoriya_id": 2,
-        "subkateqoriya_adı": "Gödəkçə və Jilet",
-        "məhsullar": []
-      },
-      {
-        "subkateqoriya_id": 3,
-        "subkateqoriya_adı": "Yağış Paltarı",
-        "məhsullar": []
-      },
-      {
-        "subkateqoriya_id": 4,
-        "subkateqoriya_adı": "İdman Büstqalteri",
-        "məhsullar": []
-      },
-      {
-        "subkateqoriya_id": 5,
-        "subkateqoriya_adı": "İdman Paltosu",
-        "məhsullar": []
-      },
-      {
-        "subkateqoriya_id": 6,
-        "subkateqoriya_adı": "İdman Papağı",
-        "məhsullar": []
-      },
-      {
-        "subkateqoriya_id": 7,
-        "subkateqoriya_adı": "İdman Ayaqqabısı",
-        "məhsullar": []
-      },
-      {
-        "subkateqoriya_id": 8,
-        "subkateqoriya_adı": "İdman Zalı Üçün Avadanlıqlar",
-        "məhsullar": []
-      },
-      {
-        "subkateqoriya_id": 10,
-        "subkateqoriya_adı": "Mat",
-        "məhsullar": []
-      },
-      {
-        "subkateqoriya_id": 11,
-        "subkateqoriya_adı": "İp Atlama",
-        "məhsullar": []
-      },
-      {
-        "subkateqoriya_id": 12,
-        "subkateqoriya_adı": "Boks Əlcəyi",
-        "məhsullar": []
-      },
-      {
-        "subkateqoriya_id": 13,
-        "subkateqoriya_adı": "Düşərgə Alətləri",
-        "məhsullar": []
-      },
-      {
-        "subkateqoriya_id": 13,
-        "subkateqoriya_adı": "Alpinizm və Dırmanma",
-        "məhsullar": []
-      },
-      {
-        "subkateqoriya_id": 15,
-        "subkateqoriya_adı": "Su İdmanı Avadanlıqları",
-        "məhsullar": []
-      },
-      {
-        "subkateqoriya_id": 16,
-        "subkateqoriya_adı": "Dalğıc Avadanlıqları",
-        "məhsullar": []
-      },
-      {
-        "subkateqoriya_id": 17,
-        "subkateqoriya_adı": "Balıqçılıq Ləvazimatları",
-        "məhsullar": []
-      },
-      {
-        "subkateqoriya_id": 19,
-        "subkateqoriya_adı": "Çadır",
-        "məhsullar": []
-      },
-      {
-        "subkateqoriya_id": 20,
-        "subkateqoriya_adı": "Pilates Topları",
-        "məhsullar": []
-      },
-      {
-        "subkateqoriya_id": 21,
-        "subkateqoriya_adı": "Protein tozu",
-        "məhsullar": []
-      },
-      {
-        "subkateqoriya_id": 22,
-        "subkateqoriya_adı": "Top",
-        "məhsullar": []
-      },
-  
-    ]
-  },
-    {
-     "kateqoriya_id": 6,
-      "kateqoriya_adı": "Ev Heyvanları & Bağ",
-      "subkateqoriyalar": [
-        {
-          "id": 1,
-          "subkateqoriya_adı": "Pişik Yeməyi",
-          "məhsullar": []
+          subkateqoriya_id: 17,
+          subkateqoriya_adı: "Velosiped",
+          məhsullar: [],
         },
         {
-          "id": 2,
-          "subkateqoriya_adı": "İt Yeməyi",
-          "məhsullar": []
+          subkateqoriya_id: 18,
+          subkateqoriya_adı: "Termoslar",
+          məhsullar: [],
         },
         {
-          "id": 3,
-          "subkateqoriya_adı": "Quş Məhsulları",
-          "məhsullar": []
+          subkateqoriya_id: 19,
+          subkateqoriya_adı: "Kitablar",
+          məhsullar: [],
+        },
+      ],
+    },
+    {
+      kateqoriya_id: 5,
+      kateqoriya_adı: "Supermarket",
+      subkateqoriyalar: [
+        {
+          subkateqoriya_id: 1,
+          subkateqoriya_adı: "Yuyucu Toz",
+          məhsullar: [],
         },
         {
-          "id": 4,
-          "subkateqoriya_adı": "Akvarium Məhsulları",
-          "məhsullar": []
+          subkateqoriya_id: 2,
+          subkateqoriya_adı: "Qab Yuyucu",
+          məhsullar: [],
         },
         {
-          "id": 5,
-          "subkateqoriya_adı": "Pişik Vitamini",
-          "məhsullar": []
-        },
-   
-   
-        {
-          "id": 8,
-          "subkateqoriya_adı": "Pişik Oyuncaqları",
-          "məhsullar": []
+          subkateqoriya_id: 3,
+          subkateqoriya_adı: "Otaq Ətri",
+          məhsullar: [],
         },
         {
-          "id": 9,
-          "subkateqoriya_adı": "İt Oyuncaqları",
-          "məhsullar": []
+          subkateqoriya_id: 4,
+          subkateqoriya_adı: "Hamam Təmizləyiciləri",
+          məhsullar: [],
         },
         {
-          "id": 10,
-          "subkateqoriya_adı": "Pişiklərin Yaş Yeməyi",
-          "məhsullar": []
+          subkateqoriya_id: 5,
+          subkateqoriya_adı: "Tualet Kağızı",
+          məhsullar: [],
         },
         {
-          "id": 11,
-          "subkateqoriya_adı": "Pişiklərin Müalicəsi",
-          "məhsullar": []
+          subkateqoriya_id: 6,
+          subkateqoriya_adı: "Kağız Dəsmal",
+          məhsullar: [],
         },
         {
-          "id": 12,
-          "subkateqoriya_adı": "İtlərin Müalicəsi",
-          "məhsullar": []
+          subkateqoriya_id: 7,
+          subkateqoriya_adı: "Saça Qulluq",
+          məhsullar: [],
         },
         {
-          "id": 13,
-          "subkateqoriya_adı": "Pişik şampunu",
-          "məhsullar": []
+          subkateqoriya_id: 8,
+          subkateqoriya_adı: "Ağız Baxımı",
+          məhsullar: [],
         },
         {
-          "id": 14,
-          "subkateqoriya_adı": "İt şampunu",
-          "məhsullar": []
+          subkateqoriya_id: 9,
+          subkateqoriya_adı: "Dəriyə Qulluq",
+          məhsullar: [],
         },
         {
-          "id": 19,
-          "subkateqoriya_adı": "Balıq Yemi",
-          "məhsullar": []
+          subkateqoriya_id: 10,
+          subkateqoriya_adı: "Elektrikli Diş Fırçaları",
+          məhsullar: [],
         },
-      ]
-}
-  ]
-}
+        {
+          subkateqoriya_id: 11,
+          subkateqoriya_adı: "Təraş Məhsulları",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 12,
+          subkateqoriya_adı: "Körpə Üçün Əlavə Qidalanma",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 13,
+          subkateqoriya_adı: "Dəsmallar",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 14,
+          subkateqoriya_adı: "Uşaq Kosmetikası",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 15,
+          subkateqoriya_adı: "Uşaq Qidaları",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 16,
+          subkateqoriya_adı: "Körpə Təmizləyici Pambıq",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 17,
+          subkateqoriya_adı: "Uşaq Pudrası",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 18,
+          subkateqoriya_adı: "Uşaq Şampunu",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 19,
+          subkateqoriya_adı: "Çay",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 20,
+          subkateqoriya_adı: "Qəlyanaltı",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 21,
+          subkateqoriya_adı: "Quru Yemək",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 22,
+          subkateqoriya_adı: "Qəhvə",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 23,
+          subkateqoriya_adı: "Makaron",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 24,
+          subkateqoriya_adı: "Duz və Ədviyyat",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 25,
+          subkateqoriya_adı: "Şəkər",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 26,
+          subkateqoriya_adı: "Süd",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 27,
+          subkateqoriya_adı: "Bitki Çayları",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 28,
+          subkateqoriya_adı: "Quru Meyvə",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 29,
+          subkateqoriya_adı: "Şokolad",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 30,
+          subkateqoriya_adı: "Biskvit",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 31,
+          subkateqoriya_adı: "Çörək Məmulatları",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 32,
+          subkateqoriya_adı: "Şirniyyat Məmulatları",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 33,
+          subkateqoriya_adı: "Qoz-Fındıq",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 34,
+          subkateqoriya_adı: "Yulaf",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 35,
+          subkateqoriya_adı: "Maye Yağ",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 36,
+          subkateqoriya_adı: "Zibil Qutusu",
+          məhsullar: [],
+        },
+      ],
+    },
+    {
+      kateqoriya_id: 6,
+      kateqoriya_adı: "İdman & Çöl",
+      subkateqoriyalar: [
+        {
+          subkateqoriya_id: 1,
+          subkateqoriya_adı: "İdman Köynəyi",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 2,
+          subkateqoriya_adı: "Gödəkçə və Jilet",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 3,
+          subkateqoriya_adı: "Yağış Paltarı",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 4,
+          subkateqoriya_adı: "İdman Büstqalteri",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 5,
+          subkateqoriya_adı: "İdman Paltosu",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 6,
+          subkateqoriya_adı: "İdman Papağı",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 7,
+          subkateqoriya_adı: "İdman Ayaqqabısı",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 8,
+          subkateqoriya_adı: "İdman Zalı Üçün Avadanlıqlar",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 10,
+          subkateqoriya_adı: "Mat",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 11,
+          subkateqoriya_adı: "İp Atlama",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 12,
+          subkateqoriya_adı: "Boks Əlcəyi",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 13,
+          subkateqoriya_adı: "Düşərgə Alətləri",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 13,
+          subkateqoriya_adı: "Alpinizm və Dırmanma",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 15,
+          subkateqoriya_adı: "Su İdmanı Avadanlıqları",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 16,
+          subkateqoriya_adı: "Dalğıc Avadanlıqları",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 17,
+          subkateqoriya_adı: "Balıqçılıq Ləvazimatları",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 19,
+          subkateqoriya_adı: "Çadır",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 20,
+          subkateqoriya_adı: "Pilates Topları",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 21,
+          subkateqoriya_adı: "Protein tozu",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 22,
+          subkateqoriya_adı: "Top",
+          məhsullar: [],
+        },
+      ],
+    },
+    {
+      kateqoriya_id: 6,
+      kateqoriya_adı: "Ev Heyvanları & Bağ",
+      subkateqoriyalar: [
+        {
+          id: 1,
+          subkateqoriya_adı: "Pişik Yeməyi",
+          məhsullar: [],
+        },
+        {
+          id: 2,
+          subkateqoriya_adı: "İt Yeməyi",
+          məhsullar: [],
+        },
+        {
+          id: 3,
+          subkateqoriya_adı: "Quş Məhsulları",
+          məhsullar: [],
+        },
+        {
+          id: 4,
+          subkateqoriya_adı: "Akvarium Məhsulları",
+          məhsullar: [],
+        },
+        {
+          id: 5,
+          subkateqoriya_adı: "Pişik Vitamini",
+          məhsullar: [],
+        },
+
+        {
+          id: 8,
+          subkateqoriya_adı: "Pişik Oyuncaqları",
+          məhsullar: [],
+        },
+        {
+          id: 9,
+          subkateqoriya_adı: "İt Oyuncaqları",
+          məhsullar: [],
+        },
+        {
+          id: 10,
+          subkateqoriya_adı: "Pişiklərin Yaş Yeməyi",
+          məhsullar: [],
+        },
+        {
+          id: 11,
+          subkateqoriya_adı: "Pişiklərin Müalicəsi",
+          məhsullar: [],
+        },
+        {
+          id: 12,
+          subkateqoriya_adı: "İtlərin Müalicəsi",
+          məhsullar: [],
+        },
+        {
+          id: 13,
+          subkateqoriya_adı: "Pişik şampunu",
+          məhsullar: [],
+        },
+        {
+          id: 14,
+          subkateqoriya_adı: "İt şampunu",
+          məhsullar: [],
+        },
+        {
+          id: 19,
+          subkateqoriya_adı: "Balıq Yemi",
+          məhsullar: [],
+        },
+      ],
+    },
+  ],
+};
 export default data;

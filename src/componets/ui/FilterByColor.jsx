@@ -1,12 +1,14 @@
 import { useContextApp } from "../../context/AppContext";
 
 const colors = [
-  { bgColorClass: "bg-red-600", name: "Red" },
-  { bgColorClass: "bg-blue-600", name: "Blue" },
-  { bgColorClass: "bg-orange-500", name: "Orange" },
-  { bgColorClass: "bg-black", name: "Black" },
-  { bgColorClass: "bg-green-600", name: "Green" },
-  { bgColorClass: "bg-yellow-500", name: "Yellow" },
+  { bgColorClass: "bg-white-600", name: "Ağ" },
+  { bgColorClass: "bg-black", name: "Qara" },
+  { bgColorClass: "bg-gray-500", name: "Boz" },
+  { bgColorClass: "bg-red-600", name: "Qırmızı" },
+  { bgColorClass: "bg-blue-600", name: "Mavi" },
+  { bgColorClass: "bg-orange-500", name: "Narinci" },
+  { bgColorClass: "bg-green-600", name: "Yaşıl" },
+  { bgColorClass: "bg-yellow-600", name: "Sarı" },
 ];
 
 const FilterByColor = () => {

@@ -1,7 +1,7 @@
 function ProductOptions({findProduct}) {
   return (
     <div>
-      <div className="flex items-center mb-6">
+      <div className="flex items-center mb-4">
         <div className="text-2xl">
           <p>Colours:</p>
         </div>

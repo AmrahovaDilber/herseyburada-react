@@ -30,7 +30,7 @@ export default function MusicExperience() {
   }, []);
   return (
 <section>
-  <div className="bg-[#000000] w-[1200px] h-[500px] flex my-[71px] ">
+  <div className="bg-[#000000]  h-[500px] flex my-[71px] ">
     <div className="w-1/2 pt-[69px] pl-[56px]">
       <p className="font-semibold text-[16px] text-[#00FF66] mb-[32px]">
         Kateqoriyalar

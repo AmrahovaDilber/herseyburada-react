@@ -47,14 +47,16 @@ export default function ProductDetail() {
         </div> */}
 
         {/* ProductImages */}
-        <div className="w-[500px] border rounded-[4px]">
-          <figure>
-            <img
-              src="https://images-na.ssl-images-amazon.com/images/I/51zyUeBrFgL._AC_UL600_SR600,600_.jpg"
-              alt="Product Image"
-            />
-          </figure>
-        </div>
+        <div className="w-[500px]  rounded-[4px] overflow-hidden">
+  <figure className="h-[600px] flex items-center justify-center">
+    <img
+      src={findProduct.image_url}
+      alt={findProduct.product_name}
+      className="w-full h-full object-cover"
+    />
+  </figure>
+</div>
+
       </div>
 
       <div className="w-[500px]">
