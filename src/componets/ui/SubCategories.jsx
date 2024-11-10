@@ -4,7 +4,7 @@ import { useContextApp } from "../../context/AppContext";
 export default function SubCategories() {
     const { slug } = useParams();
     const { allData } = useContextApp();
-    
+
     // Find the subcategory that matches the slug
     const category = allData.kateqoriyalar.find(category => 
         category.subkateqoriyalar.some(sub => sub.subkateqoriya_adı === slug)

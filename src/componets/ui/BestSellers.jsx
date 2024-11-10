@@ -1,5 +1,4 @@
-import { useState } from "react";
-import ProductList from "./ProductList";
+import { useEffect, useState } from "react";
 import TitleSubtitle from "./TitleSubtitle";
 import { useContextApp } from "../../context/AppContext";
 import ProductItem from "./ProductItem";
@@ -7,17 +6,39 @@ import ProductItem from "./ProductItem";
 export default function BestSellers() {
   const { sortedSellerProducts } = useContextApp();
   const [startIndex, setStartIndex] = useState(0);
-  const perIndex = 5;
+  const [perIndex, setPerIndex] = useState(4);
+  
+  function updatePerIndex() {
+    const width = window.innerWidth;
+    if (width >= 1024) {
+      setPerIndex(5); // Desktop
+    } else if (width >= 640) {
+      setPerIndex(3); // Tablet
+    } else {
+      setPerIndex(2); // Mobile
+    }
+  }
+
+ 
+  useEffect(() => {
+    updatePerIndex();
+    window.addEventListener("resize", updatePerIndex);
+    return () => window.removeEventListener("resize", updatePerIndex);
+  }, []);
 
   function handlePrev() {
     setStartIndex((prevIndex) =>
-      prevIndex > 0 ? prevIndex - perIndex : sortedSellerProducts.length - perIndex
+      prevIndex > 0
+        ? prevIndex - perIndex
+        : sortedSellerProducts.length - perIndex
     );
   }
 
   function handleNext() {
     setStartIndex((prevIndex) =>
-      prevIndex + perIndex < sortedSellerProducts.length ? prevIndex + perIndex : 0
+      prevIndex + perIndex < sortedSellerProducts.length
+        ? prevIndex + perIndex
+        : 0
     );
   }
 

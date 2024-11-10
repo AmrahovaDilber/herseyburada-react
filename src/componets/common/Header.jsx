@@ -83,7 +83,7 @@ export default function Header() {
               </Link>
             </div>
             <nav className="flex space-x-6">
-              <Link to="/cartpage" className="relative text-gray-500 hover:text-gray-900">
+              <Link to="/cartpage" className="relative text-gray-500 hover:text-[#ff9130]">
                 <i className="fa-solid fa-cart-shopping text-xl" />
                 {cartLength > 0 && (
                   <span className="absolute -top-2 -right-2 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-white text-xs">
@@ -91,7 +91,7 @@ export default function Header() {
                   </span>
                 )}
               </Link>
-              <Link to="/wishlist" className="relative text-gray-500 hover:text-gray-900">
+              <Link to="/wishlist" className="relative text-gray-500 hover:text-[#ff9130]">
                 <i className="fa-solid fa-heart text-xl" />
                 {favoritesLength > 0 && (
                   <span className="absolute -top-2 -right-2 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-white text-xs">
@@ -99,12 +99,12 @@ export default function Header() {
                   </span>
                 )}
               </Link>
-              <Link to="/about" className="text-gray-500 hover:text-gray-900">
+              <Link to="/about" className="text-gray-500 hover:text-[#ff9130]">
                 <FcAbout className="text-xl" />
               </Link>
               <div className="relative" ref={dropdownRef}>
                 <button
-                  className="text-gray-500 hover:text-gray-900"
+                  className="text-gray-500 hover:text-[#ff9130]"
                   onClick={handleAccountClick}
                 >
                   <i className="fa-solid fa-user text-xl" />
@@ -114,28 +114,7 @@ export default function Header() {
                     id="dropdown"
                     className="absolute flex-col justify-start right-0 top-3 w-[200px] bg-white shadow-lg rounded-lg mt-2 py-2"
                   >
-                    {/* <Link
-                      to={"/account"}
-                      className="flex justify-between items-center px-4 py-2 text-sm hover:bg-gray-100 hover:text-[#ff7518]"
-                    >
-                      <img
-                        src="/Icon-user.svg"
-                        className="size-[22px] w-[20%] mr-2"
-                        alt="User Icon"
-                      />
-                      <span className="text-left w-[80%]">Hesabımın idarəsi</span>
-                    </Link> */}
-                    {/* <Link
-                      to={"/cartpage"}
-                      className="flex justify-between items-center px-4 py-2 text-sm hover:bg-gray-100 hover:text-[#ff7518]"
-                    >
-                      <img
-                        src="/Icon-mallbag.svg"
-                        alt="Cart Icon"
-                        className="size-[24px] w-[20%] mr-2"
-                      />
-                      <span className="text-left w-[80%]">Mənim sifarişlərim</span>
-                    </Link> */}
+                   
                     <Link
                       to={"/contact"}
                       className="flex justify-between items-center px-4 py-2 text-sm hover:bg-gray-100 hover:text-[#ff7518]"
@@ -147,17 +126,7 @@ export default function Header() {
                       />
                       <span className="text-left w-[80%]">Müştəri xidməti</span>
                     </Link>
-                    {/* <a
-                      href="#"
-                      className="flex justify-between items-center px-4 py-2 text-sm hover:bg-gray-100 hover:text-[#ff7518]"
-                    >
-                      <img
-                        src="/Icon-Reviews.svg"
-                        alt="Reviews Icon"
-                        className="size-[25px] w-[20%] mr-2"
-                      />
-                      <span className="text-left w-[80%]">Mənim rəylərim</span>
-                    </a> */}
+                  
                     <Link
                       to={"/login"}
                       className="flex justify-between items-center px-4 py-2 text-sm hover:bg-gray-100 hover:text-[#ff7518]"

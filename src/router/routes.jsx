@@ -1,4 +1,3 @@
-import CheckOutPage from "../componets/ui/CheckOut";
 import AppLayout from "../layouts/AppLayout";
 import AboutPage from "../pages/About";
 import AccountPage from "../pages/AccoutPage";
@@ -13,7 +12,6 @@ import GizlilikSiyaseti from '../pages/GizlilikSiyaseti';
 import IstifadeSertleri from '../pages/IstifadeSertleri';
 import ProductDetail from "../componets/ui/ProductDetail";
 import {  AppContextProvider } from "../context/AppContext";
-import AddressBook from "../componets/ui/AddressBook";
 import PaymentOptions from "../componets/ui/PaymentOptions";
 
 const routers = [
@@ -66,20 +64,12 @@ const routers = [
     element: <AboutPage></AboutPage>,
   },
   {
-    path: "/checkout",
-    element: <CheckOutPage></CheckOutPage>,
-  },
-  {
     path: "/gizliliksiyaseti",
     element:<GizlilikSiyaseti></GizlilikSiyaseti>
   },
   {
     path: "/istifadesertleri",
     element:<IstifadeSertleri></IstifadeSertleri>
-  },
-  {
-    path: '/addressbook',
-    element:<AddressBook></AddressBook>
   },
   {
     path: "/paymentoptions",

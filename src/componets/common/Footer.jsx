@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <div>
       <footer className="bg-black">
-        <div className="w-full max-w-[1200px] mx-auto text-white py-8 md:py-12 flex flex-col md:flex-row justify-between mt-8 md:mt-12">
+        <div className="w-full max-w-[1200px] mx-auto text-white py-8 md:py-12 flex flex-col justify-center items-center md:flex-row sm:justify-between mt-8 md:mt-12">
           <div className="mb-8 md:mb-0">
             <div className="space-y-4">
               <Link to="/">
@@ -24,45 +24,37 @@ export default function Footer() {
               </div>
               <div className="flex space-x-4">
                 <Link to="/" target="_blank">
-                  <i className="text-lg md:text-xl opacity-70 hover:opacity-100 fa-brands fa-facebook-f"></i>
+                  <i className="text-lg md:text-2xl opacity-70 hover:opacity-100 fa-brands fa-facebook-f hover:text-[#1877F2]"></i>
                 </Link>
                 <Link to="/" target="_blank">
-                  <i className="text-lg md:text-xl opacity-70 hover:opacity-100 fa-brands fa-twitter"></i>
+                  <i className="text-lg md:text-2xl opacity-70 hover:opacity-100 fa-brands fa-twitter hover:text-[#1DA1F2]"></i>
                 </Link>
                 <a
                   href="https://www.instagram.com/herseyburadaz/"
                   target="_blank"
                 >
-                  <i className="text-lg md:text-xl opacity-70 hover:opacity-100 fa-brands fa-instagram"></i>
+                  <i className="text-lg md:text-2xl opacity-70 hover:opacity-100 fa-brands fa-instagram hover:text-[#E4405F]"></i>
                 </a>
-            
                 <a href="#" target="_blank">
-                  <i className="text-lg md:text-xl opacity-70 hover:opacity-100 fa-brands fa-linkedin-in"></i>
+                  <i className="text-lg md:text-2xl opacity-70 hover:opacity-100 fa-brands fa-linkedin-in hover:text-[#0A66C2]"></i>
                 </a>
               </div>
             </div>
           </div>
 
-          <div className="mb-8 md:mb-0">
-            <h3 className="font-medium text-lg md:text-xl mb-6">Dəstək</h3>
+          <div className="mb-8 md:mb-0 text-center sm:text-left">
+            <h3 className="font-medium text-lg md:text-xl mb-6 ">Dəstək</h3>
             <p className="text-base md:text-lg mb-4">Bakı, Azərbaycan</p>
 
             <p className="text-base md:text-lg mb-4">+994 (51) 548 92 72</p>
             <a href="mailto:herseyburadaz28@gmail.com">
-                  <p className="text-base md:text-lg mb-4">
-                    herseyburadaz28@gmail.com
-                  </p>
-                </a>
+              <p className="text-base md:text-lg mb-4">
+                herseyburadaz28@gmail.com
+              </p>
+            </a>
           </div>
 
           <div className="mb-8 md:mb-0 flex flex-col">
-            {/* <h3 className="font-medium text-lg md:text-xl mb-6">Hesab</h3>
-            <Link
-              to="/account"
-              className="text-base md:text-lg mb-4 opacity-70 hover:opacity-100 hover:underline"
-            >
-              Hesabım
-            </Link> */}
             <Link
               to="/signup"
               className="text-base md:text-lg mb-4 opacity-70 hover:opacity-100 hover:underline"
@@ -109,18 +101,10 @@ export default function Footer() {
             >
               Əlaqə
             </Link>
-         
           </div>
         </div>
 
         <div className="flex items-center justify-center bg-black gap-x-2 py-4 border-t border-[#141414]">
-          <div className="w-5">
-            <img
-              className="object-cover opacity-50"
-              src="./assets/img/c.svg"
-              alt="C Logo"
-            />
-          </div>
           <div className="text-sm text-[#d9d9d9]">
             <a href="#">Copyright Rimel 2022. Bütün hüquqlar qorunur</a>
           </div>

@@ -3873,4 +3873,31 @@ const data = {
     },
   ],
 };
+
+
+export const statsData = [
+  { iconSrc: "/store.svg", value: "10.5k", description: "Sallers active on our site" },
+  { iconSrc: "/store.svg", value: "33k", description: "Monthly Product Sale" },
+  { iconSrc: "/store.svg", value: "45.5k", description: "Customers active on our site" },
+  { iconSrc: "/store.svg", value: "25k", description: "Annual gross sale on our site" },
+];
+
+export const servicesData= [
+  {
+    imgSrc: "/icon-delivery.svg",
+    title: "FREE AND FAST DELIVERY",
+    description: "Free delivery for all orders over $140",
+  },
+  {
+    imgSrc: "/icon-headphone.svg",
+    title: "24/7 CUSTOMER SERVICE",
+    description: "Friendly 24/7 customer support",
+  },
+  {
+    imgSrc: "/icon-delivery.svg",
+    title: "MONEY BACK GUARANTEE",
+    description: "We return money within 30 days",
+  },
+];
+
 export default data;

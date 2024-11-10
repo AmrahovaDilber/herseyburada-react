@@ -17,13 +17,6 @@ export default function CartTotal({ subtotal }) {
         <span>Total:</span>
         <span id="total">${total.toFixed(2)}</span>
       </div>
-      {/* <div className="flex justify-center">
-        <Link to="/checkout">
-          <button className="px-[48px] py-[16px] rounded-[4px] text-white bg-[#ff7518] font-medium transition-colors hover:bg-[#e07575] duration-200">
-            Proceed to Checkout
-          </button>
-        </Link>
-      </div> */}
     </div>
   );
 }

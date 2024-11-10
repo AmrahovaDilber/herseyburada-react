@@ -13,45 +13,34 @@ export default function ProductItem({ product }) {
   } = useContextApp();
 
   return (
-    <div>
-      <div className="h-auto relative shadow-lg rounded-lg overflow-hidden">
-        <div className="relative flex items-center justify-center h-[250px] bg-[#F5F5F5] group">
+ 
+      <div className="h-auto relative shadow-lg rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300 bg-white">
+        <div  className="relative flex items-center justify-center h-[250px] bg-[#F5F5F5] group">
           <div className="w-[55px] h-[26px] bg-[#FF7518] rounded-md absolute top-[12px] left-[12px]">
             <p className="font-normal text-[12px] text-center py-1 text-[#FAFAFA]">
               -{product.discount}%
             </p>
           </div>
-          <Link
-            className="absolute inset-0 flex justify-center items-center"
-            to={`/productdetails/${product.slug}`}
-          >
-            <figure className="w-full h-full">
-              <img
-                src={product.image_url}
-                className="w-full h-full object-cover"
-                alt={product.product_name}
-              />
-            </figure>
-          </Link>
-
-          <figure className="size-[34px] rounded-full bg-[#FFFFFF] absolute top-[12px] right-[12px] flex items-center justify-center">
-            {!isFavorited(product.product_id) ? (
-              <button
-                onClick={() => addToFavorites(product.product_id)}
-                className="size-[23px]"
-              >
-                <IoMdHeartEmpty className="size-full" />
-              </button>
-            ) : (
-              <button
-                onClick={() => removeFromFavorites(product.product_id)}
-                className="size-[23px]"
-              >
-                <IoMdHeart className="size-full text-red-500" />
-              </button>
-            )}
+          <Link className="absolute inset-0 flex justify-center items-center" to={`/productdetails/${product.slug}`}>
+          <figure className="w-full h-full transition-transform duration-300 group-hover:scale-105">
+            <img src={product.image_url} className="w-full h-full object-cover" alt={product.product_name} />
+            <div className="absolute inset-0 bg-gradient-to-t from-black opacity-0 group-hover:opacity-10  transition-opacity duration-300"></div>
           </figure>
-          <div className="absolute bottom-0 py-[8px] hidden group-hover:flex space-x-[3px] items-center justify-center w-full bg-[#000000]">
+        </Link>
+
+          <figure className="size-[34px] rounded-full bg-white absolute top-[12px] right-[12px] flex items-center justify-center shadow-lg">
+          {!isFavorited(product.product_id) ? (
+            <button onClick={() => addToFavorites(product.product_id)} className="text-[#FF7518] text-[23px] transition-all duration-300 hover:text-red-500">
+              <IoMdHeartEmpty />
+            </button>
+          ) : (
+            <button onClick={() => removeFromFavorites(product.product_id)} className="text-red-500 text-[23px] transition-all duration-300">
+              <IoMdHeart />
+            </button>
+          )}
+        </figure>
+
+          <div className="absolute bottom-[-10px] py-[8px] hidden group-hover:flex space-x-[3px] items-center justify-center w-full bg-[#000000]">
             <figure className="size-[24px] text-white">
               <img src="/sebet.svg" className="object-cover" />
             </figure>
@@ -104,6 +93,6 @@ export default function ProductItem({ product }) {
           </div>
         </div>
       </div>
-    </div>
+    
   );
 }

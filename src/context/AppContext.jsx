@@ -37,6 +37,7 @@ export const AppContextProvider = ({ children }) => {
     const unsubscribe = onAuthStateChanged(auth, initializeUser);
     return unsubscribe;
   }, []);
+  
   useEffect(() => {
     if (!userLoggedIn) {
       const localCarts = JSON.parse(localStorage.getItem('carts')) || [];

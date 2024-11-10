@@ -1,4 +1,3 @@
-import React from 'react';
 import { useContextApp } from "../../context/AppContext";
 
 export default function CartItem({ product, count, setCount, updateProductCount, subtotal }) {
@@ -16,7 +15,7 @@ export default function CartItem({ product, count, setCount, updateProductCount,
       setCount(newCount);
       updateProductCount(product.product_id, newCount);
     }
-  };
+  }
 
   const handleRemove = () => {
     removeFromCart(product.product_id);
