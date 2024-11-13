@@ -6,7 +6,6 @@ const ContactForm = () => {
   const formRef = useRef(); 
   const { register, handleSubmit, formState } = useForm();
   const { errors } = formState;
-  
   function onSubmit(data) {
     console.log(data);
     emailjs
@@ -20,7 +19,6 @@ const ContactForm = () => {
       },
     );
   }
-
   return (
     <form ref={formRef} onSubmit={handleSubmit(onSubmit)} className="py-[47px] px-[30px] space-y-[32px] border border-gray-100 shadow-md rounded-[4px]">
       <div className="grid grid-cols-3 gap-[16px]">

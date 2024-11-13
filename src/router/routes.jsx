@@ -1,6 +1,5 @@
 import AppLayout from "../layouts/AppLayout";
 import AboutPage from "../pages/About";
-import AccountPage from "../pages/AccoutPage";
 import CartPage from "../pages/CartPage";
 import FilterPage from "../pages/FilterPage";
 import Home from "../pages/Home";
@@ -12,7 +11,6 @@ import GizlilikSiyaseti from '../pages/GizlilikSiyaseti';
 import IstifadeSertleri from '../pages/IstifadeSertleri';
 import ProductDetail from "../componets/ui/ProductDetail";
 import {  AppContextProvider } from "../context/AppContext";
-import PaymentOptions from "../componets/ui/PaymentOptions";
 
 const routers = [
   {
@@ -55,10 +53,7 @@ const routers = [
     path: "/login",
     element: <LoginPage></LoginPage>,
   },
-  {
-    path: "/account",
-    element: <AccountPage></AccountPage>,
-  },
+
   {
     path: "/about",
     element: <AboutPage></AboutPage>,
@@ -71,10 +66,7 @@ const routers = [
     path: "/istifadesertleri",
     element:<IstifadeSertleri></IstifadeSertleri>
   },
-  {
-    path: "/paymentoptions",
-    element:<PaymentOptions></PaymentOptions>
-  }
+
 ];
 
 const layoutRouter = (routers) => {

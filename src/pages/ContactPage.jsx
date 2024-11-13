@@ -8,33 +8,31 @@ const ContactPage = () => {
     <main className="pt-10">
       <div className="mb-10">
         <Link to="/" className="opacity-50 hover:opacity-80">
-          Home
+          Ana Səhifə
         </Link>
         <span className="opacity-50 mx-3">/</span>
-        <Link to="/contact">Contact</Link>
+        <Link to="/contact">Əlaqə</Link>
       </div>
       <div className="flex flex-col md:flex-row space-x-10">
         <div className="px-6 md:px-8 w-full md:w-[340px] py-10 space-y-8 border border-gray-100 shadow-md rounded-md">
           <ContactInfoCard
             icon="fa-phone"
-            title="Call To Us"
+            title="Bizə Zəng Edin"
             description={
               <>
-                <p>We are available 24/7, 7 days a week.</p>
-                <p>Phone: +8801611112222</p>
+                <p>Həftənin 7 günü, 24 saat mövcuduq.</p>
+                <p>Telefon: +994515489272</p>
               </>
             }
           />
           <ContactInfoCard
             icon="fa-envelope"
-            title="Write To Us"
+            title="Bizə Yazın"
             description={
               <>
-                <p>
-                  Fill out our form and we will contact you within 24 hours.
-                </p>
-                <p>Emails: customer@exclusive.com</p>
-                <p>Emails: support@exclusive.com</p>
+                <p>Formamızı doldurun, 24 saat ərzində sizinlə əlaqə saxlayacağıq.</p>
+                <p>Email: herseyburada28@gmail.com</p>
+                <p>Email: dilberamrahova1@gmail.com</p>
               </>
             }
           />

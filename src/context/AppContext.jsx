@@ -15,7 +15,6 @@ export const AppContextProvider = ({ children }) => {
       category.subkateqoriyalar.flatMap((subcategory) => subcategory.məhsullar)
     )
   );
-
   const [carts, setCarts] = useState([]);
   const [favorites, setFavorites] = useState([]);
 
@@ -98,6 +97,103 @@ export const AppContextProvider = ({ children }) => {
     }
   };
 
+  const addToCart = async (id) => {
+    if (!userLoggedIn) {
+      notification("Səbətə əşyalar əlavə etmək üçün daxil olmalısınız");
+      return;
+    }
+    const product = products.find((prod) => prod.product_id === id);
+  
+    if (product) {
+      if (!carts.includes(id)) {
+        const newCarts = [...carts, id];
+        setCarts(newCarts);
+        await updateUserData(newCarts, favorites);
+        notification(`${product.product_name} səbətə əlavə edildi`);
+      } else {
+        notification(`${product.product_name} artıq səbətdədir mövcuddur`);
+      }
+    } else {
+      notification(`Məhsul tapılmadı`);
+    }
+  };
+  
+  const removeFromCart = async (id) => {
+    const newCarts = carts.filter((item) => item !== id);
+    setCarts(newCarts);
+    const product = products.find((prod) => prod.product_id === id);
+  
+    if (product) {
+      await updateUserData(newCarts, favorites);
+      notification(`${product.product_name} səbətdən silindi`);
+    } else {
+      notification('Məhsul tapılmadı');
+    }
+  };
+
+  const fetchCartProducts = () => {
+    return products.filter((product) => carts.includes(product.product_id));
+  };
+
+  const addToFavorites = async (id) => {
+    if (!userLoggedIn) {
+      notification('You must be logged in to add items to your favorites');
+      return;
+    }
+    const findProduct = products.find((product) => product.product_id === id);
+  
+    if (findProduct) {
+      if (!favorites.includes(id)) {
+        const newFavorites = [...favorites, id];
+        setFavorites(newFavorites);
+        await updateUserData(carts, newFavorites);
+        notification(`${findProduct.product_name} sevimlilərə əlavə edildi`);
+      } else {
+        notification(`${findProduct.product_name} artıq sevimlilər siyahısındadır`);
+      }
+    } else {
+      notification('Məhsul tapılmadı');
+    }
+  };
+  
+  const removeFromFavorites = async (id) => {
+    const newFavorites = favorites.filter((favoriteId) => favoriteId !== id);
+    setFavorites(newFavorites);
+    
+    const findProduct = products.find((product) => product.product_id === id);
+  
+    if (findProduct) {
+      await updateUserData(carts, newFavorites);
+      notification(`${findProduct.product_name} removed from favorites`);
+    } else {
+      notification(`Product not found`);
+    }
+  };
+
+  const fetchFavoritesProducts = () => {
+    return products.filter((product) => favorites.includes(product.product_id));
+  };
+
+  const isFavorited = (id) => {
+    return favorites.includes(id);
+  };
+
+  const fetchProducts = (updatedCarts) => {
+    const updatedProducts = allData.kateqoriyalar.flatMap((category) =>
+      category.subkateqoriyalar.flatMap((subcategory) =>
+        subcategory.məhsullar.map((product) => ({
+          ...product,
+          isBasket: updatedCarts.includes(product.product_id),
+        }))
+      )
+    );
+    setProducts(updatedProducts);
+  };
+
+
+
+
+  
   const handleFilterPrice = (price) => {
     setMaxPrice(price);
   };
@@ -123,105 +219,6 @@ export const AppContextProvider = ({ children }) => {
           (subcategory) => subcategory.məhsullar
         )
       );
-  };
-
-  const addToCart = async (id) => {
-    if (!userLoggedIn) {
-      notification('You must be logged in to add items to the cart');
-      return;
-    }
-  
-    const product = products.find((prod) => prod.product_id === id);
-  
-    if (product) {
-      if (!carts.includes(id)) {
-        const newCarts = [...carts, id];
-        setCarts(newCarts);
-        await updateUserData(newCarts, favorites);
-        notification(`${product.product_name} added to cart`);
-      } else {
-        notification(`${product.product_name} is already in the cart`);
-      }
-    } else {
-      notification(`Product not found`);
-    }
-  };
-  
- 
- 
-  
-  const removeFromCart = async (id) => {
-    const newCarts = carts.filter((item) => item !== id);
-    setCarts(newCarts);
-    
-    const product = products.find((prod) => prod.product_id === id);
-  
-    if (product) {
-      await updateUserData(newCarts, favorites);
-      notification(`${product.product_name} removed from cart`);
-    } else {
-      notification(`Product not found`);
-    }
-  };
-  
-  const fetchProducts = (updatedCarts) => {
-    const updatedProducts = allData.kateqoriyalar.flatMap((category) =>
-      category.subkateqoriyalar.flatMap((subcategory) =>
-        subcategory.məhsullar.map((product) => ({
-          ...product,
-          isBasket: updatedCarts.includes(product.product_id),
-        }))
-      )
-    );
-    setProducts(updatedProducts);
-  };
-
-  const fetchCartProducts = () => {
-    return products.filter((product) => carts.includes(product.product_id));
-  };
-
-  const addToFavorites = async (id) => {
-    if (!userLoggedIn) {
-      notification('You must be logged in to add items to your favorites');
-      return;
-    }
-  
-    const findProduct = products.find((product) => product.product_id === id);
-  
-    if (findProduct) {
-      if (!favorites.includes(id)) {
-        const newFavorites = [...favorites, id];
-        setFavorites(newFavorites);
-        await updateUserData(carts, newFavorites);
-        notification(`${findProduct.product_name} added to favorites`);
-      } else {
-        notification(`${findProduct.product_name} is already in favorites`);
-      }
-    } else {
-      notification(`Product not found`);
-    }
-  };
-  
-  const removeFromFavorites = async (id) => {
-    const newFavorites = favorites.filter((favoriteId) => favoriteId !== id);
-    setFavorites(newFavorites);
-    
-    const findProduct = products.find((product) => product.product_id === id);
-  
-    if (findProduct) {
-      await updateUserData(carts, newFavorites);
-      notification(`${findProduct.product_name} removed from favorites`);
-    } else {
-      notification(`Product not found`);
-    }
-  };
-
-  const fetchFavoritesProducts = () => {
-    return products.filter((product) => favorites.includes(product.product_id));
-  };
-
-  const isFavorited = (id) => {
-    return favorites.includes(id);
   };
 
   // Discounted products
@@ -261,8 +258,8 @@ export const AppContextProvider = ({ children }) => {
 
   // Filter functions
   const handleColorChange = (color) => {
-    setSelectedColors((prev) =>
-      prev.includes(color) ? prev.filter((c) => c !== color) : [...prev, color]
+    setSelectedColors((selectedColors) =>
+      selectedColors.includes(color) ? selectedColors.filter((c) => c !== color) : [...selectedColors, color]
     );
   };
 

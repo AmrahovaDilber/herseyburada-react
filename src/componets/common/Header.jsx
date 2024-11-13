@@ -49,7 +49,7 @@ export default function Header() {
   };
 
   return (
-    <header className="border-b-[1px] sticky top-0 bg-white z-40">
+    <header className="border-b-[1px] sticky top-0 bg-white z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-0">
         <div className="flex justify-between items-center py-4 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
@@ -210,8 +210,8 @@ export default function Header() {
                   Haqqımızda
                 </Link>
                 {userLoggedIn ? (
-                  <Link to="/account" className="text-base font-medium text-gray-900 hover:text-gray-700">
-                    Hesab
+                  <Link to="/contact" className="text-base font-medium text-gray-900 hover:text-gray-700">
+                    Əlaqə
                   </Link>
                 ) : (
                   <Link to="/login" className="text-base font-medium text-gray-900 hover:text-gray-700">

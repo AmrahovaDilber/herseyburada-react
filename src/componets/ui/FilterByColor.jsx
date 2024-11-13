@@ -12,23 +12,30 @@ const colors = [
 ];
 
 const FilterByColor = () => {
-  // const { handleFilterColor, selectedColor } = useContextApp();
   const { handleColorChange, selectedColors } = useContextApp();
+
   return (
-    <div>
-      <h2 className="font-bold mb-2">Filter by Color</h2>
-      <ul className="space-y-1 h-[170px] overflow-y-auto">
-        {colors.map(({ bgColorClass, name, count }) => (
-          <li key={name} className="hover:bg-gray-100 rounded-sm">
+    <div className="">
+      <h2 className="text-lg font-semibold mb-3 text-gray-700">
+        Filter by Color
+      </h2>
+      <ul className=" max-h-44 overflow-y-auto custom-scrollbar">
+        {colors.map(({ bgColorClass, name }) => (
+          <li
+            key={name}
+            className="flex items-center p-2 rounded-lg transition-colors duration-200 hover:bg-gray-100"
+          >
             <label className="flex items-center cursor-pointer">
               <input
                 type="checkbox"
-                className="mr-2 cursor-pointer"
+                className="mr-2 h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500 cursor-pointer"
                 checked={selectedColors.includes(name)}
                 onChange={() => handleColorChange(name)}
               />
-              <span className={`w-4 h-4 rounded mr-2 ${bgColorClass}`} />
-              {name} ({count})
+              <span
+                className={`inline-block w-5 h-5 rounded-full mr-3 ${bgColorClass}`}
+              />
+              <span className="text-gray-600">{name}</span>
             </label>
           </li>
         ))}

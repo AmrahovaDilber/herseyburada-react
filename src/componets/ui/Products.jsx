@@ -51,7 +51,6 @@ export default function Products() {
       );
     }
 
-
     // Color filter
     if (selectedColors.length > 0) {
       products = products.filter((product) =>
@@ -63,9 +62,6 @@ export default function Products() {
       );
     }
 
-    // Apply price filter
-    products = products.filter((product) => product.price <= maxPrice);
-
     // Apply size filter
     if (selectedSizes.length > 0) {
       products = products.filter((product) =>
@@ -76,6 +72,9 @@ export default function Products() {
         )
       );
     }
+
+    // Apply price filter
+    products = products.filter((product) => product.price <= maxPrice);
 
     setFilteredProducts(products);
   }, [
