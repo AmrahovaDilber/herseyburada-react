@@ -1,43 +1,33 @@
-function ProductOptions({findProduct}) {
+// Updated ProductOptions Component
+function ProductOptions({ findProduct }) {
   return (
-    <div>
-      <div className="flex items-center mb-4">
-        <div className="text-2xl">
-          <p>Colours:</p>
+    <div className="space-y-6">
+      {/* Color Options */}
+      <div className="flex items-center">
+        <div className="text-lg font-semibold text-gray-800">Colors:</div>
+        <div className="flex ml-4 space-x-4">
+          {/* Color Options */}
+          <label className="cursor-pointer">
+            <input type="radio" name="color" className="hidden peer" />
+            <div className="w-8 h-8 rounded-full bg-blue-400 border-2 border-gray-300 peer-checked:ring-2 peer-checked:ring-blue-500"></div>
+          </label>
+          <label className="cursor-pointer">
+            <input type="radio" name="color" className="hidden peer" />
+            <div className="w-8 h-8 rounded-full bg-red-400 border-2 border-gray-300 peer-checked:ring-2 peer-checked:ring-red-500"></div>
+          </label>
         </div>
-        <label className="inline-flex items-center ml-6">
-          <input
-            type="radio"
-            name="color"
-            defaultValue="blue"
-            className="hidden peer"
-          />
-          <div className="w-8 h-8 rounded-full bg-[#A0BCE0] border border-black flex items-center justify-center peer-checked:p-2 peer-checked:w-8 peer-checked:h-8 peer-checked:bg-[#A0BCE0] peer-checked:border-black peer-checked:ring-2 peer-checked:ring-black cursor-pointer transition-all duration-200">
-            <div className="hidden peer-checked:block w-4 h-4 rounded-full bg-[#A0BCE0]" />
-          </div>
-        </label>
-        <label className="inline-flex items-center ml-2">
-          <input
-            type="radio"
-            name="color"
-            defaultValue="red"
-            className="hidden peer"
-          />
-          <div className="w-8 h-8 rounded-full bg-[#E07575] border border-black flex items-center justify-center peer-checked:w-8 peer-checked:h-8 peer-checked:bg-[#E07575] peer-checked:border-black peer-checked:ring-2 peer-checked:ring-black cursor-pointer transition-all duration-200">
-            <div className="hidden peer-checked:block w-4 h-4 rounded-full bg-[#E07575]" />
-          </div>
-        </label>
       </div>
-      <div className="flex items-center mb-[24px]">
-        <p className="text-xl mr-6">Size:</p>
-        <div className="flex">
+
+      {/* Size Options */}
+      <div className="flex items-center">
+        <div className="text-lg font-semibold text-gray-800">Size:</div>
+        <div className="flex ml-4 space-x-4">
           {findProduct.sizes.map((size) => (
-            <label
-              key={size}
-              className="inline-flex items-center justify-center border w-8 h-8 rounded mr-4 cursor-pointer"
-            >
-              <input type="radio" name="size" className="hidden" />
-              <p className="text-sm">{size}</p>
+            <label key={size} className="cursor-pointer">
+              <input type="radio" name="size" className="hidden peer" />
+              <div className="border border-gray-300 rounded-md px-3 py-1 text-sm text-gray-700 hover:bg-gray-100 peer-checked:bg-gray-300">
+                {size}
+              </div>
             </label>
           ))}
         </div>
@@ -45,4 +35,5 @@ function ProductOptions({findProduct}) {
     </div>
   );
 }
+
 export default ProductOptions;

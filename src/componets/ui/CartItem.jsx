@@ -33,7 +33,7 @@ export default function CartItem({ product, count, setCount, updateProductCount,
       <div className="flex items-center gap-2">
         <button onClick={handleDecrement}>-</button>
         <input
-          type="number"
+          type="text"
           min="1"
           value={count}
           onChange={(e) => {

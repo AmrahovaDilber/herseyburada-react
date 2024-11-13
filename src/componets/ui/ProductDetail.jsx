@@ -5,86 +5,54 @@ import { useParams } from "react-router-dom";
 import { useContextApp } from "../../context/AppContext";
 
 export default function ProductDetail() {
-  const { products ,addToCart,addToFavorites} = useContextApp();
+  const { products, addToCart, addToFavorites } = useContextApp();
   const { slug } = useParams();
   const findProduct = products.find((product) => product.slug === slug);
-  console.log(slug);
 
   return (
-    <div className="flex justify-between my-[50px] w-[1200px] ">
-      <div className="flex ">
-        {/* ThumbnailList */}
-        {/* <div className="flex flex-col gap-y-[8px]">
-        
-          <figure className="w-[170px] flex-1 rounded-[4px] border cursor-pointer">
+    <div className="flex justify-between mx-auto my-12 max-w-7xl px-6 lg:px-8">
+      <div className="flex gap-10">
+        {/* Product Images */}
+        <div className="w-[500px] rounded-lg overflow-hidden shadow-lg">
+          <figure className="h-[600px] flex items-center justify-center bg-gray-100">
             <img
-              src="https://images-na.ssl-images-amazon.com/images/I/51zyUeBrFgL._AC_UL600_SR600,600_.jpg"
-              alt="Thumbnail 1"
-              className="w-full object-cover"
+              src={findProduct.image_url}
+              alt={findProduct.product_name}
+              className="w-full h-full object-cover"
             />
           </figure>
-          <figure className="w-[170px] flex-1 rounded-[4px] border cursor-pointer">
-            <img
-              src="https://cdn.mobilesyrup.com/wp-content/uploads/2021/10/xbox-canadian-controller.jpg"
-              alt="Thumbnail 1"
-              className="w-full object-cover"
-            />
-          </figure>
-          <figure className="w-[170px] flex-1 rounded-[4px] border cursor-pointer">
-            <img
-              src="https://m.media-amazon.com/images/I/51EfS8UJe9L._AC_UF894,1000_QL80_.jpg"
-              alt="Thumbnail 1"
-              className="w-full object-cover"
-            />
-          </figure>
-          <figure className="w-[170px] flex-1 rounded-[4px] border cursor-pointer">
-            <img
-              src="https://i.ebayimg.com/images/g/2pwAAOSwu55kdZEk/s-l1200.jpg"
-              alt="Thumbnail 1"
-              className="w-full object-cover"
-            />
-          </figure>
-        </div> */}
-
-        {/* ProductImages */}
-        <div className="w-[500px]  rounded-[4px] overflow-hidden">
-  <figure className="h-[600px] flex items-center justify-center">
-    <img
-      src={findProduct.image_url}
-      alt={findProduct.product_name}
-      className="w-full h-full object-cover"
-    />
-  </figure>
-</div>
-
+        </div>
       </div>
 
-      <div className="w-[500px]">
+      {/* Product Details */}
+      <div className="w-[500px] space-y-6">
         <ProductInfo findProduct={findProduct} />
 
-        {/* ProductPrice */}
-        <div>
-          <div className="text-[24px] mb-[24px]">
-            {findProduct.original_price}
+        {/* Product Price and Description */}
+        <div className="space-y-4 border-b pb-6">
+          <div className="text-3xl font-bold text-gray-800">
+            ${findProduct.original_price}
           </div>
-          <div className="text-[14px] mb-[24px] border-b-[1px]">
-            <p className="mb-[24px]">{findProduct.description}</p>
+          <div className="text-sm text-gray-600 leading-relaxed">
+            {findProduct.description}
           </div>
         </div>
 
         <ProductOptions findProduct={findProduct} />
-        <div className="flex gap-[16px]  items-center">
-          {/* BuyNowButton */}
+
+        {/* Action Buttons */}
+        <div className="flex gap-4 mt-6">
           <button
-            onClick={()=>addToCart(findProduct.product_id)}
-            className="bg-[#FF7518] text-white py-2 px-4 rounded">
+            onClick={() => addToCart(findProduct.product_id)}
+            className="bg-orange-500 text-white px-5 py-3 rounded-lg shadow hover:bg-orange-600 transition duration-200"
+          >
             Add To Cart
           </button>
 
-          {/* WishlistButton */}
           <button
-          onClick={()=>addToFavorites(findProduct.product_id)}
-            className="bg-gray-200 text-gray-800 py-2 px-4 rounded">
+            onClick={() => addToFavorites(findProduct.product_id)}
+            className="bg-gray-200 text-gray-700 px-5 py-3 rounded-lg shadow hover:bg-gray-300 transition duration-200"
+          >
             Add to Wishlist
           </button>
         </div>

@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useContextApp } from "../../context/AppContext";
-import { FcAbout } from "react-icons/fc";
+// import { FcAbout } from "react-icons/fc";
 import { doSignOut } from "../../firebase/auth";
 
 export default function Header() {
@@ -99,9 +99,9 @@ export default function Header() {
                   </span>
                 )}
               </Link>
-              <Link to="/about" className="text-gray-500 hover:text-[#ff9130]">
+              {/* <Link to="/about" className="text-gray-500 hover:text-[#ff9130]">
                 <FcAbout className="text-xl" />
-              </Link>
+              </Link> */}
               <div className="relative" ref={dropdownRef}>
                 <button
                   className="text-gray-500 hover:text-[#ff9130]"
