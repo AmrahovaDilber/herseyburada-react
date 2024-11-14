@@ -137,7 +137,7 @@ export const AppContextProvider = ({ children }) => {
 
   const addToFavorites = async (id) => {
     if (!userLoggedIn) {
-      notification('You must be logged in to add items to your favorites');
+      notification("Sevimlilərinizə elementlər əlavə etmək üçün daxil olmalısınız");
       return;
     }
     const findProduct = products.find((product) => product.product_id === id);
