@@ -1,5 +1,5 @@
 import { useContextApp } from "../../context/AppContext";
-
+import { MdDelete } from "react-icons/md";
 export default function CartItem({ product, count, setCount, updateProductCount, subtotal }) {
   const { removeFromCart } = useContextApp();
 
@@ -65,7 +65,7 @@ export default function CartItem({ product, count, setCount, updateProductCount,
 
       <div className="text-center">${subtotal}</div>
       <div className="text-center">
-        <button onClick={handleRemove} className="text-red-600">Remove</button>
+        <button onClick={handleRemove} className="text-red-600  text-[18px] sm:text-[24px] "><MdDelete /></button>
       </div>
     </div>
   );

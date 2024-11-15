@@ -79,7 +79,7 @@ export default function CartPage() {
           updateProductQuantity={updateProductQuantity}
         />
 
-        <div className="mt-[24px] flex justify-between">
+        <div className="mt-[24px] flex justify-between gap-[20px] sm:gap-[0px]">
           <Link
             to="/"
             className="border border-black/50 rounded-[4px] px-[48px] py-[16px] font-medium hover:bg-gray-100 transition-colors duration-200"

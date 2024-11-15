@@ -62,7 +62,8 @@ export default function CartList({ handleApply, text, setText }) {
   <div className="truncate inline text-sm sm:text-lg font-semibold text-gray-800 sm:text-gray-900">Product</div>
   <div className="truncate  inline text-sm sm:text-lg font-semibold text-gray-800 sm:text-gray-900">Price</div>
   <div className="truncate  inline text-sm sm:text-lg font-semibold text-gray-800 sm:text-gray-900">Quantity</div>
-  <div className="truncate text-center  inline text-sm sm:text-lg font-semibold text-gray-800 sm:text-gray-900">Subtotal</div>
+        <div className="truncate text-center  inline text-sm sm:text-lg font-semibold text-gray-800 sm:text-gray-900">Subtotal</div>
+        
   <div className="truncate text-center  inline text-sm sm:text-lg font-semibold text-gray-800 sm:text-gray-900">Delete</div>
 </div>
 
