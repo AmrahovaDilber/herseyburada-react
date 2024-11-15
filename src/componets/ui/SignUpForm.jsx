@@ -79,7 +79,7 @@ const SignupForm = () => {
                 <input
                   type="text"
                   {...registerUser("name", { required: "Name is required" })}
-                  className="w-full py-2 border-b-2 border-gray-300 focus:border-blue-500 outline-none mb-1 transition-all"
+                  className="w-full py-2 border-b-2 border-gray-300 bg-transparent focus:border-blue-500 outline-none mb-1 transition-all"
                   placeholder="Ad"
                 />
                 <p className="text-red-500 text-sm">
@@ -94,7 +94,7 @@ const SignupForm = () => {
                   {...registerUser("surname", {
                     required: "Please fill the field",
                   })}
-                  className="w-full py-2 border-b-2 border-gray-300 focus:border-blue-500 outline-none mb-1 transition-all"
+                  className="w-full py-2 border-b-2 border-gray-300 bg-transparent focus:border-blue-500 outline-none mb-1 transition-all"
                   placeholder="Soyad"
                 />
                 <p className="text-red-500 text-sm">
@@ -113,7 +113,7 @@ const SignupForm = () => {
                       message: "Invalid email format",
                     },
                   })}
-                  className="w-full py-2 border-b-2 border-gray-300 focus:border-blue-500 outline-none mb-1 transition-all"
+                  className="w-full py-2 border-b-2 border-gray-300 bg-transparent focus:border-blue-500 outline-none mb-1 transition-all"
                   placeholder="Email"
                 />
                 <p className="text-red-500 text-sm">
@@ -132,7 +132,7 @@ const SignupForm = () => {
                       message: "Phone number must be at least 10 digits",
                     },
                   })}
-                  className="w-full py-2 border-b-2 border-gray-300 focus:border-blue-500 outline-none mb-1 transition-all"
+                  className="w-full py-2 border-b-2 border-gray-300 bg-transparent focus:border-blue-500 outline-none mb-1 transition-all"
                   placeholder="Phone Number"
                 />
                 <p className="text-red-500 text-sm">
@@ -151,7 +151,7 @@ const SignupForm = () => {
                       message: "Password must be at least 6 characters",
                     },
                   })}
-                  className="w-full py-2 border-b-2 border-gray-300 focus:border-blue-500 outline-none mb-1 transition-all"
+                  className="w-full py-2 border-b-2 border-gray-300 bg-transparent focus:border-blue-500 outline-none mb-1 transition-all"
                   placeholder="Parol"
                 />
                 <p className="text-red-500 text-sm">
@@ -169,7 +169,7 @@ const SignupForm = () => {
                       value === watchRegister("password") ||
                       "Passwords don't match",
                   })}
-                  className="w-full py-2 border-b-2 border-gray-300 focus:border-blue-500 outline-none mb-1 transition-all"
+                  className="w-full py-2 border-b-2 bg-transparent border-gray-300 focus:border-blue-500 outline-none mb-1 transition-all"
                   placeholder="Re-enter Password"
                 />
                 <p className="text-red-500 text-sm">

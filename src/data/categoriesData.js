@@ -14,9 +14,10 @@ const data = {
               price: 50.0,
               slug: "sifon_bluz",
               original_price: 70.0,
-              discount: 10, // Endirim faizi
+              discount: 10,
               salesCount: 150,
-              image_url: "https://akn-lmb-adl.a-cdn.akinoncdn.com/products/2024/03/09/464351/9a71f373-cc54-4b9a-9f26-f6fe33a44aa6_size900x1350_quality100_cropTop.jpg",
+              image_url:
+                "https://akn-lmb-adl.a-cdn.akinoncdn.com/products/2024/03/09/464351/9a71f373-cc54-4b9a-9f26-f6fe33a44aa6_size900x1350_quality100_cropTop.jpg",
               description: "Yay üçün yüngül və rahat şifon bluz.",
               colors: ["Sarı"],
               sizes: ["S", "M", "L"],
@@ -24,15 +25,15 @@ const data = {
                 {
                   review_id: 1,
                   rating: 4.0,
-                  comment: "Çox gözəl və rahatdır."
+                  comment: "Çox gözəl və rahatdır.",
                 },
                 {
                   review_id: 2,
                   rating: 4.5,
-                  comment: "Materialı keyfiyyətlidir."
-                }
-              ]
-            },            
+                  comment: "Materialı keyfiyyətlidir.",
+                },
+              ],
+            },
             {
               product_id: 2,
               product_name: "Rahat Bluz",
@@ -601,8 +602,9 @@ const data = {
 
               slug: "haki-kayik-yaka-fitilli-esnek-uzun-kollu-bluz",
             },
-          ],
+          ]
         },
+
         {
           subkateqoriya_id: 2,
           subkateqoriya_adı: "Qadın Ust Geyimi",
@@ -1125,6 +1127,7 @@ const data = {
               ],
               slug: "dugmeli-uzun-deri-kaban",
             },
+
             {
               product_id: 119,
               product_name:
@@ -1600,6 +1603,8 @@ const data = {
             },
           ],
         },
+
+
         // {
         //   subkateqoriya_id: 4,
         //   subkateqoriya_adı: "Şortik",
@@ -1813,7 +1818,7 @@ const data = {
               product_name: "LUMBERJACK Qadın Çanta",
               price: 130.0,
               original_price: 150.0,
-              discount: 13.33, // (150 - 130) / 150 * 100 ≈ 13.33%
+              discount: 13.33,
               salesCount: 80,
               image_url:
                 "https://flostore.az/wp-content/uploads/2023/02/DHO-00055187-4-600x900.jpg",
@@ -1834,7 +1839,7 @@ const data = {
               product_name: "LUMBERJACK Qadın Çanta",
               price: 70.0,
               original_price: 90.0,
-              discount: 22.22, // (90 - 70) / 90 * 100 ≈ 22.22%
+              discount: 22.22, 
               salesCount: 80,
               image_url:
                 "https://flostore.az/wp-content/uploads/2023/02/DHO-00057612-5-600x900.jpg",
@@ -1855,7 +1860,7 @@ const data = {
               product_name: "Çiyin çantası W.D.Polo ağ",
               price: 44.0,
               original_price: 80.0,
-              discount: 45, // (80 - 44) / 80 * 100 = 45%
+              discount: 45, 
               salesCount: 80,
               image_url:
                 "https://strgimgr.umico.az/sized/840/679091-222b96bdb2b5465a66ea36118ae777c5.jpg",
@@ -1876,7 +1881,7 @@ const data = {
               product_name: "Fendi",
               price: 1900.0,
               original_price: 2000.0,
-              discount: 5, // (2000 - 1900) / 2000 * 100 = 5%
+              discount: 5, 
               salesCount: 80,
               image_url:
                 "https://cdn2.emporium.az/i/p/500/232717-ccfd9ceae8987b3691a9c1745df65a9e.jpg",
@@ -1998,6 +2003,7 @@ const data = {
             },
           ],
         },
+
         {
           subkateqoriya_id: 9,
           subkateqoriya_adı: "Kosmetika",
@@ -2316,6 +2322,7 @@ const data = {
             },
           ],
         },
+
         {
           subkateqoriya_id: 10,
           subkateqoriya_adı: "Aksesuarlar",
@@ -2465,6 +2472,8 @@ const data = {
         },
       ],
     },
+    
+    
 
     {
       kateqoriya_id: 2,
@@ -2473,7 +2482,34 @@ const data = {
         {
           subkateqoriya_id: 1,
           subkateqoriya_adı: "Kişi Ust Geyimi",
-          məhsullar: [],
+          məhsullar: [
+            {
+              product_id: 101,
+              product_name: "Şifon Bluz",
+              price: 50.0,
+              slug: "sifon_bluz",
+              original_price: 70.0,
+              discount: 10,
+              salesCount: 150,
+              image_url:
+                "https://akn-lmb-adl.a-cdn.akinoncdn.com/products/2024/03/09/464351/9a71f373-cc54-4b9a-9f26-f6fe33a44aa6_size900x1350_quality100_cropTop.jpg",
+              description: "Yay üçün yüngül və rahat şifon bluz.",
+              colors: ["Sarı"],
+              sizes: ["S", "M", "L"],
+              reviews: [
+                {
+                  review_id: 1,
+                  rating: 4.0,
+                  comment: "Çox gözəl və rahatdır.",
+                },
+                {
+                  review_id: 2,
+                  rating: 4.5,
+                  comment: "Materialı keyfiyyətlidir.",
+                },
+              ],
+            },
+          ],
         },
         {
           subkateqoriya_id: 2,
@@ -2486,12 +2522,12 @@ const data = {
           məhsullar: [],
         },
         {
-          subkateqoriya_id:4,
+          subkateqoriya_id: 4,
           subkateqoriya_adı: "Kişi Çantası",
           məhsullar: [],
         },
         {
-          subkateqoriya_id:5,
+          subkateqoriya_id: 5,
           subkateqoriya_adı: "Kişi Koynek",
           məhsullar: [],
         },
@@ -2542,580 +2578,615 @@ const data = {
       ],
     },
 
+
+    
     {
       kateqoriya_id: 3,
       kateqoriya_adı: "Elektronika",
       subkateqoriyalar: [
         {
-          subkateqoriya_id:50,
+          subkateqoriya_id: 50,
           subkateqoriya_adı: "Telefon ve Kompüter",
-          məhsullar:  [
-              {
-                "product_id": 1201,
-                "product_name": "LENOVO IdeaPad 1 15IGL7 82V700CURK",
-                "price": 1500.0,
-                "slug": "oyun_noutbuku",
-                "original_price": 1800.0,
-                "discount": 20,
-                "salesCount": 200,
-                "image_url": "https://aztechshop.az/image/cache/webp/catalog/Lenovo/LENOVO%20IdeaPad%201%2015IGL7%20Cloud%20Grey%20(7)sayt%20-533x398.webp",
-                "description": "Oyun sevənlər üçün yüksək performanslı noutbuk.",
-                "colors": ["Qara"],
-                "sizes": ["15.6 düym", "17.3 düym"],
-                "reviews": [
-                  {
-                    "review_id": 1,
-                    "rating": 4.8,
-                    "comment": "Mükəmməl performans və qrafika."
-                  },
-                  {
-                    "review_id": 2,
-                    "rating": 4.2,
-                    "comment": "Puluna görə yaxşıdır."
-                  }
-                ]
-              },
-              {
-                "product_id": 1202,
-                "product_name": "Notbuk Chuwi GemiBook Plus K1",
-                "price": 1200.0,
-                "slug": "ultrabuk",
-                "original_price": 1400.0,
-                "discount": 15,
-                "salesCount": 180,
-                "image_url": "https://aztechshop.az/image/cache/webp/catalog/Lenovo/Lenovo%20Ideapad%20Slim%203%20(1)Sayt-1000x832.webp",
-                "description": "Peşəkarlar üçün yüngül və daşınan ultrabuk.",
-                "colors": [ "Qara"],
-                "sizes": ["13.3 düym", "14 düym"],
-                "reviews": [
-                  {
-                    "review_id": 1,
-                    "rating": 4.5,
-                    "comment": "Səyahət və iş üçün mükəmməldir."
-                  },
-                  {
-                    "review_id": 2,
-                    "rating": 4.7,
-                    "comment": "Sərfəli dizayn və sürətli performans."
-                  }
-                ]
-              },
-              {
-                "product_id": 1203,
-                "product_name": "Notbuk Acer A315-59-30Z5",
-                "price": 1000.0,
-                "slug": "cevrile_bilen_noutbuk",
-                "original_price": 1200.0,
-                "discount": 17,
-                "salesCount": 220,
-                "image_url": "https://aztechshop.az/image/cache/webp/catalog/Lenovo/LENOVO%20IdeaPad%20Slim%205%20Cloud%20Grey%20NoFinger(12)Sayt-533x398.webp",
-                "description": "Sensor ekranlı çoxfunksiyalı 2-1 noutbuk.",
-                "colors": ["Ağ"],
-                "sizes": ["14 düym"],
-                "reviews": [
-                  {
-                    "review_id": 1,
-                    "rating": 4.3,
-                    "comment": "Həm iş, həm də əyləncə üçün çox rahatdır."
-                  },
-                  {
-                    "review_id": 2,
-                    "rating": 4.1,
-                    "comment": "Yaxşı batareya ömrü və performans."
-                  }
-                ]
-            },
-              {
-                "product_id": 1204,
-                "product_name": "https://www.bakuelectronics.az/assets/cache_image/products/95872/a66716qumcjh8xbkr8zsxef313hq2ljz-%E2%80%94-kopiya_429x419far_efe.jpg",
-                "price": 1300.0,
-                "slug": "biznes_noutbuku",
-                "original_price": 1500.0,
-                "discount": 13,
-                "salesCount": 150,
-                "image_url": "https://www.bakuelectronics.az/assets/cache_image/products/95872/a66716qumcjh8xbkr8zsxef313hq2ljz-%E2%80%94-kopiya_429x419far_efe.jpg",
-                "description": "Ehtiyatlı təhlükəsizlik xüsusiyyətləri ilə etibarlı noutbuk.",
-                "colors": [ "Qara"],
-                "sizes": ["15 düym"],
-                "reviews": [
-                  {
-                    "review_id": 1,
-                    "rating": 4.6,
-                    "comment": "Biznes və çox iş üçün əla."
-                  },
-                  {
-                    "review_id": 2,
-                    "rating": 4.4,
-                    "comment": "Təhlükəsiz və sürətli."
-                  }
-                ]
-            },
-              
-              {
-                "product_id": 1205,
-                "product_name": "TELEFON XIAOMI 14 ULTRA ",
-                "price": 300.0,
-                "slug": "budce_smartfonu",
-                "original_price": 350.0,
-                "discount": 14,
-                "salesCount": 500,
-                "image_url": "https://www.bakuelectronics.az/assets/cache_image/products/150908/xiaomi-14-ultra-16gb512gb-6_260x204_adf.jpg",
-                "description": "Əsas xüsusiyyətlərlə əlverişli smartfon.",
-                "colors": ["Qara"],
-                "sizes": ["6.1 düym"],
-                "reviews": [
-                  {
-                    "review_id": 1,
-                    "rating": 4.0,
-                    "comment": "Puluna görə yaxşıdır."
-                  },
-                  {
-                    "review_id": 2,
-                    "rating": 3.8,
-                    "comment": "Sadə, amma etibarlı."
-                  }
-                ]
-              },
-              {
-                "product_id": 1206,
-                "product_name": "Smartfon Samsung Galaxy S24",
-                "price": 1000.0,
-                "slug": "flahqman_smartfon",
-                "original_price": 1200.0,
-                "discount": 17,
-                "salesCount": 320,
-                "image_url": "https://www.bakuelectronics.az/assets/cache_image/products/141434/samsung-galaxy-s24-1_260x204_adf.jpg",
-                "description": "Müasir xüsusiyyətlərə sahib premium smartfon.",
-                "colors": ["Qara"],
-                "sizes": ["6.7 düym"],
-                "reviews": [
-                  {
-                    "review_id": 1,
-                    "rating": 4.9,
-                    "comment": "Kamera və ekran əla."
-                  },
-                  {
-                    "review_id": 2,
-                    "rating": 4.7,
-                    "comment": "Yüksək performans."
-                  }
-                ]
-              },
-              {
-                "product_id": 1207,
-                "product_name": "Smartfon POCO M6 PRO ",
-                "price": 700.0,
-                "slug": "kompakt_smartfon",
-                "original_price": 800.0,
-                "discount": 12,
-                "salesCount": 280,
-                "image_url": "https://www.bakuelectronics.az/assets/cache_image/products/142093/smartfon-xiaomi-poco-m6-pro-12gb512-gb-blue-1_260x204_adf.jpg",
-                "description": "Yüksək səviyyəli texniki xüsusiyyətləri olan kiçik smartfon.",
-                "colors": ["Mavi"],
-                "sizes": ["5.8 düym"],
-                "reviews": [
-                  {
-                    "review_id": 1,
-                    "rating": 4.4,
-                    "comment": "Kompakt ölçüdə yüksək performans."
-                  },
-                  {
-                    "review_id": 2,
-                    "rating": 4.5,
-                    "comment": "Bir əl ilə istifadə üçün ideal."
-                  }
-                ]
-              },
-              {
-                "product_id": 1208,
-                "product_name": "Smartfon Xiaomi Redmi A1+",
-                "price": 900.0,
-                "slug": "oyun_smartfonu",
-                "original_price": 1100.0,
-                "discount": 18,
-                "salesCount": 340,
-                "image_url": "https://texnomart.az/wp-content/uploads/2022/10/texnomart-Xiaomi-Redmi-A1-Black-vsaubc09q8jpmeyrtn7x.jpg",
-                "description": "Yüksək tazələmə sürəti ilə oyun üçün optimallaşdırılmış smartfon.",
-                "colors": ["Qara"],
-                "sizes": ["6.5 düym"],
-                "reviews": [
-                  {
-                    "review_id": 1,
-                    "rating": 4.7,
-                    "comment": "Oyun üçün möhtəşəm performans."
-                  },
-                  {
-                    "review_id": 2,
-                    "rating": 4.6,
-                    "comment": "Oyun zamanı batareya bütün gün dayanır."
-                  }
-                ]
-              },
-              {
-                "product_id": 1209,
-                "product_name": "Smartfon Huawei Y70 64GB Blue",
-                "price": 800.0,
-                "slug": "styluslu_smartfon",
-                "original_price": 950.0,
-                "discount": 16,
-                "salesCount": 290,
-                "image_url": "https://texnomart.az/wp-content/uploads/2022/07/texnomart-Huawei-Y70-Blue-ag95vsif87m4wnxb1qr6-300x300.jpg",
-                "description": "İnteqrasiya edilmiş stylus ilə məhsuldarlıq üçün smartfon.",
-                "colors": ["Mavi"],
-                "sizes": ["6.4 düym"],
-                "reviews": [
-                  {
-                    "review_id": 1,
-                    "rating": 4.5,
-                    "comment": "Qeydlər üçün stylus çox faydalıdır."
-                  },
-                  {
-                    "review_id": 2,
-                    "rating": 4.3,
-                    "comment": "İş və yaradıcılıq tapşırıqları üçün əla."
-                  }
-                ]
-              },
-              {
-                "product_id": 1210,
-                "product_name": "Smartfon Samsung Galaxy S22",
-                "price": 2000.0,
-                "slug": "is_stansiyasi_noutbuku",
-                "original_price": 2400.0,
-                "discount": 17,
-                "salesCount": 100,
-                "image_url": "https://texnomart.az/wp-content/uploads/2022/07/texnomart-Xiaomi-Redmi-10A-Blue-qwgfpla0hivyes7omk81-300x300.jpg",
-                "description": "Güclü qrafik və hesablama gücünə malik iş stansiyası noutbuku.",
-                "colors": ["Mavi"],
-                "sizes": ["17 düym"],
-                "reviews": [
-                  {
-                    "review_id": 1,
-                    "rating": 4.8,
-                    "comment": "Güclü performans və mükəmməl ekran."
-                  },
-                  {
-                    "review_id": 2,
-                    "rating": 4.6,
-                    "comment": "Yüksək yükləmə altında belə dayanıqlıdır."
-                  }
-                ]
-              },
-              {
-                "product_id": 1211,
-                "product_name": "Notbuk Acer Aspire",
-                "price": 1100.0,
-                "slug": "multimedia_noutbuku",
-                "original_price": 1300.0,
-                "discount": 15,
-                "salesCount": 180,
-                "image_url": "https://www.bakuelectronics.az/assets/cache_image/products/147206/acer-aspire-5-1_429x419far_efe.jpg",
-                "description": "Film izləmək və musiqi dinləmək üçün ideal multimedia noutbuku.",
-                "colors": ["Boz"],
-                "sizes": ["15.6 düym"],
-                "reviews": [
-                  {
-                    "review_id": 1,
-                    "rating": 4.3,
-                    "comment": "Ekran keyfiyyəti əladır."
-                  },
-                  {
-                    "review_id": 2,
-                    "rating": 4.2,
-                    "comment": "Səs çıxışı çox yaxşıdır."
-                  }
-                ]
-            },
-           
+          məhsullar: [
             {
-              "product_id": 1212,
-              "product_name": "Samsung Galaxy Tab A9 Planşet",
-              "price": 600.0,
-              "slug": "samsung-galaxy-tab-a9-planset",
-              "original_price": 700.0,
-              "discount": 14,
-              "salesCount": 400,
-              "image_url": "https://www.bakuelectronics.az/assets/cache_image/products/158312/samsung-galaxy-tab-a9-1_260x204_adf.jpg",
-              "description": "Həm iş, həm də əyləncə üçün nəzərdə tutulmuş Samsung Galaxy Tab A9 planşeti.",
-              "colors": ["Ağ"],
-              "sizes": ["10.1 düym"],
-              "reviews": [
+              product_id: 1201,
+              product_name: "LENOVO IdeaPad 1 15IGL7 82V700CURK",
+              price: 1500.0,
+              slug: "oyun_noutbuku",
+              original_price: 1800.0,
+              discount: 20,
+              salesCount: 200,
+              image_url:
+                "https://aztechshop.az/image/cache/webp/catalog/Lenovo/LENOVO%20IdeaPad%201%2015IGL7%20Cloud%20Grey%20(7)sayt%20-533x398.webp",
+              description: "Oyun sevənlər üçün yüksək performanslı noutbuk.",
+              colors: ["Qara"],
+              sizes: ["15.6 düym", "17.3 düym"],
+              reviews: [
                 {
-                  "review_id": 1,
-                  "rating": 4.4,
-                  "comment": "Ekran keyfiyyəti və performans yaxşıdır."
+                  review_id: 1,
+                  rating: 4.8,
+                  comment: "Mükəmməl performans və qrafika.",
                 },
                 {
-                  "review_id": 2,
-                  "rating": 4.1,
-                  "comment": "Yüngül və daşınması asandır."
-                }
-              ]
+                  review_id: 2,
+                  rating: 4.2,
+                  comment: "Puluna görə yaxşıdır.",
+                },
+              ],
             },
             {
-              "product_id": 1213,
-              "product_name": "Samsung Galaxy Tab S6 Lite Uşaqlar üçün Planşet",
-              "price": 250.0,
-              "slug": "samsung-galaxy-tab-s6-lite-usaqlar-ucun-planset",
-              "original_price": 300.0,
-              "discount": 17,
-              "salesCount": 320,
-              "image_url": "https://www.bakuelectronics.az/assets/cache_image/products/148191/samsung-galaxy-tab-s6-lite-wi-fi-3_260x204_cd6.png",
-              "description": "Uşaqlar üçün təhlükəsiz və əyləncəli Samsung Galaxy Tab S6 Lite planşeti.",
-              "colors": ["Qara"],
-              "sizes": ["8 düym"],
-              "reviews": [
+              product_id: 1202,
+              product_name: "Notbuk Chuwi GemiBook Plus K1",
+              price: 1200.0,
+              slug: "ultrabuk",
+              original_price: 1400.0,
+              discount: 15,
+              salesCount: 180,
+              image_url:
+                "https://aztechshop.az/image/cache/webp/catalog/Lenovo/Lenovo%20Ideapad%20Slim%203%20(1)Sayt-1000x832.webp",
+              description: "Peşəkarlar üçün yüngül və daşınan ultrabuk.",
+              colors: ["Qara"],
+              sizes: ["13.3 düym", "14 düym"],
+              reviews: [
                 {
-                  "review_id": 1,
-                  "rating": 4.5,
-                  "comment": "Uşaqlar üçün əla seçimdir."
+                  review_id: 1,
+                  rating: 4.5,
+                  comment: "Səyahət və iş üçün mükəmməldir.",
                 },
                 {
-                  "review_id": 2,
-                  "rating": 4.3,
-                  "comment": "Təhsil üçün yaxşı proqramlar var."
-                }
-              ]
+                  review_id: 2,
+                  rating: 4.7,
+                  comment: "Sərfəli dizayn və sürətli performans.",
+                },
+              ],
             },
             {
-              "product_id": 1214,
-              "product_name": "HP Pavilion Laptop",
-              "price": 1300.0,
-              "slug": "hp-pavilion-laptop",
-              "original_price": 1600.0,
-              "discount": 19,
-              "salesCount": 120,
-              "image_url": "https://irshad.az/cdn-cgi/image/width=315/storage/products/99636/a0ny5ea.png",
-              "description": "Performans və istifadə rahatlığı üçün nəzərdə tutulmuş HP Pavilion noutbuku.",
-              "colors": ["Ağ"],
-              "sizes": ["15.6 düym"],
-              "reviews": [
+              product_id: 1203,
+              product_name: "Notbuk Acer A315-59-30Z5",
+              price: 1000.0,
+              slug: "cevrile_bilen_noutbuk",
+              original_price: 1200.0,
+              discount: 17,
+              salesCount: 220,
+              image_url:
+                "https://aztechshop.az/image/cache/webp/catalog/Lenovo/LENOVO%20IdeaPad%20Slim%205%20Cloud%20Grey%20NoFinger(12)Sayt-533x398.webp",
+              description: "Sensor ekranlı çoxfunksiyalı 2-1 noutbuk.",
+              colors: ["Ağ"],
+              sizes: ["14 düym"],
+              reviews: [
                 {
-                  "review_id": 1,
-                  "rating": 4.5,
-                  "comment": "Gündəlik işlər üçün əla seçimdir."
+                  review_id: 1,
+                  rating: 4.3,
+                  comment: "Həm iş, həm də əyləncə üçün çox rahatdır.",
                 },
                 {
-                  "review_id": 2,
-                  "rating": 4.6,
-                  "comment": "Yaxşı performans və ekran keyfiyyəti."
-                }
-              ]
+                  review_id: 2,
+                  rating: 4.1,
+                  comment: "Yaxşı batareya ömrü və performans.",
+                },
+              ],
             },
             {
-              "product_id": 1215,
-              "product_name": "ASUS ROG Zephyrus G16 OLED",
-              "price": 2000.0,
-              "slug": "asus-rog-zephyrus-g16-oled",
-              "original_price": 2400.0,
-              "discount": 17,
-              "salesCount": 95,
-              "image_url": "https://irshad.az/cdn-cgi/image/width=315/storage/products/99633/asus-rog-zephyrus-g16.jpg",
-              "description": "Güclü oyun təcrübəsi üçün nəzərdə tutulmuş ASUS ROG Zephyrus G16 OLED noutbuku.",
-              "colors": ["Ağ"],
-              "sizes": ["16 düym"],
-              "reviews": [
+              product_id: 1204,
+              product_name:
+                "https://www.bakuelectronics.az/assets/cache_image/products/95872/a66716qumcjh8xbkr8zsxef313hq2ljz-%E2%80%94-kopiya_429x419far_efe.jpg",
+              price: 1300.0,
+              slug: "biznes_noutbuku",
+              original_price: 1500.0,
+              discount: 13,
+              salesCount: 150,
+              image_url:
+                "https://www.bakuelectronics.az/assets/cache_image/products/95872/a66716qumcjh8xbkr8zsxef313hq2ljz-%E2%80%94-kopiya_429x419far_efe.jpg",
+              description:
+                "Ehtiyatlı təhlükəsizlik xüsusiyyətləri ilə etibarlı noutbuk.",
+              colors: ["Qara"],
+              sizes: ["15 düym"],
+              reviews: [
                 {
-                  "review_id": 1,
-                  "rating": 4.8,
-                  "comment": "Oyun üçün yüksək performans təqdim edir."
+                  review_id: 1,
+                  rating: 4.6,
+                  comment: "Biznes və çox iş üçün əla.",
                 },
                 {
-                  "review_id": 2,
-                  "rating": 4.7,
-                  "comment": "OLED ekran mükəmməl görüntü verir."
-                }
-              ]
+                  review_id: 2,
+                  rating: 4.4,
+                  comment: "Təhlükəsiz və sürətli.",
+                },
+              ],
             },
 
             {
-              "product_id": 1216,
-              "product_name": "Smartfon Infinix Note 40 Pro",
-              "price": 2000.0,
-              "slug": "infinix-note-40-pro",
-              "original_price": 2400.0,
-              "discount": 17,
-              "salesCount": 95,
-              "image_url": "https://strgimgr.umico.az/sized/280/934365-6e52ec08edcdaada2356dc0909513263.jpg",
-              "description": "Infinix Note 40 Pro, yüksək performanslı və şık dizaynlı smartfondur.",
-              "colors": ["Boz"],
-              "sizes": ["6.8 düym"],
-              "reviews": [
+              product_id: 1205,
+              product_name: "TELEFON XIAOMI 14 ULTRA ",
+              price: 300.0,
+              slug: "budce_smartfonu",
+              original_price: 350.0,
+              discount: 14,
+              salesCount: 500,
+              image_url:
+                "https://www.bakuelectronics.az/assets/cache_image/products/150908/xiaomi-14-ultra-16gb512gb-6_260x204_adf.jpg",
+              description: "Əsas xüsusiyyətlərlə əlverişli smartfon.",
+              colors: ["Qara"],
+              sizes: ["6.1 düym"],
+              reviews: [
                 {
-                  "review_id": 1,
-                  "rating": 4.8,
-                  "comment": "Yüksək performanslı və uzun batareya ömrü."
+                  review_id: 1,
+                  rating: 4.0,
+                  comment: "Puluna görə yaxşıdır.",
                 },
                 {
-                  "review_id": 2,
-                  "rating": 4.7,
-                  "comment": "Kamera keyfiyyəti çox yaxşıdır."
-                }
-              ]
+                  review_id: 2,
+                  rating: 3.8,
+                  comment: "Sadə, amma etibarlı.",
+                },
+              ],
             },
             {
-              "product_id": 1217,
-              "product_name": "Smartfon Xiaomi Redmi Note 12",
-              "price": 1700.0,
-              "slug": "xiaomi-redmi-note-12",
-              "original_price": 2000.0,
-              "discount": 15,
-              "salesCount": 120,
-              "image_url": "https://strgimgr.umico.az/sized/280/482552-13d88063226a34b2317c72b5204d333d.jpg",
-              "description": "Xiaomi Redmi Note 12, güclü performans və mükəmməl dizayn təklif edir.",
-              "colors": ["Qara"],
-              "sizes": ["6.67 düym"],
-              "reviews": [
+              product_id: 1206,
+              product_name: "Smartfon Samsung Galaxy S24",
+              price: 1000.0,
+              slug: "flahqman_smartfon",
+              original_price: 1200.0,
+              discount: 17,
+              salesCount: 320,
+              image_url:
+                "https://www.bakuelectronics.az/assets/cache_image/products/141434/samsung-galaxy-s24-1_260x204_adf.jpg",
+              description: "Müasir xüsusiyyətlərə sahib premium smartfon.",
+              colors: ["Qara"],
+              sizes: ["6.7 düym"],
+              reviews: [
                 {
-                  "review_id": 1,
-                  "rating": 4.6,
-                  "comment": "Qiymətə görə yaxşı performans."
+                  review_id: 1,
+                  rating: 4.9,
+                  comment: "Kamera və ekran əla.",
                 },
                 {
-                  "review_id": 2,
-                  "rating": 4.5,
-                  "comment": "Ekran və kamera keyfiyyəti əladır."
-                }
-              ]
+                  review_id: 2,
+                  rating: 4.7,
+                  comment: "Yüksək performans.",
+                },
+              ],
+            },
+            {
+              product_id: 1207,
+              product_name: "Smartfon POCO M6 PRO ",
+              price: 700.0,
+              slug: "kompakt_smartfon",
+              original_price: 800.0,
+              discount: 12,
+              salesCount: 280,
+              image_url:
+                "https://www.bakuelectronics.az/assets/cache_image/products/142093/smartfon-xiaomi-poco-m6-pro-12gb512-gb-blue-1_260x204_adf.jpg",
+              description:
+                "Yüksək səviyyəli texniki xüsusiyyətləri olan kiçik smartfon.",
+              colors: ["Mavi"],
+              sizes: ["5.8 düym"],
+              reviews: [
+                {
+                  review_id: 1,
+                  rating: 4.4,
+                  comment: "Kompakt ölçüdə yüksək performans.",
+                },
+                {
+                  review_id: 2,
+                  rating: 4.5,
+                  comment: "Bir əl ilə istifadə üçün ideal.",
+                },
+              ],
+            },
+            {
+              product_id: 1208,
+              product_name: "Smartfon Xiaomi Redmi A1+",
+              price: 900.0,
+              slug: "oyun_smartfonu",
+              original_price: 1100.0,
+              discount: 18,
+              salesCount: 340,
+              image_url:
+                "https://texnomart.az/wp-content/uploads/2022/10/texnomart-Xiaomi-Redmi-A1-Black-vsaubc09q8jpmeyrtn7x.jpg",
+              description:
+                "Yüksək tazələmə sürəti ilə oyun üçün optimallaşdırılmış smartfon.",
+              colors: ["Qara"],
+              sizes: ["6.5 düym"],
+              reviews: [
+                {
+                  review_id: 1,
+                  rating: 4.7,
+                  comment: "Oyun üçün möhtəşəm performans.",
+                },
+                {
+                  review_id: 2,
+                  rating: 4.6,
+                  comment: "Oyun zamanı batareya bütün gün dayanır.",
+                },
+              ],
+            },
+            {
+              product_id: 1209,
+              product_name: "Smartfon Huawei Y70 64GB Blue",
+              price: 800.0,
+              slug: "styluslu_smartfon",
+              original_price: 950.0,
+              discount: 16,
+              salesCount: 290,
+              image_url:
+                "https://texnomart.az/wp-content/uploads/2022/07/texnomart-Huawei-Y70-Blue-ag95vsif87m4wnxb1qr6-300x300.jpg",
+              description:
+                "İnteqrasiya edilmiş stylus ilə məhsuldarlıq üçün smartfon.",
+              colors: ["Mavi"],
+              sizes: ["6.4 düym"],
+              reviews: [
+                {
+                  review_id: 1,
+                  rating: 4.5,
+                  comment: "Qeydlər üçün stylus çox faydalıdır.",
+                },
+                {
+                  review_id: 2,
+                  rating: 4.3,
+                  comment: "İş və yaradıcılıq tapşırıqları üçün əla.",
+                },
+              ],
+            },
+            {
+              product_id: 1210,
+              product_name: "Smartfon Samsung Galaxy S22",
+              price: 2000.0,
+              slug: "is_stansiyasi_noutbuku",
+              original_price: 2400.0,
+              discount: 17,
+              salesCount: 100,
+              image_url:
+                "https://texnomart.az/wp-content/uploads/2022/07/texnomart-Xiaomi-Redmi-10A-Blue-qwgfpla0hivyes7omk81-300x300.jpg",
+              description:
+                "Güclü qrafik və hesablama gücünə malik iş stansiyası noutbuku.",
+              colors: ["Mavi"],
+              sizes: ["17 düym"],
+              reviews: [
+                {
+                  review_id: 1,
+                  rating: 4.8,
+                  comment: "Güclü performans və mükəmməl ekran.",
+                },
+                {
+                  review_id: 2,
+                  rating: 4.6,
+                  comment: "Yüksək yükləmə altında belə dayanıqlıdır.",
+                },
+              ],
+            },
+            {
+              product_id: 1211,
+              product_name: "Notbuk Acer Aspire",
+              price: 1100.0,
+              slug: "multimedia_noutbuku",
+              original_price: 1300.0,
+              discount: 15,
+              salesCount: 180,
+              image_url:
+                "https://www.bakuelectronics.az/assets/cache_image/products/147206/acer-aspire-5-1_429x419far_efe.jpg",
+              description:
+                "Film izləmək və musiqi dinləmək üçün ideal multimedia noutbuku.",
+              colors: ["Boz"],
+              sizes: ["15.6 düym"],
+              reviews: [
+                {
+                  review_id: 1,
+                  rating: 4.3,
+                  comment: "Ekran keyfiyyəti əladır.",
+                },
+                {
+                  review_id: 2,
+                  rating: 4.2,
+                  comment: "Səs çıxışı çox yaxşıdır.",
+                },
+              ],
             },
 
-            
-            ]
-            
-         
+            {
+              product_id: 1212,
+              product_name: "Samsung Galaxy Tab A9 Planşet",
+              price: 600.0,
+              slug: "samsung-galaxy-tab-a9-planset",
+              original_price: 700.0,
+              discount: 14,
+              salesCount: 400,
+              image_url:
+                "https://www.bakuelectronics.az/assets/cache_image/products/158312/samsung-galaxy-tab-a9-1_260x204_adf.jpg",
+              description:
+                "Həm iş, həm də əyləncə üçün nəzərdə tutulmuş Samsung Galaxy Tab A9 planşeti.",
+              colors: ["Ağ"],
+              sizes: ["10.1 düym"],
+              reviews: [
+                {
+                  review_id: 1,
+                  rating: 4.4,
+                  comment: "Ekran keyfiyyəti və performans yaxşıdır.",
+                },
+                {
+                  review_id: 2,
+                  rating: 4.1,
+                  comment: "Yüngül və daşınması asandır.",
+                },
+              ],
+            },
+            {
+              product_id: 1213,
+              product_name: "Samsung Galaxy Tab S6 Lite Uşaqlar üçün Planşet",
+              price: 250.0,
+              slug: "samsung-galaxy-tab-s6-lite-usaqlar-ucun-planset",
+              original_price: 300.0,
+              discount: 17,
+              salesCount: 320,
+              image_url:
+                "https://www.bakuelectronics.az/assets/cache_image/products/148191/samsung-galaxy-tab-s6-lite-wi-fi-3_260x204_cd6.png",
+              description:
+                "Uşaqlar üçün təhlükəsiz və əyləncəli Samsung Galaxy Tab S6 Lite planşeti.",
+              colors: ["Qara"],
+              sizes: ["8 düym"],
+              reviews: [
+                {
+                  review_id: 1,
+                  rating: 4.5,
+                  comment: "Uşaqlar üçün əla seçimdir.",
+                },
+                {
+                  review_id: 2,
+                  rating: 4.3,
+                  comment: "Təhsil üçün yaxşı proqramlar var.",
+                },
+              ],
+            },
+            {
+              product_id: 1214,
+              product_name: "HP Pavilion Laptop",
+              price: 1300.0,
+              slug: "hp-pavilion-laptop",
+              original_price: 1600.0,
+              discount: 19,
+              salesCount: 120,
+              image_url:
+                "https://irshad.az/cdn-cgi/image/width=315/storage/products/99636/a0ny5ea.png",
+              description:
+                "Performans və istifadə rahatlığı üçün nəzərdə tutulmuş HP Pavilion noutbuku.",
+              colors: ["Ağ"],
+              sizes: ["15.6 düym"],
+              reviews: [
+                {
+                  review_id: 1,
+                  rating: 4.5,
+                  comment: "Gündəlik işlər üçün əla seçimdir.",
+                },
+                {
+                  review_id: 2,
+                  rating: 4.6,
+                  comment: "Yaxşı performans və ekran keyfiyyəti.",
+                },
+              ],
+            },
+            {
+              product_id: 1215,
+              product_name: "ASUS ROG Zephyrus G16 OLED",
+              price: 2000.0,
+              slug: "asus-rog-zephyrus-g16-oled",
+              original_price: 2400.0,
+              discount: 17,
+              salesCount: 95,
+              image_url:
+                "https://irshad.az/cdn-cgi/image/width=315/storage/products/99633/asus-rog-zephyrus-g16.jpg",
+              description:
+                "Güclü oyun təcrübəsi üçün nəzərdə tutulmuş ASUS ROG Zephyrus G16 OLED noutbuku.",
+              colors: ["Ağ"],
+              sizes: ["16 düym"],
+              reviews: [
+                {
+                  review_id: 1,
+                  rating: 4.8,
+                  comment: "Oyun üçün yüksək performans təqdim edir.",
+                },
+                {
+                  review_id: 2,
+                  rating: 4.7,
+                  comment: "OLED ekran mükəmməl görüntü verir.",
+                },
+              ],
+            },
+
+            {
+              product_id: 1216,
+              product_name: "Smartfon Infinix Note 40 Pro",
+              price: 2000.0,
+              slug: "infinix-note-40-pro",
+              original_price: 2400.0,
+              discount: 17,
+              salesCount: 95,
+              image_url:
+                "https://strgimgr.umico.az/sized/280/934365-6e52ec08edcdaada2356dc0909513263.jpg",
+              description:
+                "Infinix Note 40 Pro, yüksək performanslı və şık dizaynlı smartfondur.",
+              colors: ["Boz"],
+              sizes: ["6.8 düym"],
+              reviews: [
+                {
+                  review_id: 1,
+                  rating: 4.8,
+                  comment: "Yüksək performanslı və uzun batareya ömrü.",
+                },
+                {
+                  review_id: 2,
+                  rating: 4.7,
+                  comment: "Kamera keyfiyyəti çox yaxşıdır.",
+                },
+              ],
+            },
+            {
+              product_id: 1217,
+              product_name: "Smartfon Xiaomi Redmi Note 12",
+              price: 1700.0,
+              slug: "xiaomi-redmi-note-12",
+              original_price: 2000.0,
+              discount: 15,
+              salesCount: 120,
+              image_url:
+                "https://strgimgr.umico.az/sized/280/482552-13d88063226a34b2317c72b5204d333d.jpg",
+              description:
+                "Xiaomi Redmi Note 12, güclü performans və mükəmməl dizayn təklif edir.",
+              colors: ["Qara"],
+              sizes: ["6.67 düym"],
+              reviews: [
+                {
+                  review_id: 1,
+                  rating: 4.6,
+                  comment: "Qiymətə görə yaxşı performans.",
+                },
+                {
+                  review_id: 2,
+                  rating: 4.5,
+                  comment: "Ekran və kamera keyfiyyəti əladır.",
+                },
+              ],
+            },
+          ],
         },
         {
           subkateqoriya_id: 51,
           subkateqoriya_adı: "Saat",
           məhsullar: [
             {
-              "product_id": 1300,
-              "product_name": "Smart saat Smart Watch HK9 Ultra 2 Black",
-              "price": 1500.0,
-              "slug": "smart-watch-hk9-ultra-2-black",
-              "original_price": 1800.0,
-              "discount": 17,
-              "salesCount": 200,
-              "image_url": "https://strgimgr.umico.az/sized/280/644331-1c031ac78caa69ff8434ef7f38a8296e.jpg",
-              "description": "Yüksək performanslı smart saat, sağlamlıq izləmə və bildiriş funksiyaları ilə.",
-              "colors": ["Qara"],
-              "sizes": ["44 mm"],
-              "reviews": [
+              product_id: 1300,
+              product_name: "Smart saat Smart Watch HK9 Ultra 2 Black",
+              price: 1500.0,
+              slug: "smart-watch-hk9-ultra-2-black",
+              original_price: 1800.0,
+              discount: 17,
+              salesCount: 200,
+              image_url:
+                "https://strgimgr.umico.az/sized/280/644331-1c031ac78caa69ff8434ef7f38a8296e.jpg",
+              description:
+                "Yüksək performanslı smart saat, sağlamlıq izləmə və bildiriş funksiyaları ilə.",
+              colors: ["Qara"],
+              sizes: ["44 mm"],
+              reviews: [
                 {
-                  "review_id": 1,
-                  "rating": 4.8,
-                  "comment": "Dəqiq funksiyalar və yüksək keyfiyyət."
+                  review_id: 1,
+                  rating: 4.8,
+                  comment: "Dəqiq funksiyalar və yüksək keyfiyyət.",
                 },
                 {
-                  "review_id": 2,
-                  "rating": 4.2,
-                  "comment": "Puluna görə yaxşıdır."
-                }
-              ]
+                  review_id: 2,
+                  rating: 4.2,
+                  comment: "Puluna görə yaxşıdır.",
+                },
+              ],
             },
             {
-              "product_id": 1301,
-              "product_name": "Smart saat Smart Watch HK9 Pro Plus Black",
-              "price": 1500.0,
-              "slug": "smart-watch-hk9-pro-plus-black",
-              "original_price": 1800.0,
-              "discount": 17,
-              "salesCount": 180,
-              "image_url": "https://strgimgr.umico.az/sized/280/812148-c88b982ec13be2c24930389b368e2eb5.jpg",
-              "description": "Pro versiyası olan bu smart saat, əlavə sağlamlıq və fitnes funksiyaları təklif edir.",
-              "colors": ["Qara"],
-              "sizes": ["46 mm"],
-              "reviews": [
+              product_id: 1301,
+              product_name: "Smart saat Smart Watch HK9 Pro Plus Black",
+              price: 1500.0,
+              slug: "smart-watch-hk9-pro-plus-black",
+              original_price: 1800.0,
+              discount: 17,
+              salesCount: 180,
+              image_url:
+                "https://strgimgr.umico.az/sized/280/812148-c88b982ec13be2c24930389b368e2eb5.jpg",
+              description:
+                "Pro versiyası olan bu smart saat, əlavə sağlamlıq və fitnes funksiyaları təklif edir.",
+              colors: ["Qara"],
+              sizes: ["46 mm"],
+              reviews: [
                 {
-                  "review_id": 1,
-                  "rating": 4.7,
-                  "comment": "Əla batareya ömrü və funksionallıq."
+                  review_id: 1,
+                  rating: 4.7,
+                  comment: "Əla batareya ömrü və funksionallıq.",
                 },
                 {
-                  "review_id": 2,
-                  "rating": 4.4,
-                  "comment": "Ekran keyfiyyəti yüksəkdir."
-                }
-              ]
+                  review_id: 2,
+                  rating: 4.4,
+                  comment: "Ekran keyfiyyəti yüksəkdir.",
+                },
+              ],
             },
             {
-              "product_id": 1302,
-              "product_name": "Qol saatı Lacoste LC",
-              "price": 1200.0,
-              "slug": "lacoste-lc",
-              "original_price": 1500.0,
-              "discount": 20,
-              "salesCount": 150,
-              "image_url": "https://strgimgr.umico.az/sized/280/683922-9975c5de06cf80f95be3aa0a9be58032.jpg",
-              "description": "Şık və sadə dizaynlı Lacoste qol saatı, gündəlik istifadə üçün idealdır.",
-              "colors": ["Yaşıl"],
-              "sizes": ["40 mm"],
-              "reviews": [
+              product_id: 1302,
+              product_name: "Qol saatı Lacoste LC",
+              price: 1200.0,
+              slug: "lacoste-lc",
+              original_price: 1500.0,
+              discount: 20,
+              salesCount: 150,
+              image_url:
+                "https://strgimgr.umico.az/sized/280/683922-9975c5de06cf80f95be3aa0a9be58032.jpg",
+              description:
+                "Şık və sadə dizaynlı Lacoste qol saatı, gündəlik istifadə üçün idealdır.",
+              colors: ["Yaşıl"],
+              sizes: ["40 mm"],
+              reviews: [
                 {
-                  "review_id": 1,
-                  "rating": 4.6,
-                  "comment": "Zərif dizayn və keyfiyyətli material."
+                  review_id: 1,
+                  rating: 4.6,
+                  comment: "Zərif dizayn və keyfiyyətli material.",
                 },
                 {
-                  "review_id": 2,
-                  "rating": 4.3,
-                  "comment": "Gözəl görünüş, amma funksionallıq sadədir."
-                }
-              ]
+                  review_id: 2,
+                  rating: 4.3,
+                  comment: "Gözəl görünüş, amma funksionallıq sadədir.",
+                },
+              ],
             },
             {
-              "product_id": 1303,
-              "product_name": "Qol saatı Naviforce NF5032 SWRG",
-              "price": 1300.0,
-              "slug": "naviforce-nf5032-swrg",
-              "original_price": 1600.0,
-              "discount": 19,
-              "salesCount": 170,
-              "image_url": "https://strgimgr.umico.az/sized/840/775798-560ccea4c1c6f0759af601d570c4065e.jpg",
-              "description": "Naviforce qol saatı, suya davamlı və çox funksiyalı dizaynı ilə seçilir.",
-              "colors": ["Ağ"],
-              "sizes": ["42 mm"],
-              "reviews": [
+              product_id: 1303,
+              product_name: "Qol saatı Naviforce NF5032 SWRG",
+              price: 1300.0,
+              slug: "naviforce-nf5032-swrg",
+              original_price: 1600.0,
+              discount: 19,
+              salesCount: 170,
+              image_url:
+                "https://strgimgr.umico.az/sized/840/775798-560ccea4c1c6f0759af601d570c4065e.jpg",
+              description:
+                "Naviforce qol saatı, suya davamlı və çox funksiyalı dizaynı ilə seçilir.",
+              colors: ["Ağ"],
+              sizes: ["42 mm"],
+              reviews: [
                 {
-                  "review_id": 1,
-                  "rating": 4.7,
-                  "comment": "Yaxşı keyfiyyət və çox yönlü istifadə."
+                  review_id: 1,
+                  rating: 4.7,
+                  comment: "Yaxşı keyfiyyət və çox yönlü istifadə.",
                 },
                 {
-                  "review_id": 2,
-                  "rating": 4.4,
-                  "comment": "Davamlı və suya qarşı müqavimətlidir."
-                }
-              ]
+                  review_id: 2,
+                  rating: 4.4,
+                  comment: "Davamlı və suya qarşı müqavimətlidir.",
+                },
+              ],
             },
             {
-              "product_id": 1304,
-              "product_name": "Qol saatı NaviForce NF9193 RGBB",
-              "price": 1400.0,
-              "slug": "naviforce-nf9193-rgbb",
-              "original_price": 1700.0,
-              "discount": 18,
-              "salesCount": 190,
-              "image_url": "https://strgimgr.umico.az/sized/280/579827-66df605d7ce966feea019d362b20eeb5.jpg",
-              "description": "Naviforce NF9193, dəbli dizaynı və yüksək keyfiyyəti ilə fərqlənir.",
-              "colors": ["Qara"],
-              "sizes": ["45 mm"],
-              "reviews": [
+              product_id: 1304,
+              product_name: "Qol saatı NaviForce NF9193 RGBB",
+              price: 1400.0,
+              slug: "naviforce-nf9193-rgbb",
+              original_price: 1700.0,
+              discount: 18,
+              salesCount: 190,
+              image_url:
+                "https://strgimgr.umico.az/sized/280/579827-66df605d7ce966feea019d362b20eeb5.jpg",
+              description:
+                "Naviforce NF9193, dəbli dizaynı və yüksək keyfiyyəti ilə fərqlənir.",
+              colors: ["Qara"],
+              sizes: ["45 mm"],
+              reviews: [
                 {
-                  "review_id": 1,
-                  "rating": 4.8,
-                  "comment": "Çox funksiyalı və dəbli dizayn."
+                  review_id: 1,
+                  rating: 4.8,
+                  comment: "Çox funksiyalı və dəbli dizayn.",
                 },
                 {
-                  "review_id": 2,
-                  "rating": 4.5,
-                  "comment": "Material keyfiyyəti əladır."
-                }
-              ]
+                  review_id: 2,
+                  rating: 4.5,
+                  comment: "Material keyfiyyəti əladır.",
+                },
+              ],
             },
-
-       
-
           ],
         },
         // {
@@ -3124,183 +3195,197 @@ const data = {
         //   məhsullar: [],
         // },
         {
-          subkateqoriya_id:52,
+          subkateqoriya_id: 52,
           subkateqoriya_adı: "Qulaqlıqlar",
           məhsullar: [
             {
-              "product_id": 1400,
-              "product_name": "Simsiz qulaqlıq P9 Black",
-              "price": 1500.0,
-              "slug": "wireless-earphones-p9-black",
-              "original_price": 1800.0,
-              "discount": 17,
-              "salesCount": 200,
-              "image_url": "https://strgimgr.umico.az/sized/280/659146-650d2d477940b0fd3d92505d2a052968.jpg",
-              "description": "Yüksək performanslı simsiz qulaqlıqlar, uzun müddətli batareya ömrü və rahat uyğunluq.",
-              "colors": ["Qara"],
-              "sizes": ["N/A"],
-              "reviews": [
+              product_id: 1400,
+              product_name: "Simsiz qulaqlıq P9 Black",
+              price: 1500.0,
+              slug: "wireless-earphones-p9-black",
+              original_price: 1800.0,
+              discount: 17,
+              salesCount: 200,
+              image_url:
+                "https://strgimgr.umico.az/sized/280/659146-650d2d477940b0fd3d92505d2a052968.jpg",
+              description:
+                "Yüksək performanslı simsiz qulaqlıqlar, uzun müddətli batareya ömrü və rahat uyğunluq.",
+              colors: ["Qara"],
+              sizes: ["N/A"],
+              reviews: [
                 {
-                  "review_id": 1,
-                  "rating": 4.8,
-                  "comment": "Dəqiq funksiyalar və yüksək keyfiyyət."
+                  review_id: 1,
+                  rating: 4.8,
+                  comment: "Dəqiq funksiyalar və yüksək keyfiyyət.",
                 },
                 {
-                  "review_id": 2,
-                  "rating": 4.2,
-                  "comment": "Puluna görə mükəmməl seçim."
-                }
-              ]
+                  review_id: 2,
+                  rating: 4.2,
+                  comment: "Puluna görə mükəmməl seçim.",
+                },
+              ],
             },
             {
-              "product_id": 1401,
-              "product_name": "Simsiz qulaqlıqlar P47 Blue",
-              "price": 1500.0,
-              "slug": "wireless-earphones-p47-blue",
-              "original_price": 1800.0,
-              "discount": 17,
-              "salesCount": 200,
-              "image_url": "https://strgimgr.umico.az/sized/280/257563-0a7a7d02e68258584f2a38e1a1be0dfe.jpg",
-              "description": "Güclü bass, mükəmməl səs keyfiyyəti və uzun müddətli rahatlıq.",
-              "colors": ["Mavi"],
-              "sizes": ["N/A"],
-              "reviews": [
+              product_id: 1401,
+              product_name: "Simsiz qulaqlıqlar P47 Blue",
+              price: 1500.0,
+              slug: "wireless-earphones-p47-blue",
+              original_price: 1800.0,
+              discount: 17,
+              salesCount: 200,
+              image_url:
+                "https://strgimgr.umico.az/sized/280/257563-0a7a7d02e68258584f2a38e1a1be0dfe.jpg",
+              description:
+                "Güclü bass, mükəmməl səs keyfiyyəti və uzun müddətli rahatlıq.",
+              colors: ["Mavi"],
+              sizes: ["N/A"],
+              reviews: [
                 {
-                  "review_id": 1,
-                  "rating": 4.8,
-                  "comment": "Mükəmməl səs keyfiyyəti!"
+                  review_id: 1,
+                  rating: 4.8,
+                  comment: "Mükəmməl səs keyfiyyəti!",
                 },
                 {
-                  "review_id": 2,
-                  "rating": 4.3,
-                  "comment": "Həqiqətən rahatdır."
-                }
-              ]
+                  review_id: 2,
+                  rating: 4.3,
+                  comment: "Həqiqətən rahatdır.",
+                },
+              ],
             },
             {
-              "product_id": 1402,
-              "product_name": "Simsiz qulaqlıq HUAWEI FreeBuds",
-              "price": 1500.0,
-              "slug": "huawei-freebuds",
-              "original_price": 1800.0,
-              "discount": 17,
-              "salesCount": 200,
-              "image_url": "https://www.bakuelectronics.az/assets/cache_image/products/152175/huawei-freebuds-6i-purple-5_429x419far_efe.jpg",
-              "description": "HUAWEI FreeBuds, optimal səs keyfiyyəti, ağıllı səs idarəsi və səs izolyasiyası.",
-              "colors": ["Ağ"],
-              "sizes": ["N/A"],
-              "reviews": [
+              product_id: 1402,
+              product_name: "Simsiz qulaqlıq HUAWEI FreeBuds",
+              price: 1500.0,
+              slug: "huawei-freebuds",
+              original_price: 1800.0,
+              discount: 17,
+              salesCount: 200,
+              image_url:
+                "https://www.bakuelectronics.az/assets/cache_image/products/152175/huawei-freebuds-6i-purple-5_429x419far_efe.jpg",
+              description:
+                "HUAWEI FreeBuds, optimal səs keyfiyyəti, ağıllı səs idarəsi və səs izolyasiyası.",
+              colors: ["Ağ"],
+              sizes: ["N/A"],
+              reviews: [
                 {
-                  "review_id": 1,
-                  "rating": 4.8,
-                  "comment": "Sesi mükəmməl tənzimləyir."
+                  review_id: 1,
+                  rating: 4.8,
+                  comment: "Sesi mükəmməl tənzimləyir.",
                 },
                 {
-                  "review_id": 2,
-                  "rating": 4.5,
-                  "comment": "Çox rahat və yüngüldür."
-                }
-              ]
+                  review_id: 2,
+                  rating: 4.5,
+                  comment: "Çox rahat və yüngüldür.",
+                },
+              ],
             },
             {
-              "product_id": 1403,
-              "product_name": "Simsiz qulaqlıq HUAWEI FreeBuds SE",
-              "price": 1500.0,
-              "slug": "huawei-freebuds-se",
-              "original_price": 1800.0,
-              "discount": 17,
-              "salesCount": 200,
-              "image_url": "https://www.bakuelectronics.az/assets/cache_image/products/142159/huawei-freebuds-se-2-8_429x419far_efe.jpg",
-              "description": "Yüksək səs keyfiyyəti, səs izolyasiyası və uzun müddətli batareya ömrü.",
-              "colors": ["Ağ"],
-              "sizes": ["N/A"],
-              "reviews": [
+              product_id: 1403,
+              product_name: "Simsiz qulaqlıq HUAWEI FreeBuds SE",
+              price: 1500.0,
+              slug: "huawei-freebuds-se",
+              original_price: 1800.0,
+              discount: 17,
+              salesCount: 200,
+              image_url:
+                "https://www.bakuelectronics.az/assets/cache_image/products/142159/huawei-freebuds-se-2-8_429x419far_efe.jpg",
+              description:
+                "Yüksək səs keyfiyyəti, səs izolyasiyası və uzun müddətli batareya ömrü.",
+              colors: ["Ağ"],
+              sizes: ["N/A"],
+              reviews: [
                 {
-                  "review_id": 1,
-                  "rating": 4.8,
-                  "comment": "Çox funksiyalı və istifadə üçün rahat."
+                  review_id: 1,
+                  rating: 4.8,
+                  comment: "Çox funksiyalı və istifadə üçün rahat.",
                 },
                 {
-                  "review_id": 2,
-                  "rating": 4.4,
-                  "comment": "Süper səs keyfiyyəti!"
-                }
-              ]
+                  review_id: 2,
+                  rating: 4.4,
+                  comment: "Süper səs keyfiyyəti!",
+                },
+              ],
             },
             {
-              "product_id": 1404,
-              "product_name": "Simsiz qulaqlıq HUAWEI FreeBuds SE 2",
-              "price": 1500.0,
-              "slug": "huawei-freebuds-se-2",
-              "original_price": 1800.0,
-              "discount": 17,
-              "salesCount": 200,
-              "image_url": "https://www.bakuelectronics.az/assets/cache_image/products/142145/huawei-freebuds-se-2-2_429x419far_efe.jpg",
-              "description": "Yüksək səs keyfiyyəti, rahat istifadə və yüksək performans.",
-              "colors": ["Mavi"],
-              "sizes": ["N/A"],
-              "reviews": [
+              product_id: 1404,
+              product_name: "Simsiz qulaqlıq HUAWEI FreeBuds SE 2",
+              price: 1500.0,
+              slug: "huawei-freebuds-se-2",
+              original_price: 1800.0,
+              discount: 17,
+              salesCount: 200,
+              image_url:
+                "https://www.bakuelectronics.az/assets/cache_image/products/142145/huawei-freebuds-se-2-2_429x419far_efe.jpg",
+              description:
+                "Yüksək səs keyfiyyəti, rahat istifadə və yüksək performans.",
+              colors: ["Mavi"],
+              sizes: ["N/A"],
+              reviews: [
                 {
-                  "review_id": 1,
-                  "rating": 4.8,
-                  "comment": "Mükəmməl və keyfiyyətli."
+                  review_id: 1,
+                  rating: 4.8,
+                  comment: "Mükəmməl və keyfiyyətli.",
                 },
                 {
-                  "review_id": 2,
-                  "rating": 4.3,
-                  "comment": "Səs izolyasiyası çox yaxşıdır."
-                }
-              ]
+                  review_id: 2,
+                  rating: 4.3,
+                  comment: "Səs izolyasiyası çox yaxşıdır.",
+                },
+              ],
             },
             {
-              "product_id": 1405,
-              "product_name": "Simsiz qulaqlıq YISON B3 BLACK",
-              "price": 1500.0,
-              "slug": "huawei-freebuds-se-2",
-              "original_price": 1800.0,
-              "discount": 17,
-              "salesCount": 200,
-              "image_url": "https://www.bakuelectronics.az/assets/cache_image/products/135992/YISON%20WIRELESS%20ON-EAR%20HEADPHONE%20B3%20BLACK_429x419far_efe.jpg",
-              "description": "Yüksək səs keyfiyyəti, rahat istifadə və yüksək performans.",
-              "colors": ["Qara"],
-              "sizes": ["N/A"],
-              "reviews": [
+              product_id: 1405,
+              product_name: "Simsiz qulaqlıq YISON B3 BLACK",
+              price: 1500.0,
+              slug: "huawei-freebuds-se-2",
+              original_price: 1800.0,
+              discount: 17,
+              salesCount: 200,
+              image_url:
+                "https://www.bakuelectronics.az/assets/cache_image/products/135992/YISON%20WIRELESS%20ON-EAR%20HEADPHONE%20B3%20BLACK_429x419far_efe.jpg",
+              description:
+                "Yüksək səs keyfiyyəti, rahat istifadə və yüksək performans.",
+              colors: ["Qara"],
+              sizes: ["N/A"],
+              reviews: [
                 {
-                  "review_id": 1,
-                  "rating": 4.8,
-                  "comment": "Mükəmməl və keyfiyyətli."
+                  review_id: 1,
+                  rating: 4.8,
+                  comment: "Mükəmməl və keyfiyyətli.",
                 },
                 {
-                  "review_id": 2,
-                  "rating": 4.3,
-                  "comment": "Səs izolyasiyası çox yaxşıdır."
-                }
-              ]
+                  review_id: 2,
+                  rating: 4.3,
+                  comment: "Səs izolyasiyası çox yaxşıdır.",
+                },
+              ],
             },
             {
-              "product_id": 1406,
-              "product_name": "Simsiz qulaqlıq YISON B3 BLACK",
-              "price": 1500.0,
-              "slug": "huawei-freebuds-se-2",
-              "original_price": 1800.0,
-              "discount": 17,
-              "salesCount": 200,
-              "image_url": "https://www.bakuelectronics.az/assets/cache_image/products/135992/YISON%20WIRELESS%20ON-EAR%20HEADPHONE%20B3%20BLACK_429x419far_efe.jpg",
-              "description": "Yüksək səs keyfiyyəti, rahat istifadə və yüksək performans.",
-              "colors": ["Qara"],
-              "sizes": ["N/A"],
-              "reviews": [
+              product_id: 1406,
+              product_name: "Simsiz qulaqlıq YISON B3 BLACK",
+              price: 1500.0,
+              slug: "huawei-freebuds-se-2",
+              original_price: 1800.0,
+              discount: 17,
+              salesCount: 200,
+              image_url:
+                "https://www.bakuelectronics.az/assets/cache_image/products/135992/YISON%20WIRELESS%20ON-EAR%20HEADPHONE%20B3%20BLACK_429x419far_efe.jpg",
+              description:
+                "Yüksək səs keyfiyyəti, rahat istifadə və yüksək performans.",
+              colors: ["Qara"],
+              sizes: ["N/A"],
+              reviews: [
                 {
-                  "review_id": 1,
-                  "rating": 4.8,
-                  "comment": "Mükəmməl və keyfiyyətli."
+                  review_id: 1,
+                  rating: 4.8,
+                  comment: "Mükəmməl və keyfiyyətli.",
                 },
                 {
-                  "review_id": 2,
-                  "rating": 4.3,
-                  "comment": "Səs izolyasiyası çox yaxşıdır."
-                }
-              ]
+                  review_id: 2,
+                  rating: 4.3,
+                  comment: "Səs izolyasiyası çox yaxşıdır.",
+                },
+              ],
             },
           ],
         },
@@ -3369,7 +3454,7 @@ const data = {
         //   subkateqoriya_adı: "Mikser və Mikser Dəsti",
         //   məhsullar: [],
         // },
-          // {
+        // {
         //   subkateqoriya_id: 14,
         //   subkateqoriya_adı: "Saç Qurudan",
         //   məhsullar: [],
@@ -3386,6 +3471,8 @@ const data = {
         // }
       ],
     },
+
+
     {
       kateqoriya_id: 4,
       kateqoriya_adı: "Ev & Yaşam",
@@ -3507,6 +3594,7 @@ const data = {
         },
       ],
     },
+
     {
       kateqoriya_id: 5,
       kateqoriya_adı: "Supermarket",
@@ -3693,6 +3781,7 @@ const data = {
         },
       ],
     },
+
     {
       kateqoriya_id: 6,
       kateqoriya_adı: "İdman & Çöl",
@@ -3799,90 +3888,33 @@ const data = {
         },
       ],
     },
-    {
-      kateqoriya_id: 6,
-      kateqoriya_adı: "Ev Heyvanları & Bağ",
-      subkateqoriyalar: [
-        {
-          id: 1,
-          subkateqoriya_adı: "Pişik Yeməyi",
-          məhsullar: [],
-        },
-        {
-          id: 2,
-          subkateqoriya_adı: "İt Yeməyi",
-          məhsullar: [],
-        },
-        {
-          id: 3,
-          subkateqoriya_adı: "Quş Məhsulları",
-          məhsullar: [],
-        },
-        {
-          id: 4,
-          subkateqoriya_adı: "Akvarium Məhsulları",
-          məhsullar: [],
-        },
-        {
-          id: 5,
-          subkateqoriya_adı: "Pişik Vitamini",
-          məhsullar: [],
-        },
 
-        {
-          id: 8,
-          subkateqoriya_adı: "Pişik Oyuncaqları",
-          məhsullar: [],
-        },
-        {
-          id: 9,
-          subkateqoriya_adı: "İt Oyuncaqları",
-          məhsullar: [],
-        },
-        {
-          id: 10,
-          subkateqoriya_adı: "Pişiklərin Yaş Yeməyi",
-          məhsullar: [],
-        },
-        {
-          id: 11,
-          subkateqoriya_adı: "Pişiklərin Müalicəsi",
-          məhsullar: [],
-        },
-        {
-          id: 12,
-          subkateqoriya_adı: "İtlərin Müalicəsi",
-          məhsullar: [],
-        },
-        {
-          id: 13,
-          subkateqoriya_adı: "Pişik şampunu",
-          məhsullar: [],
-        },
-        {
-          id: 14,
-          subkateqoriya_adı: "İt şampunu",
-          məhsullar: [],
-        },
-        {
-          id: 19,
-          subkateqoriya_adı: "Balıq Yemi",
-          məhsullar: [],
-        },
-      ],
-    },
+
+
+
   ],
 };
 
-
 export const statsData = [
-  { iconSrc: "/store.svg", value: "10.5k", description: "Sallers active on our site" },
+  {
+    iconSrc: "/store.svg",
+    value: "10.5k",
+    description: "Sallers active on our site",
+  },
   { iconSrc: "/store.svg", value: "33k", description: "Monthly Product Sale" },
-  { iconSrc: "/store.svg", value: "45.5k", description: "Customers active on our site" },
-  { iconSrc: "/store.svg", value: "25k", description: "Annual gross sale on our site" },
+  {
+    iconSrc: "/store.svg",
+    value: "45.5k",
+    description: "Customers active on our site",
+  },
+  {
+    iconSrc: "/store.svg",
+    value: "25k",
+    description: "Annual gross sale on our site",
+  },
 ];
 
-export const servicesData= [
+export const servicesData = [
   {
     imgSrc: "/icon-delivery.svg",
     title: "FREE AND FAST DELIVERY",
@@ -3901,3 +3933,79 @@ export const servicesData= [
 ];
 
 export default data;
+
+
+
+
+// {
+//   kateqoriya_id: 7,
+//   kateqoriya_adı: "Ev Heyvanları & Bağ",
+//   subkateqoriyalar: [
+//     {
+//       id: 1,
+//       subkateqoriya_adı: "Pişik Yeməyi",
+//       məhsullar: [],
+//     },
+//     {
+//       id: 2,
+//       subkateqoriya_adı: "İt Yeməyi",
+//       məhsullar: [],
+//     },
+//     {
+//       id: 3,
+//       subkateqoriya_adı: "Quş Məhsulları",
+//       məhsullar: [],
+//     },
+//     {
+//       id: 4,
+//       subkateqoriya_adı: "Akvarium Məhsulları",
+//       məhsullar: [],
+//     },
+//     {
+//       id: 5,
+//       subkateqoriya_adı: "Pişik Vitamini",
+//       məhsullar: [],
+//     },
+
+//     {
+//       id: 8,
+//       subkateqoriya_adı: "Pişik Oyuncaqları",
+//       məhsullar: [],
+//     },
+//     {
+//       id: 9,
+//       subkateqoriya_adı: "İt Oyuncaqları",
+//       məhsullar: [],
+//     },
+//     {
+//       id: 10,
+//       subkateqoriya_adı: "Pişiklərin Yaş Yeməyi",
+//       məhsullar: [],
+//     },
+//     {
+//       id: 11,
+//       subkateqoriya_adı: "Pişiklərin Müalicəsi",
+//       məhsullar: [],
+//     },
+//     {
+//       id: 12,
+//       subkateqoriya_adı: "İtlərin Müalicəsi",
+//       məhsullar: [],
+//     },
+//     {
+//       id: 13,
+//       subkateqoriya_adı: "Pişik şampunu",
+//       məhsullar: [],
+//     },
+//     {
+//       id: 14,
+//       subkateqoriya_adı: "İt şampunu",
+//       məhsullar: [],
+//     },
+//     {
+//       id: 19,
+//       subkateqoriya_adı: "Balıq Yemi",
+//       məhsullar: [],
+//     },
+//   ],
+// },

@@ -40,8 +40,8 @@ const MusicExperience = () => {
           </div>
 
           <Link to="/products/Elektronika">
-            <button className="w-[171px] h-[56px] bg-[#00FF66] hover:bg-[#40A860]  rounded-md text-center text-[#FAFAFA] mt-[40px]">
-              İndi
+            <button className="w-[171px] h-[56px] bg-[#00d856] hover:bg-[#40A860]  rounded-md text-center text-[#1a1a1a] text-[19px]  font-medium mt-[40px]">
+              İndi Al
             </button>
           </Link>
         </div>

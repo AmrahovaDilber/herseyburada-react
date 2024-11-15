@@ -46,7 +46,7 @@ export default function Sales() {
 
   return (
     <div className="">
-      <TitleSubtitle  title="Endirimler">
+      <TitleSubtitle  title="Endirimlər">
         <div className="space-x-[8px] flex items-center">
           <figure
             onClick={handlePrev}

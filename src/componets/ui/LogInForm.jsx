@@ -52,7 +52,7 @@ const LoginForm = () => {
         notification("Failed to send reset email. Please check your email.");
       }
     } else {
-      notification("Please enter your email to reset the password.");
+      notification("Şifrəni sıfırlamaq üçün e-poçtunuzu daxil edin.");
     }
   };
 
@@ -79,13 +79,13 @@ const LoginForm = () => {
             <input
               type="text"
               {...loginUser("email", {
-                required: "Please fill in your email",
+                required: "Zəhmət olmasa emaili daxil edin",
                 pattern: {
                   value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
                   message: "Invalid email format",
                 },
               })}
-              className="form-input border-b-[2px] border-b-[#B3B3B3] focus:border-blue-500 outline-0 w-full py-2 text-lg"
+              className="form-input border-b-[2px] bg-transparent border-b-[#B3B3B3] focus:border-blue-500 outline-0 w-full py-2 text-lg"
               placeholder="Email"
             />
             <p className="text-red-500 text-sm mt-2">
@@ -97,13 +97,13 @@ const LoginForm = () => {
             <input
               type="password"
               {...loginUser("password", {
-                required: "Please fill in your password",
+                required: "Zəhmət olmasa parolunuzu daxil edin",
                 minLength: {
                   value: 6,
                   message: "Password must be at least 6 characters long",
                 },
               })}
-              className="form-input border-b-[2px] border-b-[#B3B3B3] focus:border-blue-500 outline-0 w-full py-2 text-lg"
+              className="form-input border-b-[2px] bg-transparent border-b-[#B3B3B3] focus:border-blue-500 outline-0 w-full py-2 text-lg"
               placeholder="Parol"
             />
             <p className="text-red-500 text-sm mt-2">

@@ -22,7 +22,7 @@ export default function CategorySection() {
           >
             {mobileMenuOpen ? "Close Categories" : "Open Categories"}
           </button>
-          <ul className={`${mobileMenuOpen ? 'block' : 'hidden'} lg:block bg-white shadow-md lg:shadow-none rounded-lg lg:rounded-none`}>
+          <ul className={`${mobileMenuOpen ? 'block' : 'hidden'} lg:block bg-transparent shadow-md lg:shadow-none rounded-lg lg:rounded-none`}>
             {data.kateqoriyalar.map((item, index) => {
               const isActive = currentPath.includes(`/products/${item.kateqoriya_adı}`) ||
                 selectedCategories.includes(item.kateqoriya_adı);

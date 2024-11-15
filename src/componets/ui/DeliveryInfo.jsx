@@ -1,26 +1,22 @@
 function DeliveryInfo() {
   return (
-    <div className="w-full h-[180px] border rounded-[4px] mt-[40px]">
-      <div className="flex items-center gap-x-[16px] py-[24px] px-[16px] border-b-[1px]">
-        <div>
-          <i className="flex items-center justify-center pt-[5px] fa-solid fa-truck text-[30px]" />
+    <div className="w-full border rounded-lg mt-10">
+      <div className="flex flex-col sm:flex-row items-center gap-4 py-6 px-4 sm:px-6 border-b">
+        <div className="flex items-center justify-center text-orange-500">
+          <i className="fa-solid fa-truck text-3xl" />
         </div>
-        <div>
-          <h4 className="text-[16px] font-[500]">Free Delivery</h4>
-          <p className="text-[12px] font-[500]">
-            Enter your postal code for Delivery Availability
-          </p>
+        <div className="text-center sm:text-left">
+          <h4 className="text-base sm:text-lg font-medium">Free Delivery</h4>
+          <p className="text-sm text-gray-600">Enter your postal code for Delivery Availability</p>
         </div>
       </div>
-      <div className="flex items-center gap-x-[16px] py-[24px] px-[16px]">
+      <div className="flex flex-col sm:flex-row items-center gap-4 py-6 px-4 sm:px-6">
         <div>
-          <img src="/Icon-return.svg" alt="" />
+          <img src="/Icon-return.svg" alt="Return Icon" className="h-8 w-8" />
         </div>
-        <div>
-          <h4 className="text-[16px] font-[500]">Return Delivery</h4>
-          <p className="text-[12px] font-[500]">
-            Free 30 Days Delivery Returns. Details
-          </p>
+        <div className="text-center sm:text-left">
+          <h4 className="text-base sm:text-lg font-medium">Return Delivery</h4>
+          <p className="text-sm text-gray-600">Free 30 Days Delivery Returns. Details</p>
         </div>
       </div>
     </div>
