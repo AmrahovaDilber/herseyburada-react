@@ -13,14 +13,14 @@ export default function ProductDetail() {
     <div className="flex flex-col lg:flex-row justify-between mx-auto my-12 max-w-7xl px-4 sm:px-6 lg:px-8">
       <div className="flex flex-col lg:flex-row gap-6 lg:gap-10">
         {/* Product Images */}
-        <div className="w-full lg:w-[500px] rounded-lg overflow-hidden shadow-lg">
-          <figure className="h-[500px] lg:h-[600px] flex items-center justify-center bg-gray-100">
-            <img
-              src={findProduct.image_url}
-              alt={findProduct.product_name}
-              className="w-full h-full object-cover"
-            />
-          </figure>
+        <div className="w-full rounded-lg overflow-hidden shadow-lg">
+        <figure className="sm:h-[400px] md:h-[500px] lg:h-[600px] flex items-center justify-center bg-gray-100">
+        <img
+          src={findProduct.image_url}
+          alt={findProduct.product_name}
+          className="w-full h-full object-cover"
+        />
+      </figure>
         </div>
       </div>
 

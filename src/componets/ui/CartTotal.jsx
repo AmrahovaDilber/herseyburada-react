@@ -3,19 +3,19 @@ export default function CartTotal({ subtotal }) {
   const total = parseFloat(subtotal) + shippingCost;
 
   return (
-    <div className="w-[470px] h-[324px] border border-gray-300 rounded-[4px] space-y-[16px] px-[32px] py-[24px] bg-gray-50">
-      <h3 className="font-medium text-[24px] mb-[24px]">Cart Total</h3>
-      <div className="flex justify-between border-b border-gray-200 pb-[16px]">
-        <span>Subtotal:</span>
-        <span id="subtotal">${subtotal}</span>
+    <div className="w-full sm:w-[470px] h-auto sm:h-[324px] border border-gray-300 rounded-[4px] space-y-[16px] px-[16px] sm:px-[32px] py-[16px] sm:py-[24px] bg-gray-50">
+      <h3 className="font-medium text-[20px] sm:text-[24px] mb-[16px] sm:mb-[24px]">Cart Total</h3>
+      <div className="flex justify-between border-b border-gray-200 pb-[12px] sm:pb-[16px]">
+        <span className="text-sm sm:text-base">Subtotal:</span>
+        <span id="subtotal" className="text-sm sm:text-base">${subtotal}</span>
       </div>
-      <div className="flex justify-between border-b border-gray-200 pb-[16px]">
-        <span>Shipping:</span>
-        <span id="shipping">${shippingCost.toFixed(2)}</span>
+      <div className="flex justify-between border-b border-gray-200 pb-[12px] sm:pb-[16px]">
+        <span className="text-sm sm:text-base">Shipping:</span>
+        <span id="shipping" className="text-sm sm:text-base">${shippingCost.toFixed(2)}</span>
       </div>
-      <div className="flex justify-between pb-[16px]">
-        <span>Total:</span>
-        <span id="total">${total.toFixed(2)}</span>
+      <div className="flex justify-between pb-[12px] sm:pb-[16px]">
+        <span className="text-sm sm:text-base">Total:</span>
+        <span id="total" className="text-sm sm:text-base">${total.toFixed(2)}</span>
       </div>
     </div>
   );

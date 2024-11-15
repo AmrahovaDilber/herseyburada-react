@@ -3,10 +3,8 @@ import CartItem from "./CartItem";
 import CartTotal from "./CartTotal";
 import { useContextApp } from "../../context/AppContext";
 import Coupon from "./Coupan";
-
-export default function CartList({handleApply,text,setText}) {
+export default function CartList({ handleApply, text, setText }) {
   const { carts, fetchCartProducts } = useContextApp();
-  
   const [productCounts, setProductCounts] = useState({});
   const [cartProducts, setCartProducts] = useState([]);
   const [overallSubtotal, setOverallSubtotal] = useState(0);
@@ -46,7 +44,6 @@ export default function CartList({handleApply,text,setText}) {
     const count = productCounts[product.product_id] || 1;
     const price = parseFloat(product.original_price) || 0;
     const subtotal = (price * count).toFixed(2);
-    console.log(`Calculating subtotal for product ${product.product_id}: price=${price}, count=${count}, subtotal=${subtotal}`);
     return subtotal;
   };
 
@@ -60,15 +57,16 @@ export default function CartList({handleApply,text,setText}) {
   };
 
   return (
-    <div>
+    <div className="space-y-6">
+     <div className="grid  grid-cols-[2fr_1fr_1fr_1fr_1fr] gap-2 sm:gap-4 items-center h-12 sm:h-16 font-semibold border border-gray-100 shadow-sm px-2 sm:px-4 py-1 sm:py-2 text-sm sm:text-base">
+  <div className="truncate inline text-sm sm:text-lg font-semibold text-gray-800 sm:text-gray-900">Product</div>
+  <div className="truncate  inline text-sm sm:text-lg font-semibold text-gray-800 sm:text-gray-900">Price</div>
+  <div className="truncate  inline text-sm sm:text-lg font-semibold text-gray-800 sm:text-gray-900">Quantity</div>
+  <div className="truncate text-center  inline text-sm sm:text-lg font-semibold text-gray-800 sm:text-gray-900">Subtotal</div>
+  <div className="truncate text-center  inline text-sm sm:text-lg font-semibold text-gray-800 sm:text-gray-900">Delete</div>
+</div>
+
       <div className="space-y-4 h-[450px] overflow-y-auto">
-        <div className="grid grid-cols-[2fr_1fr_1fr_1fr_1fr] gap-4 items-center h-16 font-semibold border border-gray-100 shadow-sm px-4 py-2">
-          <div>Product</div>
-          <div>Price</div>
-          <div>Quantity</div>
-          <div className="text-center">Subtotal</div>
-          <div className="text-center">Delete</div>
-        </div>
         {cartProducts.length > 0 &&
           cartProducts.map((product) => (
             <CartItem
@@ -88,11 +86,10 @@ export default function CartList({handleApply,text,setText}) {
           </div>
         )}
       </div>
-      <div className="flex justify-between">
+      <div className="flex flex-col sm:flex-row justify-between w-full space-y-4 sm:space-y-0">
         <Coupon handleApply={handleApply} text={text} setText={setText} />
         <CartTotal subtotal={overallSubtotal} />
       </div>
-
     </div>
   );
 }
