@@ -1,17 +1,15 @@
 import { useEffect, useState, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useContextApp } from "../../context/AppContext";
-// import { FcAbout } from "react-icons/fc";
+import { IoPersonOutline } from "react-icons/io5";
+import { IoMdHeartEmpty } from "react-icons/io";
+import { IoCartOutline } from "react-icons/io5";
 import { doSignOut } from "../../firebase/auth";
+import { IoIosSearch } from "react-icons/io";
 
 export default function Header() {
-  const {
-    userLoggedIn,
-    carts,
-    favorites,
-    handleInputChange,
-    query,
-  } = useContextApp();
+  const { userLoggedIn, carts, favorites, handleInputChange, query } =
+    useContextApp();
   const [cartLength, setCartLength] = useState(null);
   const [favoritesLength, setFavoritesLength] = useState(null);
   const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -42,9 +40,9 @@ export default function Header() {
 
   const handleAccountClick = () => {
     if (userLoggedIn) {
-      setDropdownOpen(prev => !prev);
+      setDropdownOpen((prev) => !prev);
     } else {
-      navigate('/login');
+      navigate("/login");
     }
   };
 
@@ -54,7 +52,11 @@ export default function Header() {
         <div className="flex justify-between items-center py-4 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <Link to="/">
-              <img className="h-8 w-auto sm:h-10" src="/herseyburada.svg" alt="Logo" />
+              <img
+                className="h-8 w-auto sm:h-10"
+                src="/herseyburada.svg"
+                alt="Logo"
+              />
             </Link>
           </div>
           <div className="-mr-2 -my-2 md:hidden">
@@ -64,57 +66,96 @@ export default function Header() {
               onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
             >
               <span className="sr-only">Open menu</span>
-              <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              <svg
+                className="h-6 w-6"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
               </svg>
             </button>
           </div>
+          <div
+            className="sm:flex hidden items-center py-[2px] grow mr-4 rounded-full border bg-white shadow-sm hover:shadow-md
+      transition-all
+      duration-300"
+          >
+            <input
+              className="
+              bg-transparent
+              placeholder-gray-500
+              outline-none
+              text-sm
+              grow
+              px-6
+              py-2
+              transition-all
+              duration-200"
+              type="text"
+              value={query}
+              placeholder="Nə ilə maraqlanırsınız?"
+              onChange={handleInputChange}
+            />
+            <Link className="h-8 w-8 bg-[#ff9130] rounded-full cursor-pointer text-white flex justify-center items-center hover:bg-[#e7883b] mr-1 transition-colors duration-300 ease-in-out shadow-md hover:shadow-lg">
+              <IoIosSearch className="fa-solid fa-magnifying-glass text-[18px]" />
+            </Link>
+          </div>
+
           <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-            <div className="flex justify-between items-center h-10 grow max-w-md mr-4 rounded-full border">
-              <input
-                className="bg-transparent placeholder-black opacity-50 outline-none text-sm grow px-4"
-                type="text"
-                value={query}
-                placeholder="Nə ilə maraqlanırsınız?"
-                onChange={handleInputChange}
-              />
-              <Link className="size-8 bg-[#ff9130] rounded-full cursor-pointer text-white inline-flex justify-center items-center hover:bg-[#e07575] mr-1">
-                <i className="fa-solid fa-magnifying-glass text-xs" />
-              </Link>
-            </div>
+            {/* NAV İCONS */}
             <nav className="flex space-x-6">
-              <Link to="/cartpage" className="relative text-gray-500 hover:text-[#ff9130]">
-                <i className="fa-solid fa-cart-shopping text-xl" />
-                {cartLength > 0 && (
-                  <span className="absolute -top-2 -right-2 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-white text-xs">
-                    {cartLength}
-                  </span>
-                )}
+              <Link
+                to="/cartpage"
+                className="group flex items-center gap-1 text-[#1a1a1a] hover:text-[#ff9130] transition-colors duration-300 ease-in-out"
+              >
+                <div className="relative">
+                  <IoCartOutline className="text-[22px] text-[#1a1a1a] transition-transform duration-300 transform hover:scale-110 group-hover:text-[#ff9130] ease-in-out" />
+                  {cartLength > 0 && (
+                    <span className="absolute -top-2 -right-2 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-white text-xs">
+                      {cartLength}
+                    </span>
+                  )}
+                </div>
+                <span>Səbət</span>
               </Link>
-              <Link to="/wishlist" className="relative text-gray-500 hover:text-[#ff9130]">
-                <i className="fa-solid fa-heart text-xl" />
-                {favoritesLength > 0 && (
-                  <span className="absolute -top-2 -right-2 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-white text-xs">
-                    {favoritesLength}
-                  </span>
-                )}
+
+              <Link
+                to="/wishlist"
+                className="group flex items-center gap-1 text-[#1a1a1a] hover:text-[#ff9130] transition-colors duration-300 ease-in-out"
+              >
+                <div className="relative">
+                  <IoMdHeartEmpty className="text-[22px] text-[#1a1a1a] transition-transform duration-300 transform hover:scale-110 group-hover:text-[#ff9130] ease-in-out" />
+                  {favoritesLength > 0 && (
+                    <span className="absolute -top-2 -right-2 flex h-4 w-4 items-center justify-center rounded-full bg-gradient-to-r from-red-500 to-red-600 text-white text-xs font-bold shadow-md transform hover:scale-105 transition-transform duration-200 ease-in-out">
+                      {favoritesLength}
+                    </span>
+                  )}
+                </div>
+                <span>Seçilmişlər</span>
               </Link>
-              {/* <Link to="/about" className="text-gray-500 hover:text-[#ff9130]">
-                <FcAbout className="text-xl" />
-              </Link> */}
-              <div className="relative" ref={dropdownRef}>
+
+              <div className="relative group" ref={dropdownRef}>
                 <button
-                  className="text-gray-500 hover:text-[#ff9130]"
+                  className="text-gray-500 group-hover:text-[#ff9130]"
                   onClick={handleAccountClick}
                 >
-                  <i className="fa-solid fa-user text-xl" />
+                  <div className="flex items-center gap-1 w-[35px] h-[35px] rounded-full bg-gray-200  transition-transform duration-300 ease-in-out group-hover:bg-[#ff9436] justify-center text-[#1a1a1a]">
+                    <IoPersonOutline className="border  rounded-full  text-[24px]  transition-transform duration-300 transform hover:scale-110 ease-in-out" />
+                  </div>
                 </button>
                 {isDropdownOpen && userLoggedIn && (
                   <div
                     id="dropdown"
                     className="absolute flex-col justify-start right-0 top-3 w-[200px] bg-white shadow-lg rounded-lg mt-2 py-2"
                   >
-                   
                     <Link
                       to={"/contact"}
                       className="flex justify-between items-center px-4 py-2 text-sm hover:bg-gray-100 hover:text-[#ff7518]"
@@ -126,7 +167,7 @@ export default function Header() {
                       />
                       <span className="text-left w-[80%]">Müştəri xidməti</span>
                     </Link>
-                  
+
                     <Link
                       to={"/login"}
                       className="flex justify-between items-center px-4 py-2 text-sm hover:bg-gray-100 hover:text-[#ff7518]"
@@ -168,7 +209,11 @@ export default function Header() {
             <div className="pt-5 pb-6 px-5">
               <div className="flex items-center justify-between">
                 <div>
-                  <img className="h-8 w-auto" src="/herseyburada.svg" alt="Logo" />
+                  <img
+                    className="h-8 w-auto"
+                    src="/herseyburada.svg"
+                    alt="Logo"
+                  />
                 </div>
                 <div className="-mr-2">
                   <button
@@ -177,8 +222,20 @@ export default function Header() {
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     <span className="sr-only">Close menu</span>
-                    <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    <svg
+                      className="h-6 w-6"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M6 18L18 6M6 6l12 12"
+                      />
                     </svg>
                   </button>
                 </div>
@@ -200,21 +257,36 @@ export default function Header() {
             </div>
             <div className="py-6 px-5 space-y-6">
               <div className="grid grid-cols-2 gap-y-4 gap-x-8">
-                <Link to="/cartpage" className="text-base font-medium text-gray-900 hover:text-gray-700">
+                <Link
+                  to="/cartpage"
+                  className="text-base font-medium text-gray-900 hover:text-gray-700"
+                >
                   Səbət
                 </Link>
-                <Link to="/wishlist" className="text-base font-medium text-gray-900 hover:text-gray-700">
+                <Link
+                  to="/wishlist"
+                  className="text-base font-medium text-gray-900 hover:text-gray-700"
+                >
                   Favoritlər
                 </Link>
-                <Link to="/about" className="text-base font-medium text-gray-900 hover:text-gray-700">
+                <Link
+                  to="/about"
+                  className="text-base font-medium text-gray-900 hover:text-gray-700"
+                >
                   Haqqımızda
                 </Link>
                 {userLoggedIn ? (
-                  <Link to="/contact" className="text-base font-medium text-gray-900 hover:text-gray-700">
+                  <Link
+                    to="/contact"
+                    className="text-base font-medium text-gray-900 hover:text-gray-700"
+                  >
                     Əlaqə
                   </Link>
                 ) : (
-                  <Link to="/login" className="text-base font-medium text-gray-900 hover:text-gray-700">
+                  <Link
+                    to="/login"
+                    className="text-base font-medium text-gray-900 hover:text-gray-700"
+                  >
                     Daxil ol
                   </Link>
                 )}
@@ -223,7 +295,9 @@ export default function Header() {
                 <div className="mt-6">
                   <button
                     onClick={() => {
-                      if (window.confirm("Çıxış etmək istədiyinizə əminsiniz?")) {
+                      if (
+                        window.confirm("Çıxış etmək istədiyinizə əminsiniz?")
+                      ) {
                         doSignOut().then(() => {
                           navigate("/login");
                           setMobileMenuOpen(false);
