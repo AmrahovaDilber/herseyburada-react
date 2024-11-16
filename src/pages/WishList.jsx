@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useContextApp } from "../context/AppContext";
-import FavoriteItem from '../componets/ui/FavoriteItem'
+import ProductItem from "../componets/ui/ProductItem";
 
 export default function WishList() {
   const {
@@ -28,7 +28,7 @@ export default function WishList() {
 
         <div className="grid grid-cols-2  md:grid-cols-3 lg:grid-cols-5 gap-8">
           {favoritesProducts.map((product, index) => (
-            <FavoriteItem product={product} key={product.product_id} index={index} />
+            <ProductItem product={product} key={product.product_id} index={index} />
           ))}
         </div>
         {favoritesProducts.length === 0 && (
