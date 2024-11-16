@@ -37,7 +37,10 @@ const LoginForm = () => {
       try {
         await doSignInWithGoogle();
       } catch (err) {
-        console.error(err);
+        console.error("Google ilə daxil olarkən xəta:", err);
+        notification(
+          "Google ilə daxil olmaq alınmadı. Lütfən, yenidən cəhd edin."
+        );
         setIsSigningIn(false);
       }
     }
@@ -75,8 +78,6 @@ const LoginForm = () => {
           className="login-form bg-white shadow-lg border rounded-lg p-8 w-full lg:w-1/2 mb-12"
           method="post"
         >
-        
-          {/* Email Input */}
           <div className="input-group mb-5">
             <label htmlFor="email" className="block text-gray-600 text-lg mb-2">
               Email
@@ -99,7 +100,6 @@ const LoginForm = () => {
             </p>
           </div>
 
-          {/* Password Input */}
           <div className="input-group mb-5">
             <label
               htmlFor="password"
