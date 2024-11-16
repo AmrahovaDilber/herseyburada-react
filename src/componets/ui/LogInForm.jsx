@@ -59,25 +59,31 @@ const LoginForm = () => {
   return (
     <>
       {userLoggedIn && <Navigate to={"/"} replace={true} />}
-      <main className="main-content flex flex-col lg:flex-row lg:space-x-[50px] items-center w-full max-w-7xl mx-auto px-4 sm:px-0 py-8">
+      <main className="main-content flex flex-col justify-center w-full lg:space-x-[50px] items-center max-w-7xl mx-auto px-6 sm:px-8 py-12">
+        <Link to="/">
+          <figure className="w-[200px] h-[50px] mb-4">
+            <img
+              src="./herseyburada.svg"
+              alt="Hərşeyburada Logo"
+              className="object-contain w-full h-full"
+            />
+          </figure>
+        </Link>
+
         <form
           onSubmit={handleLoginSubmit(onSubmit)}
-          className="login-form flex flex-col justify-self-start w-full lg:w-1/2 mb-8 lg:mb-0"
+          className="login-form bg-white shadow-lg border rounded-lg p-8 w-full lg:w-1/2 mb-12"
           method="post"
         >
-          <h1
-            className="form-title text-2xl lg:text-[36px] font-[500] mb-6 lg:mb-[26px] text-center"
-            style={{ fontFamily: "'Inter', sans-serif" }}
-          >
-            <span style={{ fontFamily: "Comfortaa, sans-serif" }}>
-              hərşeyburada
-            </span>
-            -ya daxil ol
-          </h1>
-
-          <div className="input-group mb-6 lg:mb-[40px]">
+        
+          {/* Email Input */}
+          <div className="input-group mb-5">
+            <label htmlFor="email" className="block text-gray-600 text-lg mb-2">
+              Email
+            </label>
             <input
               type="text"
+              id="email"
               {...loginUser("email", {
                 required: "Zəhmət olmasa emaili daxil edin",
                 pattern: {
@@ -85,17 +91,25 @@ const LoginForm = () => {
                   message: "Invalid email format",
                 },
               })}
-              className="form-input border-b-[2px] bg-transparent border-b-[#B3B3B3] focus:border-blue-500 outline-0 w-full py-2 text-lg"
+              className="form-input border border-gray-300 focus:border-[#ff9130] focus:ring focus:ring-[#ff9130]/50 outline-none w-full py-3 px-4 rounded-md text-lg"
               placeholder="Email"
             />
-            <p className="text-red-500 text-sm mt-2">
+            <p className="text-red-500 text-sm mt-1">
               {loginErrors.email?.message}
             </p>
           </div>
 
-          <div className="input-group mb-6 lg:mb-[40px]">
+          {/* Password Input */}
+          <div className="input-group mb-5">
+            <label
+              htmlFor="password"
+              className="block text-gray-600 text-lg mb-2"
+            >
+              Parol
+            </label>
             <input
               type="password"
+              id="password"
               {...loginUser("password", {
                 required: "Zəhmət olmasa parolunuzu daxil edin",
                 minLength: {
@@ -103,62 +117,53 @@ const LoginForm = () => {
                   message: "Password must be at least 6 characters long",
                 },
               })}
-              className="form-input border-b-[2px] bg-transparent border-b-[#B3B3B3] focus:border-blue-500 outline-0 w-full py-2 text-lg"
+              className="form-input border border-gray-300 focus:border-[#ff9130] focus:ring focus:ring-[#ff9130]/50 outline-none w-full py-3 px-4 rounded-md text-lg"
               placeholder="Parol"
             />
-            <p className="text-red-500 text-sm mt-2">
+            <p className="text-red-500 text-sm mt-1">
               {loginErrors.password?.message}
             </p>
           </div>
 
-          <div className="form-submit flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6">
+          {/* Submit Button and Forgot Password */}
+          <div className="form-submit flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8">
             <button
-              className="submit-btn bg-[#FF7518] hover:bg-[#e07575] text-[#ffffff] px-[48px] h-[56px] mb-4 sm:mb-0 rounded-[4px] cursor-pointer transition-colors w-full sm:w-auto"
+              className="submit-btn bg-[#ff9130] hover:bg-[#e08430] text-white py-3 px-8 rounded-md cursor-pointer transition-all w-full sm:w-auto shadow-md"
               type="submit"
             >
               Daxil ol
             </button>
             <p
               onClick={() => setForgotPasswordEmail(email)}
-              className="text-[#FF7518] hover:text-[#e07575] text-[16px] cursor-pointer transition-colors text-center sm:text-right"
+              className="text-[#ff9130] hover:text-[#e08430] text-sm cursor-pointer transition-colors text-center sm:text-right mt-4 sm:mt-0"
               onDoubleClick={handleForgotPassword}
             >
               Parolu unutmusan?
             </p>
           </div>
 
+          {/* Google Sign-In */}
           <div className="google-signin mb-6">
             <button
               onClick={onGoogleSignIn}
-              className="w-full flex items-center justify-center gap-2 bg-white border border-gray-300 py-2 px-4 rounded hover:bg-gray-100 transition"
+              className="w-full flex items-center justify-center gap-3 bg-white border border-gray-300 py-3 px-5 rounded-md hover:bg-gray-50 transition-all shadow-sm"
             >
-              <img
-                src={google}
-                alt="Google"
-                className="w-6 h-6 bg-transparent"
-              />
+              <img src={google} alt="Google" className="w-5 h-5" />
               <span className="text-gray-600">Sign in with Google</span>
             </button>
           </div>
 
-          <p className="form-bottom opacity-70 text-center sm:text-left">
+          {/* Sign Up Link */}
+          <p className="form-bottom opacity-80 text-center sm:text-left">
             Hesabın yoxdur?
             <Link
               to={"/signup"}
-              className="ml-[16px] opacity-100 underline-offset-2 text-blue-500 underline hover:no-underline"
+              className="ml-2 opacity-100 text-[#ff9130] hover:text-[#e08430] underline"
             >
               Qeydiyyatdan keç
             </Link>
           </p>
         </form>
-
-        <figure className="w-full lg:w-1/2 h-[300px] lg:h-[650px]">
-          <img
-            className="w-full h-full object-cover"
-            src="/login-register.svg"
-            alt="Login illustration"
-          />
-        </figure>
       </main>
     </>
   );

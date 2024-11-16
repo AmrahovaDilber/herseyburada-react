@@ -1,8 +1,15 @@
+import { IoWomanSharp } from "react-icons/io5";
+import { IoIosMan } from "react-icons/io";
+import { IoMdPhonePortrait } from "react-icons/io";
+import { FaHome } from "react-icons/fa";
+import { FaStore } from "react-icons/fa";
+import { MdOutlineSportsTennis } from "react-icons/md";
 const data = {
   kateqoriyalar: [
     {
       kateqoriya_id: 1,
       kateqoriya_adı: "Qadın",
+      icon:IoWomanSharp ,
       subkateqoriyalar: [
         {
           subkateqoriya_id: 1,
@@ -602,7 +609,7 @@ const data = {
 
               slug: "haki-kayik-yaka-fitilli-esnek-uzun-kollu-bluz",
             },
-          ]
+          ],
         },
 
         {
@@ -1604,107 +1611,6 @@ const data = {
           ],
         },
 
-
-        // {
-        //   subkateqoriya_id: 4,
-        //   subkateqoriya_adı: "Şortik",
-        //   məhsullar: [
-        //     {
-        //       product_id: 5,
-        //       product_name: "Yay Şortiki",
-        //       price: 40.0,
-        //       original_price: 50.0,
-        //       discount: 20,
-        //       salesCount: 85,
-        //       image_url: "https://example.com/products/summer-shorts.jpg",
-        //       description: "Rahat və sərin yay şortiki.",
-        //       colors: ["White", "Khaki", "Navy"],
-        //       sizes: ["XS", "S", "M", "L"],
-        //       reviews: [
-        //         {
-        //           review_id: 18,
-        //           rating: 4.3,
-        //           comment: "Çox rahat, amma ölçüsü biraz böyük.",
-        //         },
-        //       ],
-        //     },
-        //   ],
-        // },
-        // {
-        //   subkateqoriya_id: 5,
-        //   subkateqoriya_adı: "Qadın Paltosu",
-        //   məhsullar: [
-        //     {
-        //       product_id: 6,
-        //       product_name: "Qış Paltosu",
-        //       price: 150.0,
-        //       original_price: 180.0,
-        //       discount: 0,
-        //       salesCount: 50,
-        //       image_url: "https://example.com/products/winter-coat.jpg",
-        //       description: "İsti və stilli qış paltosu.",
-        //       colors: ["Black", "Camel"],
-        //       sizes: ["S", "M", "L", "XL"],
-        //       reviews: [
-        //         {
-        //           review_id: 19,
-        //           rating: 4.9,
-        //           comment: "Mükəmməl keyfiyyət və dizayn!",
-        //         },
-        //       ],
-        //     },
-        //   ],
-        // },
-        // {
-        //   subkateqoriya_id: 6,
-        //   subkateqoriya_adı: "Qadın Pencəyi",
-        //   məhsullar: [
-        //     {
-        //       product_id: 7,
-        //       product_name: "Klassik Pencək",
-        //       price: 90.0,
-        //       original_price: 110.0,
-        //       discount: 5,
-        //       salesCount: 70,
-        //       image_url: "https://example.com/products/classic-blazer.jpg",
-        //       description: "Ofis və gündəlik istifadə üçün şık pencək.",
-        //       colors: ["Black", "Navy", "Grey"],
-        //       sizes: ["S", "M", "L"],
-        //       reviews: [
-        //         {
-        //           review_id: 20,
-        //           rating: 4.6,
-        //           comment: "Çox şık və keyfiyyətli.",
-        //         },
-        //       ],
-        //     },
-        //   ],
-        // },
-        // {
-        //   subkateqoriya_id: 7,
-        //   subkateqoriya_adı: "Yataq Geyimi",
-        //   məhsullar: [
-        //     {
-        //       product_id: 8,
-        //       product_name: "İpək Pijama Dəsti",
-        //       price: 75.0,
-        //       original_price: 90.0,
-        //       discount: 10,
-        //       salesCount: 100,
-        //       image_url: "https://example.com/products/silk-pajama-set.jpg",
-        //       description: "Lüks və rahat ipək pijama dəsti.",
-        //       colors: ["Pink", "Lavender", "Champagne"],
-        //       sizes: ["S", "M", "L"],
-        //       reviews: [
-        //         {
-        //           review_id: 21,
-        //           rating: 4.8,
-        //           comment: "Çox rahat və lüks hiss etdirir.",
-        //         },
-        //       ],
-        //     },
-        //   ],
-        // },
         {
           subkateqoriya_id: 8,
           subkateqoriya_adı: "Qadın Çantası",
@@ -1839,7 +1745,7 @@ const data = {
               product_name: "LUMBERJACK Qadın Çanta",
               price: 70.0,
               original_price: 90.0,
-              discount: 22.22, 
+              discount: 22.22,
               salesCount: 80,
               image_url:
                 "https://flostore.az/wp-content/uploads/2023/02/DHO-00057612-5-600x900.jpg",
@@ -1860,7 +1766,7 @@ const data = {
               product_name: "Çiyin çantası W.D.Polo ağ",
               price: 44.0,
               original_price: 80.0,
-              discount: 45, 
+              discount: 45,
               salesCount: 80,
               image_url:
                 "https://strgimgr.umico.az/sized/840/679091-222b96bdb2b5465a66ea36118ae777c5.jpg",
@@ -1881,7 +1787,7 @@ const data = {
               product_name: "Fendi",
               price: 1900.0,
               original_price: 2000.0,
-              discount: 5, 
+              discount: 5,
               salesCount: 80,
               image_url:
                 "https://cdn2.emporium.az/i/p/500/232717-ccfd9ceae8987b3691a9c1745df65a9e.jpg",
@@ -2472,40 +2378,772 @@ const data = {
         },
       ],
     },
-    
-    
 
     {
       kateqoriya_id: 2,
       kateqoriya_adı: "Kişi",
+      icon:IoIosMan ,
       subkateqoriyalar: [
         {
           subkateqoriya_id: 1,
           subkateqoriya_adı: "Kişi Ust Geyimi",
           məhsullar: [
             {
-              product_id: 101,
-              product_name: "Şifon Bluz",
-              price: 50.0,
-              slug: "sifon_bluz",
-              original_price: 70.0,
-              discount: 10,
-              salesCount: 150,
+              product_id: 1000,
+              product_name: "Kişi Tünd Yaşıl Mont",
+              price: 45.0,
+              slug: "kisi_tund_yasil_mont",
+              original_price: 60.0,
+              discount: 15,
+              salesCount: 120,
               image_url:
-                "https://akn-lmb-adl.a-cdn.akinoncdn.com/products/2024/03/09/464351/9a71f373-cc54-4b9a-9f26-f6fe33a44aa6_size900x1350_quality100_cropTop.jpg",
-              description: "Yay üçün yüngül və rahat şifon bluz.",
-              colors: ["Sarı"],
-              sizes: ["S", "M", "L"],
+                "https://25d163.a-cdn.akinoncloud.com/products/2024/09/19/1082469/6002ec58-76a8-4710-a30b-d5ce5888856d_size796x1198_quality100_cropCenter.jpg",
+              description: "Yay üçün rahat və dəbli kişi tünd yaşıl mont.",
+              colors: ["Yaşıl"],
+              sizes: ["S", "M", "L", "XL"],
               reviews: [
                 {
                   review_id: 1,
                   rating: 4.0,
-                  comment: "Çox gözəl və rahatdır.",
+                  comment: "Rahat material və gözəl dizayn.",
                 },
                 {
                   review_id: 2,
                   rating: 4.5,
+                  comment: "Rəngləri çox bəyəndim.",
+                },
+              ],
+            },
+            {
+              product_id: 1001,
+              product_name: "Kişi Gödəkçə",
+              price: 90.0,
+              slug: "kisi_ağ_godekce",
+              original_price: 120.0,
+              discount: 30,
+              salesCount: 200,
+              image_url:
+                "https://25d163.a-cdn.akinoncloud.com/products/2024/10/21/1092681/f30e4159-9fc6-46f9-a194-5bd2092fffaa_size796x1198_quality100_cropCenter.jpg",
+              description: "Qış üçün isti və rahat kişi gödəkçəsi.",
+              colors: ["Ağ"],
+              sizes: ["M", "L", "XL", "XXL"],
+              reviews: [
+                {
+                  review_id: 3,
+                  rating: 5.0,
+                  comment: "Çox isti saxlayır, qış üçün əla seçimdir.",
+                },
+                {
+                  review_id: 4,
+                  rating: 4.8,
+                  comment: "Keyfiyyəti çox yaxşıdır.",
+                },
+              ],
+            },
+            {
+              product_id: 1002,
+              product_name: "Polo Kişi Paltosu",
+              price: 70.0,
+              slug: "polo_kisi_paltosu",
+              original_price: 85.0,
+              discount: 15,
+              salesCount: 95,
+              image_url:
+                "https://25d163.a-cdn.akinoncloud.com/products/2024/10/01/1062437/2e68d9f4-3acc-47bc-8742-b13597290b3a_size796x1198_quality100_cropCenter.jpg",
+              description: "Payız üçün yüngül və rahat kişi paltosu.",
+              colors: ["Yaşıl"],
+              sizes: ["M", "L", "XL"],
+              reviews: [
+                {
+                  review_id: 5,
+                  rating: 4.3,
+                  comment: "Yaxşı oturur, rahat geyimdir.",
+                },
+                {
+                  review_id: 6,
+                  rating: 4.0,
+                  comment: "İsti və yüngül.",
+                },
+              ],
+            },
+            {
+              product_id: 1003,
+              product_name: "Polo Göy Mont",
+              price: 55.0,
+              slug: "polo_goy_mont",
+              original_price: 70.0,
+              discount: 15,
+              salesCount: 170,
+              image_url:
+                "https://25d163.a-cdn.akinoncloud.com/products/2024/10/08/1081467/d8892814-52e7-4c61-8244-95b317a34768_size796x1198_quality100_cropCenter.jpg",
+              description: "Gündəlik istifadə üçün rahat kişi mont.",
+              colors: ["Mavi"],
+              sizes: ["S", "M", "L", "XL"],
+              reviews: [
+                {
+                  review_id: 7,
+                  rating: 4.2,
+                  comment: "Çox rahat və keyfiyyətlidir.",
+                },
+                {
+                  review_id: 8,
+                  rating: 4.0,
+                  comment: "Sadə dizaynı çox bəyəndim.",
+                },
+              ],
+            },
+            {
+              product_id: 1004,
+              product_name: "Boz Kişi Paltosu",
+              price: 40.0,
+              slug: "boz_kisi_paltosu",
+              original_price: 55.0,
+              discount: 15,
+              salesCount: 140,
+              image_url:
+                "https://25d163.a-cdn.akinoncloud.com/products/2024/10/04/1065111/3078c5b1-15ef-4928-a6ff-6ed937e44435_size796x1198_quality100_cropCenter.jpg",
+              description: "Payız üçün rahat və eleqant boz kişi paltosu.",
+              colors: ["Boz"],
+              sizes: ["M", "L", "XL"],
+              reviews: [
+                {
+                  review_id: 9,
+                  rating: 4.5,
+                  comment: "Materialı çox rahatdır, keyfiyyətlidir.",
+                },
+                {
+                  review_id: 10,
+                  rating: 4.2,
+                  comment: "Gündəlik istifadə üçün əlverişlidir.",
+                },
+              ],
+            },
+            {
+              product_id: 1005,
+              product_name: "Kişi Gödəkçəsi",
+              price: 110.0,
+              slug: "kisi_cins_godekcesi",
+              original_price: 140.0,
+              discount: 30,
+              salesCount: 75,
+              image_url:
+                "https://25d163.a-cdn.akinoncloud.com/products/2024/10/30/1081512/d14c82d6-d022-4fcb-94c8-7bd3a73ae983_size796x1198_quality100_cropCenter.jpg",
+              description: "Dəbli və eleqant kişi gödəkçəsi.",
+              colors: ["Mavi"],
+              sizes: ["M", "L", "XL"],
+              reviews: [
+                {
+                  review_id: 11,
+                  rating: 4.7,
+                  comment: "Dizaynı çox zövqlüdür, eleqant bir seçimdir.",
+                },
+                {
+                  review_id: 12,
+                  rating: 4.3,
+                  comment:
+                    "Sərin havalar üçün əladır, gündəlik istifadəyə uyğundur.",
+                },
+              ],
+            },
+            {
+              product_id: 1006,
+              product_name: "Qara Kişi Paltosu",
+              price: 65.0,
+              slug: "qara_kisi_paltosu",
+              original_price: 80.0,
+              discount: 15,
+              salesCount: 160,
+              image_url:
+                "https://25d163.a-cdn.akinoncloud.com/products/2024/09/19/1081636/05e252cd-acf3-4f95-b6e3-d07dc9f9f244_size780x1170_quality100_cropCenter.jpg",
+              description: "Klassik görünüşlü qara kişi paltosu.",
+              colors: ["Qara"],
+              sizes: ["S", "M", "L", "XL"],
+              reviews: [
+                {
+                  review_id: 13,
+                  rating: 4.6,
+                  comment: "Çox zərif və rahatdır.",
+                },
+                {
+                  review_id: 14,
+                  rating: 4.4,
+                  comment: "İş üçün mükəmməl seçimdir.",
+                },
+              ],
+            },
+            {
+              product_id: 1007,
+              product_name: "Kişi Bej Dəri Gödəkçə",
+              price: 80.0,
+              slug: "kisi_bej_deri_godekce",
+              original_price: 100.0,
+              discount: 20,
+              salesCount: 110,
+              image_url:
+                "https://25d163.a-cdn.akinoncloud.com/products/2024/10/07/1093377/af6678e3-543c-4752-8a15-ddd244719d29_size796x1198_quality100_cropCenter.jpg",
+              description: "Yay axşamları üçün bej rəngli kişi dəri gödəkçəsi.",
+              colors: ["Bej"],
+              sizes: ["M", "L", "XL", "XXL"],
+              reviews: [
+                {
+                  review_id: 15,
+                  rating: 4.1,
+                  comment: "Rahat və şık görünüş.",
+                },
+                {
+                  review_id: 16,
+                  rating: 4.3,
+                  comment: "Yay üçün ideal geyimdir.",
+                },
+              ],
+            },
+            {
+              product_id: 1008,
+              product_name: "Kişi Qara Dəri Gödəkçə",
+              price: 60.0,
+              slug: "kisi_qara_deri_godekce",
+              original_price: 75.0,
+              discount: 15,
+              salesCount: 185,
+              image_url:
+                "https://25d163.a-cdn.akinoncloud.com/products/2024/09/19/1067422/cffa8109-9111-4664-ab08-472b370abb25_size796x1198_quality100_cropCenter.jpg",
+              description: "Kapüşonlu və rahat qara kişi dəri gödəkçəsi.",
+              colors: ["Qara"],
+              sizes: ["S", "M", "L", "XL"],
+              reviews: [
+                {
+                  review_id: 17,
+                  rating: 4.8,
+                  comment: "Çox rahatdır, qış üçün əla.",
+                },
+                {
+                  review_id: 18,
+                  rating: 4.5,
+                  comment: "Şık və gündəlik geyim üçün uyğundur.",
+                },
+              ],
+            },
+            {
+              product_id: 1009,
+              product_name: "Kişi Ceket",
+              price: 100.0,
+              slug: "kisi_ceket",
+              original_price: 130.0,
+              discount: 30,
+              salesCount: 95,
+              image_url:
+                "https://25d163.a-cdn.akinoncloud.com/products/2024/09/23/1062879/4d8af8c3-d070-453f-a466-e4f0828197df_size796x1198_quality100_cropCenter.jpg",
+              description:
+                "Eleqant kişi ceketi, rəsmi tədbirlər üçün uyğundur.",
+              colors: ["Boz"],
+              sizes: ["M", "L", "XL", "XXL"],
+              reviews: [
+                {
+                  review_id: 19,
+                  rating: 4.5,
+                  comment: "Gözəl görünüşə malikdir.",
+                },
+                {
+                  review_id: 20,
+                  rating: 4.2,
+                  comment: "Rəsmi tədbirlər üçün idealdır.",
+                },
+              ],
+            },
+            {
+              product_id: 1010,
+              product_name: "Kişi Sarı Jilet",
+              price: 75.0,
+              slug: "kisi_sarı_jilet",
+              original_price: 90.0,
+              discount: 15,
+              salesCount: 130,
+              image_url:
+                "https://25d163.a-cdn.akinoncloud.com/products/2023/09/14/919961/4d21d828-d7f3-4970-a381-8977cbffec01_size780x1170_quality100_cropCenter.jpg",
+              description: "Rəsmi görüşlər üçün klassik kişi jileti.",
+              colors: ["Sarı"],
+              sizes: ["M", "L", "XL", "XXL"],
+              reviews: [
+                {
+                  review_id: 21,
+                  rating: 4.7,
+                  comment: "Çox zərif və rahatdır.",
+                },
+                {
+                  review_id: 22,
+                  rating: 4.6,
+                  comment: "İş görüşləri üçün uyğundur.",
+                },
+              ],
+            },
+            {
+              product_id: 1011,
+              product_name: "Kişi Qış Gödəkçəsi",
+              price: 150.0,
+              slug: "kisi_qis_godekcesi",
+              original_price: 180.0,
+              discount: 30,
+              salesCount: 90,
+              image_url:
+                "https://25d163.a-cdn.akinoncloud.com/products/2024/10/01/1062439/ea675d2b-b04c-40c8-8755-06813641c42e_size780x1170_quality100_cropCenter.jpg",
+              description:
+                "Qışın soyuq günləri üçün qalın və rahat kişi gödəkçəsi.",
+              colors: ["Qırmızı"],
+              sizes: ["M", "L", "XL", "XXL"],
+              reviews: [
+                {
+                  review_id: 23,
+                  rating: 4.8,
+                  comment: "Qış üçün mükəmməl seçimdir.",
+                },
+                {
+                  review_id: 24,
+                  rating: 4.7,
+                  comment: "İsti saxlayır və rahatdır.",
+                },
+              ],
+            },
+            {
+              product_id: 1012,
+              product_name: "Kişi İdman Jileti",
+              price: 65.0,
+              slug: "kisi_idman_jileti",
+              original_price: 80.0,
+              discount: 15,
+              salesCount: 100,
+              image_url:
+                "https://25d163.a-cdn.akinoncloud.com/products/2024/10/01/1062410/401f693f-3500-4de1-abfc-6476c27b4c5d_size780x1170_quality100_cropCenter.jpg",
+              description: "İdman fəaliyyəti üçün yüngül kişi jileti.",
+              colors: ["Mavi"],
+              sizes: ["M", "L", "XL"],
+              reviews: [
+                {
+                  review_id: 25,
+                  rating: 4.3,
+                  comment: "Yüngül və rahatdır.",
+                },
+                {
+                  review_id: 26,
+                  rating: 4.0,
+                  comment: "Sport fəaliyyəti üçün uyğundur.",
+                },
+              ],
+            },
+            {
+              product_id: 1013,
+              product_name: "Kişilər Xaki Jilet",
+              price: 80.0,
+              slug: "kisi_xaki_jilet",
+              original_price: 100.0,
+              discount: 20,
+              salesCount: 85,
+              image_url:
+                "https://25d163.a-cdn.akinoncloud.com/products/2024/10/10/1081508/84da5bf7-c53c-4340-a051-32797fe180fd_size796x1198_quality100_cropCenter.jpg",
+              description: "Qış üçün isti və rahat kişi xaki rəngli jileti.",
+              colors: ["Ağ"],
+              sizes: ["M", "L", "XL", "XXL"],
+              reviews: [
+                { review_id: 27, rating: 4.5, comment: "İsti və rahatdır." },
+                {
+                  review_id: 28,
+                  rating: 4.2,
+                  comment: "Qış üçün əla seçimdir.",
+                },
+              ],
+            },
+            {
+              product_id: 1014,
+              product_name: "Kişi Püstə Yaşıl Jilet",
+              price: 70.0,
+              slug: "kisi_puste_yasil_jilet",
+              original_price: 85.0,
+              discount: 15,
+              salesCount: 115,
+              image_url:
+                "https://25d163.a-cdn.akinoncloud.com/products/2024/09/04/1046652/eefdce72-77b6-49e6-b5a9-c236e7172478_size796x1198_quality100_cropCenter.jpg",
+              description:
+                "Gündəlik istifadə üçün dəbli kişi püstə yaşıl rəngli jileti.",
+              colors: ["Sarı"],
+              sizes: ["M", "L", "XL"],
+              reviews: [
+                { review_id: 29, rating: 4.4, comment: "Çox dəblidir." },
+                {
+                  review_id: 30,
+                  rating: 4.1,
                   comment: "Materialı keyfiyyətlidir.",
+                },
+              ],
+            },
+            {
+              product_id: 1015,
+              product_name: "Bordo Kişi Jileti",
+              price: 85.0,
+              slug: "bordo_kisi_jileti",
+              original_price: 100.0,
+              discount: 15,
+              salesCount: 160,
+              image_url:
+                "https://25d163.a-cdn.akinoncloud.com/products/2024/07/30/1045614/a40094ba-8293-4b39-ae41-0df303f55945_size796x1198_quality100_cropCenter.jpg",
+              description:
+                "Kapüşonlu və rahat bordo rəngli kişi jileti, gündəlik istifadə üçün uyğundur.",
+              colors: ["Qırmızı"],
+              sizes: ["S", "M", "L", "XL"],
+              reviews: [
+                {
+                  review_id: 31,
+                  rating: 4.7,
+                  comment: "Gözəl oturur, gündəlik geyim üçün idealdır.",
+                },
+                {
+                  review_id: 32,
+                  rating: 4.6,
+                  comment: "Kapüşonlu olduğu üçün daha praktikdir.",
+                },
+              ],
+            },
+            {
+              product_id: 1016,
+              product_name: "Kişi Boz Jilet",
+              price: 60.0,
+              slug: "kisi_boz_jilet",
+              original_price: 75.0,
+              discount: 15,
+              salesCount: 105,
+              image_url: "https://example.com/kisi_boz_jilet.jpg",
+              description: "Yüngül və rahat kişi jileti.",
+              colors: ["Boz"],
+              sizes: ["M", "L", "XL"],
+              reviews: [
+                { review_id: 33, rating: 4.2, comment: "Rahat və yüngül." },
+                { review_id: 34, rating: 4.0, comment: "Dəbli və gözəldir." },
+              ],
+            },
+            {
+              product_id: 1017,
+              product_name: "Kişi Jilet",
+              price: 50.0,
+              slug: "kisi_jilet",
+              original_price: 65.0,
+              discount: 15,
+              salesCount: 140,
+              image_url:
+                "https://25d163.a-cdn.akinoncloud.com/products/2024/09/03/1046689/5e1c19a3-5730-4289-8a61-c4b9f348db85_size796x1198_quality100_cropCenter.jpg",
+              description: "Rahat və gündəlik istifadə üçün uyğun kişi jileti.",
+              colors: ["Narinci"],
+              sizes: ["S", "M", "L", "XL"],
+              reviews: [
+                { review_id: 35, rating: 4.5, comment: "Rahat və sadədir." },
+                {
+                  review_id: 36,
+                  rating: 4.3,
+                  comment: "Yaxşı material və dizayn.",
+                },
+              ],
+            },
+            {
+              product_id: 1018,
+              product_name: "Kişi Paltosu",
+              price: 95.0,
+              slug: "kisi_paltosu",
+              original_price: 110.0,
+              discount: 15,
+              salesCount: 75,
+              image_url:
+                "https://25d163.a-cdn.akinoncloud.com/products/2023/10/27/919986/a4f10ba6-c664-445c-9fb3-799b7bba57f8_size796x1198_quality100_cropCenter.jpg",
+              description:
+                "Eleqant və dəbli kişi paltosu, rəsmi tədbirlər üçün uyğundur.",
+              colors: ["Ağ"],
+              sizes: ["M", "L", "XL", "XXL"],
+              reviews: [
+                {
+                  review_id: 37,
+                  rating: 4.6,
+                  comment: "Rəsmi tədbirlər üçün uyğundur.",
+                },
+                { review_id: 38, rating: 4.4, comment: "Zərif və eleqantdır." },
+              ],
+            },
+            {
+              product_id: 1019,
+              product_name: "Kişi Narinci Kurtka",
+              price: 120.0,
+              slug: "kisi_narinci_kurtka",
+              original_price: 150.0,
+              discount: 30,
+              salesCount: 50,
+              image_url:
+                "https://25d163.a-cdn.akinoncloud.com/products/2024/10/10/1094021/0aa1e09d-91fb-48ad-b4ef-718eb26597e7_size796x1198_quality100_cropCenter.jpg",
+              description: "Yaz üçün yüngül və rahat kişi kurtkası.",
+              colors: ["Narinci"],
+              sizes: ["M", "L", "XL"],
+              reviews: [
+                { review_id: 39, rating: 4.5, comment: "Yüngül və rahatdır." },
+                {
+                  review_id: 40,
+                  rating: 4.3,
+                  comment: "Materialı çox keyfiyyətlidir.",
+                },
+              ],
+            },
+            {
+              product_id: 1020,
+              product_name: "Kişi Polo Palto",
+              price: 130.0,
+              slug: "kisi_polo_palto",
+              original_price: 160.0,
+              discount: 30,
+              salesCount: 60,
+              image_url:
+                "https://25d163.a-cdn.akinoncloud.com/products/2024/10/11/1066446/b557e022-931e-4b7a-ad35-dc6db3c4cfa3_size796x1198_quality100_cropCenter.jpg",
+              description: "Qış üçün isti və rahat kişi polo palto.",
+              colors: ["Qara"],
+              sizes: ["M", "L", "XL", "XXL"],
+              reviews: [
+                {
+                  review_id: 41,
+                  rating: 4.8,
+                  comment: "Çox isti və rahatdır.",
+                },
+                {
+                  review_id: 42,
+                  rating: 4.7,
+                  comment: "Qış üçün ideal seçimdir.",
+                },
+              ],
+            },
+            {
+              product_id: 1021,
+              product_name: "Kişi Emporium Kurtka",
+              price: 70.0,
+              slug: "kisi_emporium_kurtka",
+              original_price: 85.0,
+              discount: 15,
+              salesCount: 130,
+              image_url:
+                "https://25d163.a-cdn.akinoncloud.com/products/2024/10/08/1092848/84f53d54-9f6a-4f7d-94b1-38c08ea2753d_size796x1198_quality100_cropCenter.jpg",
+              description: "Dəbli və rahat kişi Emporium Kurtka.",
+              colors: ["Boz"],
+              sizes: ["S", "M", "L", "XL"],
+              reviews: [
+                {
+                  review_id: 43,
+                  rating: 4.6,
+                  comment: "Dizaynı çox gözəldir.",
+                },
+                {
+                  review_id: 44,
+                  rating: 4.4,
+                  comment: "Rahat və gündəlik istifadə üçün əladır.",
+                },
+              ],
+            },
+            {
+              product_id: 1022,
+              product_name: "Kişi Mavi Kurtka",
+              price: 85.0,
+              slug: "kisi_mavi_kurtka",
+              original_price: 100.0,
+              discount: 15,
+              salesCount: 170,
+              image_url:
+                "https://25d163.a-cdn.akinoncloud.com/products/2024/09/30/1060911/a727d3a3-4b56-4b88-ab1e-9871dcc4af2c_size796x1198_quality100_cropCenter.jpg",
+              description: "Gündəlik istifadə üçün rahat və şık kişi kurtkası.",
+              colors: ["Mavi"],
+              sizes: ["M", "L", "XL", "XXL"],
+              reviews: [
+                {
+                  review_id: 45,
+                  rating: 4.7,
+                  comment: "Çox rahat və şıkdır.",
+                },
+                {
+                  review_id: 46,
+                  rating: 4.5,
+                  comment: "Yumşaq və rahatdır, gündəlik istifadəyə ideal.",
+                },
+              ],
+            },
+            {
+              product_id: 1023,
+              product_name: "Kişi Qırmızı Palto",
+              price: 65.0,
+              slug: "kisi_qirmizi_palto",
+              original_price: 80.0,
+              discount: 15,
+              salesCount: 100,
+              image_url:
+                "https://25d163.a-cdn.akinoncloud.com/products/2024/10/01/1062520/bd39d770-6020-4ed5-8b7a-20bb89f06cee_size796x1198_quality100_cropCenter.jpg",
+              description: "Yay üçün ideal, şık və rahat kişi palto.",
+              colors: ["Qırmızı"],
+              sizes: ["S", "M", "L", "XL"],
+              reviews: [
+                {
+                  review_id: 47,
+                  rating: 4.4,
+                  comment: "Yumşaq və gözəl dizaynı var.",
+                },
+                {
+                  review_id: 48,
+                  rating: 4.2,
+                  comment: "Çox rahat və yay üçün mükəmməl.",
+                },
+              ],
+            },
+            {
+              product_id: 1024,
+              product_name: "Kişi Yaşıl Kurtka",
+              price: 90.0,
+              slug: "kisi_yasil_kurtka",
+              original_price: 110.0,
+              discount: 20,
+              salesCount: 80,
+              image_url:
+                "https://25d163.a-cdn.akinoncloud.com/products/2024/10/01/1062437/2e68d9f4-3acc-47bc-8742-b13597290b3a_size796x1198_quality100_cropCenter.jpg",
+              description:
+                "Kışda istifadə üçün ideal, isti və rahat kişi kurtkası.",
+              colors: ["Yaşıl"],
+              sizes: ["M", "L", "XL", "XXL"],
+              reviews: [
+                {
+                  review_id: 49,
+                  rating: 4.5,
+                  comment: "Çox rahat və isti saxlayır.",
+                },
+                {
+                  review_id: 50,
+                  rating: 4.3,
+                  comment: "Yüksək keyfiyyətli və gündəlik geyim üçün əladır.",
+                },
+              ],
+            },
+            {
+              product_id: 1025,
+              product_name: "Kişi Kəşmir Palto",
+              price: 105.0,
+              slug: "kisi_kesmir_palto",
+              original_price: 130.0,
+              discount: 25,
+              salesCount: 95,
+              image_url:
+                "https://cdn2.emporium.az/i/p/500/304749-ba1ba9098590f573db1a4350473cddde.jpg",
+              description: "Yaz ayları üçün yüngül və rahat kişi kəşmir palto.",
+              colors: ["Ağ"],
+              sizes: ["M", "L", "XL"],
+              reviews: [
+                {
+                  review_id: 51,
+                  rating: 4.6,
+                  comment: "Yaz üçün mükəmməl seçimdir.",
+                },
+                {
+                  review_id: 52,
+                  rating: 4.4,
+                  comment: "Çox rahat və müasir dizayna sahibdir.",
+                },
+              ],
+            },
+            {
+              product_id: 1026,
+              product_name: "Kişilər üçün qış gödəkçəsi AVVA",
+              price: 40.0,
+              slug: "kisi_qis_godekcesi_avva",
+              original_price: 310.0,
+              discount: 30,
+              salesCount: 150,
+              image_url:
+                "https://strgimgr.umico.az/sized/280/976453-34a781012b1339ae21819b25c397ed8a.jpg",
+              description: "Sadə və rahat kişi gödəkçəsi.",
+              colors: ["Qara"],
+              sizes: ["S", "M", "L", "XL"],
+              reviews: [
+                {
+                  review_id: 53,
+                  rating: 4.2,
+                  comment: "Çox rahat və gündəlik geyim üçün əladır.",
+                },
+                {
+                  review_id: 54,
+                  rating: 4.0,
+                  comment: "Sadə və şık, gündəlik istifadə üçün idealdır.",
+                },
+              ],
+            },
+            {
+              product_id: 1027,
+              product_name: "Kişilər qış gödəkçəsi AVVA narıncı",
+              price: 120.0,
+              slug: "kisi_qis_godekcesi_avva_narinci",
+              original_price: 145.0,
+              discount: 25,
+              salesCount: 60,
+              image_url:
+                "https://strgimgr.umico.az/sized/280/976496-2a0b21662955c0c6fc66794d24866198.jpg",
+              description: "Ofis və rəsmi tədbirlər üçün dəbli kişi gödəkçəsi.",
+              colors: ["Narinci"],
+              sizes: ["M", "L"],
+              reviews: [
+                {
+                  review_id: 55,
+                  rating: 4.7,
+                  comment: "Dəbli və rahatdır.",
+                },
+                {
+                  review_id: 56,
+                  rating: 4.5,
+                  comment: "İş üçün əla seçimdir.",
+                },
+              ],
+            },
+            {
+              product_id: 1028,
+              product_name: "Kişilər üçün qış gödəkçəsi AVVA qırmızı",
+              price: 85.0,
+              slug: "kisi_qis_godekcesi_avva_qirmizi",
+              original_price: 100.0,
+              discount: 15,
+              salesCount: 70,
+              image_url:
+                "https://strgimgr.umico.az/sized/840/976493-254e0683a1602743a114aef4ca62416c.jpg",
+              description: "Rəsmi tədbirlər üçün klassik kişi gödəkçəsi.",
+              colors: ["Qırmızı"],
+              sizes: ["M", "L", "XL"],
+              reviews: [
+                {
+                  review_id: 57,
+                  rating: 4.5,
+                  comment: "Klassik və eleqantdır.",
+                },
+                {
+                  review_id: 58,
+                  rating: 4.3,
+                  comment: "Dəbli dizayn və keyfiyyətli material.",
+                },
+              ],
+            },
+
+            {
+              product_id: 1029,
+              product_name: "Kişi Polo Qara Mont",
+              price: 55.0,
+              slug: "kisi_polo_qara_mont",
+              original_price: 70.0,
+              discount: 15,
+              salesCount: 250,
+              image_url:
+                "https://25d163.a-cdn.akinoncloud.com/products/2024/11/05/1081474/7d763c7f-e698-4ab4-b9cf-81c8d2717d86_size796x1198_quality100_cropCenter.jpg",
+              description: "Rahat və gündəlik istifadə üçün kişi polo mont.",
+              colors: ["Qara"],
+              sizes: ["S", "M", "L", "XL"],
+              reviews: [
+                {
+                  review_id: 59,
+                  rating: 4.6,
+                  comment: "Sadə və rahat.",
+                },
+                {
+                  review_id: 60,
+                  rating: 4.3,
+                  comment: "Yaxşı materialdır, davamlıdır.",
                 },
               ],
             },
@@ -2514,82 +3152,616 @@ const data = {
         {
           subkateqoriya_id: 2,
           subkateqoriya_adı: "Kişi Ayaqqabı",
-          məhsullar: [],
+          məhsullar: [
+            {
+              product_id: 1100,
+              product_name: "Kişilər üçün Sliper",
+              price: 49.99,
+              slug: "kisi_sliper",
+              original_price: 65.0,
+              discount: 23,
+              salesCount: 150,
+              image_url:
+                "https://strgimgr.umico.az/sized/280/314188-764f7c68a110c61d86de869a9c6a92f7.jpg",
+              description: "Yaz fəslinə uyğun rahat və şık kişi sliperləri.",
+              colors: ["Qara"],
+              sizes: ["S", "M", ],
+              reviews: [
+                {
+                  review_id: 1,
+                  rating: 4.0,
+                  comment: "Çox rahat və şık bir dizayn.",
+                },
+                {
+                  review_id: 2,
+                  rating: 4.5,
+                  comment: "Rəngləri çox gözəldir, keyfiyyəti mükəmməldir.",
+                },
+              ],
+            },
+            {
+              product_id: 1101,
+              product_name: "Dəri idman ayaqqabısı",
+              price: 42.5,
+              slug: "dəri_idman_ayaqqabıs",
+              original_price: 58.0,
+              discount: 27,
+              salesCount: 130,
+              image_url:
+                "https://cdn2.premiumoutlet.az/i/p/500/181043-196fb0d1afb83ad4e442fc8e6d6b641e.JPG",
+              description: "Yaz aylarında rahat və trendy sliponlar.",
+              colors: ["Qara"],
+              sizes: ["M", "L", ],
+              reviews: [
+                {
+                  review_id: 1,
+                  rating: 4.0,
+                  comment: "Çox rahat material, ayaqda çox yüngüldür.",
+                },
+                {
+                  review_id: 2,
+                  rating: 4.5,
+                  comment:
+                    "Rənglər çox bəyənildi, gündəlik istifadə üçün idealdır.",
+                },
+              ],
+            },
+            {
+              product_id: 1102,
+              product_name: "Kişi Krosovka",
+              price: 55.0,
+              slug: "kisi_krosovka",
+              original_price: 75.0,
+              discount: 27,
+              salesCount: 110,
+              image_url:
+                "https://strgimgr.umico.az/sized/280/943742-ba6d2589b3a60547b2d5595ecfa7eec6.jpg",
+              description: "Hər bir aktiv kişi üçün uyğun krosovka.",
+              colors: ["Ağ"],
+              sizes: [ "L"],
+              reviews: [
+                {
+                  review_id: 1,
+                  rating: 4.0,
+                  comment: "Materialı çox keyfiyyətli, rahat hiss edirəm.",
+                },
+                {
+                  review_id: 2,
+                  rating: 4.5,
+                  comment: "Həqiqətən gözəl dizaynı var, ayaqda çox rahatdır.",
+                },
+              ],
+            },
+            {
+              product_id: 1103,
+              product_name: "Kişi Trekinq Botları",
+              price: 64.99,
+              slug: "kisi_treking_botlari",
+              original_price: 85.0,
+              discount: 24,
+              salesCount: 140,
+              image_url:
+                "https://strgimgr.umico.az/sized/280/635838-9146f543ad08bff75a1553fca8394ade.jpg",
+              description:
+                "Dağlıq və sərt şəraitlər üçün ideal trekinq botları.",
+              colors: ["Boz"],
+              sizes: ["S", "L", "XL"],
+              reviews: [
+                {
+                  review_id: 1,
+                  rating: 4.0,
+                  comment: "Çox rahat və əla material.",
+                },
+                {
+                  review_id: 2,
+                  rating: 4.5,
+                  comment: "Həqiqətən sərt şəraitlərdə belə rahatdır.",
+                },
+              ],
+            },
+            {
+              product_id: 1104,
+              product_name: "Kişi Krosovka (Ağ)",
+              price: 49.99,
+              slug: "kisi_krosovka_ag",
+              original_price: 70.0,
+              discount: 28,
+              salesCount: 125,
+              image_url:
+                "https://strgimgr.umico.az/sized/280/943742-ba6d2589b3a60547b2d5595ecfa7eec6.jpg",
+              description:
+                "Şəhər həyatına uyğun, rahat və müasir kişi krosovkası.",
+              colors: ["Ağ"],
+              sizes: ["S", "XL"],
+              reviews: [
+                {
+                  review_id: 1,
+                  rating: 4.0,
+                  comment:
+                    "Çox rahatdır, həm gündəlik, həm də idman üçün istifadə edilə bilər.",
+                },
+                {
+                  review_id: 2,
+                  rating: 4.5,
+                  comment:
+                    "Rəng və dizaynı çox bəyəndim, gündəlik istifadə üçün mükəmməldir.",
+                },
+              ],
+            },
+            {
+              product_id: 1105,
+              product_name: "Kişilər üçün Derbi",
+              price: 45.99,
+              slug: "kisi_derbi",
+              original_price: 65.0,
+              discount: 29,
+              salesCount: 150,
+              image_url:
+                "https://cdn2.premiumoutlet.az/i/p/500/180544-50cbe477ed73a20c66c6c67ceebf8a7d.JPG",
+              description:
+                "Şəhər həyatına uyğun, rahat və müasir kişi krosovkası.",
+              colors: ["Mavi"],
+              sizes: [ "M", "L", "XL"],
+              reviews: [
+                {
+                  review_id: 1,
+                  rating: 4.0,
+                  comment:
+                    "Çox rahatdır, həm gündəlik, həm də idman üçün istifadə edilə bilər.",
+                },
+                {
+                  review_id: 2,
+                  rating: 4.5,
+                  comment:
+                    "Rəng və dizaynı çox bəyəndim, gündəlik istifadə üçün mükəmməldir.",
+                },
+              ],
+            },
+            {
+              product_id: 1106,
+              product_name: "PROSHOT Kişi Gündəlik Ayaqqabı",
+              price: 47.5,
+              slug: "kisi_proshot_ayaqqabi",
+              original_price: 68.0,
+              discount: 30,
+              salesCount: 135,
+              image_url:
+                "https://flostore.az/wp-content/uploads/2024/10/DHO-00070759-300x400.jpg",
+              description:
+                "Şəhər həyatına uyğun, rahat və müasir kişi krosovkası.",
+              colors: ["Boz"],
+              sizes: ["S", "L", "XL"],
+              reviews: [
+                {
+                  review_id: 1,
+                  rating: 4.0,
+                  comment:
+                    "Çox rahatdır, həm gündəlik, həm də idman üçün istifadə edilə bilər.",
+                },
+                {
+                  review_id: 2,
+                  rating: 4.5,
+                  comment:
+                    "Rəng və dizaynı çox bəyəndim, gündəlik istifadə üçün mükəmməldir.",
+                },
+              ],
+            },
+            {
+              product_id: 1107,
+              product_name: "Sergio Rossi",
+              price: 225.0,
+              slug: "sergio_rossi_krosovka",
+              original_price: 650.0,
+              discount: 50,
+              salesCount: 130,
+              image_url:
+                "https://cdn2.premiumoutlet.az/i/p/500/180316-cc65fdbcc5f36cbeb5954a50e87d60c6.JPG",
+              description: "Loqo dizaynlı idman ayaqqabısı.",
+              colors: ["Ağ"],
+              sizes: [ "M", "L", "XL"],
+              reviews: [
+                {
+                  review_id: 1,
+                  rating: 4.0,
+                  comment:
+                    "Çox rahatdır, həm gündəlik, həm də idman üçün istifadə edilə bilər.",
+                },
+                {
+                  review_id: 2,
+                  rating: 4.5,
+                  comment:
+                    "Rəng və dizaynı çox bəyəndim, gündəlik istifadə üçün mükəmməldir.",
+                },
+              ],
+            },
+            {
+              product_id: 1108,
+              product_name: "Fratelli Rossetti",
+              price: 225.0,
+              slug: "fratelli_rossetti_lofer",
+              original_price: 650.0,
+              discount: 50,
+              salesCount: 140,
+              image_url:
+                "https://cdn2.premiumoutlet.az/i/p/500/t-154215-126608-p1d5ceof871atv3fkvel46rcs09.JPG",
+              description: "Toxuma dizaynlı lofer.",
+              colors: ["Mavi"],
+              sizes: ["S",  "L",],
+              reviews: [
+                {
+                  review_id: 1,
+                  rating: 4.0,
+                  comment:
+                    "Çox rahatdır, həm gündəlik, həm də idman üçün istifadə edilə bilər.",
+                },
+                {
+                  review_id: 2,
+                  rating: 4.5,
+                  comment:
+                    "Rəng və dizaynı çox bəyəndim, gündəlik istifadə üçün mükəmməldir.",
+                },
+              ],
+            },
+            {
+              product_id: 1109,
+              product_name: "Tod's",
+              price: 215.0,
+              slug: "tods_loefer",
+              original_price: 630.0,
+              discount: 50,
+              salesCount: 150,
+              image_url:
+                "https://cdn2.premiumoutlet.az/i/p/500/178505-64bc5d4cced438c6e5a06311dc911140.JPG",
+              description: "Rezin alt hissəli zamşa lofer.",
+              colors: ["Qırmızı"],
+              sizes: [ "M", "L", "XL"],
+              reviews: [
+                {
+                  review_id: 1,
+                  rating: 4.0,
+                  comment:
+                    "Çox rahatdır, həm gündəlik, həm də idman üçün istifadə edilə bilər.",
+                },
+                {
+                  review_id: 2,
+                  rating: 4.5,
+                  comment:
+                    "Rəng və dizaynı çox bəyəndim, gündəlik istifadə üçün mükəmməldir.",
+                },
+              ],
+            },
+            {
+              product_id: 1110,
+              product_name: "Sergio Rossi",
+              price: 215.0,
+              slug: "sergio_rossi_loefer",
+              original_price: 630.0,
+              discount: 50,
+              salesCount: 145,
+              image_url:
+                "https://cdn2.premiumoutlet.az/i/p360/500/179308-4e2b6f088334754bf1d6569c2cdb15c3.JPG",
+              description: "Enli alt hissəli zamşa idman ayaqqabıları",
+              colors: ["Yaşıl"],
+              sizes: ["S",  "L", "XL"],
+              reviews: [
+                {
+                  review_id: 1,
+                  rating: 4.0,
+                  comment:
+                    "Çox rahatdır, həm gündəlik, həm də idman üçün istifadə edilə bilər.",
+                },
+                {
+                  review_id: 2,
+                  rating: 4.5,
+                  comment:
+                    "Rəng və dizaynı çox bəyəndim, gündəlik istifadə üçün mükəmməldir.",
+                },
+              ],
+            },
+            {
+              product_id: 1111,
+              product_name: "Gucci",
+              price: 215.0,
+              slug: "gucci_krossovka",
+              original_price: 427.0,
+              discount: 50,
+              salesCount: 135,
+              image_url:
+                "https://cdn2.premiumoutlet.az/i/p/500/160419-98378f639a6dc45dfd6263b7470db89e.JPG",
+              description: "Qırmızı rəngli loqo detallı krossovka",
+              colors: ["Qırmızı"],
+              sizes: [ "M", "L", ],
+              reviews: [
+                {
+                  review_id: 1,
+                  rating: 4.0,
+                  comment:
+                    "Çox rahatdır, həm gündəlik, həm də idman üçün istifadə edilə bilər.",
+                },
+                {
+                  review_id: 2,
+                  rating: 4.5,
+                  comment:
+                    "Rəng və dizaynı çox bəyəndim, gündəlik istifadə üçün mükəmməldir.",
+                },
+              ],
+            },
+            {
+              product_id: 1112,
+              product_name: "Isaia",
+              price: 215.0,
+              slug: "isaia_krossovka",
+              original_price: 497.0,
+              discount: 50,
+              salesCount: 105,
+              image_url:
+                "https://cdn2.premiumoutlet.az/i/p360/500/180812-8f6da7ff5a703f2d9be0c052eff4143b.JPG",
+              description: "Qırmızı rəngli loqo detallı krossovka",
+              colors: ["Yaşıl"],
+              sizes: ["S", "M", ],
+              reviews: [
+                {
+                  review_id: 1,
+                  rating: 4.0,
+                  comment:
+                    "Çox rahatdır, həm gündəlik, həm də idman üçün istifadə edilə bilər.",
+                },
+                {
+                  review_id: 2,
+                  rating: 4.5,
+                  comment:
+                    "Rəng və dizaynı çox bəyəndim, gündəlik istifadə üçün mükəmməldir.",
+                },
+              ],
+            },
+            {
+              product_id: 1113,
+              product_name: "Isaia",
+              price: 250.0,
+              slug: "isaia_deri_loefer",
+              original_price: 500.0,
+              discount: 50,
+              salesCount: 135,
+              image_url:
+                "https://cdn2.premiumoutlet.az/i/p360/500/180244-9fee9b4420beea463778ddf82f2c890c.JPG",
+              description: "Dəri lofer",
+              colors: ["Qırmızı"],
+              sizes: ["S", "M", "L", "XL"],
+              reviews: [
+                {
+                  review_id: 1,
+                  rating: 4.0,
+                  comment:
+                    "Çox rahatdır, həm gündəlik, həm də idman üçün istifadə edilə bilər.",
+                },
+                {
+                  review_id: 2,
+                  rating: 4.5,
+                  comment:
+                    "Rəng və dizaynı çox bəyəndim, gündəlik istifadə üçün mükəmməldir.",
+                },
+              ],
+            },
+          ],
         },
         {
           subkateqoriya_id: 3,
           subkateqoriya_adı: "Kişi Aksesuarlari",
-          məhsullar: [],
+          məhsullar: [
+              {
+                "product_id": 1200,
+                "product_name": "Gucci qalstuk",
+                "price": 59.99,
+                "slug": "gucci-silk-tie",
+                "original_price": 79.0,
+                "discount": 24,
+                "salesCount": 230,
+                "image_url": "https://cdn2.premiumoutlet.az/i/p/500/180631-1e31c9e6044ac0cf6869e65cfdcf7e3f.JPG",
+                "description": "Naxışlı, yüksək keyfiyyətli ipək qalstuk.",
+                "colors": ["Qara"],
+                "sizes": ["S", "M", "L"],
+                "reviews": [
+                  {
+                    "review_id": 1,
+                    "rating": 4.5,
+                    "comment": "Çox şık və rahatdır, iş görüşləri üçün ideal."
+                  },
+                  {
+                    "review_id": 2,
+                    "rating": 5.0,
+                    "comment": "Rəngi və dizaynı mükəmməldir, çox bəyənildi."
+                  }
+                ]
+              },
+              {
+                "product_id": 1201,
+                "product_name": "Pal Zileri",
+                "price": 69.99,
+                "slug": "pal-zileri-tie",
+                "original_price": 85.0,
+                "discount": 18,
+                "salesCount": 180,
+                "image_url": "https://cdn2.premiumoutlet.az/i/p/500/110290-241504_1555936946800.4126748p908.JPG",
+                "description": "Boz rəngli, naxışlı ipək qalstuk.",
+                "colors": ["Boz"],
+                "sizes": ["M", "L"],
+                "reviews": [
+                  {
+                    "review_id": 1,
+                    "rating": 4.2,
+                    "comment": "Naxışlar çox gözəldir, amma qiyməti bir az yüksəkdir."
+                  },
+                  {
+                    "review_id": 2,
+                    "rating": 4.8,
+                    "comment": "Keyfiyyəti çox yüksəkdir, alqışlanacaq bir məhsuldur."
+                  }
+                ]
+              },
+              {
+                "product_id": 1202,
+                "product_name": "Celio İpək bant",
+                "price": 39.99,
+                "slug": "celio-silk-band",
+                "original_price": 59.0,
+                "discount": 33,
+                "salesCount": 250,
+                "image_url": "https://cdn2.premiumoutlet.az/i/p/500/156326-4d175a2b6690ac34ba4ded00c31f9273.JPG",
+                "description": "Çox rahat və şık ipək bant.",
+                "colors": ["Qırmızı"],
+                "sizes": ["S", "M"],
+                "reviews": [
+                  {
+                    "review_id": 1,
+                    "rating": 4.4,
+                    "comment": "Çox zərif və şık, mükəmməl dizayn."
+                  },
+                  {
+                    "review_id": 2,
+                    "rating": 4.9,
+                    "comment": "Bantın keyfiyyəti çox yaxşıdır, həqiqətən tövsiyə edirəm."
+                  }
+                ]
+              },
+              {
+                "product_id": 1203,
+                "product_name": "Etro Dəri kəmər",
+                "price": 79.99,
+                "slug": "etro-leather-belt",
+                "original_price": 100.0,
+                "discount": 20,
+                "salesCount": 110,
+                "image_url": "https://cdn2.premiumoutlet.az/i/p/500/179511-b765c9d108a3ea6ac1b484ce3baeee9c.JPG",
+                "description": "Yüksək keyfiyyətli dəri kəmər, gündəlik istifadə üçün mükəmməl.",
+                "colors": ["Qara"],
+                "sizes": ["L", "XL"],
+                "reviews": [
+                  {
+                    "review_id": 1,
+                    "rating": 4.7,
+                    "comment": "Çox yaxşı keyfiyyət, həm gündəlik həm də rəsmi geyimlər üçün uyğun."
+                  },
+                  {
+                    "review_id": 2,
+                    "rating": 5.0,
+                    "comment": "Həqiqətən mükəmməl bir məhsul, çox uzun müddət istifadə etdiyim bir kəmərdir."
+                  }
+                ]
+              },
+              {
+                "product_id": 1204,
+                "product_name": "Paul & Shark kepka",
+                "price": 55.99,
+                "slug": "paul-shark-cap",
+                "original_price": 70.0,
+                "discount": 20,
+                "salesCount": 200,
+                "image_url": "https://cdn2.premiumoutlet.az/i/p/500/178017-3bd08945fd5c0aadeaa28ab4ce34b115.jpg",
+                "description": "Şık və rahat Paul & Shark loqolu kepka.",
+                "colors": ["Ağ"],
+                "sizes": ["M", "L"],
+                "reviews": [
+                  {
+                    "review_id": 1,
+                    "rating": 4.5,
+                    "comment": "Rahat və şık dizaynı ilə hər mühitə uyğun."
+                  },
+                  {
+                    "review_id": 2,
+                    "rating": 4.3,
+                    "comment": "Yaxşı keyfiyyət, amma biraz daha böyük olmalıydı."
+                  }
+                ]
+              },
+              {
+                "product_id": 1205,
+                "product_name": "Altea İpək qalstuk",
+                "price": 65.99,
+                "slug": "altea-silk-tie",
+                "original_price": 90.0,
+                "discount": 27,
+                "salesCount": 60,
+                "image_url": "https://cdn2.premiumoutlet.az/i/p/500/180066-3c2969bdbd0d9064e6d8832ec31b9d36.JPG",
+                "description": "Rəngarəng və zərif dizaynla hazırlanmış ipək qalstuk.",
+                "colors": ["Sarı"],
+                "sizes": ["S", "M"],
+                "reviews": [
+                  {
+                    "review_id": 1,
+                    "rating": 4.3,
+                    "comment": "Çox gözəl rəng və keyfiyyətli material."
+                  },
+                  {
+                    "review_id": 2,
+                    "rating": 4.7,
+                    "comment": "Mükəmməl qalstuk, rəngi və dizaynı çox bəyənildi."
+                  }
+                ]
+              }
+          
+          
+
+
+
+          ],
         },
         {
           subkateqoriya_id: 4,
-          subkateqoriya_adı: "Kişi Çantası",
-          məhsullar: [],
-        },
-        {
-          subkateqoriya_id: 5,
           subkateqoriya_adı: "Kişi Koynek",
-          məhsullar: [],
+          məhsullar: [
+            {
+              "product_id": 1300,
+              "product_name": "Gucci qalstuk",
+              "price": 59.99,
+              "slug": "gucci-silk-tie",
+              "original_price": 79.0,
+              "discount": 24,
+              "salesCount": 230,
+              "image_url": "https://cdn2.premiumoutlet.az/i/p/500/180631-1e31c9e6044ac0cf6869e65cfdcf7e3f.JPG",
+              "description": "Naxışlı, yüksək keyfiyyətli ipək qalstuk.",
+              "colors": ["Qara"],
+              "sizes": ["S", "M", "L"],
+              "reviews": [
+                {
+                  "review_id": 1,
+                  "rating": 4.5,
+                  "comment": "Çox şık və rahatdır, iş görüşləri üçün ideal."
+                },
+                {
+                  "review_id": 2,
+                  "rating": 5.0,
+                  "comment": "Rəngi və dizaynı mükəmməldir, çox bəyənildi."
+                }
+              ]
+            },
+          ],
         },
-        // {
-        //   subkateqoriya_id: 8,
-        //   subkateqoriya_adı: "Kəmər",
-        //   məhsullar: [],
-        // },
+  
         // {
         //   subkateqoriya_id: 9,
         //   subkateqoriya_adı: "Eynək",
         //   məhsullar: [],
         // },
-        {
-          subkateqoriya_id: 6,
-          subkateqoriya_adı: "Qalstuk",
-          məhsullar: [],
-        },
         // {
         //   subkateqoriya_id: 11,
         //   subkateqoriya_adı: "Pul Kisəsi",
         //   məhsullar: [],
         // },
-        // {
-        //   subkateqoriya_id: 12,
-        //   subkateqoriya_adı: "Saat",
-        //   məhsullar: [
-        //     {
-        //       product_id: 20,
-        //       product_name: "Sony WH-1000XM4",
-        //       price: 950.0,
-        //       original_price: 1000.0,
-        //       discount: 5,
-        //       image_url: "https://example.com/products/product-i.jpg",
-        //       description: "Sony WH-1000XM4 üçün təsvir.",
-        //       colors: ["Black", "Silver"],
-        //       sizes: ["L"],
-        //       reviews: [
-        //         {
-        //           review_id: 3,
-        //           rating: 4.5,
-        //           comment: "Mükəmməl səs keyfiyyəti.",
-        //         },
-        //       ],
-        //     },
-        //   ],
-        // },
+        
       ],
     },
 
-
-    
     {
       kateqoriya_id: 3,
       kateqoriya_adı: "Elektronika",
+      icon:IoMdPhonePortrait ,
       subkateqoriyalar: [
         {
           subkateqoriya_id: 50,
           subkateqoriya_adı: "Telefon ve Kompüter",
           məhsullar: [
             {
-              product_id: 1201,
+              product_id: 2201,
               product_name: "LENOVO IdeaPad 1 15IGL7 82V700CURK",
               price: 1500.0,
               slug: "oyun_noutbuku",
@@ -2615,7 +3787,7 @@ const data = {
               ],
             },
             {
-              product_id: 1202,
+              product_id: 2202,
               product_name: "Notbuk Chuwi GemiBook Plus K1",
               price: 1200.0,
               slug: "ultrabuk",
@@ -2641,7 +3813,7 @@ const data = {
               ],
             },
             {
-              product_id: 1203,
+              product_id: 2203,
               product_name: "Notbuk Acer A315-59-30Z5",
               price: 1000.0,
               slug: "cevrile_bilen_noutbuk",
@@ -2667,7 +3839,7 @@ const data = {
               ],
             },
             {
-              product_id: 1204,
+              product_id: 2204,
               product_name:
                 "https://www.bakuelectronics.az/assets/cache_image/products/95872/a66716qumcjh8xbkr8zsxef313hq2ljz-%E2%80%94-kopiya_429x419far_efe.jpg",
               price: 1300.0,
@@ -2696,7 +3868,7 @@ const data = {
             },
 
             {
-              product_id: 1205,
+              product_id: 2205,
               product_name: "TELEFON XIAOMI 14 ULTRA ",
               price: 300.0,
               slug: "budce_smartfonu",
@@ -2722,7 +3894,7 @@ const data = {
               ],
             },
             {
-              product_id: 1206,
+              product_id: 2206,
               product_name: "Smartfon Samsung Galaxy S24",
               price: 1000.0,
               slug: "flahqman_smartfon",
@@ -2748,7 +3920,7 @@ const data = {
               ],
             },
             {
-              product_id: 1207,
+              product_id: 2207,
               product_name: "Smartfon POCO M6 PRO ",
               price: 700.0,
               slug: "kompakt_smartfon",
@@ -2775,7 +3947,7 @@ const data = {
               ],
             },
             {
-              product_id: 1208,
+              product_id: 2208,
               product_name: "Smartfon Xiaomi Redmi A1+",
               price: 900.0,
               slug: "oyun_smartfonu",
@@ -2802,7 +3974,7 @@ const data = {
               ],
             },
             {
-              product_id: 1209,
+              product_id: 2209,
               product_name: "Smartfon Huawei Y70 64GB Blue",
               price: 800.0,
               slug: "styluslu_smartfon",
@@ -2829,7 +4001,7 @@ const data = {
               ],
             },
             {
-              product_id: 1210,
+              product_id: 2210,
               product_name: "Smartfon Samsung Galaxy S22",
               price: 2000.0,
               slug: "is_stansiyasi_noutbuku",
@@ -2856,7 +4028,7 @@ const data = {
               ],
             },
             {
-              product_id: 1211,
+              product_id: 2211,
               product_name: "Notbuk Acer Aspire",
               price: 1100.0,
               slug: "multimedia_noutbuku",
@@ -2884,7 +4056,7 @@ const data = {
             },
 
             {
-              product_id: 1212,
+              product_id: 2212,
               product_name: "Samsung Galaxy Tab A9 Planşet",
               price: 600.0,
               slug: "samsung-galaxy-tab-a9-planset",
@@ -2911,7 +4083,7 @@ const data = {
               ],
             },
             {
-              product_id: 1213,
+              product_id: 2213,
               product_name: "Samsung Galaxy Tab S6 Lite Uşaqlar üçün Planşet",
               price: 250.0,
               slug: "samsung-galaxy-tab-s6-lite-usaqlar-ucun-planset",
@@ -2938,7 +4110,7 @@ const data = {
               ],
             },
             {
-              product_id: 1214,
+              product_id: 2214,
               product_name: "HP Pavilion Laptop",
               price: 1300.0,
               slug: "hp-pavilion-laptop",
@@ -2965,7 +4137,7 @@ const data = {
               ],
             },
             {
-              product_id: 1215,
+              product_id: 2215,
               product_name: "ASUS ROG Zephyrus G16 OLED",
               price: 2000.0,
               slug: "asus-rog-zephyrus-g16-oled",
@@ -2993,7 +4165,7 @@ const data = {
             },
 
             {
-              product_id: 1216,
+              product_id: 2216,
               product_name: "Smartfon Infinix Note 40 Pro",
               price: 2000.0,
               slug: "infinix-note-40-pro",
@@ -3020,7 +4192,7 @@ const data = {
               ],
             },
             {
-              product_id: 1217,
+              product_id: 2217,
               product_name: "Smartfon Xiaomi Redmi Note 12",
               price: 1700.0,
               slug: "xiaomi-redmi-note-12",
@@ -3053,7 +4225,7 @@ const data = {
           subkateqoriya_adı: "Saat",
           məhsullar: [
             {
-              product_id: 1300,
+              product_id: 2300,
               product_name: "Smart saat Smart Watch HK9 Ultra 2 Black",
               price: 1500.0,
               slug: "smart-watch-hk9-ultra-2-black",
@@ -3080,7 +4252,7 @@ const data = {
               ],
             },
             {
-              product_id: 1301,
+              product_id:2301,
               product_name: "Smart saat Smart Watch HK9 Pro Plus Black",
               price: 1500.0,
               slug: "smart-watch-hk9-pro-plus-black",
@@ -3107,7 +4279,7 @@ const data = {
               ],
             },
             {
-              product_id: 1302,
+              product_id: 2302,
               product_name: "Qol saatı Lacoste LC",
               price: 1200.0,
               slug: "lacoste-lc",
@@ -3134,7 +4306,7 @@ const data = {
               ],
             },
             {
-              product_id: 1303,
+              product_id: 2303,
               product_name: "Qol saatı Naviforce NF5032 SWRG",
               price: 1300.0,
               slug: "naviforce-nf5032-swrg",
@@ -3161,7 +4333,7 @@ const data = {
               ],
             },
             {
-              product_id: 1304,
+              product_id: 2304,
               product_name: "Qol saatı NaviForce NF9193 RGBB",
               price: 1400.0,
               slug: "naviforce-nf9193-rgbb",
@@ -3189,17 +4361,13 @@ const data = {
             },
           ],
         },
-        // {
-        //   subkateqoriya_id: 5,
-        //   subkateqoriya_adı: "Şarj Cihazları",
-        //   məhsullar: [],
-        // },
+
         {
           subkateqoriya_id: 52,
           subkateqoriya_adı: "Qulaqlıqlar",
           məhsullar: [
             {
-              product_id: 1400,
+              product_id: 2400,
               product_name: "Simsiz qulaqlıq P9 Black",
               price: 1500.0,
               slug: "wireless-earphones-p9-black",
@@ -3226,7 +4394,7 @@ const data = {
               ],
             },
             {
-              product_id: 1401,
+              product_id: 2401,
               product_name: "Simsiz qulaqlıqlar P47 Blue",
               price: 1500.0,
               slug: "wireless-earphones-p47-blue",
@@ -3253,7 +4421,7 @@ const data = {
               ],
             },
             {
-              product_id: 1402,
+              product_id: 2402,
               product_name: "Simsiz qulaqlıq HUAWEI FreeBuds",
               price: 1500.0,
               slug: "huawei-freebuds",
@@ -3280,7 +4448,7 @@ const data = {
               ],
             },
             {
-              product_id: 1403,
+              product_id: 2403,
               product_name: "Simsiz qulaqlıq HUAWEI FreeBuds SE",
               price: 1500.0,
               slug: "huawei-freebuds-se",
@@ -3307,7 +4475,7 @@ const data = {
               ],
             },
             {
-              product_id: 1404,
+              product_id: 2404,
               product_name: "Simsiz qulaqlıq HUAWEI FreeBuds SE 2",
               price: 1500.0,
               slug: "huawei-freebuds-se-2",
@@ -3334,7 +4502,7 @@ const data = {
               ],
             },
             {
-              product_id: 1405,
+              product_id: 2405,
               product_name: "Simsiz qulaqlıq YISON B3 BLACK",
               price: 1500.0,
               slug: "huawei-freebuds-se-2",
@@ -3361,7 +4529,7 @@ const data = {
               ],
             },
             {
-              product_id: 1406,
+              product_id: 2406,
               product_name: "Simsiz qulaqlıq YISON B3 BLACK",
               price: 1500.0,
               slug: "huawei-freebuds-se-2",
@@ -3473,9 +4641,17 @@ const data = {
     },
 
 
+
+
+
+
+
+
+
     {
       kateqoriya_id: 4,
       kateqoriya_adı: "Ev & Yaşam",
+      icon:FaHome ,
       subkateqoriyalar: [
         {
           subkateqoriya_id: 1,
@@ -3598,193 +4774,88 @@ const data = {
     {
       kateqoriya_id: 5,
       kateqoriya_adı: "Supermarket",
+      icon:FaStore ,
       subkateqoriyalar: [
         {
           subkateqoriya_id: 1,
-          subkateqoriya_adı: "Yuyucu Toz",
+          subkateqoriya_adı: "Meyvə və tərəvəz",
           məhsullar: [],
         },
         {
           subkateqoriya_id: 2,
-          subkateqoriya_adı: "Qab Yuyucu",
+          subkateqoriya_adı: "Sosis və Kolbasalar",
           məhsullar: [],
         },
         {
           subkateqoriya_id: 3,
-          subkateqoriya_adı: "Otaq Ətri",
+          subkateqoriya_adı: "Süd məhsulları",
           məhsullar: [],
         },
         {
           subkateqoriya_id: 4,
-          subkateqoriya_adı: "Hamam Təmizləyiciləri",
+          subkateqoriya_adı: "Şirniyyat Məmulatları",
           məhsullar: [],
         },
         {
           subkateqoriya_id: 5,
-          subkateqoriya_adı: "Tualet Kağızı",
+          subkateqoriya_adı: "Şokolad",
           məhsullar: [],
         },
+
         {
           subkateqoriya_id: 6,
-          subkateqoriya_adı: "Kağız Dəsmal",
+          subkateqoriya_adı: "Çay&Qəhvə",
           məhsullar: [],
         },
+
         {
           subkateqoriya_id: 7,
-          subkateqoriya_adı: "Saça Qulluq",
+          subkateqoriya_adı: "Çörək Məmulatları",
           məhsullar: [],
         },
         {
           subkateqoriya_id: 8,
-          subkateqoriya_adı: "Ağız Baxımı",
+          subkateqoriya_adı: "Yağlar",
           məhsullar: [],
         },
         {
           subkateqoriya_id: 9,
-          subkateqoriya_adı: "Dəriyə Qulluq",
+          subkateqoriya_adı: "Ev təmizliyi",
           məhsullar: [],
         },
         {
           subkateqoriya_id: 10,
-          subkateqoriya_adı: "Elektrikli Diş Fırçaları",
+          subkateqoriya_adı: "Saça Qulluq",
           məhsullar: [],
         },
         {
           subkateqoriya_id: 11,
-          subkateqoriya_adı: "Təraş Məhsulları",
+          subkateqoriya_adı: "Ağız Baxımı",
           məhsullar: [],
         },
         {
           subkateqoriya_id: 12,
-          subkateqoriya_adı: "Körpə Üçün Əlavə Qidalanma",
+          subkateqoriya_adı: "Dəriyə Qulluq",
           məhsullar: [],
         },
+
         {
           subkateqoriya_id: 13,
           subkateqoriya_adı: "Dəsmallar",
           məhsullar: [],
         },
+
         {
           subkateqoriya_id: 14,
-          subkateqoriya_adı: "Uşaq Kosmetikası",
-          məhsullar: [],
-        },
-        {
-          subkateqoriya_id: 15,
-          subkateqoriya_adı: "Uşaq Qidaları",
-          məhsullar: [],
-        },
-        {
-          subkateqoriya_id: 16,
-          subkateqoriya_adı: "Körpə Təmizləyici Pambıq",
-          məhsullar: [],
-        },
-        {
-          subkateqoriya_id: 17,
-          subkateqoriya_adı: "Uşaq Pudrası",
-          məhsullar: [],
-        },
-        {
-          subkateqoriya_id: 18,
-          subkateqoriya_adı: "Uşaq Şampunu",
-          məhsullar: [],
-        },
-        {
-          subkateqoriya_id: 19,
-          subkateqoriya_adı: "Çay",
-          məhsullar: [],
-        },
-        {
-          subkateqoriya_id: 20,
-          subkateqoriya_adı: "Qəlyanaltı",
-          məhsullar: [],
-        },
-        {
-          subkateqoriya_id: 21,
-          subkateqoriya_adı: "Quru Yemək",
-          məhsullar: [],
-        },
-        {
-          subkateqoriya_id: 22,
-          subkateqoriya_adı: "Qəhvə",
-          məhsullar: [],
-        },
-        {
-          subkateqoriya_id: 23,
-          subkateqoriya_adı: "Makaron",
-          məhsullar: [],
-        },
-        {
-          subkateqoriya_id: 24,
-          subkateqoriya_adı: "Duz və Ədviyyat",
-          məhsullar: [],
-        },
-        {
-          subkateqoriya_id: 25,
-          subkateqoriya_adı: "Şəkər",
-          məhsullar: [],
-        },
-        {
-          subkateqoriya_id: 26,
-          subkateqoriya_adı: "Süd",
-          məhsullar: [],
-        },
-        {
-          subkateqoriya_id: 27,
-          subkateqoriya_adı: "Bitki Çayları",
-          məhsullar: [],
-        },
-        {
-          subkateqoriya_id: 28,
-          subkateqoriya_adı: "Quru Meyvə",
-          məhsullar: [],
-        },
-        {
-          subkateqoriya_id: 29,
-          subkateqoriya_adı: "Şokolad",
-          məhsullar: [],
-        },
-        {
-          subkateqoriya_id: 30,
-          subkateqoriya_adı: "Biskvit",
-          məhsullar: [],
-        },
-        {
-          subkateqoriya_id: 31,
-          subkateqoriya_adı: "Çörək Məmulatları",
-          məhsullar: [],
-        },
-        {
-          subkateqoriya_id: 32,
-          subkateqoriya_adı: "Şirniyyat Məmulatları",
-          məhsullar: [],
-        },
-        {
-          subkateqoriya_id: 33,
-          subkateqoriya_adı: "Qoz-Fındıq",
-          məhsullar: [],
-        },
-        {
-          subkateqoriya_id: 34,
-          subkateqoriya_adı: "Yulaf",
-          məhsullar: [],
-        },
-        {
-          subkateqoriya_id: 35,
-          subkateqoriya_adı: "Maye Yağ",
-          məhsullar: [],
-        },
-        {
-          subkateqoriya_id: 36,
-          subkateqoriya_adı: "Zibil Qutusu",
+          subkateqoriya_adı: "Uşaqlar üçün",
           məhsullar: [],
         },
       ],
     },
-
     {
       kateqoriya_id: 6,
       kateqoriya_adı: "İdman & Çöl",
+      icon:MdOutlineSportsTennis ,
       subkateqoriyalar: [
         {
           subkateqoriya_id: 1,
@@ -3888,10 +4959,6 @@ const data = {
         },
       ],
     },
-
-
-
-
   ],
 };
 
@@ -3933,9 +5000,6 @@ export const servicesData = [
 ];
 
 export default data;
-
-
-
 
 // {
 //   kateqoriya_id: 7,

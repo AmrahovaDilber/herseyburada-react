@@ -16,38 +16,47 @@ const routers = [
   {
     path: "/",
     element: <Home></Home>,
+    layout:"App"
   },
   {
     path: "/productdetails/:slug",
     element: <ProductDetail></ProductDetail>,
+     layout:"App"
   },
   {
     path: "/filter",
     element: <FilterPage></FilterPage>,
+     layout:"App"
   },
   {
     path: "/products/:slug/:subcategorySlug?",
     element: <FilterPage />,
+     layout:"App"
   },
   {
     path: "/subcategories/:slug",
     element: <FilterPage></FilterPage>,
+     layout:"App"
   },
   {
     path: "/contact",
     element: <ContactPage></ContactPage>,
+     layout:"App"
   },
   {
     path: "/cartpage",
     element: <CartPage></CartPage>,
+     layout:"App"
   },
   {
     path: "/wishlist",
     element: <WishList></WishList>,
+     layout:"App"
   },
   {
     path: "/signup",
     element: <SignUpPage></SignUpPage>,
+   
   },
   {
     path: "/login",
@@ -57,27 +66,40 @@ const routers = [
   {
     path: "/about",
     element: <AboutPage></AboutPage>,
+     layout:"App"
   },
   {
     path: "/gizliliksiyaseti",
-    element:<GizlilikSiyaseti></GizlilikSiyaseti>
+    element: <GizlilikSiyaseti></GizlilikSiyaseti>,
+     layout:"App"
+    
   },
   {
     path: "/istifadesertleri",
-    element:<IstifadeSertleri></IstifadeSertleri>
+    element: <IstifadeSertleri></IstifadeSertleri>,
+     layout:"App"
   },
 
 ];
 
 const layoutRouter = (routers) => {
   return routers.map((router) => {
-    router.element = (
-      <AppContextProvider>
-        <AppLayout>{router.element}</AppLayout>
-      </AppContextProvider>
-    );
+    if (router.layout && router.layout === 'App') {
+      router.element = (
+        <AppContextProvider>
+          <AppLayout>{router.element}</AppLayout>
+        </AppContextProvider>
+      );
+    } else {
+      router.element = (
+        <AppContextProvider>
+          {router.element}
+        </AppContextProvider>
+      );
+    }
     return router;
   });
 };
+
 
 export default layoutRouter(routers);

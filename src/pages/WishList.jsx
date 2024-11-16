@@ -13,7 +13,7 @@ export default function WishList() {
 
   useEffect(() => {
     const fetchedProducts = fetchFavoritesProducts();
-    console.log('Fetched favorite products:', fetchedProducts); // Add this line for debugging
+    console.log('Fetched favorite products:', fetchedProducts); 
     setFavoritesProducts(fetchedProducts);
   }, [favorites, products]);
 
@@ -22,7 +22,7 @@ export default function WishList() {
       <div className="container mx-auto px-4 md:px-0">
         <div className="flex flex-col sm:flex-row justify-between items-center mb-8">
           <p className="text-2xl font-semibold text-gray-800">
-            Wishlist ({favoritesProducts.length})
+           Sevimlilər ({favoritesProducts.length})
           </p>
         </div>
 
@@ -34,7 +34,7 @@ export default function WishList() {
         {favoritesProducts.length === 0 && (
           <div className="flex justify-center items-center h-80 rounded-lg">
             <p className="text-gray-600 text-lg font-semibold">
-              Your Wishlist Is Empty
+            Sevimlilər siyahınız boş görünür, amma mükəmməl seçimlər var!
             </p>
           </div>
         )}

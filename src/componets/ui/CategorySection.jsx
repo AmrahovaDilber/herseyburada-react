@@ -13,37 +13,53 @@ export default function CategorySection() {
 
   return (
     <section className=" mx-auto ">
-      <div className="mt-8 lg:mt-[40px] mb-8 lg:mb-[100px] flex flex-col lg:flex-row">
+      <div className="mt-8 lg:mt-[40px] mb-8 lg:mb-[60px] flex flex-col lg:flex-row">
         {/* LEFTBOX */}
         <div className="w-full lg:w-[417px] lg:mr-[36px] mb-6 lg:mb-0">
+          {/* Mobile versiya buttonu */}
           <button
             className="lg:hidden w-full bg-[#FF7518] text-white py-2 px-4 rounded mb-4"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? "Close Categories" : "Open Categories"}
           </button>
-          <ul className={`${mobileMenuOpen ? 'block' : 'hidden'} lg:block bg-transparent shadow-md lg:shadow-none rounded-lg lg:rounded-none`}>
+          <ul
+            className={`${
+              mobileMenuOpen ? "block" : "hidden"
+            } relative group lg:block bg-transparent shadow-md lg:shadow-none rounded-lg lg:rounded-none`}
+          >
             {data.kateqoriyalar.map((item, index) => {
-              const isActive = currentPath.includes(`/products/${item.kateqoriya_adı}`) ||
+              const isActive =
+                currentPath.includes(`/products/${item.kateqoriya_adı}`) ||
                 selectedCategories.includes(item.kateqoriya_adı);
               return (
                 <div
                   key={index}
-                  className="relative group"
                   onMouseEnter={() => setActiveDropdown(index)}
                   onMouseLeave={() => setActiveDropdown(null)}
                 >
-                  <div className={`flex items-center justify-between py-3 pr-4 hover:bg-gray-100 cursor-pointer ${
-                    isActive ? 'bg-blue-100' : ''
-                  }`}>
-                    <Link 
+                  <div
+                    className={`flex items-center justify-between py-3 pr-4 hover:bg-gray-100 cursor-pointer ${
+                      isActive ? "bg-blue-100" : ""
+                    }`}
+                  >
+                    <Link
                       to={`/products/${item.kateqoriya_adı}`}
                       onClick={() => handleCategoryChange(item.kateqoriya_adı)}
+                      className="group block rounded-lg   p-[5px] transition duration-300 ease-in-out"
                     >
-                      <li className={`text-sm lg:text-base ${
-                        isActive ? 'text-blue-600 font-semibold' : 'text-[#000000] font-normal'
-                      }`}>
-                        {item.kateqoriya_adı}
+                      <li
+                        className={`text-sm lg:text-base flex items-center gap-3 rounded-lg ${
+                          isActive
+                            ? "text-blue-600 font-semibold "
+                            : "text-[#1a1a1a] font-normal"
+                        }   `}
+                      >
+                        <span className="text-[#f1892f] group-hover:text-[#f27314] text-lg">
+                          <item.icon />
+                        </span>
+
+                        <span>{item.kateqoriya_adı}</span>
                       </li>
                     </Link>
                     <img
@@ -52,27 +68,32 @@ export default function CategorySection() {
                       alt="Right arrow"
                     />
                   </div>
-                  
+
                   {/* Dropdown content */}
-                  {(activeDropdown === index || (mobileMenuOpen && isActive)) && (
-                    <div className="lg:absolute lg:left-full lg:top-0 w-full lg:w-[calc(100vw-280px)] max-w-[980px] p-4 bg-white border border-gray-300 shadow-lg z-30 rounded-lg">
+                  {(activeDropdown === index ||
+                    (mobileMenuOpen && isActive)) && (
+                    <div className="lg:absolute lg:left-full lg:top-0 w-full lg:w-[calc(100vw-280px)] max-w-[980px] p-4 bg-white border border-gray-300 shadow-lg z-30 h-[350px] rounded-lg">
                       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-                        {item.subkateqoriyalar.map((subkateqoriya, subIndex) => {
-                          const isSubActive = currentPath.includes(`/products/${item.kateqoriya_adı}/${subkateqoriya.subkateqoriya_adı}`);
-                          return (
-                            <Link
-                              to={`/products/${item.kateqoriya_adı}/${subkateqoriya.subkateqoriya_adı}`}
-                              key={subIndex}
-                              className={`px-3 py-2 text-xs lg:text-sm ${
-                                isSubActive
-                                  ? 'bg-blue-100 text-[#FF7518] font-semibold'
-                                  : 'text-[#333] hover:bg-gray-100 hover:text-[#FF7518]'
-                              } transition-all duration-300 ease-in-out cursor-pointer rounded-md shadow-sm`}
-                            >
-                              {subkateqoriya.subkateqoriya_adı}
-                            </Link>
-                          );
-                        })}
+                        {item.subkateqoriyalar.map(
+                          (subkateqoriya, subIndex) => {
+                            const isSubActive = currentPath.includes(
+                              `/products/${item.kateqoriya_adı}/${subkateqoriya.subkateqoriya_adı}`
+                            );
+                            return (
+                              <Link
+                                to={`/products/${item.kateqoriya_adı}/${subkateqoriya.subkateqoriya_adı}`}
+                                key={subIndex}
+                                className={`px-3 py-2 text-xs lg:text-sm ${
+                                  isSubActive
+                                    ? "bg-blue-100 text-[#FF7518] font-semibold"
+                                    : "text-[#333] hover:bg-gray-100 hover:text-[#FF7518]"
+                                } transition-all duration-300 ease-in-out cursor-pointer rounded-md shadow-sm`}
+                              >
+                                {subkateqoriya.subkateqoriya_adı}
+                              </Link>
+                            );
+                          }
+                        )}
                       </div>
                     </div>
                   )}
@@ -81,7 +102,7 @@ export default function CategorySection() {
             })}
           </ul>
         </div>
-        
+
         {/* RIGHTBOX */}
         <div className="max-w-[930px] lg:flex-grow">
           <Slider />

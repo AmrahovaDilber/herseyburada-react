@@ -4,24 +4,26 @@ const FilterProductCategories = () => {
   const { allData, selectedCategories, handleCategoryChange } = useContextApp();
 
   return (
-    <div>
-      <h2 className="font-bold mb-2">Product Categories</h2>
-      <ul className=" h-[200px] overflow-y-auto">
+    <div className="p-4 rounded-lg ">
+      <h2 className=" font-bold mb-2 text-gray-700">Product Categories</h2>
+      <ul className="h-[240px] overflow-y-auto scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-gray-300 scrollbar-track-gray-100">
         {allData.kateqoriyalar.map((category) => {
           const isActive = selectedCategories.includes(category.kateqoriya_adı);
           return (
             <li 
               key={category.kateqoriya_id} 
-              className={`hover:bg-gray-100 rounded-sm ${isActive ? 'bg-blue-100' : ''}`}
+              className={`py-2 rounded-md  cursor-pointer transition-all duration-300 ${
+                isActive ? 'bg-blue-100 text-blue-600' : 'hover:bg-gray-100'
+              }`}
             >
-              <label className="flex items-center cursor-pointer p-1">
+              <label className="flex items-center cursor-pointer">
                 <input
                   type="checkbox"
                   checked={isActive}
                   onChange={() => handleCategoryChange(category.kateqoriya_adı)}
-                  className="mr-2 cursor-pointer"
+                  className="mr-3 cursor-pointer h-4 w-4 accent-blue-500"
                 />
-                <span className={`${isActive ? 'font-semibold text-blue-600' : ''}`}>
+                <span className={`transition-colors duration-200 ${isActive ? 'font-semibold' : 'text-gray-600'}`}>
                   {category.kateqoriya_adı}
                 </span>
               </label>
