@@ -16,14 +16,14 @@ export default function ProductItem({ product }) {
  
       <div className="h-auto relative shadow-lg rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300 bg-white">
         <div  className="relative flex items-center justify-center h-[250px] bg-[#F5F5F5] group">
-          <div className="w-[55px] h-[26px] bg-[#FF7518] rounded-md absolute top-[12px] left-[12px]">
+          <div className="w-[55px] h-[26px] z-30  bg-[#FF7518] rounded-md absolute top-[12px] left-[8px]">
             <p className="font-normal text-[12px] text-center py-1 text-[#FAFAFA]">
               -{product.discount}%
             </p>
           </div>
           <Link className="absolute inset-0 flex justify-center items-center" to={`/productdetails/${product.slug}`}>
-          <figure className="w-full h-full transition-transform duration-300 group-hover:scale-105">
-            <img src={product.image_url} className="w-full h-full object-cover" alt={product.product_name} />
+          <figure className="w-full h-full aspect-auto transition-transform duration-300 group-hover:scale-105">
+            <img src={product.image_url} className="w-full h-full object-contain md:object-cover" alt={product.product_name} />
             <div className="absolute inset-0 bg-gradient-to-t from-black opacity-0 group-hover:opacity-10  transition-opacity duration-300"></div>
           </figure>
         </Link>
@@ -49,14 +49,14 @@ export default function ProductItem({ product }) {
                 onClick={() => removeFromCart(product.product_id)}
                 className="text-[#FFFF] text-[12px] font-normal"
               >
-                Remove From Cart
+            Karta Əlavə et
               </button>
             ) : (
               <button
                 onClick={() => addToCart(product.product_id)}
                 className="text-[#FFFF] text-[12px] font-normal"
               >
-                Add To Cart
+             Kartdan Sil
               </button>
             )}
           </div>

@@ -7,7 +7,7 @@ import { useContextApp } from "../../context/AppContext";
 export default function CategorySection() {
   const location = useLocation();
   const currentPath = location.pathname;
-  const { selectedCategories, handleCategoryChange } = useContextApp();
+  const { selectedCategories,handleCategoryChange } = useContextApp();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
 
@@ -39,8 +39,7 @@ export default function CategorySection() {
                   onMouseLeave={() => setActiveDropdown(null)}
                 >
                   <div
-                    className={`flex items-center justify-between py-3 pr-4 hover:bg-gray-100 cursor-pointer ${
-                      isActive ? "bg-blue-100" : ""
+                    className={`flex items-center justify-between py-3 pr-4 hover:bg-gray-100 cursor-pointer
                     }`}
                   >
                     <Link
@@ -48,12 +47,14 @@ export default function CategorySection() {
                       onClick={() => handleCategoryChange(item.kateqoriya_adı)}
                       className="group block rounded-lg   p-[5px] transition duration-300 ease-in-out"
                     >
-                      <li
-                        className={`text-sm lg:text-base flex items-center gap-3 rounded-lg ${
+                             {/* ${
                           isActive
                             ? "text-blue-600 font-semibold "
-                            : "text-[#1a1a1a] font-normal"
-                        }   `}
+                            : "text-[#1a1a1a] font-normal"}   */}
+                      <li
+                        className={`text-sm lg:text-base flex items-center gap-3 rounded-lg
+                    
+                             `}
                       >
                         <span className="text-[#f1892f] group-hover:text-[#f27314] text-lg">
                           <item.icon />
