@@ -1,90 +1,99 @@
 import { useForm } from 'react-hook-form';
-import  { useRef } from 'react';
+import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 
 const ContactForm = () => {
   const formRef = useRef(); 
   const { register, handleSubmit, formState } = useForm();
   const { errors } = formState;
+
   function onSubmit(data) {
     console.log(data);
     emailjs
-    .sendForm('service_x165pd3', 'template_ogqf8df', formRef.current, 'tLHxzJLhqO4YWH7bh')
-    .then(
-      () => {
-        alert('Success!');
-      },
-      (error) => {
-        alert('Failed! ' + error.text);
-      },
-    );
+      .sendForm('service_x165pd3', 'template_ogqf8df', formRef.current, 'tLHxzJLhqO4YWH7bh')
+      .then(
+        () => {
+          alert('Success!');
+        },
+        (error) => {
+          alert('Failed! ' + error.text);
+        },
+      );
   }
+
   return (
-    <form ref={formRef} onSubmit={handleSubmit(onSubmit)} className="py-[47px] px-[30px] space-y-[32px] border border-gray-100 shadow-md rounded-[4px]">
-      <div className="grid grid-cols-3 gap-[16px]">
+    <form 
+      ref={formRef} 
+      onSubmit={handleSubmit(onSubmit)} 
+      className="py-8 px-6 sm:py-10 sm:px-8 lg:py-12 lg:px-12 space-y-8 border  border-gray-100 shadow-md rounded-md"
+    >
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <div>
           <input
             type="text"
-            placeholder="Your Name"
+            placeholder="Ad"
             {...register('name', {
-              required: "Please fill the field",
+              required: "Zəhmət olmasa sahəni doldurun",
               minLength: {
                 value: 3,
-                message: "Name must be at least 3 characters long"
+                message: "Ad ən azı 3 simvol uzunluğunda olmalıdır"
               }
             })}
-            className="h-[50px] px-[24px] rounded-[4px] bg-[#f5f5f5] outline-none"
+            className="h-12 px-4 rounded-md bg-gray-100 outline-none w-full"
           />
-          <p className="text-red-500">{errors.name?.message}</p>
+          <p className="text-red-500 mt-1">{errors.name?.message}</p>
         </div>
 
         <div>
           <input
             type="email"
-            placeholder="Your Email"
+            placeholder="Email"
             {...register('email', {
-              required: "Please fill the field",
+              required: "Zəhmət olmasa sahəni doldurun",
               pattern: {
                 value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                message: "Please enter a valid email address"
+                message: "Etibarlı email ünvanı daxil edin"
               }
             })}
-            className="h-[50px] px-[24px] rounded-[4px] bg-[#f5f5f5] outline-none"
+            className="h-12 px-4 rounded-md bg-gray-100 outline-none w-full"
           />
-          <p className="text-red-500">{errors.email?.message}</p>
+          <p className="text-red-500 mt-1">{errors.email?.message}</p>
         </div>
 
         <div>
           <input
             type="number"
-            placeholder="Your Phone"
+            placeholder="Telefon nömrəsi"
             {...register('phone', {
-              required: "Please fill the field",
+              required: "Zəhmət olmasa sahəni doldurun",
               pattern: {
                 value: /^[0-9]{10,15}$/,
-                message: "Please enter a valid phone number"
+                message: "Zəhmət olmasa düzgün telefon formatı daxil edin"
               }
             })}
-            className="h-[50px] px-[24px] rounded-[4px] bg-[#f5f5f5] outline-none"
+            className="h-12 px-4 rounded-md bg-gray-100 outline-none w-full"
           />
-          <p className="text-red-500">{errors.phone?.message}</p>
+          <p className="text-red-500 mt-1">{errors.phone?.message}</p>
         </div>
       </div>
 
       <div>
         <textarea
           {...register("message", {
-            required: "Please fill the field"
+            required: "Zəhmət olmasa sahəni doldurun"
           })}
-          placeholder="Your Message"
-          className="h-[207px] px-[24px] py-[13px] rounded-[4px] bg-[#f5f5f5] w-full outline-none resize-none"
+          placeholder="Mesajınız"
+          className="h-52 px-4 py-3 rounded-md bg-gray-100 w-full outline-none resize-none"
         ></textarea>
-        <p className="text-red-500">{errors.message?.message}</p>
+        <p className="text-red-500 mt-1">{errors.message?.message}</p>
       </div>
 
-      <div className="flex justify-end">
-        <button type='submit' className="px-[48px] py-[16px] rounded-[4px] text-white bg-[#ff7518] font-medium hover:bg-[#e07575]">
-          Send Message
+      <div className="flex justify-center sm:justify-end">
+        <button 
+          type='submit' 
+          className="px-6 py-3 rounded-md text-white bg-orange-600 font-medium hover:bg-orange-500 transition duration-300 ease-in-out"
+        >
+         Mesajı Göndər
         </button>
       </div>
     </form>

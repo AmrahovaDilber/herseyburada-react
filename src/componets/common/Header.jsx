@@ -1,12 +1,12 @@
-import { useState, } from "react";
-import { Link,useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { useContextApp } from "../../context/AppContext";
 import { doSignOut } from "../../firebase/auth";
 import { IoIosSearch } from "react-icons/io";
 import NavLinks from "./NavLinks";
 
 export default function Header() {
-  const { userLoggedIn,  handleInputChange, query } =useContextApp();
+  const { userLoggedIn, handleInputChange, query } = useContextApp();
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navigate = useNavigate();
@@ -54,16 +54,7 @@ export default function Header() {
       duration-300"
           >
             <input
-              className="
-              bg-transparent
-              placeholder-gray-500
-              outline-none
-              text-sm
-              grow
-              px-6
-              py-2
-              transition-all
-              duration-200"
+              className="bg-transparent placeholder-gray-500 outline-none text-sm grow px-6 py-2 transition-all duration-200"
               type="text"
               value={query}
               placeholder="Nə ilə maraqlanırsınız?"
@@ -135,61 +126,65 @@ export default function Header() {
               </div>
             </div>
             <div className="py-6 px-5 space-y-6">
-              <div className="grid grid-cols-2 gap-y-4 gap-x-8">
-                <Link
-                  to="/cartpage"
-                  className="text-base font-medium text-gray-900 hover:text-gray-700"
-                >
-                  Səbət
-                </Link>
-                <Link
-                  to="/wishlist"
-                  className="text-base font-medium text-gray-900 hover:text-gray-700"
-                >
-                  Favoritlər
-                </Link>
-                <Link
-                  to="/about"
-                  className="text-base font-medium text-gray-900 hover:text-gray-700"
-                >
-                  Haqqımızda
-                </Link>
-                {userLoggedIn ? (
-                  <Link
-                    to="/contact"
-                    className="text-base font-medium text-gray-900 hover:text-gray-700"
-                  >
-                    Əlaqə
-                  </Link>
-                ) : (
-                  <Link
-                    to="/login"
-                    className="text-base font-medium text-gray-900 hover:text-gray-700"
-                  >
-                    Daxil ol
-                  </Link>
-                )}
-              </div>
-              {userLoggedIn && (
-                <div className="mt-6">
-                  <button
-                    onClick={() => {
-                      if (
-                        window.confirm("Çıxış etmək istədiyinizə əminsiniz?")
-                      ) {
-                        doSignOut().then(() => {
-                          navigate("/login");
-                          setMobileMenuOpen(false);
-                        });
-                      }
-                    }}
-                    className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
-                  >
-                    Çıxış et
-                  </button>
-                </div>
-              )}
-            </div>
+  <div className="grid grid-cols-2 gap-y-4 gap-x-8">
+    <Link
+      to="/cartpage"
+      className="text-base font-medium text-gray-900 hover:text-gray-700"
+      onClick={() => setMobileMenuOpen(false)} // Close the menu on click
+    >
+      Səbət
+    </Link>
+    <Link
+      to="/wishlist"
+      className="text-base font-medium text-gray-900 hover:text-gray-700"
+      onClick={() => setMobileMenuOpen(false)} // Close the menu on click
+    >
+      Favoritlər
+    </Link>
+    <Link
+      to="/about"
+      className="text-base font-medium text-gray-900 hover:text-gray-700"
+      onClick={() => setMobileMenuOpen(false)} // Close the menu on click
+    >
+      Haqqımızda
+    </Link>
+    {userLoggedIn ? (
+      <Link
+        to="/contact"
+        className="text-base font-medium text-gray-900 hover:text-gray-700"
+        onClick={() => setMobileMenuOpen(false)} // Close the menu on click
+      >
+        Əlaqə
+      </Link>
+    ) : (
+      <Link
+        to="/login"
+        className="text-base font-medium text-gray-900 hover:text-gray-700"
+        onClick={() => setMobileMenuOpen(false)} // Close the menu on click
+      >
+        Daxil ol
+      </Link>
+    )}
+  </div>
+  {userLoggedIn && (
+    <div className="mt-6">
+      <button
+        onClick={() => {
+          if (window.confirm("Çıxış etmək istədiyinizə əminsiniz?")) {
+            doSignOut().then(() => {
+              navigate("/login");
+              setMobileMenuOpen(false); // Close the menu on sign-out
+            });
+          }
+        }}
+        className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
+      >
+        Çıxış et
+      </button>
+    </div>
+  )}
+</div>
+
           </div>
         </div>
       )}
