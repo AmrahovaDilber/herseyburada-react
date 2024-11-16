@@ -88,7 +88,7 @@ const LoginForm = () => {
                 required: "Zəhmət olmasa emaili daxil edin",
                 pattern: {
                   value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-                  message: "Invalid email format",
+                  message: "Yanlış email formatı",
                 },
               })}
               className="form-input border border-gray-300 focus:border-[#ff9130] focus:ring focus:ring-[#ff9130]/50 outline-none w-full py-3 px-4 rounded-md text-lg"
@@ -114,7 +114,7 @@ const LoginForm = () => {
                 required: "Zəhmət olmasa parolunuzu daxil edin",
                 minLength: {
                   value: 6,
-                  message: "Password must be at least 6 characters long",
+                  message: "Parol ən azı 6 simvol uzunluğunda olmalıdır",
                 },
               })}
               className="form-input border border-gray-300 focus:border-[#ff9130] focus:ring focus:ring-[#ff9130]/50 outline-none w-full py-3 px-4 rounded-md text-lg"
@@ -149,7 +149,7 @@ const LoginForm = () => {
               className="w-full flex items-center justify-center gap-3 bg-white border border-gray-300 py-3 px-5 rounded-md hover:bg-gray-50 transition-all shadow-sm"
             >
               <img src={google} alt="Google" className="w-5 h-5" />
-              <span className="text-gray-600">Sign in with Google</span>
+              <span className="text-gray-600">Google ilə daxil olun</span>
             </button>
           </div>
 

@@ -21,7 +21,7 @@ export default function CategorySection() {
             className="lg:hidden w-full bg-[#FF7518] text-white py-2 px-4 rounded mb-4"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            {mobileMenuOpen ? "Close Categories" : "Open Categories"}
+            { "Məhsul Kataloqu" }
           </button>
           <ul
             className={`${

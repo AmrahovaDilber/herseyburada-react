@@ -72,7 +72,7 @@ const SignupForm = () => {
         <div>
           <input
             type="text"
-            {...registerUser("name", { required: "Name is required" })}
+            {...registerUser("name", { required: "Ad tələb olunur" })}
             className="w-full py-3 px-4 border border-gray-300 rounded-md bg-transparent focus:border-[#ff9130] outline-none mb-1 transition-all"
             placeholder="Ad"
           />
@@ -86,7 +86,7 @@ const SignupForm = () => {
           <input
             type="text"
             {...registerUser("surname", {
-              required: "Please fill the field",
+              required: "Soyad tələb olunur",
             })}
             className="w-full py-3 px-4 border border-gray-300 rounded-md bg-transparent focus:border-[#ff9130] outline-none mb-1 transition-all"
             placeholder="Soyad"
@@ -101,10 +101,10 @@ const SignupForm = () => {
           <input
             type="email"
             {...registerUser("email", {
-              required: "Email is required",
+              required: "Email tələb olunur",
               pattern: {
                 value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-                message: "Invalid email format",
+                message: "Yanlış email formatı",
               },
             })}
             className="w-full py-3 px-4 border border-gray-300 rounded-md bg-transparent focus:border-[#ff9130] outline-none mb-1 transition-all"
@@ -120,14 +120,14 @@ const SignupForm = () => {
           <input
             type="number"
             {...registerUser("number", {
-              required: "Phone number is required",
+              required: "Telefon nömrəsi tələb olunur",
               minLength: {
                 value: 10,
-                message: "Phone number must be at least 10 digits",
+                message: "Telefon nömrəsi ən azı 10 rəqəmdən ibarət olmalıdır",
               },
             })}
             className="w-full py-3 px-4 border border-gray-300 rounded-md bg-transparent focus:border-[#ff9130] outline-none mb-1 transition-all"
-            placeholder="Phone Number"
+            placeholder="Telefon nömrəsi"
           />
           <p className="text-red-500 text-sm">
             {registerErrors.number?.message}
@@ -139,10 +139,10 @@ const SignupForm = () => {
           <input
             type="password"
             {...registerUser("password", {
-              required: "Password is required",
+              required: "Parol tələb olunur",
               minLength: {
                 value: 6,
-                message: "Password must be at least 6 characters",
+                message: "Parol ən azı 6 simvoldan ibarət olmalıdır",
               },
             })}
             className="w-full py-3 px-4 border border-gray-300 rounded-md bg-transparent focus:border-[#ff9130] outline-none mb-1 transition-all"
@@ -158,13 +158,13 @@ const SignupForm = () => {
           <input
             type="password"
             {...registerUser("rePassword", {
-              required: "Please confirm your password",
+              required: "Zəhmət olmasa parolunuzu təsdiqləyin",
               validate: (value) =>
                 value === watchRegister("password") ||
-                "Passwords don't match",
+                "Parollar uyğun gəlmir",
             })}
             className="w-full py-3 px-4 border border-gray-300 rounded-md bg-transparent focus:border-[#ff9130] outline-none mb-1 transition-all"
-            placeholder="Re-enter Password"
+            placeholder="Şifrəni yenidən daxil edin"
           />
           <p className="text-red-500 text-sm">
             {registerErrors.rePassword?.message}
