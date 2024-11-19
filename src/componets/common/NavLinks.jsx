@@ -79,7 +79,7 @@ export default function NavLinks() {
           onClick={handleAccountClick}
         >
           <div className="flex items-center gap-1 w-[35px] h-[35px] rounded-full bg-gray-200  transition-transform duration-300 ease-in-out group-hover:bg-[#ff9436] justify-center text-[#1a1a1a]">
-            <IoPersonOutline className="border  rounded-full  text-[24px]  transition-transform duration-300 transform hover:scale-110 ease-in-out" />
+            <IoPersonOutline className=" rounded-full  text-[24px]   " />
           </div>
         </button>
         {isDropdownOpen && userLoggedIn && (

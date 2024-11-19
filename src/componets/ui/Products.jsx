@@ -20,7 +20,7 @@ export default function Products() {
   useEffect(() => {
     let products = [];
 
-    // Initial product selection based on categories or slugs
+    
     if (selectedCategories.length > 0) {
       products = handleFilterCategory();
     } else if (slug && !subcategorySlug) {

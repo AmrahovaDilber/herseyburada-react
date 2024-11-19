@@ -12,10 +12,8 @@ export default function Sales() {
   
   function updatePerIndex() {
     const width = window.innerWidth;
-    if (width >= 1024) {
+    if (width >= 720) {
       setPerIndex(5); // Desktop
-    } else if (width >= 640) {
-      setPerIndex(3); // Tablet
     } else {
       setPerIndex(2); // Mobile
     }

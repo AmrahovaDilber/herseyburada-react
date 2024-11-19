@@ -26,11 +26,11 @@ const MusicExperience = () => {
 
  
   return (
-    <div className="bg-black my-[50px]  p-8">
+    <div className="bg-black my-[100px]  p-8">
       <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row gap-8">
-        <div className="md:w-1/2 space-y-6">
+        <div className="md:w-1/2 space-y-7">
           <span className="text-green-400 font-semibold">Categories</span>
-          <h1 className="text-4xl text-white font-semibold">
+          <h1 className="text-4xl text-white  font-semibold">
             Enhance Your Music Experience
           </h1>
           <div className="flex gap-6">

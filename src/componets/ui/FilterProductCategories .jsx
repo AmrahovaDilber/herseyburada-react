@@ -12,9 +12,7 @@ const FilterProductCategories = () => {
           return (
             <li 
               key={category.kateqoriya_id} 
-              className={`py-2 rounded-md  cursor-pointer transition-all duration-300 ${
-                isActive ? 'bg-blue-100 text-blue-600' : 'hover:bg-gray-100'
-              }`}
+              className={`py-2 rounded-md  cursor-pointer transition-all duration-300 `}
             >
               <label className="flex items-center cursor-pointer">
                 <input

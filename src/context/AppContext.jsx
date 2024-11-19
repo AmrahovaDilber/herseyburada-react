@@ -96,18 +96,19 @@ export const AppContextProvider = ({ children }) => {
       localStorage.setItem('favorites', JSON.stringify(newFavorites));
     }
   };
-
   const addToCart = async (id) => {
     if (!userLoggedIn) {
       notification("Səbətə əşyalar əlavə etmək üçün daxil olmalısınız");
       return;
     }
+    console.log("Adding to cart:", id); // Debugging line
     const product = products.find((prod) => prod.product_id === id);
   
     if (product) {
       if (!carts.includes(id)) {
         const newCarts = [...carts, id];
         setCarts(newCarts);
+        console.log("Cart updated:", newCarts); // Debugging line
         await updateUserData(newCarts, favorites);
         notification(`${product.product_name} səbətə əlavə edildi`);
       } else {
@@ -117,6 +118,7 @@ export const AppContextProvider = ({ children }) => {
       notification(`Məhsul tapılmadı`);
     }
   };
+  
   
   const removeFromCart = async (id) => {
     const newCarts = carts.filter((item) => item !== id);
@@ -130,7 +132,9 @@ export const AppContextProvider = ({ children }) => {
       notification('Məhsul tapılmadı');
     }
   };
-
+  const isInCart = (id) => {
+    return carts.includes(id);
+  };
   const fetchCartProducts = () => {
     return products.filter((product) => carts.includes(product.product_id));
   };
@@ -321,7 +325,8 @@ export const AppContextProvider = ({ children }) => {
     setSelectedPrice,
     selectedCategory,
     setSelectedCategory,
-    setCarts
+    setCarts,
+    isInCart  
   };
 
   return <AppContext.Provider value={values}>{children}</AppContext.Provider>;

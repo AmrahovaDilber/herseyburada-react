@@ -7,18 +7,18 @@ import { useContextApp } from "../../context/AppContext";
 export default function CategorySection() {
   const location = useLocation();
   const currentPath = location.pathname;
-  const { selectedCategories,handleCategoryChange } = useContextApp();
+  const { selectedCategories, handleCategoryChange } = useContextApp();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
 
   return (
-    <section className=" mx-auto ">
-      <div className="mt-8 lg:mt-[40px] mb-8 lg:mb-[60px] flex flex-col lg:flex-row">
+    <div className="mt-8 lg:mt-[40px] w-full  mb-[100px] ">
+      <div className="flex flex-col lg:flex-row gap-4">
         {/* LEFTBOX */}
-        <div className="w-full lg:w-[417px] lg:mr-[36px] mb-6 lg:mb-0">
+        <div className="w-full lg:w-[19%]   mb-6 lg:mb-0">
           {/* Mobile versiya buttonu */}
           <button
-            className="lg:hidden w-full bg-[#FF7518] text-white py-2 px-4 rounded mb-4"
+            className="lg:hidden w-full bg-[#FF7518] text-white py-3 px-4 rounded mb-2"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             { "Məhsul Kataloqu" }
@@ -73,7 +73,7 @@ export default function CategorySection() {
                   {/* Dropdown content */}
                   {(activeDropdown === index ||
                     (mobileMenuOpen && isActive)) && (
-                    <div className="lg:absolute lg:left-full lg:top-0 w-full lg:w-[calc(100vw-280px)] max-w-[980px] p-4 bg-white border border-gray-300 shadow-lg z-30 h-[350px] rounded-lg">
+                    <div className="lg:absolute lg:left-full lg:top-0 w-full lg:w-[calc(100vw)] max-w-[1050px] p-4 bg-white border border-gray-300 shadow-lg z-30 h-[500px] rounded-lg">
                       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
                         {item.subkateqoriyalar.map(
                           (subkateqoriya, subIndex) => {
@@ -88,7 +88,7 @@ export default function CategorySection() {
                                   isSubActive
                                     ? "bg-blue-100 text-[#FF7518] font-semibold"
                                     : "text-[#333] hover:bg-gray-100 hover:text-[#FF7518]"
-                                } transition-all duration-300 ease-in-out cursor-pointer rounded-md shadow-sm`}
+                                } transition-all duration-300 ease-in-out cursor-pointer rounded-md `}
                               >
                                 {subkateqoriya.subkateqoriya_adı}
                               </Link>
@@ -104,11 +104,12 @@ export default function CategorySection() {
           </ul>
         </div>
 
+
         {/* RIGHTBOX */}
-        <div className="max-w-[930px] lg:flex-grow">
+        <div className="w-full lg:w-[81%]">
           <Slider />
         </div>
       </div>
-    </section>
+    </div>
   );
 }

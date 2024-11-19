@@ -2,7 +2,7 @@ function DeliveryInfo() {
   return (
     <div className="w-full border rounded-lg mt-10">
       <div className="flex flex-col sm:flex-row items-center gap-4 py-6 px-4 sm:px-6 border-b">
-        <div className="flex items-center justify-center text-orange-500">
+        <div className="flex items-center justify-center ">
           <i className="fa-solid fa-truck text-3xl" />
         </div>
         <div className="text-center sm:text-left">

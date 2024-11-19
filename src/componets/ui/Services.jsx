@@ -2,9 +2,9 @@ import { servicesData } from "../../data/categoriesData";
 
 export default function Services() {
   return (
-    <div className="px-4 sm:px-8 lg:px-16">
+    <div className="px-4 sm:px-8 lg:px-12">
       <section>
-        <div className="grid grid-cols-1 sm:grid-cols-3  mt-[50px] mb-[80px] gap-[20px] lg:gap-[40px]">
+        <div className="grid grid-cols-1 sm:grid-cols-3  mt-[50px] mb-[80px] gap-[20px] lg:gap-[50px]">
           {servicesData.map((service, index) => (
             <div
               key={index}
@@ -19,10 +19,10 @@ export default function Services() {
                   />
                 </figure>
               </div>
-              <p className="font-semibold text-[14px] sm:text-[18px] lg:text-[20px] text-[#000000] mt-[16px] lg:mt-[24px] mb-[8px] relative hover:border-b-0 after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-[#ff9130] after:transition-width after:duration-300 hover:after:w-full">
+              <p className="font-semibold text-[14px] sm:text-[18px] lg:text-[18px] text-[#000000] mt-[16px] lg:mt-[24px] mb-[8px] relative    ">
                 {service.title}
               </p>
-              <p className="font-normal text-[12px] sm:text-[14px] lg:text-[16px]">
+              <p className="font-normal text-[12px] sm:text-[14px] lg:text-[16px] w-[400px]">
                 {service.description}
               </p>
             </div>

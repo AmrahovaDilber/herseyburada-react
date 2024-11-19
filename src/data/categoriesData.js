@@ -4640,14 +4640,6 @@ const data = {
       ],
     },
 
-
-
-
-
-
-
-
-
     {
       kateqoriya_id: 4,
       kateqoriya_adı: "Ev & Yaşam",
@@ -4959,6 +4951,220 @@ const data = {
         },
       ],
     },
+    {
+      kateqoriya_id: 6,
+      kateqoriya_adı: "İdman & Çöl",
+      icon:MdOutlineSportsTennis ,
+      subkateqoriyalar: [
+        {
+          subkateqoriya_id: 1,
+          subkateqoriya_adı: "İdman Köynəyi",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 2,
+          subkateqoriya_adı: "Gödəkçə və Jilet",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 3,
+          subkateqoriya_adı: "Yağış Paltarı",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 4,
+          subkateqoriya_adı: "İdman Büstqalteri",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 5,
+          subkateqoriya_adı: "İdman Paltosu",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 6,
+          subkateqoriya_adı: "İdman Papağı",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 7,
+          subkateqoriya_adı: "İdman Ayaqqabısı",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 8,
+          subkateqoriya_adı: "İdman Zalı Üçün Avadanlıqlar",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 10,
+          subkateqoriya_adı: "Mat",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 11,
+          subkateqoriya_adı: "İp Atlama",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 12,
+          subkateqoriya_adı: "Boks Əlcəyi",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 13,
+          subkateqoriya_adı: "Düşərgə Alətləri",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 13,
+          subkateqoriya_adı: "Alpinizm və Dırmanma",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 15,
+          subkateqoriya_adı: "Su İdmanı Avadanlıqları",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 16,
+          subkateqoriya_adı: "Dalğıc Avadanlıqları",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 17,
+          subkateqoriya_adı: "Balıqçılıq Ləvazimatları",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 19,
+          subkateqoriya_adı: "Çadır",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 20,
+          subkateqoriya_adı: "Pilates Topları",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 21,
+          subkateqoriya_adı: "Protein tozu",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 22,
+          subkateqoriya_adı: "Top",
+          məhsullar: [],
+        },
+      ],
+    },
+    {
+      kateqoriya_id: 6,
+      kateqoriya_adı: "İdman & Çöl",
+      icon:MdOutlineSportsTennis ,
+      subkateqoriyalar: [
+        {
+          subkateqoriya_id: 1,
+          subkateqoriya_adı: "İdman Köynəyi",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 2,
+          subkateqoriya_adı: "Gödəkçə və Jilet",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 3,
+          subkateqoriya_adı: "Yağış Paltarı",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 4,
+          subkateqoriya_adı: "İdman Büstqalteri",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 5,
+          subkateqoriya_adı: "İdman Paltosu",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 6,
+          subkateqoriya_adı: "İdman Papağı",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 7,
+          subkateqoriya_adı: "İdman Ayaqqabısı",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 8,
+          subkateqoriya_adı: "İdman Zalı Üçün Avadanlıqlar",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 10,
+          subkateqoriya_adı: "Mat",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 11,
+          subkateqoriya_adı: "İp Atlama",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 12,
+          subkateqoriya_adı: "Boks Əlcəyi",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 13,
+          subkateqoriya_adı: "Düşərgə Alətləri",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 13,
+          subkateqoriya_adı: "Alpinizm və Dırmanma",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 15,
+          subkateqoriya_adı: "Su İdmanı Avadanlıqları",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 16,
+          subkateqoriya_adı: "Dalğıc Avadanlıqları",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 17,
+          subkateqoriya_adı: "Balıqçılıq Ləvazimatları",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 19,
+          subkateqoriya_adı: "Çadır",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 20,
+          subkateqoriya_adı: "Pilates Topları",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 21,
+          subkateqoriya_adı: "Protein tozu",
+          məhsullar: [],
+        },
+        {
+          subkateqoriya_id: 22,
+          subkateqoriya_adı: "Top",
+          məhsullar: [],
+        },
+      ],
+    },
   ],
 };
 
@@ -4984,20 +5190,21 @@ export const statsData = [
 export const servicesData = [
   {
     imgSrc: "/icon-delivery.svg",
-    title: "FREE AND FAST DELIVERY",
-    description: "Free delivery for all orders over $140",
+    title: "PULSUZ VƏ SÜRƏTLİ ÇATDIRILMA",
+    description: "Bütün $140-dan yuxarı sifarişlər üçün pulsuz çatdırılma",
   },
   {
     imgSrc: "/icon-headphone.svg",
-    title: "24/7 CUSTOMER SERVICE",
-    description: "Friendly 24/7 customer support",
+    title: "24/7 MÜŞTƏRİ XİDMƏTİ",
+    description: "Dostyana 24/7 müştəri dəstəyi",
   },
   {
     imgSrc: "/icon-delivery.svg",
-    title: "MONEY BACK GUARANTEE",
-    description: "We return money within 30 days",
+    title: "PULUN GERİ QAYTARILMA ZƏMANƏTİ",
+    description: "Pulunuzu 30 gün ərzində geri qaytarırıq",
   },
 ];
+
 
 export default data;
 

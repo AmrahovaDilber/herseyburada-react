@@ -8,16 +8,26 @@ export default function BestSellers() {
   const [startIndex, setStartIndex] = useState(0);
   const [perIndex, setPerIndex] = useState(4);
   
+  // function updatePerIndex() {
+  //   const width = window.innerWidth;
+  //   if (width >= 1024) {
+  //     setPerIndex(5); // Desktop
+  //   } else if (width >= 640) {
+  //     setPerIndex(3); // Tablet
+  //   } else {
+  //     setPerIndex(2); // Mobile
+  //   }
+  // }
+    
   function updatePerIndex() {
     const width = window.innerWidth;
-    if (width >= 1024) {
-      setPerIndex(5); // Desktop
-    } else if (width >= 640) {
-      setPerIndex(3); // Tablet
+    if (width >= 720) {
+      setPerIndex(5); 
     } else {
-      setPerIndex(2); // Mobile
+      setPerIndex(2); 
     }
   }
+
 
  
   useEffect(() => {
