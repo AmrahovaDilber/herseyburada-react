@@ -28,7 +28,7 @@ export default function ProductItem({ product }) {
           <figure className="w-full h-full aspect-auto transition-transform duration-300 group-hover:scale-105">
             <img
               src={product.image_url}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain"
               alt={product.product_name}
             />
             {/* <div className="absolute inset-0 bg-gradient-to-t from-black opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div> */}
