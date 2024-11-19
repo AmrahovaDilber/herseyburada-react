@@ -78,21 +78,21 @@ export default function CartPage() {
           setText={setText}
           updateProductQuantity={updateProductQuantity}
         />
+<div className="mt-[24px] flex flex-col sm:flex-row w-full justify-between gap-[20px] sm:gap-[0px]">
+  <Link
+    to="/"
+    className="border border-black/50 text-center rounded-[4px] w-full sm:w-[18%]  py-[16px] font-medium hover:bg-gray-100 transition-colors duration-200"
+  >
+    Return To Shop
+  </Link>
+  <button
+    onClick={handleUpdateCart}
+    className="border border-black/50 rounded-[4px] w-full sm:w-[18%]  py-[16px] font-medium hover:bg-gray-100 transition-colors duration-200"
+  >
+    Update Cart
+  </button>
+</div>
 
-        <div className="mt-[24px] flex justify-between gap-[20px] sm:gap-[0px]">
-          <Link
-            to="/"
-            className="border border-black/50 rounded-[4px] px-[48px] py-[16px] font-medium hover:bg-gray-100 transition-colors duration-200"
-          >
-            Return To Shop
-          </Link>
-          <button
-            onClick={handleUpdateCart}
-            className="border border-black/50 rounded-[4px] px-[48px] py-[16px] font-medium hover:bg-gray-100 transition-colors duration-200"
-          >
-            Update Cart
-          </button>
-        </div>
       </div>
     </main>
   );

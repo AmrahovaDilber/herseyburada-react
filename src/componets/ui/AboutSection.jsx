@@ -1,6 +1,6 @@
 export function AboutSection() {
   return (
-    <div className="flex flex-col lg:flex-row justify-between items-center lg:items-start mb-16 lg:mb-36 rounded-lg px-4 lg:px-0 gap-[40px]">
+    <div className="flex flex-col lg:flex-row justify-between items-center lg:items-start mb-16 lg:mb-36 rounded-lg  lg:px-0 gap-[40px]">
       <div className="w-full lg:w-1/2 mb-8 lg:mb-0">
         <h1 className="font-semibold text-2xl sm:text-3xl lg:text-4xl xl:text-5xl tracking-wide mb-6 lg:mb-10 text-[#ff9130] relative after:content-[''] after:block after:w-24 sm:after:w-40 lg:after:w-[300px] after:h-[3px] lg:after:h-[4px] after:bg-gradient-to-r after:from-[#ff9130] after:to-[#eff88c] after:mt-2 lg:after:mt-3">
           Bizim hekayəmiz

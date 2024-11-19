@@ -13,7 +13,7 @@ const FilterByPrice = () => {
 
   return (
     <div>
-      <h2 className="font-bold mb-2">Filter by Price</h2>
+      <h2 className="font-bold text-gray-700 mb-3 text-lg border-b pb-2">Filter by Price</h2>
       <div className="space-y-2">
         <p>Qiymət: $0 - ${priceRange}</p>
         <input 

@@ -65,7 +65,7 @@ const LoginForm = () => {
   return (
     <>
       {userLoggedIn && <Navigate to={"/"} replace={true} />}
-      <main className="flex flex-col justify-center items-center min-h-screen bg-gray-100">
+      <main className="flex flex-col justify-center items-center min-h-screen bg-gray-100 px-4 sm:px-0">
         <div className="bg-white shadow-lg border rounded-lg p-8 w-full max-w-[550px] mx-auto my-8">
           <Link to="/">
             <figure className="w-[180px]  mb-5 mx-auto">
@@ -155,7 +155,7 @@ const LoginForm = () => {
             </div>
 
             {/* Sign Up Link */}
-            <div className="flex justify-between">
+            <div className="flex justify-between flex-col sm:flex-row">
               <p className="form-bottom opacity-80 text-center sm:text-left">
                 Hesabın yoxdur?
                 <Link

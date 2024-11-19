@@ -15,7 +15,7 @@ export default function ProductDetail() {
   return (
     <div className="flex flex-col">
       {/* Main Container */}
-      <div className="flex flex-col lg:flex-row gap-[50px]  my-12 max-w-7xl px-4 sm:px-6 lg:px-0">
+      <div className="flex flex-col lg:flex-row gap-[50px]  my-12 max-w-7xl  sm:px-6 lg:px-0">
         
         {/* Product Images */}
         <div className="w-full lg:w-[40%] rounded-lg overflow-hidden ">
@@ -29,7 +29,7 @@ export default function ProductDetail() {
         </div>
 
         {/* Product Details */}
-        <div className="w-full lg:w-[60%] space-y-6">
+        <div className="w-full lg:w-[60%] space-y-1 sm:space-y-6">
           <ProductInfo findProduct={findProduct} />
 
           {/* Product Price and Description */}
@@ -53,7 +53,7 @@ export default function ProductDetail() {
           <ProductOptions findProduct={findProduct} />
 
           {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 my-6">
+          <div className="flex flex-col sm:flex-row gap-5 justify-between my-6">
             <button
               onClick={() => addToCart(findProduct.product_id)}
               className="bg-orange-500 w-full sm:w-[48%] flex items-center justify-center gap-2 text-white px-5 py-3 rounded-lg shadow-md hover:bg-orange-600 transition duration-300"

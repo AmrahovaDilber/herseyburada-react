@@ -17,7 +17,7 @@ export default function Footer() {
               <div>
                 <Link
                   to="/"
-                  className="text-lg md:text-xl font-medium cursor-pointer opacity-70 hover:opacity-100"
+                  className="text-lg text-center sm:text-left md:text-xl font-medium cursor-pointer opacity-70 hover:opacity-100"
                 >
                   Abunə Olun
                 </Link>

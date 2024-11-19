@@ -14,10 +14,7 @@ function ProductInfo({ findProduct }) {
           <i className="fa-regular fa-star" />
         </div>
      
-        <div className="text-gray-500">
-          {findProduct.reviews.length} review{findProduct.reviews.length !== 1 && 's'}
-        </div>
-       
+    
         <div className="text-green-500 font-medium border-t sm:border-t-0 sm:border-l pl-0 sm:pl-4 pt-2 sm:pt-0">
           {findProduct.stockStatus}
         </div>

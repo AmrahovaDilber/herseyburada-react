@@ -16,7 +16,7 @@ const FilterByColor = () => {
 
   return (
     <div className="">
-      <h2 className="text-lg font-semibold mb-3 text-gray-700">
+      <h2 className="font-bold text-gray-700 mb-3 text-lg border-b pb-2">
         Filter by Color
       </h2>
       <ul className=" max-h-44 overflow-y-auto custom-scrollbar">
@@ -28,7 +28,7 @@ const FilterByColor = () => {
             <label className="flex items-center cursor-pointer">
               <input
                 type="checkbox"
-                className="mr-2 h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500 cursor-pointer"
+                className="mr-2 h-4 w-4  border-gray-300 rounded cursor-pointer"
                 checked={selectedColors.includes(name)}
                 onChange={() => handleColorChange(name)}
               />
