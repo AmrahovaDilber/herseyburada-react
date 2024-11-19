@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useContextApp } from "../../context/AppContext";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { IoMdHeart } from "react-icons/io";
+import { FaStar } from "react-icons/fa";
 
 export default function ProductItem({ product }) {
   const {
@@ -10,12 +11,22 @@ export default function ProductItem({ product }) {
     addToFavorites,
     removeFromFavorites,
     isFavorited,
-    isInCart
+    isInCart,
   } = useContextApp();
 
+  // Calculate the average rating
+  const averageRating =
+    product.reviews.length > 0
+      ? product.reviews.reduce((acc, review) => acc + review.rating, 0) / product.reviews.length
+      : 0;
+
+  const getStarColor = (index) => {
+    return index < Math.round(averageRating) ? "#fbd439" : "#CCCCCC";
+  };
+
   return (
-    <div className="h-auto relative shadow-md rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300 bg-white">
-      <div className="relative flex items-center justify-center h-[250px] bg-[#F5F5F5] group">
+    <div className="group relative shadow-lg rounded-lg overflow-hidden bg-white transition-all duration-300 hover:scale-105">
+      <div className="relative flex items-center justify-center h-[250px] bg-[#F5F5F5]">
         <div className="w-[55px] h-[26px] z-30 bg-[#FF7518] rounded-md absolute top-[12px] left-[8px]">
           <p className="font-normal text-[12px] text-center py-1 text-[#FAFAFA]">
             -{product.discount ? product.discount.toFixed(0) : 0}%
@@ -28,13 +39,12 @@ export default function ProductItem({ product }) {
           <figure className="w-full h-full aspect-auto transition-transform duration-300 group-hover:scale-105">
             <img
               src={product.image_url}
-              className="w-full h-full object-contain"
+              className="w-full h-full object-cover"
               alt={product.product_name}
             />
-            {/* <div className="absolute inset-0 bg-gradient-to-t from-black opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div> */}
           </figure>
         </Link>
-        <figure className="size-[34px] rounded-full bg-white absolute top-[12px] right-[12px] flex items-center justify-center ">
+        <figure className="size-[34px] rounded-full bg-white absolute top-[12px] right-[12px] flex items-center justify-center">
           {!isFavorited(product.product_id) ? (
             <button
               onClick={() => addToFavorites(product.product_id)}
@@ -58,50 +68,51 @@ export default function ProductItem({ product }) {
           </figure>
           {isInCart(product.product_id) ? (
             <button
-            onClick={()=>removeFromCart(product.product_id)}
+              onClick={() => removeFromCart(product.product_id)}
               className="text-[#FFFF] text-[12px] font-normal"
             >
               Səbətdən Sil
             </button>
           ) : (
             <button
-            onClick={()=>addToCart(product.product_id)}
+              onClick={() => addToCart(product.product_id)}
               className="text-[#FFFF] text-[12px] font-normal"
             >
-             Səbətə Əlavə et
+              Səbətə Əlavə et
             </button>
           )}
         </div>
       </div>
 
-      <div className="p-3 flex flex-col">
-        <p className="font-medium text-[14px] md:text-[16px] text-[#000000] mb-[8px] line-clamp-1">
+      <div className="p-4 flex flex-col">
+        <p className="font-semibold text-[16px] text-[#000000] mb-[8px] line-clamp-1">
           {product.product_name}
         </p>
-        <div className="space-x-[8px] md:space-x-[12px] flex items-center mb-[8px]">
-          <p className="text-[14px] md:text-[17px] font-medium text-[#FF7518]">
+        <div className="space-x-[12px] flex items-center mb-[8px]">
+          <p className="text-[17px] font-medium text-[#FF7518]">
             ${product.price}
           </p>
-          <p className="text-[14px] md:text-[14px] font-medium text-[#a7a7a7] line-through">
+          <p className="text-[14px] font-medium text-[#a7a7a7] line-through">
             ${product.original_price}
           </p>
         </div>
-        <div className="flex space-x-[8px] items-center">
-          <div className="w-[70px] md:w-[100px] flex space-x-[4px] md:space-x-[8px]">
+        <div className="flex items-center mb-[8px]">
+          <p className="text-[14px] mt-1  text-[#7F7F7F] font-semibold">
+            {averageRating.toFixed(1)}
+          </p>
+          <div className="flex space-x-[4px] ml-2">
             {Array.from({ length: 5 }, (_, index) => (
-              <div key={index} className="w-[10px]">
-                <i className="text-[12px] md:text-[14px] fa-regular fa-star"></i>
+              <div key={index} className="width-[px]">
+                <FaStar
+                  className="fa-regular fa-star"
+                  style={{ color: getStarColor(index),objectFit:"cover",width:'14px' }}
+                />
               </div>
             ))}
           </div>
-          {product.reviews.map((rew, index) => (
-            <p
-              key={index}
-              className="text-[12px] md:text-[14px] text-[#7F7F7F] font-semibold"
-            >
-              ({rew.rating})
-            </p>
-          ))}
+          <div className="text-[13px] text-[#7F7F7F] ml-1 mt-1">
+            ({product.reviews.length})
+          </div>
         </div>
       </div>
     </div>

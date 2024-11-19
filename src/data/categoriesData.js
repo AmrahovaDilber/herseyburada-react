@@ -4,6 +4,8 @@ import { IoMdPhonePortrait } from "react-icons/io";
 import { FaHome } from "react-icons/fa";
 import { FaStore } from "react-icons/fa";
 import { MdOutlineSportsTennis } from "react-icons/md";
+import { FaCar } from "react-icons/fa";
+import { GiLips } from "react-icons/gi";
 const data = {
   kateqoriyalar: [
     {
@@ -38,6 +40,61 @@ const data = {
                   review_id: 2,
                   rating: 4.5,
                   comment: "Materialı keyfiyyətlidir.",
+                },
+                {
+                  review_id: 3,
+                  rating: 5.0,
+                  comment: "Mükəmməl keyfiyyət, çox məmnunam.",
+                },
+                {
+                  review_id: 4,
+                  rating: 3.5,
+                  comment: "Fiyatına görə yaxşıdır, amma bəzi hissələri zəifdir.",
+                },
+                {
+                  review_id: 5,
+                  rating: 4.2,
+                  comment: "Çox rahat və şık görünür.",
+                },
+                {
+                  review_id: 6,
+                  rating: 4.8,
+                  comment: "Hər şey superdir, heç bir problem yoxdur.",
+                },
+                {
+                  review_id: 7,
+                  rating: 3.0,
+                  comment: "Rəng fotodakı kimi deyil, amma yenə də yaxşıdır.",
+                },
+                {
+                  review_id: 8,
+                  rating: 4.7,
+                  comment: "Tez çatdırıldı və gözləntilərimdən daha yaxşıdır.",
+                },
+                {
+                  review_id: 9,
+                  rating: 4.3,
+                  comment: "Çox rahat, hər gün istifadə edirəm.",
+                },
+                {
+                  review_id: 10,
+                  rating: 2.5,
+                  comment: "Dikiləri bəzən zəifdir, amma istifadə edilə bilər.",
+                },
+                {
+                  review_id: 11,
+                  rating: 4.9,
+                  comment: "Məhsul keyfiyyətlidir, hər kəsə tövsiyə edirəm.",
+                },
+                {
+                  review_id: 12,
+                  rating: 3.8,
+                  comment: "Çox gözəl görünür, amma bir az ağırdır.",
+                },
+                {
+                  review_id: 13,
+                  rating: 4.1,
+                  comment: "Fiyatına görə keyfiyyəti çox yaxşıdır.",
                 },
               ],
             },
@@ -4846,7 +4903,7 @@ const data = {
     },
     {
       kateqoriya_id: 6,
-      kateqoriya_adı: "İdman & Çöl",
+      kateqoriya_adı: "İdman & Əyləncə",
       icon:MdOutlineSportsTennis ,
       subkateqoriyalar: [
         {
@@ -4953,8 +5010,8 @@ const data = {
     },
     {
       kateqoriya_id: 6,
-      kateqoriya_adı: "İdman & Çöl",
-      icon:MdOutlineSportsTennis ,
+      kateqoriya_adı: "Avtomobil Məhsulları",
+      icon:FaCar  ,
       subkateqoriyalar: [
         {
           subkateqoriya_id: 1,
@@ -5059,9 +5116,9 @@ const data = {
       ],
     },
     {
-      kateqoriya_id: 6,
-      kateqoriya_adı: "İdman & Çöl",
-      icon:MdOutlineSportsTennis ,
+      kateqoriya_id: 7,
+      kateqoriya_adı: "Gözəllik Məhsulları",
+      icon:GiLips  ,
       subkateqoriyalar: [
         {
           subkateqoriya_id: 1,

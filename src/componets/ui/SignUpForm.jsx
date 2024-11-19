@@ -71,7 +71,7 @@ const SignupForm = () => {
               className="flex flex-col space-y-6"
               method="post"
             >
-              {/* Name Input */}
+            
               <div>
                 <input
                   type="text"
@@ -84,7 +84,7 @@ const SignupForm = () => {
                 </p>
               </div>
 
-              {/* Surname Input */}
+            
               <div>
                 <input
                   type="text"
@@ -99,7 +99,7 @@ const SignupForm = () => {
                 </p>
               </div>
 
-              {/* Email Input */}
+            
               <div>
                 <input
                   type="email"
@@ -118,10 +118,10 @@ const SignupForm = () => {
                 </p>
               </div>
 
-              {/* Phone Number Input */}
+       
               <div>
                 <input
-                  type="number"
+                  type="text"
                   {...registerUser("number", {
                     required: "Telefon nömrəsi tələb olunur",
                     minLength: {
@@ -138,7 +138,7 @@ const SignupForm = () => {
                 </p>
               </div>
 
-              {/* Password Input */}
+             
               <div className="relative">
                 <input
                   type={showPassword ? "text" : "password"}
@@ -170,7 +170,7 @@ const SignupForm = () => {
                 </p>
               </div>
 
-              {/* Re-enter Password Input */}
+ 
               <div className="relative">
                 <input
                   type={showRePassword ? "text" : "password"}
@@ -201,7 +201,7 @@ const SignupForm = () => {
                 </p>
               </div>
 
-              {/* Submit Button */}
+
               <button
                 className="bg-[#ff9130] hover:bg-[#e08430] text-white py-3 rounded-md transition-colors"
                 type="submit"

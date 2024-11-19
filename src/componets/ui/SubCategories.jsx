@@ -5,15 +5,14 @@ export default function SubCategories() {
     const { slug } = useParams();
     const { allData } = useContextApp();
 
-    // Find the subcategory that matches the slug
+   
     const category = allData.kateqoriyalar.find(category => 
         category.subkateqoriyalar.some(sub => sub.subkateqoriya_adı === slug)
     );
     
-    // Find the subcategory with matching slug
     const subcategory = category?.subkateqoriyalar.find(sub => sub.subkateqoriya_adı === slug);
     
-    // If subcategory is found, flatten all products
+
     const products = subcategory ? subcategory.mehsullar : [];
     
     return (

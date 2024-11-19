@@ -5,7 +5,8 @@ import { useContextApp } from "../context/AppContext";
 
 export default function CartPage() {
   const [cartProducts, setCartProducts] = useState([]);
-  const { fetchCartProducts, carts, setCarts, updateUserData, fetchProducts } = useContextApp();
+  const { fetchCartProducts, carts, setCarts, updateUserData, fetchProducts } =
+    useContextApp();
   const [text, setText] = useState("");
   const [shipping, setShipping] = useState(25);
 
@@ -29,22 +30,21 @@ export default function CartPage() {
   }
 
   async function handleUpdateCart() {
-    // Clear the cart completely
+   
     setCarts([]);
-    
-    // Update local state
+
     setCartProducts([]);
-    
-    // Update user data in backend/localStorage
-    await updateUserData([], []); // Assuming the second array is for favorites
-    
-    // Fetch updated products (this will reflect the empty cart)
+
+   
+    await updateUserData([], []); 
+
+   
     fetchProducts([]);
   }
 
   function updateProductQuantity(productId, newQuantity) {
-    setCartProducts(prevProducts =>
-      prevProducts.map(product =>
+    setCartProducts((prevProducts) =>
+      prevProducts.map((product) =>
         product.product_id === productId
           ? { ...product, quantity: newQuantity }
           : product
@@ -78,21 +78,20 @@ export default function CartPage() {
           setText={setText}
           updateProductQuantity={updateProductQuantity}
         />
-<div className="mt-[24px] flex flex-col sm:flex-row w-full justify-between gap-[20px] sm:gap-[0px]">
-  <Link
-    to="/"
-    className="border border-black/50 text-center rounded-[4px] w-full sm:w-[18%]  py-[16px] font-medium hover:bg-gray-100 transition-colors duration-200"
-  >
-    Return To Shop
-  </Link>
-  <button
-    onClick={handleUpdateCart}
-    className="border border-black/50 rounded-[4px] w-full sm:w-[18%]  py-[16px] font-medium hover:bg-gray-100 transition-colors duration-200"
-  >
-    Update Cart
-  </button>
-</div>
-
+        <div className="mt-[24px] flex flex-col sm:flex-row w-full justify-between gap-[20px] sm:gap-[0px]">
+          <Link
+            to="/"
+            className="border border-black/50 text-center rounded-[4px] w-full sm:w-[18%]  py-[16px] font-medium hover:bg-gray-100 transition-colors duration-200"
+          >
+            Alışverişə Qayıt
+          </Link>
+          <button
+            onClick={handleUpdateCart}
+            className="border border-black/50 rounded-[4px] w-full sm:w-[18%]  py-[16px] font-medium hover:bg-gray-100 transition-colors duration-200"
+          >
+            Səbəti Sıfırla
+          </button>
+        </div>
       </div>
     </main>
   );

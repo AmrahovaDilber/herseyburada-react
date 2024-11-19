@@ -7,7 +7,7 @@ export default function AppLayout({ children }) {
     <div className="bg-[#fafaf9] w-full h-full">
         <ScrollToTop /> 
       <Header></Header>
-      <div className=" max-w-7xl mx-auto px-4 sm:px-0  ">{children}</div>
+      <div className="overflow-x-hidden max-w-7xl mx-auto px-4 sm:px-0  ">{children}</div>
       <Footer></Footer>
     </div>
   );

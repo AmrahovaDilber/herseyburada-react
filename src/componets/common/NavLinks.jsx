@@ -70,7 +70,7 @@ export default function NavLinks() {
             </span>
           )}
         </div>
-        <span>Seçilmişlər</span>
+        <span>Sevimlilər</span>
       </Link>
 
       <div className="relative group" ref={dropdownRef}>

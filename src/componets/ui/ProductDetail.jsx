@@ -14,10 +14,7 @@ export default function ProductDetail() {
 
   return (
     <div className="flex flex-col">
-      {/* Main Container */}
       <div className="flex flex-col lg:flex-row gap-[50px]  my-12 max-w-7xl  sm:px-6 lg:px-0">
-        
-        {/* Product Images */}
         <div className="w-full lg:w-[40%] rounded-lg overflow-hidden ">
           <figure className="h-[300px] sm:h-[400px] lg:h-[500px] flex items-center justify-center">
             <img
@@ -28,12 +25,10 @@ export default function ProductDetail() {
           </figure>
         </div>
 
-        {/* Product Details */}
-        <div className="w-full lg:w-[60%] space-y-1 sm:space-y-6">
+        <div className="w-full lg:w-[60%] space-y-6 ">
           <ProductInfo findProduct={findProduct} />
 
-          {/* Product Price and Description */}
-          <div className="space-y-4 border-b pb-6">
+          <div className="space-y-1 sm:space-y-4 border-b pb-6">
             <div className="flex items-center gap-4">
               <div className="text-sm md:text-base font-medium text-gray-500 line-through">
                 ${findProduct.original_price}
@@ -43,8 +38,9 @@ export default function ProductDetail() {
               </span>
             </div>
             <div className="text-xl font-bold text-gray-800">
-              ${(
-                findProduct.original_price - 
+              $
+              {(
+                findProduct.original_price -
                 (findProduct.original_price * findProduct.discount) / 100
               ).toFixed(2)}
             </div>
@@ -52,7 +48,6 @@ export default function ProductDetail() {
 
           <ProductOptions findProduct={findProduct} />
 
-          {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-5 justify-between my-6">
             <button
               onClick={() => addToCart(findProduct.product_id)}
@@ -74,8 +69,7 @@ export default function ProductDetail() {
           <DeliveryInfo />
         </div>
       </div>
-      
-      {/* Review Section */}
+
       <Review findProduct={findProduct} />
     </div>
   );
