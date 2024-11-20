@@ -91,7 +91,7 @@ export default function Products() {
 
   return (
     <div className="products-page">
-      <div className="products border border-gray-200 grid grid-cols-2 sm:grid-cols-4 gap-[30px] shadow-md rounded-lg p-4 bg-white">
+      <div className="products border border-gray-200 grid grid-cols-2 sm:grid-cols-4 gap-[18px] shadow-md rounded-lg p-3 bg-white">
         {filteredProducts.length > 0 ? (
           filteredProducts.map((product, index) => (
             <ProductItem key={index} product={product} />

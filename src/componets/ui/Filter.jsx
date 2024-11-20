@@ -7,7 +7,7 @@ function Filter() {
       {/* Sidebar */}
       <ProductsSidebar></ProductsSidebar>
       {/* Main Content */}
-      <div className="flex-1 ml-8">
+      <div className="flex-1 ml-7">
         {/* Results Summary and Sorting */}
 
         {/* Product Listing */}

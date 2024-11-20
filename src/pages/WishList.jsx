@@ -19,14 +19,14 @@ export default function WishList() {
 
   return (
     <main className="min-h-screen py-10">
-      <div className="container mx-auto px-4 md:px-0">
+      <div className="container mx-auto  md:px-0">
         <div className="flex flex-col sm:flex-row justify-between items-center mb-8">
           <p className="text-2xl font-semibold text-gray-800">
            Sevimlilər ({favoritesProducts.length})
           </p>
         </div>
 
-        <div className="grid grid-cols-2  md:grid-cols-3 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-2  md:grid-cols-3 lg:grid-cols-5 gap-[20px]">
           {favoritesProducts.map((product, index) => (
             <ProductItem product={product} key={product.product_id} index={index} />
           ))}

@@ -23,7 +23,7 @@ export default function ProductsSidebar() {
       <div
         className={`fixed inset-y-0 left-0 transform ${
           isOpen ? "translate-x-0 " : "-translate-x-full"
-        }  md:translate-x-0 w-[244px] h-[100vh] overflow-y-auto md:sticky top-[64px] sm:top-[70px] space-y-6 border border-gray-200 shadow-md rounded-lg p-4 bg-white z-50 transition-transform duration-300 ease-in-out`}
+        }  md:translate-x-0 w-[244px] h-[100vh] overflow-y-auto md:sticky top-[0px] sm:top-[0px] space-y-6 border border-gray-200 shadow-md rounded-lg p-4 bg-white z-50 transition-transform duration-300 ease-in-out`}
       >
         <FilterProductSubCategories />
         <FilterByPrice />
