@@ -1,8 +1,8 @@
-export default function Coupon({ handleApply,text,setText }) {
+export default function Coupon({ handleApply, text, setText }) {
   return (
     <div>
       <input
-        onChange={(e)=>setText(e.target.value)}
+        onChange={(e) => setText(e.target.value)}
         value={text}
         type="text"
         id="coupon-code"
@@ -14,7 +14,7 @@ export default function Coupon({ handleApply,text,setText }) {
         id="apply-coupon"
         className="w-full sm:w-60 h-[56px] rounded-md text-white bg-[#ff7518] transition-colors hover:bg-[#b85a17] duration-200"
       >
-      Kupon tətbiq edin
+        Kupon tətbiq edin
       </button>
       <p className="mt-4 text-gray-400 text-center mb-3 sm:mb-0 sm:text-left">
         <span id="coupon-text">"BURADA"</span> kodundan istifadə edərək

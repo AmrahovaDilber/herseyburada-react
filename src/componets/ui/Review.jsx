@@ -13,7 +13,7 @@ export default function Review({ findProduct }) {
   };
 
   return (
-    <div className="my-4 w-full max-w-4xl mx-auto p-8 bg-white shadow-lg rounded-xl">
+    <div className="my-4 w-full  mx-auto p-8 bg-white shadow-lg rounded-xl">
       <div className="flex flex-col space-y-8">
         {/* Tab Buttons */}
         <div className="flex items-center gap-4 border-b pb-4">

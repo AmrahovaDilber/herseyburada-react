@@ -3,15 +3,17 @@ import CartItem from "./CartItem";
 import CartTotal from "./CartTotal";
 import { useContextApp } from "../../context/AppContext";
 import Coupon from "./Coupan";
-export default function CartList({ handleApply, text, setText }) {
+
+export default function CartList() {
   const { carts, fetchCartProducts } = useContextApp();
   const [productCounts, setProductCounts] = useState({});
   const [cartProducts, setCartProducts] = useState([]);
   const [overallSubtotal, setOverallSubtotal] = useState(0);
+  const [text, setText] = useState("");
+  const [isCouponApplied, setIsCouponApplied] = useState(false);
 
   useEffect(() => {
     const fetchedProducts = fetchCartProducts();
-    console.log("Fetched products:", fetchedProducts);
     setCartProducts(fetchedProducts);
     const initialCounts = fetchedProducts.reduce((acc, product) => {
       acc[product.product_id] = product.quantity || 1;
@@ -21,8 +23,16 @@ export default function CartList({ handleApply, text, setText }) {
     calculateOverallSubtotal(fetchedProducts, initialCounts);
   }, [carts, fetchCartProducts]);
 
+  const handleApplyCoupon = () => {
+    if (text === "BURADA") {
+      setIsCouponApplied(true);
+      setText(""); // Clear the input field after applying the coupon
+    } else {
+      alert("Invalid coupon code");
+    }
+  };
+
   const updateProductCount = (id, newCount) => {
-    console.log(`Updating count for product ${id} to ${newCount}`);
     setProductCounts((prevCounts) => {
       const newCounts = {
         ...prevCounts,
@@ -43,8 +53,7 @@ export default function CartList({ handleApply, text, setText }) {
   const calculateSubtotal = (product) => {
     const count = productCounts[product.product_id] || 1;
     const price = parseFloat(product.original_price) || 0;
-    const subtotal = (price * count).toFixed(2);
-    return subtotal;
+    return (price * count).toFixed(2);
   };
 
   const calculateOverallSubtotal = (products, counts) => {
@@ -58,14 +67,13 @@ export default function CartList({ handleApply, text, setText }) {
 
   return (
     <div className="space-y-6">
-     <div className="grid  grid-cols-[2fr_1fr_1fr_1fr_1fr] gap-2 sm:gap-4 items-center h-12 sm:h-16 font-semibold border border-gray-100 shadow-sm px-2 sm:px-4 py-1 sm:py-2 text-sm sm:text-base">
-  <div className="truncate inline text-sm sm:text-lg font-semibold text-gray-800 sm:text-gray-900">Məhsul</div>
-  <div className="truncate  inline text-sm sm:text-lg font-semibold text-gray-800 sm:text-gray-900">Qiymət</div>
-  <div className="truncate  inline text-sm sm:text-lg font-semibold text-gray-800 sm:text-gray-900">Kəmiyyət</div>
-        <div className="truncate text-center  inline text-sm sm:text-lg font-semibold text-gray-800 sm:text-gray-900">Cəmi</div>
-        
-  <div className="truncate text-center  inline text-sm sm:text-lg font-semibold text-gray-800 sm:text-gray-900">Sil</div>
-</div>
+      <div className="grid grid-cols-[2fr_1fr_1fr_1fr_1fr] gap-2 sm:gap-4 items-center h-12 sm:h-16 font-semibold border border-gray-100 shadow-sm px-2 sm:px-4 py-1 sm:py-2 text-sm sm:text-base">
+        <div className="truncate text-sm sm:text-lg font-semibold text-gray-800 sm:text-gray-900">Məhsul</div>
+        <div className="truncate text-sm sm:text-lg font-semibold text-gray-800 sm:text-gray-900">Qiymət</div>
+        <div className="truncate text-sm sm:text-lg font-semibold text-gray-800 sm:text-gray-900">Kəmiyyət</div>
+        <div className="truncate text-center text-sm sm:text-lg font-semibold text-gray-800 sm:text-gray-900">Cəmi</div>
+        <div className="truncate text-center text-sm sm:text-lg font-semibold text-gray-800 sm:text-gray-900">Sil</div>
+      </div>
 
       <div className="space-y-4 h-[450px] overflow-y-auto">
         {cartProducts.length > 0 &&
@@ -75,21 +83,19 @@ export default function CartList({ handleApply, text, setText }) {
               product={product}
               count={productCounts[product.product_id] || 1}
               setCount={(newCount) => updateProductCount(product.product_id, newCount)}
-              updateProductCount={updateProductCount}
               subtotal={calculateSubtotal(product)}
             />
           ))}
         {cartProducts.length === 0 && (
           <div className="flex justify-center items-center h-80 rounded-lg">
-            <p className="text-gray-600 text-lg font-semibold">
-            Səbətiniz Boşdur
-            </p>
+            <p className="text-gray-600 text-lg font-semibold">Səbətiniz Boşdur</p>
           </div>
         )}
       </div>
+
       <div className="flex flex-col sm:flex-row justify-between w-full space-y-4 sm:space-y-0">
-        <Coupon handleApply={handleApply} text={text} setText={setText} />
-        <CartTotal subtotal={overallSubtotal} />
+        <Coupon handleApply={handleApplyCoupon} text={text} setText={setText} />
+        <CartTotal subtotal={overallSubtotal} isCouponApplied={isCouponApplied} />
       </div>
     </div>
   );

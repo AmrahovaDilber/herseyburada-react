@@ -9,7 +9,16 @@ export default function CartPage() {
     useContextApp();
   const [text, setText] = useState("");
   const [shipping, setShipping] = useState(25);
+  const [isCouponApplied, setIsCouponApplied] = useState(false);
 
+  const handleApplyCoupon = () => {
+    if (text === "BURADA") {
+      setIsCouponApplied(true);
+      setText(""); // Clear the input field after applying the coupon
+    } else {
+      alert("Invalid coupon code");
+    }
+  };
   useEffect(() => {
     setCartProducts(fetchCartProducts());
   }, [fetchCartProducts, carts]);

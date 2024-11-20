@@ -29,9 +29,18 @@ const LoginForm = () => {
     console.log(data);
     if (!isSigningIn) {
       setIsSigningIn(true);
-      await doSignInWithEmailAndPassword(email, password);
+      try {
+        await doSignInWithEmailAndPassword(email, password);
+        notification("Uğurla daxil oldunuz!");
+      } catch (error) {
+        console.error("Daxilolma xətası:", error);
+        notification("Daxil olmaq alınmadı. Lütfən, məlumatları yoxlayın."); 
+      } finally {
+        setIsSigningIn(false);
+      }
     }
   }
+  
 
   const onGoogleSignIn = async (e) => {
     e.preventDefault();

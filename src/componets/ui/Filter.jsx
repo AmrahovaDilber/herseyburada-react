@@ -3,7 +3,7 @@ import ProductsSidebar from "./ProductsSidebar";
 
 function Filter() {
   return (
-    <div className="flex">
+    <div className="flex h-[100vh]">
       {/* Sidebar */}
       <ProductsSidebar></ProductsSidebar>
       {/* Main Content */}
