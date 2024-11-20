@@ -17,7 +17,7 @@ export default function ProductsSidebar() {
       {/* Toggle Button for Mobile */}
       <button
         onClick={toggleSidebar}
-        className="md:hidden p-2 fixed top-2 left-2 text-gray-700 focus:outline-none z-50"
+        className="md:hidden p-2 fixed top-18 left-2 text-gray-700 focus:outline-none z-40"
       >
         <HiOutlineMenuAlt3 className="w-7 h-7" />
       </button>
