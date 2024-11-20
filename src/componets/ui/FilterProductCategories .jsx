@@ -5,7 +5,7 @@ const FilterProductCategories = () => {
 
   return (
     <div className="p-2 rounded-lg ">
-      <h2 className="font-bold text-gray-700 mb-3 text-lg border-b pb-2">Product Categories</h2>
+      <h2 className="font-bold text-gray-700 mb-3 text-lg border-b pb-2">Kateqoriyalar</h2>
       <ul className="h-[240px] overflow-y-auto scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-gray-300 scrollbar-track-gray-100">
         {allData.kateqoriyalar.map((category) => {
           const isActive = selectedCategories.includes(category.kateqoriya_adı);

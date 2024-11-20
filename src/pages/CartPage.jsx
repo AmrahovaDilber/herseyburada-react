@@ -39,15 +39,12 @@ export default function CartPage() {
   }
 
   async function handleUpdateCart() {
-   
     setCarts([]);
 
     setCartProducts([]);
 
-   
-    await updateUserData([], []); 
+    await updateUserData([], []);
 
-   
     fetchProducts([]);
   }
 
@@ -68,14 +65,14 @@ export default function CartPage() {
           to="/"
           className="hover:text-black transition-colors duration-200"
         >
-          Home
+          Ana Səhifə
         </Link>
         <span className="mx-[12px]">/</span>
         <Link
           to="/cartpage"
           className="hover:text-black text-black transition-colors duration-200"
         >
-          Cart
+          Səbət
         </Link>
       </div>
 

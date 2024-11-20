@@ -26,7 +26,7 @@ export default function CartList() {
   const handleApplyCoupon = () => {
     if (text === "BURADA") {
       setIsCouponApplied(true);
-      setText(""); // Clear the input field after applying the coupon
+      setText("");
     } else {
       alert("Invalid coupon code");
     }

@@ -218,7 +218,7 @@ const SignupForm = () => {
                   className="ml-2 text-[#ff9130] hover:text-[#e08430] underline"
                 >
                   Daxil ol
-                </Link>
+              </Link>
               </p>
             </form>
           </div>

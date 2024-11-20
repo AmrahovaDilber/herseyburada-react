@@ -3,12 +3,13 @@ import ProductOptions from "../ui/ProductOptions";
 import DeliveryInfo from "../ui/DeliveryInfo";
 import { useParams } from "react-router-dom";
 import { useContextApp } from "../../context/AppContext";
-import { BsCartPlus } from "react-icons/bs";
+
 import { FaRegHeart } from "react-icons/fa";
 import Review from "./Review";
 
 export default function ProductDetail() {
-  const { products, addToCart, addToFavorites } = useContextApp();
+  const { products, addToCart, addToFavorites, isInCart, removeFromCart } =
+    useContextApp();
   const { slug } = useParams();
   const findProduct = products.find((product) => product.slug === slug);
 
@@ -49,14 +50,21 @@ export default function ProductDetail() {
           <ProductOptions findProduct={findProduct} />
 
           <div className="flex flex-col sm:flex-row gap-5 justify-between my-6">
-            <button
-              onClick={() => addToCart(findProduct.product_id)}
-              className="bg-orange-500 w-full sm:w-[48%] flex items-center justify-center gap-2 text-white px-5 py-3 rounded-lg shadow-md hover:bg-orange-600 transition duration-300"
-            >
-              <BsCartPlus className="text-[22px]" />
-              Səbətə Əlavə Et
-            </button>
-
+            {isInCart(findProduct.product_id) ? (
+              <button
+                onClick={() => removeFromCart(findProduct.product_id)}
+                className="bg-orange-500 w-full sm:w-[48%] flex items-center justify-center gap-2 text-white px-5 py-3 rounded-lg shadow-md hover:bg-orange-600 transition duration-300"
+              >
+                Səbətdən Sil
+              </button>
+            ) : (
+              <button
+                onClick={() => addToCart(findProduct.product_id)}
+                className="bg-orange-500 w-full sm:w-[48%] flex items-center justify-center gap-2 text-white px-5 py-3 rounded-lg shadow-md hover:bg-orange-600 transition duration-300"
+              >
+                Səbətə Əlavə et
+              </button>
+            )}
             <button
               onClick={() => addToFavorites(findProduct.product_id)}
               className="bg-gray-200 w-full sm:w-[48%] flex items-center justify-center gap-2 text-gray-700 px-5 py-3 rounded-lg shadow-md hover:bg-gray-300 transition duration-300"

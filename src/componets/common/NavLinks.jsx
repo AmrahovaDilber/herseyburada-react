@@ -75,10 +75,10 @@ export default function NavLinks() {
 
       <div className="relative group" ref={dropdownRef}>
         <button
-          className="text-gray-500 group-hover:text-[#ff9130]"
+          className="text-gray-500 "
           onClick={handleAccountClick}
         >
-          <div className="flex items-center gap-1 w-[35px] h-[35px] rounded-full bg-gray-200  transition-transform duration-300 ease-in-out group-hover:bg-[#ff9436] justify-center text-[#1a1a1a]">
+          <div className="flex items-center gap-1 w-[35px] h-[35px] rounded-full bg-gray-200  transition-transform duration-300 ease-in-out  justify-center text-[#1a1a1a]">
             <IoPersonOutline className=" rounded-full  text-[24px]   " />
           </div>
         </button>

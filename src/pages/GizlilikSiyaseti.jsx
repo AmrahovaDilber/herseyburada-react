@@ -206,14 +206,11 @@ export default function PrivacyPolicy() {
           </p>
           <ul className="list-disc list-inside pl-5 text-gray-600">
             <li>
-              <strong>E-Mail Ünvanı:</strong> dataprotection@hepsiglobal.com
+              <strong>E-Mail Ünvanı:</strong>  herseyburadaz28@gmail.com
             </li>
+         
             <li>
-              <strong>Poçt Ünvanı:</strong> Kuştepe Mah. Mecidiyeköy Yolu Cad.
-              Trump Towers Kule 2 Kat:2 No:12 34387 Şişli / İstanbul / TÜRKİYƏ
-            </li>
-            <li>
-              <strong>Telefon:</strong> 0850 252 40 00
+              <strong>Telefon:</strong> +994515489272
             </li>
             <li>
               <strong>Veb Sayt:</strong>{" "}
@@ -221,7 +218,7 @@ export default function PrivacyPolicy() {
                 href="https://global.hepsiburada.com"
                 className="text-[#ff9130]"
               >
-                https://global.hepsiburada.com
+              herseyburadaz28@gmail.com
               </a>
             </li>
           </ul>

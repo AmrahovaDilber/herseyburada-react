@@ -74,8 +74,8 @@ export const AppContextProvider = ({ children }) => {
         await setDoc(userDocRef, { carts: [], favorites: [] });
       }
     } catch (error) {
-      console.error("Error fetching user data:", error);
-      notification("Error fetching user data. Please try again.");
+      console.error("İstifadəçi məlumatlarını əldə edərkən xəta baş verdi:", error);
+      notification("İstifadəçi məlumatlarını əldə edərkən xəta baş verdi. Yenidən cəhd edin.");
     }
   };
 
@@ -88,8 +88,8 @@ export const AppContextProvider = ({ children }) => {
           favorites: newFavorites
         });
       } catch (error) {
-        console.error("Error updating user data:", error);
-        notification("Error updating data. Please try again.");
+        console.error("İstifadəçi məlumatlarının yenilənməsi xətası:", error);
+        notification("Data yenilənərkən xəta baş verdi. Yenidən cəhd edin.");
       }
     } else {
       localStorage.setItem('carts', JSON.stringify(newCarts));
@@ -168,9 +168,9 @@ export const AppContextProvider = ({ children }) => {
   
     if (findProduct) {
       await updateUserData(carts, newFavorites);
-      notification(`${findProduct.product_name} removed from favorites`);
+      notification(`${findProduct.product_name} sevimlilərdən silindi`);
     } else {
-      notification(`Product not found`);
+      notification(`Məhsul tapılmadı`);
     }
   };
 

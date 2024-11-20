@@ -16,10 +16,10 @@ const FilterBySize = () => {
   return (
     <div className=" rounded-lg ">
       <h2 className="font-bold text-gray-700 mb-3 text-lg border-b pb-2">
-        Filter by Size
+        Ölçü
       </h2>
       <ul className="space-y-1 h-[170px] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
-        {sizes.map(({ size, count }) => (
+        {sizes.map(({ size }) => (
           <li key={size} className=" rounded-md p-1">
             <label className="flex items-center cursor-pointer text-gray-600 ">
               <input
@@ -29,7 +29,6 @@ const FilterBySize = () => {
                 onChange={() => handleSizeChange(size)}
               />
               <span className="font-medium">{size}</span>
-            
             </label>
           </li>
         ))}

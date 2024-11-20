@@ -10,7 +10,7 @@ export default function Services() {
               key={index}
               className="flex flex-col justify-center items-center text-center cursor-pointer p-4"
             >
-              <div className="bg-[#C1C1C1] hover:scale-110 transition ease-in-out w-[60px] h-[60px] lg:w-[80px] lg:h-[80px] rounded-full flex items-center justify-center">
+              <div className="bg-[#C1C1C1]  w-[60px] h-[60px] lg:w-[80px] lg:h-[80px] rounded-full flex items-center justify-center">
                 <figure className="w-[40px] h-[40px] lg:w-[58px] lg:h-[58px] bg-[#000000] rounded-full flex items-center justify-center">
                   <img
                     src={service.imgSrc}

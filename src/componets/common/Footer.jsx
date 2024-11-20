@@ -14,14 +14,7 @@ export default function Footer() {
                   className="w-32 md:w-40"
                 />
               </Link>
-              <div>
-                <Link
-                  to="/"
-                  className="text-lg text-center sm:text-left md:text-xl font-medium cursor-pointer opacity-70 hover:opacity-100"
-                >
-                  Abunə Olun
-                </Link>
-              </div>
+
               <div className="flex space-x-4">
                 <Link to="/" target="_blank">
                   <i className="text-lg md:text-2xl opacity-70 hover:opacity-100 fa-brands fa-facebook-f hover:text-[#1877F2]"></i>
@@ -45,8 +38,9 @@ export default function Footer() {
           <div className="mb-8 md:mb-0 text-center sm:text-left">
             <h3 className="font-medium text-lg md:text-xl mb-6 ">Dəstək</h3>
             <p className="text-base md:text-lg mb-4">Bakı, Azərbaycan</p>
-
-            <p className="text-base md:text-lg mb-4">+994 (51) 548 92 72</p>
+            <div className="text-base md:text-lg mb-4 cursor-pointer">
+              <Link to="tel:+994 51 548 92 72">+994 (51) 548 92 72</Link>
+            </div>
             <a href="mailto:herseyburadaz28@gmail.com">
               <p className="text-base md:text-lg mb-4">
                 herseyburadaz28@gmail.com
@@ -55,13 +49,13 @@ export default function Footer() {
           </div>
 
           <div className="mb-8 md:mb-0 flex flex-col">
-            <Link
+            {/* <Link
               to="/signup"
               className="text-base md:text-lg mb-4 opacity-70 hover:opacity-100 hover:underline"
             >
               Daxil ol
-            </Link>
-            <Link
+            </Link> */}
+            {/* <Link
               to="/cartpage"
               className="text-base md:text-lg mb-4 opacity-70 hover:opacity-100 hover:underline"
             >
@@ -72,17 +66,17 @@ export default function Footer() {
               className="text-base md:text-lg mb-4 opacity-70 hover:opacity-100 hover:underline"
             >
               Sevimlilər
-            </Link>
-            <Link
+            </Link> */}
+         
+          </div>
+
+          <div className="flex flex-col">
+              <Link
               to="/about"
               className="text-base md:text-lg mb-4 opacity-70 hover:opacity-100 hover:underline"
             >
               Haqqımızda
             </Link>
-          </div>
-
-          <div className="flex flex-col">
-            <h3 className="font-medium text-lg md:text-xl mb-6 ">Tez Link</h3>
             <Link
               to="/gizliliksiyaseti"
               className="text-base md:text-lg mb-4 opacity-70 hover:opacity-100 hover:underline"

@@ -63,7 +63,7 @@ export default function Header() {
           </div>
 
           {/* Search Bar (Visible on Larger Screens) */}
-          <div className="hidden lg:flex items-center py-[2px] grow mr-4 rounded-full border bg-white shadow-sm hover:shadow-md transition-all duration-300">
+          <div className="hidden lg:flex items-center py-[2px] grow mr-4 rounded-full border bg-white shadow-sm transition-all duration-300">
             <input
               className="bg-transparent placeholder-gray-500 outline-none text-sm grow px-6 py-2 transition-all duration-200"
               type="text"
@@ -71,7 +71,7 @@ export default function Header() {
               placeholder="Nə ilə maraqlanırsınız?"
               onChange={handleInputChange}
             />
-            <Link className="h-8 w-8 bg-[#ff9130] rounded-full cursor-pointer text-white flex justify-center items-center hover:bg-[#e7883b] mr-1 transition-colors duration-300 ease-in-out shadow-md hover:shadow-lg">
+            <Link className="h-8 w-8 bg-[#ff9130] rounded-full cursor-pointer text-white flex justify-center items-center  mr-1 transition-colors duration-300 ease-in-out shadow-md ">
               <IoIosSearch className="fa-solid fa-magnifying-glass text-[18px]" />
             </Link>
           </div>
@@ -116,7 +116,7 @@ export default function Header() {
                     placeholder="Nə ilə maraqlanırsınız?"
                     onChange={handleInputChange}
                   />
-                  <Link className="size-8 bg-[#ff9130] rounded-full cursor-pointer text-white inline-flex justify-center items-center hover:bg-[#e07575] mr-1">
+                  <Link className="size-8 bg-[#ff9130] rounded-full cursor-pointer text-white inline-flex justify-center items-center  mr-1">
                     <i className="fa-solid fa-magnifying-glass text-xs" />
                   </Link>
                 </div>
