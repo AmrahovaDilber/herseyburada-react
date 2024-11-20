@@ -106,9 +106,9 @@ export default function CategorySection() {
 
 
         {/* RIGHTBOX */}
-        <div className="w-full lg:w-[81%]">
-          <Slider />
-        </div>
+        <div className="w-full lg:w-[81%] relative z-10">
+      <Slider />
+    </div>
       </div>
     </div>
   );

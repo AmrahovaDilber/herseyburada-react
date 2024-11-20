@@ -49,29 +49,8 @@ export default function Footer() {
           </div>
 
           <div className="mb-8 md:mb-0 flex flex-col">
-            {/* <Link
-              to="/signup"
-              className="text-base md:text-lg mb-4 opacity-70 hover:opacity-100 hover:underline"
-            >
-              Daxil ol
-            </Link> */}
-            {/* <Link
-              to="/cartpage"
-              className="text-base md:text-lg mb-4 opacity-70 hover:opacity-100 hover:underline"
-            >
-              Səbətim
-            </Link>
+        
             <Link
-              to="/wishlist"
-              className="text-base md:text-lg mb-4 opacity-70 hover:opacity-100 hover:underline"
-            >
-              Sevimlilər
-            </Link> */}
-         
-          </div>
-
-          <div className="flex flex-col">
-              <Link
               to="/about"
               className="text-base md:text-lg mb-4 opacity-70 hover:opacity-100 hover:underline"
             >
@@ -96,11 +75,16 @@ export default function Footer() {
               Əlaqə
             </Link>
           </div>
+
+          <div className="flex flex-col">
+          <img src='/qr.png' className="w-[150px]"></img>
+    
+          </div>
         </div>
 
         <div className="flex items-center justify-center bg-black gap-x-2 py-4 border-t border-[#141414]">
           <div className="text-sm text-[#d9d9d9]">
-            <a href="#">Copyright Rimel 2022. Bütün hüquqlar qorunur</a>
+            <a href="#">Copyright Rimel 2024. Bütün hüquqlar qorunur</a>
           </div>
         </div>
       </footer>

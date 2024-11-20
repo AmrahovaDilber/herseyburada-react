@@ -97,20 +97,20 @@ export default function ProductItem({ product }) {
           </p>
         </div>
         <div className="flex items-center mb-[8px]">
-          <p className="text-[14px] mt-1  text-[#7F7F7F] font-semibold">
+          <p className="text-[12px] sm:text-[14px] mt-1  text-[#7F7F7F] font-semibold">
             {averageRating.toFixed(1)}
           </p>
-          <div className="flex space-x-[4px] ml-2">
+          <div className="flex space-x-[2px]  sm:space-x-[4px] ml-2">
             {Array.from({ length: 5 }, (_, index) => (
-              <div key={index} className="width-[px]">
+              <div key={index} >
                 <FaStar
-                  className="fa-regular fa-star"
-                  style={{ color: getStarColor(index),objectFit:"cover",width:'14px' }}
+                  className="fa-regular fa-star w-[12px] sm:w-[14px]"
+                  style={{ color: getStarColor(index),objectFit:"cover"}}
                 />
               </div>
             ))}
           </div>
-          <div className="text-[13px] text-[#7F7F7F] ml-1 mt-1">
+          <div className="text-[13px] text-[#7F7F7F] ml-0 sm:ml-1 mt-1">
             ({product.reviews.length})
           </div>
         </div>

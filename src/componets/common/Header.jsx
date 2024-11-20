@@ -4,12 +4,13 @@ import { useContextApp } from "../../context/AppContext";
 import { doSignOut } from "../../firebase/auth";
 import { IoIosSearch, IoMdClose } from "react-icons/io";
 import NavLinks from "./NavLinks";
-import { FaBars } from "react-icons/fa";
+import { FaHome, FaUser, FaRegHeart } from "react-icons/fa";
+import { IoCartOutline } from "react-icons/io5";
+import { RiMenuSearchLine } from "react-icons/ri";
 
 export default function Header() {
   const { userLoggedIn, handleInputChange, query } = useContextApp();
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
   const navigate = useNavigate();
@@ -17,173 +18,136 @@ export default function Header() {
   useEffect(() => {
     const controlHeader = () => {
       const currentScrollY = window.scrollY;
-      
-      if (currentScrollY > lastScrollY) {
-        // Scrolling down
-        setIsVisible(false);
-      } else {
-        // Scrolling up
-        setIsVisible(true);
-      }
-      
       setLastScrollY(currentScrollY);
     };
 
-    window.addEventListener('scroll', controlHeader);
+    window.addEventListener("scroll", controlHeader);
 
     return () => {
-      window.removeEventListener('scroll', controlHeader);
+      window.removeEventListener("scroll", controlHeader);
     };
   }, [lastScrollY]);
 
   return (
-    <header className={`border-b-[1px] sticky top-0 bg-white z-[999] transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
-      <div className="max-w-7xl mx-auto px-4 lg:px-0">
-        <div className="flex justify-between items-center py-4 md:space-x-10">
-          {/* Logo Section */}
-          <div className="flex justify-start lg:w-0 lg:flex-1">
-            <Link to="/">
-              <img
-                className="h-8 w-auto sm:h-10"
-                src="/herseyburada.svg"
-                alt="Logo"
+    <>
+      <header className="hidden lg:block border-b-[1px] sticky top-0 bg-white z-[999]">
+        <div className="max-w-7xl mx-auto px-4 lg:px-0">
+          <div className="flex justify-between items-center py-4 md:space-x-10">
+            {/* Logo Section */}
+            <div className="flex justify-start lg:w-0 lg:flex-1">
+              <Link to="/">
+                <img
+                  className="h-8 w-auto sm:h-10"
+                  src="/herseyburada.svg"
+                  alt="Logo"
+                />
+              </Link>
+            </div>
+
+            {/* Search Bar */}
+            <div className="hidden lg:flex items-center py-[2px] grow mr-4 rounded-full border bg-white shadow-sm transition-all duration-300">
+              <input
+                className="bg-transparent placeholder-gray-500 outline-none text-sm grow px-6 py-2 transition-all duration-200"
+                type="text"
+                value={query}
+                placeholder="Nə ilə maraqlanırsınız?"
+                onChange={handleInputChange}
               />
-            </Link>
-          </div>
+              <Link className="h-8 w-8 bg-[#ff9130] rounded-full cursor-pointer text-white flex justify-center items-center  mr-1 transition-colors duration-300 ease-in-out shadow-md ">
+                <IoIosSearch className="text-[18px]" />
+              </Link>
+            </div>
 
-          {/* Mobile Menu Button */}
-          <div className="flex lg:hidden">
-            <button
-              type="button"
-              className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
-              onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
-            >
-              <FaBars className="h-6 w-6" />
-            </button>
-          </div>
-
-          {/* Search Bar (Visible on Larger Screens) */}
-          <div className="hidden lg:flex items-center py-[2px] grow mr-4 rounded-full border bg-white shadow-sm transition-all duration-300">
-            <input
-              className="bg-transparent placeholder-gray-500 outline-none text-sm grow px-6 py-2 transition-all duration-200"
-              type="text"
-              value={query}
-              placeholder="Nə ilə maraqlanırsınız?"
-              onChange={handleInputChange}
-            />
-            <Link className="h-8 w-8 bg-[#ff9130] rounded-full cursor-pointer text-white flex justify-center items-center  mr-1 transition-colors duration-300 ease-in-out shadow-md ">
-              <IoIosSearch className="fa-solid fa-magnifying-glass text-[18px]" />
-            </Link>
-          </div>
-
-          {/* Navigation Links (Visible on Larger Screens) */}
-          <div className="hidden lg:flex items-center justify-end lg:flex-1 lg:w-0">
-            <NavLinks />
+            {/* Navigation Links */}
+            <div className="hidden lg:flex items-center justify-end lg:flex-1 lg:w-0">
+              <NavLinks />
+            </div>
           </div>
         </div>
+      </header>
+
+      {/* Mobile Bottom Navigation */}
+      <div className="lg:hidden fixed bottom-0 left-0 w-full bg-white shadow-md z-[999] flex justify-between px-4 py-2 border-t">
+        <Link
+          to="/"
+          className="flex flex-col items-center text-gray-500 hover:text-black"
+        >
+          <FaHome className="text-xl" />
+          <span className="text-xs">Ana Səhifə</span>
+        </Link>
+        <Link
+          to="/products/Qadın"
+          className="flex flex-col items-center text-gray-500 hover:text-black"
+        >
+          <RiMenuSearchLine  className="text-xl" />
+          <span className="text-xs">Kataloq</span>
+        </Link>
+        <Link
+          to="/wishlist"
+          className="flex flex-col items-center text-gray-500 hover:text-black"
+        >
+          <FaRegHeart className="text-xl" />
+          <span className="text-xs">Sevimlilər</span>
+        </Link>
+        <Link
+          to="/cartpage"
+          className="flex flex-col items-center text-gray-500 hover:text-black"
+        >
+          <IoCartOutline className="text-xl" />
+          <span className="text-xs">Səbət</span>
+        </Link>
+        <Link
+          to="/profile"
+          className="flex flex-col items-center text-gray-500 hover:text-black"
+        >
+          <FaUser className="text-xl" />
+          <span className="text-xs">Profile</span>
+        </Link>
       </div>
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="fixed top-0 left-0 w-full p-2 transition transform origin-top lg:hidden bg-white">
-          <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
-            <div className="pt-5 pb-6 px-5">
-              <div className="flex items-center justify-between">
-                <Link to='/'>
-                  <img
-                    className="h-8 w-auto"
-                    src="/herseyburada.svg"
-                    alt="Logo"
-                  />
-                </Link>
-                <div className="-mr-2">
-                  <button
-                    type="button"
-                    className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    <span className="sr-only">Close menu</span>
-                    <IoMdClose className="size-[26px] object-cover"/>
-                  </button>
-                </div>
-              </div>
-              <div className="mt-6">
-                <div className="flex justify-between items-center h-10 grow rounded-full border">
-                  <input
-                    className="bg-transparent placeholder-black opacity-50 outline-none text-sm grow px-4"
-                    type="text"
-                    value={query}
-                    placeholder="Nə ilə maraqlanırsınız?"
-                    onChange={handleInputChange}
-                  />
-                  <Link className="size-8 bg-[#ff9130] rounded-full cursor-pointer text-white inline-flex justify-center items-center  mr-1">
-                    <i className="fa-solid fa-magnifying-glass text-xs" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className="py-6 px-5 space-y-6">
-              <div className="grid grid-cols-2 gap-y-4 gap-x-8">
-                <Link
-                  to="/cartpage"
-                  className="text-base font-medium text-gray-900 hover:text-gray-700"
-                  onClick={() => setMobileMenuOpen(false)}
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-[999] flex items-center justify-center">
+          <div className="bg-white w-11/12 max-w-md rounded-lg shadow-lg p-4">
+            <button
+              className="text-gray-600 hover:text-black absolute top-3 right-3"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              <IoMdClose className="text-2xl" />
+            </button>
+            <div className="space-y-4">
+              <Link to="/cartpage" onClick={() => setMobileMenuOpen(false)}>
+                Cart
+              </Link>
+              <Link to="/wishlist" onClick={() => setMobileMenuOpen(false)}>
+                Wishlist
+              </Link>
+              <Link to="/about" onClick={() => setMobileMenuOpen(false)}>
+                About
+              </Link>
+              {userLoggedIn ? (
+                <button
+                  onClick={() => {
+                    if (window.confirm("Çıxış etmək istədiyinizə əminsiniz?")) {
+                      doSignOut().then(() => {
+                        navigate("/login");
+                        setMobileMenuOpen(false);
+                      });
+                    }
+                  }}
+                  className="text-indigo-600"
                 >
-                  Səbət
+                  Logout
+                </button>
+              ) : (
+                <Link to="/login" onClick={() => setMobileMenuOpen(false)}>
+                  Login
                 </Link>
-                <Link
-                  to="/wishlist"
-                  className="text-base font-medium text-gray-900 hover:text-gray-700"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Favoritlər
-                </Link>
-                <Link
-                  to="/about"
-                  className="text-base font-medium text-gray-900 hover:text-gray-700"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Haqqımızda
-                </Link>
-                {userLoggedIn ? (
-                  <Link
-                    to="/contact"
-                    className="text-base font-medium text-gray-900 hover:text-gray-700"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Əlaqə
-                  </Link>
-                ) : (
-                  <Link
-                    to="/login"
-                    className="text-base font-medium text-gray-900 hover:text-gray-700"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Daxil ol
-                  </Link>
-                )}
-              </div>
-              {userLoggedIn && (
-                <div className="mt-6">
-                  <button
-                    onClick={() => {
-                      if (window.confirm("Çıxış etmək istədiyinizə əminsiniz?")) {
-                        doSignOut().then(() => {
-                          navigate("/login");
-                          setMobileMenuOpen(false);
-                        });
-                      }
-                    }}
-                    className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
-                  >
-                    Çıxış et
-                  </button>
-                </div>
               )}
             </div>
           </div>
         </div>
       )}
-    </header>
+    </>
   );
 }
