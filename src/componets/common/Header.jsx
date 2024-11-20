@@ -1,22 +1,25 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { IoIosSearch } from "react-icons/io";
-import NavLinks from "./NavLinks"; // Assuming you have a NavLinks component
+import { Link, useNavigate } from "react-router-dom";
+import { useContextApp } from "../../context/AppContext";
+import { doSignOut } from "../../firebase/auth";
+import { IoIosSearch, IoMdClose } from "react-icons/io";
+import NavLinks from "./NavLinks";
 import { FaBars } from "react-icons/fa";
 
 export default function Header() {
+  const { userLoggedIn, handleInputChange, query } = useContextApp();
   const [isHeaderHidden, setIsHeaderHidden] = useState(false);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [query, setQuery] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
 
     const handleScroll = () => {
       if (window.scrollY > lastScrollY && window.scrollY > 50) {
-        setIsHeaderHidden(true); // Hide header when scrolling down
+        setIsHeaderHidden(true);
       } else {
-        setIsHeaderHidden(false); // Show header when scrolling up
+        setIsHeaderHidden(false);
       }
       lastScrollY = window.scrollY;
     };
@@ -24,10 +27,6 @@ export default function Header() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const handleInputChange = (e) => {
-    setQuery(e.target.value);
-  };
 
   return (
     <header
@@ -68,11 +67,8 @@ export default function Header() {
               placeholder="Nə ilə maraqlanırsınız?"
               onChange={handleInputChange}
             />
-            <Link
-              to={`/search?q=${query}`}
-              className="h-8 w-8 bg-[#ff9130] rounded-full cursor-pointer text-white flex justify-center items-center hover:bg-[#e7883b] mr-1 transition-colors duration-300 ease-in-out shadow-md hover:shadow-lg"
-            >
-              <IoIosSearch className="text-[18px]" />
+            <Link className="h-8 w-8 bg-[#ff9130] rounded-full cursor-pointer text-white flex justify-center items-center hover:bg-[#e7883b] mr-1 transition-colors duration-300 ease-in-out shadow-md hover:shadow-lg">
+              <IoIosSearch className="fa-solid fa-magnifying-glass text-[18px]" />
             </Link>
           </div>
 
@@ -87,8 +83,7 @@ export default function Header() {
       {isMobileMenuOpen && (
         <div className="absolute top-0 left-0 w-full p-2 transition transform origin-top lg:hidden">
           <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
-            {/* Add your mobile menu items here */}
-            <NavLinks />
+            {/* Menu Content */}
           </div>
         </div>
       )}
