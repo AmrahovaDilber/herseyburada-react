@@ -6,8 +6,8 @@ function DeliveryInfo() {
           <i className="fa-solid fa-truck text-3xl" />
         </div>
         <div className="text-center sm:text-left">
-          <h4 className="text-base sm:text-lg font-medium">Free Delivery</h4>
-          <p className="text-sm text-gray-600">Enter your postal code for Delivery Availability</p>
+          <h4 className="text-base sm:text-lg font-medium">Pulsuz Çatdırılma Delivery</h4>
+          <p className="text-sm text-gray-600">Çatdırılma Mövcudluğu üçün poçt kodunuzu daxil edin</p>
         </div>
       </div>
       <div className="flex flex-col sm:flex-row items-center gap-4 py-6 px-4 sm:px-6">
@@ -15,8 +15,8 @@ function DeliveryInfo() {
           <img src="/Icon-return.svg" alt="Return Icon" className="h-8 w-8" />
         </div>
         <div className="text-center sm:text-left">
-          <h4 className="text-base sm:text-lg font-medium">Return Delivery</h4>
-          <p className="text-sm text-gray-600">Free 30 Days Delivery Returns. Details</p>
+          <h4 className="text-base sm:text-lg font-medium">Geri Çatdırılma</h4>
+          <p className="text-sm text-gray-600">30 Gün ərzində Pulsuz Çatdırılma. Təfərrüatlar</p>
         </div>
       </div>
     </div>

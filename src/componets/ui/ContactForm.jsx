@@ -13,10 +13,10 @@ const ContactForm = () => {
       .sendForm('service_x165pd3', 'template_ogqf8df', formRef.current, 'tLHxzJLhqO4YWH7bh')
       .then(
         () => {
-          alert('Success!');
+          alert('Mesajınız uğurla email hesabımıza göndərildi.Sizinlə əlaqə saxlıyacıq!');
         },
         (error) => {
-          alert('Failed! ' + error.text);
+          alert('Mesajıınızı göndərmək alınmadı! ' + error.text);
         },
       );
   }

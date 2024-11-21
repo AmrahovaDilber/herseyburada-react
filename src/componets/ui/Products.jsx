@@ -91,15 +91,17 @@ export default function Products() {
 
   return (
     <div className="products-page">
-      <div className="products border border-gray-200 grid grid-cols-2 sm:grid-cols-4 gap-[18px] sm:gap-[30px] shadow-md rounded-lg p-3 bg-white">
-        {filteredProducts.length > 0 ? (
-          filteredProducts.map((product, index) => (
-            <ProductItem key={index} product={product} />
-          ))
-        ) : (
-          <p>No products available for this category.</p>
-        )}
-      </div>
+    <div className="products border border-gray-200 grid grid-cols-2 sm:grid-cols-4 gap-[18px] sm:gap-[30px] shadow-md rounded-lg p-3 bg-white">
+      {filteredProducts.length > 0 ? (
+        filteredProducts.map((product, index) => (
+          <ProductItem key={index} product={product} />
+        ))
+      ) : (
+        <p className="col-span-full text-center h-[100%] text-gray-500 font-medium py-6 text-lg bg-gray-50 border border-dashed border-gray-300 rounded-lg shadow-sm">
+          Bu kateqoriya üçün məhsul yoxdur.
+        </p>
+      )}
     </div>
+  </div>
   );
 }

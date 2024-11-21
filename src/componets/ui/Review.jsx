@@ -25,7 +25,7 @@ export default function Review({ findProduct }) {
             }`}
             onClick={() => setActiveTab("description")}
           >
-            Description
+            Təsvir
           </button>
           <button
             className={`px-6 py-3 rounded-lg font-semibold text-sm transition duration-300 ${
@@ -35,7 +35,7 @@ export default function Review({ findProduct }) {
             }`}
             onClick={() => setActiveTab("reviews")}
           >
-            Reviews
+            RƏylər
             <span className="ml-1">
               ({findProduct.reviews.length})
             </span>

@@ -62,9 +62,9 @@ const LoginForm = () => {
     if (forgotPasswordEmail) {
       try {
         await doPasswordReset(forgotPasswordEmail);
-        notification("A password reset email has been sent to your email.");
+        notification("E-poçtunuza parol sıfırlama e-poçtu göndərildi.");
       } catch (error) {
-        notification("Failed to send reset email. Please check your email.");
+        notification("Sıfırlama e-poçtunu göndərmək alınmadı. E-poçtunuzu yoxlayın.");
       }
     } else {
       notification("Şifrəni sıfırlamaq üçün e-poçtunuzu daxil edin.");
