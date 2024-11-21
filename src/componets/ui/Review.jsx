@@ -35,7 +35,7 @@ export default function Review({ findProduct }) {
             }`}
             onClick={() => setActiveTab("reviews")}
           >
-            RƏylər
+            Rəylər
             <span className="ml-1">
               ({findProduct.reviews.length})
             </span>
