@@ -17,7 +17,7 @@ export default function Coupon({ handleApply, text, setText }) {
         Kupon tətbiq edin
       </button>
       <p className="mt-4 text-gray-400 text-center mb-3 sm:mb-0 sm:text-left">
-        <span id="coupon-text">"BURADA"</span> kodundan istifadə edərək
+        <span id="coupon-text">&quot;BURADA&quot;</span> kodundan istifadə edərək
         çatdırılmanı pulsuz et
       </p>
     </div>

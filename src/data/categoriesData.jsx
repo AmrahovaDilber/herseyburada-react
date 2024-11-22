@@ -5175,41 +5175,15 @@ const data = {
           subkateqoriya_adı: "Boks Əlcəyi",
           məhsullar: [],
         },
-        {
-          subkateqoriya_id: 13,
-          subkateqoriya_adı: "Düşərgə Alətləri",
-          məhsullar: [],
-        },
-        {
-          subkateqoriya_id: 13,
-          subkateqoriya_adı: "Alpinizm və Dırmanma",
-          məhsullar: [],
-        },
-        {
-          subkateqoriya_id: 15,
-          subkateqoriya_adı: "Su İdmanı Avadanlıqları",
-          məhsullar: [],
-        },
-        {
-          subkateqoriya_id: 16,
-          subkateqoriya_adı: "Dalğıc Avadanlıqları",
-          məhsullar: [],
-        },
+       
+      
         {
           subkateqoriya_id: 17,
           subkateqoriya_adı: "Balıqçılıq Ləvazimatları",
           məhsullar: [],
         },
-        {
-          subkateqoriya_id: 19,
-          subkateqoriya_adı: "Çadır",
-          məhsullar: [],
-        },
-        {
-          subkateqoriya_id: 20,
-          subkateqoriya_adı: "Pilates Topları",
-          məhsullar: [],
-        },
+      
+       
         {
           subkateqoriya_id: 21,
           subkateqoriya_adı: "Protein tozu",
@@ -5263,77 +5237,30 @@ export const servicesData = [
 ];
 
 
+export const contactInfo = [
+  {
+    icon: "fa-phone",
+    title: "Bizə Zəng Edin",
+    description: (
+      <>
+        <p>Həftənin 7 günü, 24 saat mövcuduq.</p>
+        <p>Telefon: +994515489272</p>
+      </>
+    )
+  },
+  {
+    icon: "fa-envelope",
+    title: "Bizə Yazın",
+    description: (
+      <>
+        <p>Formamızı doldurun, 24 saat ərzində sizinlə əlaqə saxlayacağıq.</p>
+        <p>Email: herseyburada28@gmail.com</p>
+      </>
+    )
+  }
+];
+
+
+
 export default data;
 
-// {
-//   kateqoriya_id: 7,
-//   kateqoriya_adı: "Ev Heyvanları & Bağ",
-//   subkateqoriyalar: [
-//     {
-//       id: 1,
-//       subkateqoriya_adı: "Pişik Yeməyi",
-//       məhsullar: [],
-//     },
-//     {
-//       id: 2,
-//       subkateqoriya_adı: "İt Yeməyi",
-//       məhsullar: [],
-//     },
-//     {
-//       id: 3,
-//       subkateqoriya_adı: "Quş Məhsulları",
-//       məhsullar: [],
-//     },
-//     {
-//       id: 4,
-//       subkateqoriya_adı: "Akvarium Məhsulları",
-//       məhsullar: [],
-//     },
-//     {
-//       id: 5,
-//       subkateqoriya_adı: "Pişik Vitamini",
-//       məhsullar: [],
-//     },
-
-//     {
-//       id: 8,
-//       subkateqoriya_adı: "Pişik Oyuncaqları",
-//       məhsullar: [],
-//     },
-//     {
-//       id: 9,
-//       subkateqoriya_adı: "İt Oyuncaqları",
-//       məhsullar: [],
-//     },
-//     {
-//       id: 10,
-//       subkateqoriya_adı: "Pişiklərin Yaş Yeməyi",
-//       məhsullar: [],
-//     },
-//     {
-//       id: 11,
-//       subkateqoriya_adı: "Pişiklərin Müalicəsi",
-//       məhsullar: [],
-//     },
-//     {
-//       id: 12,
-//       subkateqoriya_adı: "İtlərin Müalicəsi",
-//       məhsullar: [],
-//     },
-//     {
-//       id: 13,
-//       subkateqoriya_adı: "Pişik şampunu",
-//       məhsullar: [],
-//     },
-//     {
-//       id: 14,
-//       subkateqoriya_adı: "İt şampunu",
-//       məhsullar: [],
-//     },
-//     {
-//       id: 19,
-//       subkateqoriya_adı: "Balıq Yemi",
-//       məhsullar: [],
-//     },
-//   ],
-// },

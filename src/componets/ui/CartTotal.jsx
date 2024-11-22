@@ -1,5 +1,5 @@
 export default function CartTotal({ subtotal, isCouponApplied }) {
-  const shippingCost = isCouponApplied ? 0 : 25.00; // Shipping is free if the coupon is applied
+  const shippingCost = isCouponApplied ? 0 : 25.00;
   const total = parseFloat(subtotal) + shippingCost;
 
   return (

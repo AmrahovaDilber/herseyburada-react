@@ -41,7 +41,7 @@ export default function TermsOfService() {
         <p className="mb-4">
           İstifadə şərtləri ilə bağlı hər hansı bir sualınız varsa, bizimlə
           əlaqə saxlamaqdan çəkinməyin. Əlaqə məlumatlarımızı veb saytımızın
-          "Əlaqə" bölməsində tapa bilərsiniz.
+          &quot;Əlaqə&quot; bölməsində tapa bilərsiniz.
         </p>
       </div>
     </main>

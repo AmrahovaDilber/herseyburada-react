@@ -12,10 +12,8 @@ const firebaseConfig = {
   measurementId: "G-ELLMDMTP2Y",
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-// Initialize Auth and Firestore
 const auth = getAuth(app);
 const db = getFirestore(app);
 

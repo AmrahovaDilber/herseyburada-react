@@ -8,8 +8,7 @@ import { FaRegHeart } from "react-icons/fa";
 import Review from "./Review";
 
 export default function ProductDetail() {
-  const { products, addToCart, addToFavorites, isInCart, removeFromCart } =
-    useContextApp();
+  const { products, addToCart, addToFavorites, isInCart, removeFromCart } =useContextApp();
   const { slug } = useParams();
   const findProduct = products.find((product) => product.slug === slug);
 
@@ -70,7 +69,7 @@ export default function ProductDetail() {
               className="bg-gray-200 w-full sm:w-[48%] flex items-center justify-center gap-2 text-gray-700 px-5 py-3 rounded-lg shadow-md hover:bg-gray-300 transition duration-300"
             >
               <FaRegHeart className="text-[22px]" />
-              Seçilmişlərə Əlavə Et
+              Sevimlilərə Əlavə Et
             </button>
           </div>
 

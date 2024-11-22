@@ -64,7 +64,7 @@ const LoginForm = () => {
         await doPasswordReset(forgotPasswordEmail);
         notification("E-poçtunuza parol sıfırlama e-poçtu göndərildi.");
       } catch (error) {
-        notification("Sıfırlama e-poçtunu göndərmək alınmadı. E-poçtunuzu yoxlayın.");
+        notification(`Sıfırlama e-poçtunu göndərmək alınmadı. E-poçtunuzu yoxlayın${error.message}`);
       }
     } else {
       notification("Şifrəni sıfırlamaq üçün e-poçtunuzu daxil edin.");
@@ -94,7 +94,7 @@ const LoginForm = () => {
             className="space-y-6"
             method="post"
           >
-            {/* Email Input */}
+          
             <div className="input-group mb-5">
               <input
                 type="text"

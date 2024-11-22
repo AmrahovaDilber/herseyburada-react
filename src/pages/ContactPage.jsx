@@ -1,6 +1,8 @@
 import ContactInfoCard from "../componets/ui/ContactInfoCard";
 import ContactForm from "../componets/ui/ContactForm";
 import { Link } from "react-router-dom";
+import { contactInfo } from "../data/categoriesData";
+
 
 
 const ContactPage = () => {
@@ -15,27 +17,14 @@ const ContactPage = () => {
       </div>
       <div className="flex flex-col md:flex-row space-x-10">
         <div className="px-6 md:px-8 w-full md:w-[340px] py-10 space-y-8 border border-gray-100 shadow-md rounded-md">
-          <ContactInfoCard
-            icon="fa-phone"
-            title="Bizə Zəng Edin"
-            description={
-              <>
-                <p>Həftənin 7 günü, 24 saat mövcuduq.</p>
-                <p>Telefon: +994515489272</p>
-              </>
-            }
-          />
-          <ContactInfoCard
-            icon="fa-envelope"
-            title="Bizə Yazın"
-            description={
-              <>
-                <p>Formamızı doldurun, 24 saat ərzində sizinlə əlaqə saxlayacağıq.</p>
-                <p>Email: herseyburada28@gmail.com</p>
-                <p>Email: dilberamrahova1@gmail.com</p>
-              </>
-            }
-          />
+          {contactInfo.map((item, index) => (
+            <ContactInfoCard
+              key={index}
+              icon={item.icon}
+              title={item.title}
+              description={item.description}
+            />
+          ))}
         </div>
         <div className="flex-1 mt-10 md:mt-0">
           <ContactForm />

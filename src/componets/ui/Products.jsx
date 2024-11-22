@@ -73,7 +73,7 @@ export default function Products() {
       );
     }
 
-    // Apply price filter
+
     products = products.filter((product) => product.price <= maxPrice);
 
     setFilteredProducts(products);

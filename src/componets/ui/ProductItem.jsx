@@ -14,10 +14,10 @@ export default function ProductItem({ product }) {
     isInCart,
   } = useContextApp();
 
-  // Calculate the average rating
   const averageRating =
     product.reviews.length > 0
-      ? product.reviews.reduce((acc, review) => acc + review.rating, 0) / product.reviews.length
+      ? product.reviews.reduce((acc, review) => acc + review.rating, 0) /
+        product.reviews.length
       : 0;
 
   const getStarColor = (index) => {
@@ -102,10 +102,10 @@ export default function ProductItem({ product }) {
           </p>
           <div className="flex space-x-[2px]  sm:space-x-[4px] ml-2">
             {Array.from({ length: 5 }, (_, index) => (
-              <div key={index} >
+              <div key={index}>
                 <FaStar
                   className="fa-regular fa-star w-[12px] sm:w-[14px]"
-                  style={{ color: getStarColor(index),objectFit:"cover"}}
+                  style={{ color: getStarColor(index), objectFit: "cover" }}
                 />
               </div>
             ))}

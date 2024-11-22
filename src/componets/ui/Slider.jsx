@@ -13,7 +13,7 @@ import data from "../../data/categoriesData";
 export default function Slider() {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 h-auto md:h-[480px]">
-      {/* Main Slider */}
+      
       <div className="col-span-1 lg:col-span-3 h-[400px] lg:h-full">
         <Swiper
           modules={[Pagination, Autoplay]}
@@ -97,7 +97,7 @@ export default function Slider() {
         </Swiper>
       </div>
 
-      {/* Side banners - Now visible on all screen sizes */}
+  
       <div className="hidden lg:grid grid-cols-3 lg:grid-cols-1 lg:grid-rows-3 gap-4 h-[200px] lg:h-full">
         <div className="relative h-full">
           <Link to="/products/Qadın">

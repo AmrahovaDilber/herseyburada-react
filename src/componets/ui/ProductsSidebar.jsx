@@ -14,7 +14,7 @@ export default function ProductsSidebar() {
 
   return (
     <>
-      {/* Toggle Button for Mobile */}
+      
       <button
         onClick={toggleSidebar}
         className="md:hidden p-2 fixed top-18 left-2 text-gray-700 focus:outline-none z-40"
@@ -34,7 +34,7 @@ export default function ProductsSidebar() {
         <FilterBySize />
       </div>
 
-      {/* Overlay for Mobile Menu */}
+
       {isOpen && (
         <div
           className="fixed inset-0 bg-black opacity-50 z-40 md:hidden"

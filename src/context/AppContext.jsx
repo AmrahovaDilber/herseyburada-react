@@ -101,14 +101,14 @@ export const AppContextProvider = ({ children }) => {
       notification("Səbətə əşyalar əlavə etmək üçün daxil olmalısınız");
       return;
     }
-    console.log("Adding to cart:", id); // Debugging line
+    console.log("Adding to cart:", id); 
     const product = products.find((prod) => prod.product_id === id);
   
     if (product) {
       if (!carts.includes(id)) {
         const newCarts = [...carts, id];
         setCarts(newCarts);
-        console.log("Cart updated:", newCarts); // Debugging line
+        console.log("Cart updated:", newCarts);
         await updateUserData(newCarts, favorites);
         notification(`${product.product_name} səbətə əlavə edildi`);
       } else {
@@ -160,10 +160,10 @@ export const AppContextProvider = ({ children }) => {
     }
   };
   
+
   const removeFromFavorites = async (id) => {
     const newFavorites = favorites.filter((favoriteId) => favoriteId !== id);
     setFavorites(newFavorites);
-    
     const findProduct = products.find((product) => product.product_id === id);
   
     if (findProduct) {
@@ -193,8 +193,6 @@ export const AppContextProvider = ({ children }) => {
     );
     setProducts(updatedProducts);
   };
-
-
 
 
   
@@ -260,7 +258,7 @@ export const AppContextProvider = ({ children }) => {
 
   const { errors: loginErrors } = loginFormState;
 
-  // Filter functions
+
   const handleColorChange = (color) => {
     setSelectedColors((selectedColors) =>
       selectedColors.includes(color) ? selectedColors.filter((c) => c !== color) : [...selectedColors, color]
