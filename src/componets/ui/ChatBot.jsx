@@ -93,7 +93,7 @@ Current customer message: `;
   };
 
   return (
-    <div className="p-4">
+    <div className="">
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="fixed bottom-[70px] sm:bottom-4 right-4 flex items-center gap-1 p-3 z-50 bg-blue-500 text-white rounded-full shadow-lg hover:bg-blue-600 focus:outline-none"
@@ -103,7 +103,7 @@ Current customer message: `;
       </button>
 
       {isOpen && (
-        <div className="fixed bottom-10 sm:bottom-0 right-0 m-4 max-w-full sm:max-w-[500px] z-50 bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden">
+        <div className="fixed bottom-[35px] sm:bottom-0 right-0 m-6 max-w-full sm:max-w-[500px] z-50 bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden">
           <div className="flex justify-between items-center p-4 border-b border-gray-200">
             <h2 className="text-lg font-bold">ChatBot</h2>
             <button
@@ -153,7 +153,7 @@ Current customer message: `;
                 value={value}
                 onChange={(e) => setValue(e.target.value)}
                 onKeyPress={handleKeyPress}
-                placeholder="Type your message..."
+                placeholder="Mesajınızı yazın..."
                 className="flex-1 p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 disabled={loading}
               />

@@ -18,7 +18,7 @@ export default function CategorySection() {
         <div className="w-full lg:w-[19%]   mb-6 lg:mb-0">
           {/* Mobile versiya buttonu */}
           <button
-            className="lg:hidden w-full bg-[#FF7518] text-white py-3 px-4 rounded mb-2"
+            className="lg:hidden w-full bg-[#FF7518] text-white py-4 px-4 rounded "
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             { "Məhsul Kataloqu" }
