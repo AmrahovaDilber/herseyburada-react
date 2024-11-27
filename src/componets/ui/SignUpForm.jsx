@@ -57,8 +57,8 @@ const SignupForm = () => {
       <main   className={`flex flex-col justify-center items-center min-h-screen ${
           darkMode ? "bg-[#121212] text-white" : "bg-gray-100 text-gray-700"
         } px-4 sm:px-0`}>
-        <div   className={`bg-white shadow-lg border rounded-lg p-8 w-full max-w-[550px] mx-auto my-8 ${
-            darkMode ? "bg-[#1a1a1a] border-[#333]" : "border-gray-300"
+        <div   className={` shadow-lg border rounded-lg p-4 w-full max-w-[550px] mx-auto my-8 ${
+            darkMode ? "bg-[#1a1a1a] border-[#333]" : "border-gray-300 bg-white"
           }`}>
           <div className="w-full max-w-[550px] p-8">
             <h1

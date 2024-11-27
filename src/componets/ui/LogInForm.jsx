@@ -35,7 +35,7 @@ const LoginForm = () => {
         notification("Uğurla daxil oldunuz!");
       } catch (error) {
         console.error("Daxilolma xətası:", error);
-        notification("Daxil olmaq alınmadı. Lütfən, məlumatları yoxlayın."); 
+        notification("Daxil olmaq alınmadı. Lütfən, məlumatları yoxlayın.");
       } finally {
         setIsSigningIn(false);
       }
@@ -75,14 +75,10 @@ const LoginForm = () => {
     <>
       {userLoggedIn && <Navigate to={"/"} replace={true} />}
       <main
-        className={`flex flex-col justify-center items-center min-h-screen ${
-          darkMode ? "bg-[#121212] text-white" : "bg-gray-100 text-gray-700"
-        } px-4 sm:px-0`}
+        className={`flex flex-col justify-center items-center min-h-screen ${darkMode ? "bg-[#121212] text-white" : "bg-gray-100 text-gray-700"} px-4 sm:px-0`}
       >
         <div
-          className={`bg-white shadow-lg border rounded-lg p-8 w-full max-w-[550px] mx-auto my-8 ${
-            darkMode ? "bg-[#1a1a1a] border-[#333]" : "border-gray-300"
-          }`}
+          className={` shadow-lg border rounded-lg p-8 w-full max-w-[550px] mx-auto my-8 ${darkMode ? "bg-[#1a1a1a] border-[#444]" : "border-gray-300 bg-white"}`}
         >
           <Link to="/">
             <figure className="w-[180px] mb-5 mx-auto">
@@ -94,11 +90,7 @@ const LoginForm = () => {
             </figure>
           </Link>
 
-          <h2
-            className={`text-center mb-6 font-semibold text-2xl ${
-              darkMode ? "text-white" : "text-gray-700"
-            }`}
-          >
+          <h2 className={`text-center mb-6 font-semibold text-2xl ${darkMode ? "text-white" : "text-gray-700"}`}>
             Daxil ol
           </h2>
           <form
@@ -117,11 +109,7 @@ const LoginForm = () => {
                     message: "Yanlış email formatı",
                   },
                 })}
-                className={`form-input border focus:ring focus:ring-[#ff9130]/50 outline-none w-full py-3 px-4 rounded-md text-lg ${
-                  darkMode
-                    ? "bg-[#333] border-[#444] text-white focus:border-[#ff9130]"
-                    : "bg-white border-gray-300 text-gray-700 focus:border-[#ff9130]"
-                }`}
+                className={`form-input border focus:ring focus:ring-[#ff9130]/50 outline-none w-full py-3 px-4 rounded-md text-lg ${darkMode ? "bg-[#333] border-[#444] text-white focus:border-[#ff9130]" : "bg-white border-gray-300 text-gray-700 focus:border-[#ff9130]"}`}
                 placeholder="Email"
               />
               <p className="text-red-500 text-sm mt-1">
@@ -129,7 +117,7 @@ const LoginForm = () => {
               </p>
             </div>
 
-            {/* Password Input */}
+      
             <div className="input-group mb-5 relative">
               <input
                 type={showPassword ? "text" : "password"}
@@ -141,11 +129,7 @@ const LoginForm = () => {
                     message: "Parol ən azı 6 simvol uzunluğunda olmalıdır",
                   },
                 })}
-                className={`form-input border focus:ring focus:ring-[#ff9130]/50 outline-none w-full py-3 px-4 rounded-md text-lg ${
-                  darkMode
-                    ? "bg-[#333] border-[#444] text-white focus:border-[#ff9130]"
-                    : "bg-white border-gray-300 text-gray-700 focus:border-[#ff9130]"
-                }`}
+                className={`form-input border focus:ring focus:ring-[#ff9130]/50 outline-none w-full py-3 px-4 rounded-md text-lg ${darkMode ? "bg-[#333] border-[#444] text-white focus:border-[#ff9130]" : "bg-white border-gray-300 text-gray-700 focus:border-[#ff9130]"}`}
                 placeholder="Parol"
               />
               <div
@@ -163,7 +147,6 @@ const LoginForm = () => {
               </p>
             </div>
 
-            {/* Submit Button and Forgot Password */}
             <button
               className="submit-btn bg-[#ff9130] hover:bg-[#e08430] w-full text-white py-3 px-8 rounded-md cursor-pointer transition-all my-5 shadow-md"
               type="submit"
@@ -171,32 +154,22 @@ const LoginForm = () => {
               Daxil ol
             </button>
 
-            {/* Google Sign-In */}
+     
             <div className="google-signin mb-6">
               <button
                 onClick={onGoogleSignIn}
-                className={`w-full flex items-center justify-center gap-3  ${
-                    darkMode ? "bg-[#202020]" : "bg-white"
-                }  border border-gray-300 py-3 px-5 rounded-md  transition-all shadow-sm`}
+                className={`w-full flex items-center justify-center gap-3 ${darkMode ? "bg-[#202020]" : "bg-white"} border border-gray-300 py-3 px-5 rounded-md transition-all shadow-sm`}
               >
                 <img src={google} alt="Google" className="w-5 h-5" />
-                <span
-                  className={`${
-                    darkMode ? "text-white" : "text-gray-600"
-                  }`}
-                >
+                <span className={`${darkMode ? "text-white" : "text-gray-600"}`}>
                   Google ilə daxil olun
                 </span>
               </button>
             </div>
 
-            {/* Sign Up Link */}
+         
             <div className="flex justify-between flex-col sm:flex-row">
-              <p
-                className={`form-bottom opacity-80 text-center sm:text-left ${
-                  darkMode ? "text-gray-400" : "text-gray-700"
-                }`}
-              >
+              <p className={`form-bottom opacity-80 text-center sm:text-left ${darkMode ? "text-gray-400" : "text-gray-700"}`}>
                 Hesabın yoxdur?
                 <Link
                   to={"/signup"}
