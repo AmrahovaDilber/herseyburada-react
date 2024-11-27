@@ -6,9 +6,9 @@ import { IoIosSearch, IoMdClose } from "react-icons/io";
 import NavLinks from "./NavLinks";
 import { FaBars } from "react-icons/fa";
 import { RiMenuSearchLine } from "react-icons/ri";
-import { IoHomeOutline } from "react-icons/io5";
+import { IoHomeOutline, IoMoonOutline, IoSunnyOutline } from "react-icons/io5";
 export default function Header() {
-  const { userLoggedIn, handleInputChange, query, } =
+  const { userLoggedIn, handleInputChange, query,darkMode,toggleDarkMode } =
     useContextApp();
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
@@ -91,108 +91,103 @@ export default function Header() {
         </div>
 
         {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="fixed top-0 left-0 w-full p-2 transition transform origin-top lg:hidden bg-white dark:bg-[#202020]">
-            <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white dark:bg-[#202020] divide-y-2 divide-gray-50 dark:divide-gray-700">
-              <div className="pt-5 pb-6 px-5">
-                <div className="flex items-center justify-between">
-                  <Link to="/">
-                    <img
-                      className="h-8 w-auto"
-                      src="/herseyburada.svg"
-                      alt="Logo"
-                    />
-                  </Link>
-                  <div className="-mr-2">
-                    <button
-                      type="button"
-                      className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400  hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      <span className="sr-only">Close menu</span>
-                      <IoMdClose className="size-[26px] object-cover" />
-                    </button>
-                  </div>
-                </div>
-                <div className="mt-6">
-                  <div className="flex justify-between items-center h-10 grow rounded-full border">
-                    <input
-                      className="bg-transparent placeholder-black opacity-50 outline-none text-sm grow px-4"
-                      type="text"
-                      value={query}
-                      placeholder="Nə ilə maraqlanırsınız?"
-                      onChange={handleInputChange}
-                    />
-                    <Link className="size-8 bg-[#ff9130] rounded-full cursor-pointer text-white inline-flex justify-center items-center mr-1">
-                      <i className="fa-solid fa-magnifying-glass text-xs" />
-                    </Link>
-                  </div>
-                </div>
-              </div>
-              <div className="py-6 px-5 space-y-6">
-                <div className="grid grid-cols-2 gap-y-4 gap-x-8">
-                  <Link
-                    to="/cartpage"
-                    className="text-base font-medium text-gray-900 hover:text-gray-700 dark:text-[#fff]"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Səbət
-                  </Link>
-                  <Link
-                    to="/wishlist"
-                    className="text-base font-medium text-gray-900 hover:text-gray-700 dark:text-[#fff]"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Favoritlər
-                  </Link>
-                  <Link
-                    to="/about"
-                    className="text-base font-medium text-gray-900 hover:text-gray-700 dark:text-[#fff]"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Haqqımızda
-                  </Link>
-                  {userLoggedIn ? (
-                    <Link
-                      to="/contact"
-                      className="text-base font-medium text-gray-900 hover:text-gray-700 dark:text-[#fff]"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      Əlaqə
-                    </Link>
-                  ) : (
-                    <Link
-                      to="/login"
-                      className="text-base font-medium text-gray-900 hover:text-gray-700 dark:text-[#fff]"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      Daxil ol
-                    </Link>
-                  )}
-                </div>
-                {userLoggedIn && (
-                  <div className="mt-6">
-                    <button
-                      onClick={() => {
-                        if (
-                          window.confirm("Çıxış etmək istədiyinizə əminsiniz?")
-                        ) {
-                          doSignOut().then(() => {
-                            navigate("/login");
-                            setMobileMenuOpen(false);
-                          });
-                        }
-                      }}
-                      className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
-                    >
-                      Çıxış et
-                    </button>
-                  </div>
-                )}
-              </div>
-            </div>
+      {/* Mobile Menu */}
+{isMobileMenuOpen && (
+  <div className="fixed top-0 left-0 w-full p-2 transition transform origin-top lg:hidden bg-white dark:bg-[#202020]">
+    <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white dark:bg-[#202020] divide-y-2 divide-gray-50 dark:divide-gray-700">
+      <div className="pt-5 pb-6 px-5">
+        <div className="flex items-center justify-between">
+          <Link to="/">
+            <img className="h-8 w-auto" src="/herseyburada.svg" alt="Logo" />
+          </Link>
+          <div className="-mr-2">
+            <button
+              type="button"
+              className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              <span className="sr-only">Close menu</span>
+              <IoMdClose className="size-[26px] object-cover" />
+            </button>
           </div>
+        </div>
+        <div className="mt-6">
+          <div className="flex justify-between items-center h-10 grow rounded-full border">
+            <input
+              className="bg-transparent placeholder-black opacity-50 outline-none text-sm grow px-4"
+              type="text"
+              value={query}
+              placeholder="Nə ilə maraqlanırsınız?"
+              onChange={handleInputChange}
+            />
+            <Link className="size-8 bg-[#ff9130] rounded-full cursor-pointer text-white inline-flex justify-center items-center mr-1">
+              <i className="fa-solid fa-magnifying-glass text-xs" />
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Dark Mode Toggle Button */}
+      <button
+        onClick={toggleDarkMode}
+        className="flex items-center justify-center text-gray-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded-full transition-colors duration-300"
+        aria-label="Toggle dark mode"
+      >
+        {darkMode ? (
+          <IoSunnyOutline className="text-[22px]" />
+        ) : (
+          <IoMoonOutline className="text-[22px]" />
         )}
+      </button>
+
+      {/* Other Links */}
+      <div className="py-6 px-5 space-y-6">
+        <div className="grid grid-cols-2 gap-y-4 gap-x-8">
+          <Link
+            to="/cartpage"
+            className="text-base font-medium text-gray-900 hover:text-gray-700 dark:text-[#fff]"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Səbət
+          </Link>
+          <Link
+            to="/wishlist"
+            className="text-base font-medium text-gray-900 hover:text-gray-700 dark:text-[#fff]"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Favoritlər
+          </Link>
+          <Link
+            to="/about"
+            className="text-base font-medium text-gray-900 hover:text-gray-700 dark:text-[#fff]"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Haqqımızda
+          </Link>
+
+          {userLoggedIn ? (
+            <Link
+              to="/contact"
+              className="text-base font-medium text-gray-900 hover:text-gray-700 dark:text-[#fff]"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Əlaqə
+            </Link>
+          ) : (
+            <Link
+              to="/login"
+              className="text-base font-medium text-gray-900 hover:text-gray-700 dark:text-[#fff]"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Daxil ol
+            </Link>
+          )}
+        </div>
+      </div>
+    </div>
+  </div>
+)}
+
       </header>
 
       {/* Responsive Footer with Icons */}

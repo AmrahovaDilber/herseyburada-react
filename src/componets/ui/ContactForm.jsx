@@ -1,11 +1,13 @@
 import { useForm } from 'react-hook-form';
 import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
+import { useContextApp } from '../../context/AppContext';
 
 const ContactForm = () => {
   const formRef = useRef(); 
   const { register, handleSubmit, formState } = useForm();
   const { errors } = formState;
+  const { darkMode } = useContextApp();
 
   function onSubmit(data) {
     console.log(data);
@@ -13,11 +15,11 @@ const ContactForm = () => {
       .sendForm('service_x165pd3', 'template_ogqf8df', formRef.current, 'tLHxzJLhqO4YWH7bh')
       .then(
         () => {
-          alert('Mesajınız uğurla email hesabımıza göndərildi.Sizinlə əlaqə saxlıyacıq!');
+          alert('Mesajınız uğurla email hesabımıza göndərildi. Sizinlə əlaqə saxlayacağıq!');
         },
         (error) => {
-          alert('Mesajıınızı göndərmək alınmadı! ' + error.text);
-        },
+          alert('Mesajı göndərmək alınmadı! ' + error.text);
+        }
       );
   }
 
@@ -25,7 +27,7 @@ const ContactForm = () => {
     <form 
       ref={formRef} 
       onSubmit={handleSubmit(onSubmit)} 
-      className="py-8 px-6 sm:py-10 sm:px-8 lg:py-12 lg:px-12 space-y-8 border dark:bg-[#202020] border-gray-100 shadow-md rounded-md"
+      className={`py-8 px-6 sm:py-10 sm:px-8 lg:py-12 lg:px-12 space-y-8 border shadow-md rounded-md ${darkMode ? "bg-[#202020] border-[#444]" : "bg-white border-gray-100"}`}
     >
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <div>
@@ -39,7 +41,7 @@ const ContactForm = () => {
                 message: "Ad ən azı 3 simvol uzunluğunda olmalıdır"
               }
             })}
-            className="h-12 px-4 rounded-md bg-gray-100 outline-none w-full"
+            className={`h-12 px-4 rounded-md focus:ring focus:ring-[#ff9130]/50 outline-none w-full ${darkMode ? "bg-[#333] border-[#444] text-white focus:border-[#ff9130]" : "bg-gray-100 border-gray-300 text-gray-700 focus:border-[#ff9130]"}`}
           />
           <p className="text-red-500 mt-1">{errors.name?.message}</p>
         </div>
@@ -55,7 +57,7 @@ const ContactForm = () => {
                 message: "Etibarlı email ünvanı daxil edin"
               }
             })}
-            className="h-12 px-4 rounded-md bg-gray-100 outline-none w-full"
+            className={`h-12 px-4 rounded-md focus:ring focus:ring-[#ff9130]/50 outline-none w-full ${darkMode ? "bg-[#333] border-[#444] text-white focus:border-[#ff9130]" : "bg-gray-100 border-gray-300 text-gray-700 focus:border-[#ff9130]"}`}
           />
           <p className="text-red-500 mt-1">{errors.email?.message}</p>
         </div>
@@ -71,7 +73,7 @@ const ContactForm = () => {
                 message: "Zəhmət olmasa düzgün telefon formatı daxil edin"
               }
             })}
-            className="h-12 px-4 rounded-md bg-gray-100 outline-none w-full"
+            className={`h-12 px-4 rounded-md focus:ring focus:ring-[#ff9130]/50 outline-none w-full ${darkMode ? "bg-[#333] border-[#444] text-white focus:border-[#ff9130]" : "bg-gray-100 border-gray-300 text-gray-700 focus:border-[#ff9130]"}`}
           />
           <p className="text-red-500 mt-1">{errors.phone?.message}</p>
         </div>
@@ -83,17 +85,17 @@ const ContactForm = () => {
             required: "Zəhmət olmasa sahəni doldurun"
           })}
           placeholder="Mesajınız"
-          className="h-52 px-4 py-3 rounded-md bg-gray-100 w-full outline-none resize-none"
+          className={`h-52 px-4 py-3 rounded-md focus:ring focus:ring-[#ff9130]/50 outline-none w-full resize-none ${darkMode ? "bg-[#333] border-[#444] text-white focus:border-[#ff9130]" : "bg-gray-100 border-gray-300 text-gray-700 focus:border-[#ff9130]"}`}
         ></textarea>
         <p className="text-red-500 mt-1">{errors.message?.message}</p>
       </div>
 
       <div className="flex justify-center sm:justify-end">
         <button 
-          type='submit' 
+          type="submit" 
           className="px-6 py-3 rounded-md text-white bg-orange-600 font-medium hover:bg-orange-500 transition duration-300 ease-in-out"
         >
-         Mesajı Göndər
+          Mesajı Göndər
         </button>
       </div>
     </form>
