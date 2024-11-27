@@ -44,14 +44,14 @@ export default function Products() {
       );
     }
 
-    // Search query filter
+
     if (query) {
       products = products.filter((product) =>
         product.product_name.toLowerCase().includes(query.toLowerCase())
       );
     }
 
-    // Color filter
+    // Reng filteri
     if (selectedColors.length > 0) {
       products = products.filter((product) =>
         selectedColors.some((color) =>
@@ -62,7 +62,7 @@ export default function Products() {
       );
     }
 
-    // Apply size filter
+    // Olcu filter
     if (selectedSizes.length > 0) {
       products = products.filter((product) =>
         selectedSizes.some((size) =>
@@ -91,13 +91,13 @@ export default function Products() {
 
   return (
     <div className="products-page">
-    <div className="products border border-gray-200 grid grid-cols-2 sm:grid-cols-4 gap-[18px] sm:gap-[30px] shadow-md rounded-lg p-3 bg-white">
+    <div className="products border border-gray-200 grid grid-cols-2 sm:grid-cols-4 gap-[18px] sm:gap-[30px] shadow-md rounded-lg p-3 bg-white dark:bg-[#1a1a1a]">
       {filteredProducts.length > 0 ? (
         filteredProducts.map((product, index) => (
           <ProductItem key={index} product={product} />
         ))
       ) : (
-        <p className="col-span-full text-center h-[100%] text-gray-500 font-medium py-6 text-lg bg-gray-50 border border-dashed border-gray-300 rounded-lg shadow-sm">
+        <p className="col-span-full text-center h-[100%] text-gray-500 font-medium py-6 text-lg dark:text-[#fff] bg-gray-50 dark:bg-[#202020] border border-dashed border-gray-300 rounded-lg shadow-sm">
           Bu kateqoriya üçün məhsul yoxdur.
         </p>
       )}

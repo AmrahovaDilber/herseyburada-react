@@ -15,13 +15,13 @@ const FilterBySize = () => {
 
   return (
     <div className=" rounded-lg ">
-      <h2 className="font-bold text-gray-700 mb-3 text-lg border-b pb-2">
+      <h2 className="font-bold text-gray-700 dark:text-[#fff]  mb-3 text-lg border-b pb-2">
         Ölçü
       </h2>
       <ul className="space-y-1 h-[170px] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
         {sizes.map(({ size }) => (
           <li key={size} className=" rounded-md p-1">
-            <label className="flex items-center cursor-pointer text-gray-600 ">
+            <label className="flex items-center cursor-pointer text-gray-600 dark:text-[#fff]  ">
               <input
                 type="checkbox"
                 className="form-checkbox h-4 w-4 text-blue-500 rounded focus:ring-0 focus:outline-none mr-3"

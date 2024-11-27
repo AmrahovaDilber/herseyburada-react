@@ -11,7 +11,7 @@ export default function Services() {
               className="flex flex-col justify-center items-center text-center cursor-pointer p-4"
             >
               <div className="bg-[#C1C1C1]  w-[60px] h-[60px] lg:w-[80px] lg:h-[80px] rounded-full flex items-center justify-center">
-                <figure className="w-[40px] h-[40px] lg:w-[58px] lg:h-[58px] bg-[#000000] rounded-full flex items-center justify-center">
+                <figure className="w-[40px] h-[40px] lg:w-[58px] lg:h-[58px] bg-[#000000]  rounded-full flex items-center justify-center">
                   <img
                     src={service.imgSrc}
                     className="object-cover"
@@ -19,10 +19,10 @@ export default function Services() {
                   />
                 </figure>
               </div>
-              <p className="font-semibold text-[14px] sm:text-[18px] lg:text-[18px] text-[#000000] mt-[16px] lg:mt-[24px] mb-[8px] relative    ">
+              <p className="font-semibold text-[14px] sm:text-[18px] lg:text-[18px] text-[#000000] dark:text-[#fff] mt-[16px] lg:mt-[24px] mb-[8px] relative    ">
                 {service.title}
               </p>
-              <p className="font-normal text-[12px] sm:text-[14px] lg:text-[16px] w-[400px]">
+              <p className="font-normal text-[12px] sm:text-[14px] lg:text-[16px] w-[400px]  dark:text-[#fff]">
                 {service.description}
               </p>
             </div>

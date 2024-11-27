@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import { IoMdHeartEmpty } from "react-icons/io";
-import { IoCartOutline, IoPersonOutline } from "react-icons/io5";
+import { IoCartOutline, IoMoonOutline, IoPersonOutline, IoSunnyOutline } from "react-icons/io5";
 import { Link, useNavigate } from "react-router-dom";
 import { useContextApp } from "../../context/AppContext";
 import { doSignOut } from "../../firebase/auth";
 
 export default function NavLinks() {
-  const { userLoggedIn, carts, favorites } = useContextApp();
+  const { userLoggedIn, carts, favorites , toggleDarkMode,darkMode} = useContextApp();
   const [cartLength, setCartLength] = useState(null);
   const [favoritesLength, setFavoritesLength] = useState(null);
   const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -45,10 +45,10 @@ export default function NavLinks() {
     <nav className="flex space-x-6">
       <Link
         to="/cartpage"
-        className="group flex items-center gap-1 text-[#1a1a1a] hover:text-[#ff9130] transition-colors duration-300 ease-in-out"
+        className="group flex items-center gap-1 text-[#1a1a1a] dark:text-white hover:text-[#ff9130] transition-colors duration-300 ease-in-out"
       >
         <div className="relative">
-          <IoCartOutline className="text-[22px] text-[#1a1a1a] transition-transform duration-300 transform hover:scale-110 group-hover:text-[#ff9130] ease-in-out" />
+          <IoCartOutline className="text-[22px] text-[#1a1a1a] dark:text-white transition-transform duration-300 transform hover:scale-110 group-hover:text-[#ff9130] ease-in-out" />
           {cartLength > 0 && (
             <span className="absolute -top-2 -right-2 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-white text-xs">
               {cartLength}
@@ -60,10 +60,10 @@ export default function NavLinks() {
 
       <Link
         to="/wishlist"
-        className="group flex items-center gap-1 text-[#1a1a1a] hover:text-[#ff9130] transition-colors duration-300 ease-in-out"
+        className="group flex items-center gap-1 text-[#1a1a1a] dark:text-white hover:text-[#ff9130] transition-colors duration-300 ease-in-out"
       >
         <div className="relative">
-          <IoMdHeartEmpty className="text-[22px] text-[#1a1a1a] transition-transform duration-300 transform hover:scale-110 group-hover:text-[#ff9130] ease-in-out" />
+          <IoMdHeartEmpty className="text-[22px] text-[#1a1a1a] dark:text-white transition-transform duration-300 transform hover:scale-110 group-hover:text-[#ff9130] ease-in-out" />
           {favoritesLength > 0 && (
             <span className="absolute -top-2 -right-2 flex h-4 w-4 items-center justify-center rounded-full bg-gradient-to-r from-red-500 to-red-600 text-white text-xs font-bold shadow-md transform hover:scale-105 transition-transform duration-200 ease-in-out">
               {favoritesLength}
@@ -73,13 +73,26 @@ export default function NavLinks() {
         <span>Sevimlilər</span>
       </Link>
 
+    <button
+        onClick={toggleDarkMode}
+        className="flex items-center justify-center text-gray-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded-full transition-colors duration-300"
+        aria-label="Toggle dark mode"
+      >
+        {darkMode ? (
+          <IoSunnyOutline className="text-[22px]"/>
+        ) : (
+          <IoMoonOutline className="text-[22px]" />
+        )}
+      </button>
+
+
       <div className="relative group" ref={dropdownRef}>
         <button
           className="text-gray-500 "
           onClick={handleAccountClick}
         >
           <div className="flex items-center gap-1 w-[35px] h-[35px] rounded-full bg-gray-200  transition-transform duration-300 ease-in-out  justify-center text-[#1a1a1a]">
-            <IoPersonOutline className=" rounded-full  text-[24px]   " />
+            <IoPersonOutline className="rounded-full  text-[24px]" />
           </div>
         </button>
         {isDropdownOpen && userLoggedIn && (

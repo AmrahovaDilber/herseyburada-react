@@ -1,7 +1,7 @@
 function ProductInfo({ findProduct }) {
   return (
     <div className="space-y-2">
-      <div className="text-lg sm:text-xl lg:text-2xl font-semibold mb- text-gray-900">
+      <div className="text-lg sm:text-xl lg:text-2xl font-semibold mb- text-gray-900 dark:text-[#fff]">
         {findProduct.product_name}
       </div>
       <div className="flex flex-col sm:flex-row items-start sm:items-center mb-6 gap-4 sm:gap-6">

@@ -13,7 +13,7 @@ export default function ExploreProducts() {
       <ProductList products={slicedArr} />
       <Link to={`products/Qadın`}>
       <div className="mx-auto w-[234px] my-[60px]">
-        <button className="h-[56px] w-[234px] bg-[#FF7518]  rounded-md text-[#FAFAFA] text-[16px] font-medium text-center">
+        <button className="h-[56px] w-[234px] bg-[#FF7518]  dark:text-white  rounded-md text-[#FAFAFA] text-[16px] font-medium text-center">
           Hamısını göstər
         </button>
       </div></Link>

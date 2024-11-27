@@ -3,6 +3,7 @@ import { useState } from "react";
 import data from "../../data/categoriesData";
 import Slider from "./Slider";
 import { useContextApp } from "../../context/AppContext";
+import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 
 export default function CategorySection() {
   const location = useLocation();
@@ -39,7 +40,7 @@ export default function CategorySection() {
                   onMouseLeave={() => setActiveDropdown(null)}
                 >
                   <div
-                    className={`flex items-center justify-between py-3 pr-4 hover:bg-gray-100 cursor-pointer
+                    className={`flex items-center justify-between py-3 pr-4 hover:bg-gray-100  dark:hover:bg-[#202020] cursor-pointer
                     }`}
                   >
                     <Link
@@ -63,17 +64,14 @@ export default function CategorySection() {
                         <span>{item.kateqoriya_adı}</span>
                       </li>
                     </Link>
-                    <img
-                      src="/right.svg"
-                      className="w-4 h-4 object-contain"
-                      alt="Right arrow"
-                    />
+                    <MdOutlineKeyboardArrowRight    className="w-7 h-7 object-contain dark:text-[#fff]"/>
+
                   </div>
 
                   {/* Dropdown content */}
                   {(activeDropdown === index ||
                     (mobileMenuOpen && isActive)) && (
-                    <div className="lg:absolute lg:left-full lg:top-0 w-full lg:w-[calc(100vw)] max-w-[1050px] p-4 bg-white border border-gray-300 shadow-lg z-30 h-[500px] rounded-lg">
+                    <div className="lg:absolute lg:left-full lg:top-0 w-full lg:w-[calc(100vw)] max-w-[1050px] p-4 bg-white dark:bg-[#202020] border border-gray-300 shadow-lg z-30 h-[500px] rounded-lg">
                       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
                         {item.subkateqoriyalar.map(
                           (subkateqoriya, subIndex) => {
@@ -87,7 +85,7 @@ export default function CategorySection() {
                                 className={`px-3 py-2 text-xs lg:text-sm ${
                                   isSubActive
                                     ? "bg-blue-100 text-[#FF7518] font-semibold"
-                                    : "text-[#333] hover:bg-gray-100 hover:text-[#FF7518]"
+                                    : "text-[#333] dark:text-[#fff]  hover:bg-gray-700 hover:text-[#FF7518]"
                                 } transition-all duration-300 ease-in-out cursor-pointer rounded-md `}
                               >
                                 {subkateqoriya.subkateqoriya_adı}

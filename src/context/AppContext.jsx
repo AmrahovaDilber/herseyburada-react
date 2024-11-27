@@ -4,11 +4,18 @@ import { useForm } from "react-hook-form";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../firebase/firebase";
 import data from "../data/categoriesData";
-import { getFirestore, doc, setDoc, getDoc, updateDoc } from "firebase/firestore";
+import {
+  getFirestore,
+  doc,
+  setDoc,
+  getDoc,
+  updateDoc,
+} from "firebase/firestore";
 
 export const AppContext = createContext();
 
 export const AppContextProvider = ({ children }) => {
+  const [darkMode, setDarkMode] = useState(false);
   const [allData, setAllData] = useState(data);
   const [products, setProducts] = useState(
     allData.kateqoriyalar.flatMap((category) =>
@@ -31,16 +38,21 @@ export const AppContextProvider = ({ children }) => {
   const [userLoggedIn, setUserLoggedIn] = useState(false);
   const [loading, setLoading] = useState(true);
 
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+
   const db = getFirestore();
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, initializeUser);
     return unsubscribe;
   }, []);
-  
+
   useEffect(() => {
     if (!userLoggedIn) {
-      const localCarts = JSON.parse(localStorage.getItem('carts')) || [];
-      const localFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
+      const localCarts = JSON.parse(localStorage.getItem("carts")) || [];
+      const localFavorites =
+        JSON.parse(localStorage.getItem("favorites")) || [];
       setCarts(localCarts);
       setFavorites(localFavorites);
     }
@@ -54,8 +66,9 @@ export const AppContextProvider = ({ children }) => {
     } else {
       setCurrentUser(null);
       setUserLoggedIn(false);
-      const localCarts = JSON.parse(localStorage.getItem('carts')) || [];
-      const localFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
+      const localCarts = JSON.parse(localStorage.getItem("carts")) || [];
+      const localFavorites =
+        JSON.parse(localStorage.getItem("favorites")) || [];
       setCarts(localCarts);
       setFavorites(localFavorites);
     }
@@ -64,7 +77,7 @@ export const AppContextProvider = ({ children }) => {
 
   const fetchUserData = async (userId) => {
     try {
-      const userDocRef = doc(db, 'users', userId);
+      const userDocRef = doc(db, "users", userId);
       const userDoc = await getDoc(userDocRef);
       if (userDoc.exists()) {
         const userData = userDoc.data();
@@ -74,26 +87,31 @@ export const AppContextProvider = ({ children }) => {
         await setDoc(userDocRef, { carts: [], favorites: [] });
       }
     } catch (error) {
-      console.error("İstifadəçi məlumatlarını əldə edərkən xəta baş verdi:", error);
-      notification("İstifadəçi məlumatlarını əldə edərkən xəta baş verdi. Yenidən cəhd edin.");
+      console.error(
+        "İstifadəçi məlumatlarını əldə edərkən xəta baş verdi:",
+        error
+      );
+      notification(
+        "İstifadəçi məlumatlarını əldə edərkən xəta baş verdi. Yenidən cəhd edin."
+      );
     }
   };
 
   const updateUserData = async (newCarts, newFavorites) => {
     if (userLoggedIn && currentUser) {
       try {
-        const userDocRef = doc(db, 'users', currentUser.uid);
+        const userDocRef = doc(db, "users", currentUser.uid);
         await updateDoc(userDocRef, {
           carts: newCarts,
-          favorites: newFavorites
+          favorites: newFavorites,
         });
       } catch (error) {
         console.error("İstifadəçi məlumatlarının yenilənməsi xətası:", error);
         notification("Data yenilənərkən xəta baş verdi. Yenidən cəhd edin.");
       }
     } else {
-      localStorage.setItem('carts', JSON.stringify(newCarts));
-      localStorage.setItem('favorites', JSON.stringify(newFavorites));
+      localStorage.setItem("carts", JSON.stringify(newCarts));
+      localStorage.setItem("favorites", JSON.stringify(newFavorites));
     }
   };
   const addToCart = async (id) => {
@@ -101,9 +119,9 @@ export const AppContextProvider = ({ children }) => {
       notification("Səbətə əşyalar əlavə etmək üçün daxil olmalısınız");
       return;
     }
-    console.log("Adding to cart:", id); 
+    console.log("Adding to cart:", id);
     const product = products.find((prod) => prod.product_id === id);
-  
+
     if (product) {
       if (!carts.includes(id)) {
         const newCarts = [...carts, id];
@@ -118,18 +136,17 @@ export const AppContextProvider = ({ children }) => {
       notification(`Məhsul tapılmadı`);
     }
   };
-  
-  
+
   const removeFromCart = async (id) => {
     const newCarts = carts.filter((item) => item !== id);
     setCarts(newCarts);
     const product = products.find((prod) => prod.product_id === id);
-  
+
     if (product) {
       await updateUserData(newCarts, favorites);
       notification(`${product.product_name} səbətdən silindi`);
     } else {
-      notification('Məhsul tapılmadı');
+      notification("Məhsul tapılmadı");
     }
   };
   const isInCart = (id) => {
@@ -141,11 +158,13 @@ export const AppContextProvider = ({ children }) => {
 
   const addToFavorites = async (id) => {
     if (!userLoggedIn) {
-      notification("Sevimlilərinizə elementlər əlavə etmək üçün daxil olmalısınız");
+      notification(
+        "Sevimlilərinizə elementlər əlavə etmək üçün daxil olmalısınız"
+      );
       return;
     }
     const findProduct = products.find((product) => product.product_id === id);
-  
+
     if (findProduct) {
       if (!favorites.includes(id)) {
         const newFavorites = [...favorites, id];
@@ -153,19 +172,20 @@ export const AppContextProvider = ({ children }) => {
         await updateUserData(carts, newFavorites);
         notification(`${findProduct.product_name} sevimlilərə əlavə edildi`);
       } else {
-        notification(`${findProduct.product_name} artıq sevimlilər siyahısındadır`);
+        notification(
+          `${findProduct.product_name} artıq sevimlilər siyahısındadır`
+        );
       }
     } else {
-      notification('Məhsul tapılmadı');
+      notification("Məhsul tapılmadı");
     }
   };
-  
 
   const removeFromFavorites = async (id) => {
     const newFavorites = favorites.filter((favoriteId) => favoriteId !== id);
     setFavorites(newFavorites);
     const findProduct = products.find((product) => product.product_id === id);
-  
+
     if (findProduct) {
       await updateUserData(carts, newFavorites);
       notification(`${findProduct.product_name} sevimlilərdən silindi`);
@@ -194,8 +214,6 @@ export const AppContextProvider = ({ children }) => {
     setProducts(updatedProducts);
   };
 
-
-  
   const handleFilterPrice = (price) => {
     setMaxPrice(price);
   };
@@ -258,10 +276,11 @@ export const AppContextProvider = ({ children }) => {
 
   const { errors: loginErrors } = loginFormState;
 
-
   const handleColorChange = (color) => {
     setSelectedColors((selectedColors) =>
-      selectedColors.includes(color) ? selectedColors.filter((c) => c !== color) : [...selectedColors, color]
+      selectedColors.includes(color)
+        ? selectedColors.filter((c) => c !== color)
+        : [...selectedColors, color]
     );
   };
 
@@ -324,7 +343,10 @@ export const AppContextProvider = ({ children }) => {
     selectedCategory,
     setSelectedCategory,
     setCarts,
-    isInCart  
+    darkMode,
+    setDarkMode,
+    isInCart,
+    toggleDarkMode,
   };
 
   return <AppContext.Provider value={values}>{children}</AppContext.Provider>;

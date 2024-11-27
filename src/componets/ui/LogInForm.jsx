@@ -21,6 +21,7 @@ const LoginForm = () => {
     loginErrors,
     userLoggedIn,
     watchLogin,
+    darkMode
   } = useContextApp();
   const email = watchLogin("email");
   const password = watchLogin("password");
@@ -40,7 +41,6 @@ const LoginForm = () => {
       }
     }
   }
-  
 
   const onGoogleSignIn = async (e) => {
     e.preventDefault();
@@ -64,7 +64,7 @@ const LoginForm = () => {
         await doPasswordReset(forgotPasswordEmail);
         notification("E-poçtunuza parol sıfırlama e-poçtu göndərildi.");
       } catch (error) {
-        notification(`Sıfırlama e-poçtunu göndərmək alınmadı. E-poçtunuzu yoxlayın${error.message}`);
+        notification(`Sıfırlama e-poçtu göndərmək alınmadı. E-poçtunuzu yoxlayın${error.message}`);
       }
     } else {
       notification("Şifrəni sıfırlamaq üçün e-poçtunuzu daxil edin.");
@@ -74,10 +74,18 @@ const LoginForm = () => {
   return (
     <>
       {userLoggedIn && <Navigate to={"/"} replace={true} />}
-      <main className="flex flex-col justify-center items-center min-h-screen bg-gray-100 px-4 sm:px-0">
-        <div className="bg-white shadow-lg border rounded-lg p-8 w-full max-w-[550px] mx-auto my-8">
+      <main
+        className={`flex flex-col justify-center items-center min-h-screen ${
+          darkMode ? "bg-[#121212] text-white" : "bg-gray-100 text-gray-700"
+        } px-4 sm:px-0`}
+      >
+        <div
+          className={`bg-white shadow-lg border rounded-lg p-8 w-full max-w-[550px] mx-auto my-8 ${
+            darkMode ? "bg-[#1a1a1a] border-[#333]" : "border-gray-300"
+          }`}
+        >
           <Link to="/">
-            <figure className="w-[180px]  mb-5 mx-auto">
+            <figure className="w-[180px] mb-5 mx-auto">
               <img
                 src="./herseyburada.svg"
                 alt="Hərşeyburada Logo"
@@ -86,7 +94,11 @@ const LoginForm = () => {
             </figure>
           </Link>
 
-          <h2 className="text-center mb-6 font-semibold text-2xl text-gray-700">
+          <h2
+            className={`text-center mb-6 font-semibold text-2xl ${
+              darkMode ? "text-white" : "text-gray-700"
+            }`}
+          >
             Daxil ol
           </h2>
           <form
@@ -94,7 +106,6 @@ const LoginForm = () => {
             className="space-y-6"
             method="post"
           >
-          
             <div className="input-group mb-5">
               <input
                 type="text"
@@ -106,7 +117,11 @@ const LoginForm = () => {
                     message: "Yanlış email formatı",
                   },
                 })}
-                className="form-input border border-gray-300 focus:border-[#ff9130] focus:ring focus:ring-[#ff9130]/50 outline-none w-full py-3 px-4 rounded-md text-lg"
+                className={`form-input border focus:ring focus:ring-[#ff9130]/50 outline-none w-full py-3 px-4 rounded-md text-lg ${
+                  darkMode
+                    ? "bg-[#333] border-[#444] text-white focus:border-[#ff9130]"
+                    : "bg-white border-gray-300 text-gray-700 focus:border-[#ff9130]"
+                }`}
                 placeholder="Email"
               />
               <p className="text-red-500 text-sm mt-1">
@@ -115,7 +130,7 @@ const LoginForm = () => {
             </div>
 
             {/* Password Input */}
-            <div className="input-group mb-5 relative ">
+            <div className="input-group mb-5 relative">
               <input
                 type={showPassword ? "text" : "password"}
                 id="password"
@@ -126,7 +141,11 @@ const LoginForm = () => {
                     message: "Parol ən azı 6 simvol uzunluğunda olmalıdır",
                   },
                 })}
-                className="form-input  border border-gray-300 focus:border-[#ff9130] focus:ring focus:ring-[#ff9130]/50 outline-none w-full py-3 px-4 rounded-md text-lg"
+                className={`form-input border focus:ring focus:ring-[#ff9130]/50 outline-none w-full py-3 px-4 rounded-md text-lg ${
+                  darkMode
+                    ? "bg-[#333] border-[#444] text-white focus:border-[#ff9130]"
+                    : "bg-white border-gray-300 text-gray-700 focus:border-[#ff9130]"
+                }`}
                 placeholder="Parol"
               />
               <div
@@ -156,27 +175,39 @@ const LoginForm = () => {
             <div className="google-signin mb-6">
               <button
                 onClick={onGoogleSignIn}
-                className="w-full flex items-center justify-center gap-3 bg-white border border-gray-300 py-3 px-5 rounded-md hover:bg-gray-50 transition-all shadow-sm"
+                className={`w-full flex items-center justify-center gap-3  ${
+                    darkMode ? "bg-[#202020]" : "bg-white"
+                }  border border-gray-300 py-3 px-5 rounded-md  transition-all shadow-sm`}
               >
                 <img src={google} alt="Google" className="w-5 h-5" />
-                <span className="text-gray-600">Google ilə daxil olun</span>
+                <span
+                  className={`${
+                    darkMode ? "text-white" : "text-gray-600"
+                  }`}
+                >
+                  Google ilə daxil olun
+                </span>
               </button>
             </div>
 
             {/* Sign Up Link */}
             <div className="flex justify-between flex-col sm:flex-row">
-              <p className="form-bottom opacity-80 text-center sm:text-left">
+              <p
+                className={`form-bottom opacity-80 text-center sm:text-left ${
+                  darkMode ? "text-gray-400" : "text-gray-700"
+                }`}
+              >
                 Hesabın yoxdur?
                 <Link
                   to={"/signup"}
-                  className="ml-2 opacity-100  text-[#ff9130] hover:text-[#e08430] underline"
+                  className="ml-2 opacity-100 text-[#ff9130] hover:text-[#e08430] underline"
                 >
                   Qeydiyyatdan keç
                 </Link>
               </p>
               <p
                 onClick={() => setForgotPasswordEmail(email)}
-                className="text-[#ff9130] hover:text-[#e08430] text-center text-sm cursor-pointer transition-colors  sm:text-right mt-4 sm:mt-0"
+                className="text-[#ff9130] hover:text-[#e08430] text-center text-sm cursor-pointer transition-colors sm:text-right mt-4 sm:mt-0"
                 onDoubleClick={handleForgotPassword}
               >
                 Parolu unutmusan?

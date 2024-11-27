@@ -16,7 +16,7 @@ export default function WishList() {
     <main className="min-h-screen py-10">
       <div className="container mx-auto  md:px-0">
         <div className="flex flex-col sm:flex-row justify-between items-center mb-8">
-          <p className="text-2xl font-semibold text-gray-800">
+          <p className="text-2xl font-semibold text-gray-800 dark:text-white">
             Sevimlilər ({favoritesProducts.length})
           </p>
         </div>
@@ -32,7 +32,7 @@ export default function WishList() {
         </div>
         {favoritesProducts.length === 0 && (
           <div className="flex justify-center items-center h-80 rounded-lg">
-            <p className="text-gray-600 text-lg font-semibold">
+            <p className="text-gray-600 dark:text-[#fff] text-lg font-semibold">
               Sevimlilər siyahınız boş görünür, amma mükəmməl seçimlər var!
             </p>
           </div>

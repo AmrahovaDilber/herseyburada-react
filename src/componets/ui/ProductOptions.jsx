@@ -27,7 +27,7 @@ function ProductOptions({ findProduct }) {
     <div className="space-y-6">
     
       <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4">
-        <div className="text-base sm:text-lg font-semibold text-gray-800">Rəng:</div>
+        <div className="text-base sm:text-lg font-semibold text-gray-800 dark:text-[#fff]">Rəng:</div>
         <div className="flex flex-wrap gap-4">
           {availableColors.map((color, index) => {
             const isSelected = selectedColor === color.name;
@@ -52,12 +52,12 @@ function ProductOptions({ findProduct }) {
 
     
       <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4">
-        <div className="text-base sm:text-lg font-semibold text-gray-800">Ölçülər:</div>
+        <div className="text-base sm:text-lg font-semibold text-gray-800 dark:text-[#fff]">Ölçülər:</div>
         <div className="flex flex-wrap gap-2">
           {findProduct.sizes.map((size, index) => (
             <div
               key={index}
-              className="border border-gray-300 rounded-md px-3 py-1 text-sm text-gray-700 hover:bg-gray-100 peer-checked:bg-gray-300"
+              className="border border-gray-300 rounded-md px-3 py-1 text-sm text-gray-700 dark:text-[#fff] dark:bg-[#202020] peer-checked:bg-gray-300"
             >
               {size}
             </div>

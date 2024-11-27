@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export default function Footer() {
   return (
     <div>
-      <footer className="bg-black">
+      <footer className="bg-black dark:bg-[#121212] dark:border-t">
         <div className="w-full max-w-[1200px] mx-auto text-white py-8 md:py-12 flex flex-col justify-center items-center md:flex-row sm:justify-between mt-8 md:mt-12">
           <div className="mb-8 md:mb-0">
             <div className="space-y-4">
@@ -82,7 +82,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex items-center justify-center bg-black gap-x-2 py-4 border-t border-[#141414]">
+        <div className="flex items-center justify-center bg-black dark:bg-[#2a2a2a] gap-x-2 py-4 border-t border-[#141414]">
           <div className="text-sm text-[#d9d9d9]">
             <a href="#">Copyright Rimel 2024. Bütün hüquqlar qorunur</a>
           </div>

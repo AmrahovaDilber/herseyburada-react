@@ -16,7 +16,7 @@ const FilterByColor = () => {
 
   return (
     <div className="">
-      <h2 className="font-bold text-gray-700 mb-3 text-lg border-b pb-2">
+      <h2 className="font-bold text-gray-700 dark:text-[#fff] mb-3 text-lg border-b pb-2">
         Rəng
       </h2>
       <ul className=" max-h-44 overflow-y-auto custom-scrollbar">
@@ -35,7 +35,7 @@ const FilterByColor = () => {
               <span
                 className={`inline-block w-5 h-5 rounded-full mr-3 border ${bgColorClass}`}
               />
-              <span className="text-gray-600">{name}</span>
+              <span className="text-gray-600 dark:text-[#fff]">{name}</span>
             </label>
           </li>
         ))}

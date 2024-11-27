@@ -3,9 +3,8 @@ import ProductOptions from "../ui/ProductOptions";
 import DeliveryInfo from "../ui/DeliveryInfo";
 import { useParams } from "react-router-dom";
 import { useContextApp } from "../../context/AppContext";
-
 import { FaRegHeart } from "react-icons/fa";
-import Review from "./Review";
+import ReviewandDescription from "./ReviewAndDescription.jsx";
 
 export default function ProductDetail() {
   const { products, addToCart, addToFavorites, isInCart, removeFromCart } =useContextApp();
@@ -13,7 +12,7 @@ export default function ProductDetail() {
   const findProduct = products.find((product) => product.slug === slug);
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col dark:text-[#fff]">
       <div className="flex flex-col lg:flex-row gap-[50px]  my-12 max-w-7xl  sm:px-6 lg:px-0">
         <div className="w-full lg:w-[40%] rounded-lg overflow-hidden ">
           <figure className="h-[300px] sm:h-[400px] lg:h-[500px] flex items-center justify-center">
@@ -30,14 +29,14 @@ export default function ProductDetail() {
 
           <div className="space-y-1 sm:space-y-4 border-b pb-6">
             <div className="flex items-center gap-4">
-              <div className="text-sm md:text-base font-medium text-gray-500 line-through">
+              <div className="text-sm md:text-base font-medium text-gray-500 dark:text-[#fff] line-through">
                 ${findProduct.original_price}
               </div>
               <span className="text-sm md:text-base font-semibold text-red-600 bg-red-100 px-3 py-1 rounded-md">
                 -{findProduct.discount ? findProduct.discount.toFixed(0) : 0}%
               </span>
             </div>
-            <div className="text-xl font-bold text-gray-800">
+            <div className="text-xl font-bold text-gray-800 dark:text-[#fff]">
               $
               {(
                 findProduct.original_price -
@@ -77,7 +76,7 @@ export default function ProductDetail() {
         </div>
       </div>
 
-      <Review findProduct={findProduct} />
+      <ReviewandDescription findProduct={findProduct} />
     </div>
   );
 }

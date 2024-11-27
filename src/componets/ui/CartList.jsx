@@ -68,11 +68,11 @@ export default function CartList() {
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-[2fr_1fr_1fr_1fr_1fr] gap-2 sm:gap-4 items-center h-12 sm:h-16 font-semibold border border-gray-100 shadow-sm px-2 sm:px-4 py-1 sm:py-2 text-sm sm:text-base">
-        <div className="truncate text-sm sm:text-lg font-semibold text-gray-800 sm:text-gray-900">Məhsul</div>
-        <div className="truncate text-sm sm:text-lg font-semibold text-gray-800 sm:text-gray-900">Qiymət</div>
-        <div className="truncate text-sm sm:text-lg font-semibold text-gray-800 sm:text-gray-900">Kəmiyyət</div>
-        <div className="truncate text-center text-sm sm:text-lg font-semibold text-gray-800 sm:text-gray-900">Cəmi</div>
-        <div className="truncate text-center text-sm sm:text-lg font-semibold text-gray-800 sm:text-gray-900">Sil</div>
+        <div className="truncate text-sm sm:text-lg font-semibold text-gray-800 sm:text-gray-900 dark:text-[#fff]">Məhsul</div>
+        <div className="truncate text-sm sm:text-lg font-semibold text-gray-800 sm:text-gray-900 dark:text-[#fff]">Qiymət</div>
+        <div className="truncate text-sm sm:text-lg font-semibold text-gray-800 sm:text-gray-900 dark:text-[#fff]">Kəmiyyət</div>
+        <div className="truncate text-center text-sm sm:text-lg font-semibold text-gray-800 sm:text-gray-900 dark:text-[#fff]">Cəmi</div>
+        <div className="truncate text-center text-sm sm:text-lg font-semibold text-gray-800 sm:text-gray-900 dark:text-[#fff]">Sil</div>
       </div>
 
       <div className="space-y-4 h-[450px] overflow-y-auto">
@@ -88,7 +88,7 @@ export default function CartList() {
           ))}
         {cartProducts.length === 0 && (
           <div className="flex justify-center items-center h-80 rounded-lg">
-            <p className="text-gray-600 text-lg font-semibold">Səbətiniz Boşdur</p>
+            <p className="text-gray-600 text-lg font-semibold dark:text-[#fff]">Səbətiniz Boşdur</p>
           </div>
         )}
       </div>

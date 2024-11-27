@@ -25,7 +25,7 @@ const ContactForm = () => {
     <form 
       ref={formRef} 
       onSubmit={handleSubmit(onSubmit)} 
-      className="py-8 px-6 sm:py-10 sm:px-8 lg:py-12 lg:px-12 space-y-8 border  border-gray-100 shadow-md rounded-md"
+      className="py-8 px-6 sm:py-10 sm:px-8 lg:py-12 lg:px-12 space-y-8 border dark:bg-[#202020] border-gray-100 shadow-md rounded-md"
     >
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <div>

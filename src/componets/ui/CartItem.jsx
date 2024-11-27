@@ -24,14 +24,14 @@ export default function CartItem({ product, count, setCount, updateProductCount,
   console.log(`Rendering CartItem for product ${product.product_id}: count=${count}, subtotal=${subtotal}`);
 
   return (
-    <div className="grid grid-cols-[2fr_1fr_1fr_1fr_1fr] gap-4 items-center border border-gray-100 shadow-sm px-4 py-2">
+    <div className="grid grid-cols-[2fr_1fr_1fr_1fr_1fr] gap-4 items-center border border-gray-100 dark:bg-[#202020] shadow-sm px-4 py-2">
      <div className="flex items-center flex-col sm:flex-row gap-2 sm:gap-4">
   <img
     src={product.image_url}
     alt={product.product_name}
     className="w-16 h-16 sm:w-20 sm:h-20 object-cover rounded"
   />
- <span className="text-center sm:text-left text-[13px] leading-[1rem] sm:text-base font-semibold text-gray-800 sm:text-gray-900 ">
+ <span className="text-center sm:text-left text-[13px] leading-[1rem] sm:text-base font-semibold text-gray-800 sm:text-gray-900 dark:text-[#fff] ">
   {product.product_name}
 </span>
 
@@ -40,7 +40,7 @@ export default function CartItem({ product, count, setCount, updateProductCount,
       <div className="flex items-center gap-2">
   <button
     onClick={handleDecrement}
-    className="w-6 h-6 sm:w-8 sm:h-8 text-[20px] sm:text-[22px] bg-gray-200 rounded-md flex items-center justify-center"
+    className="w-6 h-6 sm:w-8 sm:h-8 text-[20px] sm:text-[22px] bg-gray-200 dark:bg-[#202020] rounded-md flex items-center justify-center"
   >
     -
   </button>
@@ -53,11 +53,11 @@ export default function CartItem({ product, count, setCount, updateProductCount,
       setCount(newCount);
       updateProductCount(product.product_id, newCount);
     }}
-    className="w-8 sm:w-12 text-center border rounded-md text-sm sm:text-base"
+    className="w-8 sm:w-12 text-center border rounded-md text-sm sm:text-base text-black"
   />
   <button
     onClick={handleIncrement}
-    className="w-6 h-6 sm:w-8 sm:h-8 text-[20px] sm:text-[22px] bg-gray-200 rounded-md flex items-center justify-center"
+    className="w-6 h-6 sm:w-8 sm:h-8 text-[20px] sm:text-[22px] bg-gray-200 dark:bg-[#202020] rounded-md flex items-center justify-center"
   >
     +
   </button>

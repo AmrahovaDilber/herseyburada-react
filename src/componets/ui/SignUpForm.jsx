@@ -8,7 +8,7 @@ import { db } from "../../firebase/firebase";
 
 const SignupForm = () => {
   const [isRegistering, setIsRegistering] = useState(false);
-  const { userLoggedIn } = useContextApp();
+  const { userLoggedIn,darkMode } = useContextApp();
   const [showPassword, setShowPassword] = useState(false);
   const [showRePassword, setShowRePassword] = useState(false);
 
@@ -54,16 +54,20 @@ const SignupForm = () => {
   return (
     <>
       {userLoggedIn && <Navigate to={"/"} replace={true} />}
-      <main className="flex items-center justify-center min-h-screen px-4 bg-gray-50">
-        <div className="flex flex-col-reverse items-center my-10 w-full max-w-[600px] bg-white rounded-lg shadow-lg overflow-hidden">
+      <main   className={`flex flex-col justify-center items-center min-h-screen ${
+          darkMode ? "bg-[#121212] text-white" : "bg-gray-100 text-gray-700"
+        } px-4 sm:px-0`}>
+        <div   className={`bg-white shadow-lg border rounded-lg p-8 w-full max-w-[550px] mx-auto my-8 ${
+            darkMode ? "bg-[#1a1a1a] border-[#333]" : "border-gray-300"
+          }`}>
           <div className="w-full max-w-[550px] p-8">
             <h1
-              className="text-3xl lg:text-4xl font-semibold mb-4 text-gray-800 text-center"
+              className={`${darkMode&&"text-white"} text-3xl lg:text-4xl font-semibold mb-4 text-gray-800 text-center`}
               style={{ fontFamily: "'Inter', sans-serif" }}
             >
               Hesab yaradın
             </h1>
-            <h3 className="text-md lg:text-lg mb-5 text-gray-600 text-center">
+            <h3 className={`text-md lg:text-lg mb-5 text-gray-600 ${darkMode&&"text-[#fff]"} text-center`}>
               Məlumatlarınızı aşağıda qeyd edin
             </h3>
             <form
@@ -76,7 +80,11 @@ const SignupForm = () => {
                 <input
                   type="text"
                   {...registerUser("name", { required: "Ad tələb olunur" })}
-                  className="w-full py-3 px-4 border border-gray-300 rounded-md bg-transparent focus:border-[#ff9130] outline-none transition-all"
+                  className={`form-input border focus:ring focus:ring-[#ff9130]/50 outline-none w-full py-3 px-4 rounded-md text-lg ${
+                    darkMode
+                      ? "bg-[#333] border-[#444] text-white focus:border-[#ff9130]"
+                      : "bg-white border-gray-300 text-gray-700 focus:border-[#ff9130]"
+                  }`}
                   placeholder="Ad"
                 />
                 <p className="text-red-500 text-sm">
@@ -91,7 +99,11 @@ const SignupForm = () => {
                   {...registerUser("surname", {
                     required: "Soyad tələb olunur",
                   })}
-                  className="w-full py-3 px-4 border border-gray-300 rounded-md bg-transparent focus:border-[#ff9130] outline-none transition-all"
+                className={`form-input border focus:ring focus:ring-[#ff9130]/50 outline-none w-full py-3 px-4 rounded-md text-lg ${
+                  darkMode
+                    ? "bg-[#333] border-[#444] text-white focus:border-[#ff9130]"
+                    : "bg-white border-gray-300 text-gray-700 focus:border-[#ff9130]"
+                }`}
                   placeholder="Soyad"
                 />
                 <p className="text-red-500 text-sm">
@@ -110,7 +122,11 @@ const SignupForm = () => {
                       message: "Yanlış email formatı",
                     },
                   })}
-                  className="w-full py-3 px-4 border border-gray-300 rounded-md bg-transparent focus:border-[#ff9130] outline-none transition-all"
+                className={`form-input border focus:ring focus:ring-[#ff9130]/50 outline-none w-full py-3 px-4 rounded-md text-lg ${
+                  darkMode
+                    ? "bg-[#333] border-[#444] text-white focus:border-[#ff9130]"
+                    : "bg-white border-gray-300 text-gray-700 focus:border-[#ff9130]"
+                }`}
                   placeholder="Email"
                 />
                 <p className="text-red-500 text-sm">
@@ -130,7 +146,11 @@ const SignupForm = () => {
                         "Telefon nömrəsi ən azı 10 rəqəmdən ibarət olmalıdır",
                     },
                   })}
-                  className="w-full py-3 px-4 border border-gray-300 rounded-md bg-transparent focus:border-[#ff9130] outline-none transition-all"
+                className={`form-input border focus:ring focus:ring-[#ff9130]/50 outline-none w-full py-3 px-4 rounded-md text-lg ${
+                  darkMode
+                    ? "bg-[#333] border-[#444] text-white focus:border-[#ff9130]"
+                    : "bg-white border-gray-300 text-gray-700 focus:border-[#ff9130]"
+                }`}
                   placeholder="Telefon nömrəsi"
                 />
                 <p className="text-red-500 text-sm">
@@ -149,7 +169,11 @@ const SignupForm = () => {
                       message: "Parol ən azı 6 simvoldan ibarət olmalıdır",
                     },
                   })}
-                  className="w-full py-3 px-4 border border-gray-300 rounded-md bg-transparent focus:border-[#ff9130] outline-none transition-all"
+                className={`form-input border focus:ring focus:ring-[#ff9130]/50 outline-none w-full py-3 px-4 rounded-md text-lg ${
+                  darkMode
+                    ? "bg-[#333] border-[#444] text-white focus:border-[#ff9130]"
+                    : "bg-white border-gray-300 text-gray-700 focus:border-[#ff9130]"
+                }`}
                   placeholder="Parol"
                 />
                 {showPassword ? (
@@ -180,8 +204,11 @@ const SignupForm = () => {
                       value === watchRegister("password") ||
                       "Parollar uyğun gəlmir",
                   })}
-                  className="w-full py-3 px-4 border border-gray-300 rounded-md bg-transparent focus:border-[#ff9130] outline-none transition-all"
-                  placeholder="Şifrəni yenidən daxil edin"
+                  className={`form-input border focus:ring focus:ring-[#ff9130]/50 outline-none w-full py-3 px-4 rounded-md text-lg ${
+                    darkMode
+                      ? "bg-[#333] border-[#444] text-white focus:border-[#ff9130]"
+                      : "bg-white border-gray-300 text-gray-700 focus:border-[#ff9130]"
+                  }`}                  placeholder="Şifrəni yenidən daxil edin"
                 />
                 {showRePassword ? (
                   <FaRegEye
@@ -210,7 +237,7 @@ const SignupForm = () => {
                 {isRegistering ? "Yüklənir..." : "Hesab yarat"}
               </button>
 
-              {/* Login Link */}
+ 
               <p className="text-center text-gray-600">
                 Artıq hesabın var?
                 <Link

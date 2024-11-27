@@ -5,7 +5,7 @@ const FilterProductCategories = () => {
 
   return (
     <div className="p-2 rounded-lg ">
-      <h2 className="font-bold text-gray-700 mb-3 text-lg border-b pb-2">Kateqoriyalar</h2>
+      <h2 className="font-bold text-gray-700 mb-3 text-lg border-b pb-2 dark:text-[#fff] " >Kateqoriyalar</h2>
       <ul className="h-[240px] overflow-y-auto scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-gray-300 scrollbar-track-gray-100">
         {allData.kateqoriyalar.map((category) => {
           const isActive = selectedCategories.includes(category.kateqoriya_adı);
@@ -21,7 +21,7 @@ const FilterProductCategories = () => {
                   onChange={() => handleCategoryChange(category.kateqoriya_adı)}
                   className="mr-3 cursor-pointer h-4 w-4 accent-blue-500"
                 />
-                <span className={`transition-colors duration-200 ${isActive ? 'font-semibold' : 'text-gray-600'}`}>
+                <span className={`transition-colors duration-200 ${isActive ? 'font-semibold' : 'text-gray-600'} dark:text-[#fff] `}>
                   {category.kateqoriya_adı}
                 </span>
               </label>
