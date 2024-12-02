@@ -2,11 +2,11 @@ import { Link, Navigate } from "react-router-dom";
 import { useContextApp } from "../../context/AppContext";
 import {
   doSignInWithEmailAndPassword,
-  doSignInWithGoogle,
+  // doSignInWithGoogle,
   doPasswordReset,
 } from "../../firebase/auth";
 import { useState } from "react";
-import google from "../../../public/google.png";
+// import google from "../../../public/google.png";
 import { notification } from "../../utils/helper";
 import { FaRegEye } from "react-icons/fa";
 import { FaRegEyeSlash } from "react-icons/fa";
@@ -42,34 +42,46 @@ const LoginForm = () => {
     }
   }
 
-  const onGoogleSignIn = async (e) => {
-    e.preventDefault();
-    if (!isSigningIn) {
-      setIsSigningIn(true);
-      try {
-        await doSignInWithGoogle();
-      } catch (err) {
-        console.error("Google ilə daxil olarkən xəta:", err);
-        notification(
-          "Google ilə daxil olmaq alınmadı. Lütfən, yenidən cəhd edin."
-        );
-        setIsSigningIn(false);
-      }
-    }
-  };
+  // const onGoogleSignIn = async (e) => {
+  //   e.preventDefault();
+  //   if (!isSigningIn) {
+  //     setIsSigningIn(true);
+  //     try {
+  //       await doSignInWithGoogle();
+  //     } catch (err) {
+  //       console.error("Google ilə daxil olarkən xəta:", err);
+  //       notification("Google ilə daxil olmaq alınmadı. Lütfən, yenidən cəhd edin.");
+  //     } finally {
+  //       setIsSigningIn(false);
+  //     }
+  //   }
+  // };
+  
 
   const handleForgotPassword = async () => {
     if (forgotPasswordEmail) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(forgotPasswordEmail)) {
+        notification("Düzgün formatda e-poçt daxil edin.");
+        return;
+      }
       try {
         await doPasswordReset(forgotPasswordEmail);
         notification("E-poçtunuza parol sıfırlama e-poçtu göndərildi.");
       } catch (error) {
-        notification(`Sıfırlama e-poçtu göndərmək alınmadı. E-poçtunuzu yoxlayın${error.message}`);
+        if (error.code === "auth/user-not-found") {
+          notification("Bu e-poçt ünvanı ilə istifadəçi tapılmadı.");
+        } else if (error.code === "auth/invalid-email") {
+          notification("Düzgün formatda e-poçt daxil edin.");
+        } else {
+          notification(`Sıfırlama e-poçtu göndərmək alınmadı. Xəta: ${error.message}`);
+        }
       }
     } else {
       notification("Şifrəni sıfırlamaq üçün e-poçtunuzu daxil edin.");
     }
   };
+  
 
   return (
     <>
@@ -155,7 +167,7 @@ const LoginForm = () => {
             </button>
 
      
-            <div className="google-signin mb-6">
+            {/* <div className="google-signin mb-6">
               <button
                 onClick={onGoogleSignIn}
                 className={`w-full flex items-center justify-center gap-3 ${darkMode ? "bg-[#202020]" : "bg-white"} border border-gray-300 py-3 px-5 rounded-md transition-all shadow-sm`}
@@ -165,7 +177,7 @@ const LoginForm = () => {
                   Google ilə daxil olun
                 </span>
               </button>
-            </div>
+            </div> */}
 
          
             <div className="flex justify-between flex-col sm:flex-row">

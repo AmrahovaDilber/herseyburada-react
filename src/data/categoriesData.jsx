@@ -11,7 +11,7 @@ const data = {
     {
       kateqoriya_id: 1,
       kateqoriya_adı: "Qadın",
-      icon:IoWomanSharp ,
+      icon: IoWomanSharp,
       subkateqoriyalar: [
         {
           subkateqoriya_id: 1,
@@ -49,7 +49,8 @@ const data = {
                 {
                   review_id: 4,
                   rating: 3.5,
-                  comment: "Fiyatına görə yaxşıdır, amma bəzi hissələri zəifdir.",
+                  comment:
+                    "Fiyatına görə yaxşıdır, amma bəzi hissələri zəifdir.",
                 },
                 {
                   review_id: 5,
@@ -98,6 +99,7 @@ const data = {
                 },
               ],
             },
+
             {
               product_id: 2,
               product_name: "Rahat Bluz",
@@ -240,7 +242,7 @@ const data = {
                   comment: "Rəngi çox gözəl, amma ölçü kiçik.",
                 },
               ],
-              slug: "qadin-bluz-mavi",
+              slug: "qadin-bluz-qirmizi",
             },
             {
               product_id: 8,
@@ -274,7 +276,7 @@ const data = {
               image_url:
                 "https://akn-lmb-adl.a-cdn.akinoncdn.com/products/2024/08/15/481659/5d71ad75-4787-4c0e-9227-fecefe97577f_size900x1350_quality100_cropTop.jpg",
               description: "Rəngarəng və rahat bluz.",
-              colors: ["Mavi"],
+              colors: ["Yaşıl"],
               sizes: ["M", "L", "XL"],
               reviews: [
                 { review_id: 2, rating: 5.0, comment: "Çox rahat və şıx!" },
@@ -296,7 +298,7 @@ const data = {
               image_url:
                 "https://akn-lmb-adl.a-cdn.akinoncdn.com/products/2023/02/06/405941/208e3ad5-d58e-4b50-afd5-a578dffefdac_size900x1350_quality100_cropTop.jpg",
               description: "Rəngarəng və rahat bluz.",
-              colors: ["Sarı"],
+              colors: ["Yaşıl Tünd"],
               sizes: ["M", "L", "XL"],
               reviews: [
                 { review_id: 2, rating: 5.0, comment: "Çox rahat və şıx!" },
@@ -318,7 +320,7 @@ const data = {
               image_url:
                 "https://akn-lmb-adl.a-cdn.akinoncdn.com/products/2024/03/29/469057/96852243-7c3e-48a3-a8a0-388d1195f4e7_size900x1350_quality100_cropTop.jpg",
               description: "Rəngarəng və rahat bluz.",
-              colors: ["Yaşıl"],
+              colors: ["Açıq Mavi"],
               sizes: ["M", "L", "XL"],
               reviews: [
                 { review_id: 2, rating: 5.0, comment: "Çox rahat və şıx!" },
@@ -328,8 +330,9 @@ const data = {
                   comment: "Rəngi çox gözəl, amma ölçü kiçik.",
                 },
               ],
-              slug: "qadin-bluz-aq-mavi",
+              slug: "qadin-bluz-aciq-mavi",
             },
+
             {
               product_id: 12,
               product_name: "Qadın Bluz - Tünd Yaşıl",
@@ -1677,7 +1680,7 @@ const data = {
               product_name: "BUTIGO Qadın Çanta",
               price: 25.0,
               original_price: 50.0,
-              discount: 50, // (50 - 25) / 50 * 100 = 50%
+              discount: 50,
               salesCount: 80,
               image_url:
                 "https://flostore.az/wp-content/uploads/2024/03/DHO-00065802-12-300x400.jpg",
@@ -1692,13 +1695,14 @@ const data = {
                   comment: "Gözəl dizayn və yüksək keyfiyyət.",
                 },
               ],
+              slug: "butigo-qadin-canta",
             },
             {
               product_id: 301,
               product_name: "BUTIGO Qadın Çanta",
               price: 40.0,
               original_price: 70.0,
-              discount: 42.86, // (70 - 40) / 70 * 100 ≈ 42.86%
+              discount: 42.86,
               salesCount: 80,
               image_url:
                 "https://flostore.az/wp-content/uploads/2024/02/DHO-00064124-600x900.jpg",
@@ -1712,13 +1716,14 @@ const data = {
                   comment: "Gözəl dizayn və yüksək keyfiyyət.",
                 },
               ],
+              slug: "butigo-qadin-canta-2",
             },
             {
               product_id: 302,
               product_name: "BLUMBERJACK Qadın Çanta",
               price: 200.0,
               original_price: 230.0,
-              discount: 13.04, // (230 - 200) / 230 * 100 ≈ 13.04%
+              discount: 13.04,
               salesCount: 80,
               image_url:
                 "https://flostore.az/wp-content/uploads/2024/02/DHO-00064120-600x900.jpg",
@@ -1733,13 +1738,14 @@ const data = {
                   comment: "Gözəl dizayn və yüksək keyfiyyət.",
                 },
               ],
+              slug: "blumberjack-qadin-canta",
             },
             {
               product_id: 303,
               product_name: "BLUMBERJACK Qadın Çanta",
               price: 200.0,
               original_price: 250.0,
-              discount: 20, // (250 - 200) / 250 * 100 = 20%
+              discount: 20,
               salesCount: 80,
               image_url:
                 "https://flostore.az/wp-content/uploads/2023/04/DHO-00059276-5-1.jpg",
@@ -1754,7 +1760,9 @@ const data = {
                   comment: "Gözəl dizayn və yüksək keyfiyyət.",
                 },
               ],
+              slug: "blumberjack-qadin-canta-2",
             },
+
             {
               product_id: 304,
               product_name: "BLUMBERJACK Qadın Çanta",
@@ -1768,6 +1776,7 @@ const data = {
                 "Gündəlik istifadə üçün mükəmməl olan şık və rahat çiyin çantası.",
               colors: ["Mavi"],
               sizes: ["ST"],
+              slug: "blumberjack-qadin-canta-3",
               reviews: [
                 {
                   review_id: 22,
@@ -1781,7 +1790,7 @@ const data = {
               product_name: "LUMBERJACK Qadın Çanta",
               price: 130.0,
               original_price: 150.0,
-              discount: 13.33,
+              discount: 13.33, // (150 - 130) / 150 * 100 = 13.33%
               salesCount: 80,
               image_url:
                 "https://flostore.az/wp-content/uploads/2023/02/DHO-00055187-4-600x900.jpg",
@@ -1789,6 +1798,7 @@ const data = {
                 "Hər gün üçün uyğun, şık və modern dizaynlı çiyin çantası.",
               colors: ["Mavi"],
               sizes: ["ST"],
+              slug: "lumberjack-qadin-canta",
               reviews: [
                 {
                   review_id: 22,
@@ -1802,7 +1812,7 @@ const data = {
               product_name: "LUMBERJACK Qadın Çanta",
               price: 70.0,
               original_price: 90.0,
-              discount: 22.22,
+              discount: 22.22, // (90 - 70) / 90 * 100 = 22.22%
               salesCount: 80,
               image_url:
                 "https://flostore.az/wp-content/uploads/2023/02/DHO-00057612-5-600x900.jpg",
@@ -1810,6 +1820,7 @@ const data = {
                 "Şık və rəngarəng dizayna malik çiyin çantası, gündəlik istifadə üçün idealdır.",
               colors: ["Narinci"],
               sizes: ["ST"],
+              slug: "lumberjack-qadin-canta-2",
               reviews: [
                 {
                   review_id: 22,
@@ -1823,7 +1834,7 @@ const data = {
               product_name: "Çiyin çantası W.D.Polo ağ",
               price: 44.0,
               original_price: 80.0,
-              discount: 45,
+              discount: 45, // (80 - 44) / 80 * 100 = 45%
               salesCount: 80,
               image_url:
                 "https://strgimgr.umico.az/sized/840/679091-222b96bdb2b5465a66ea36118ae777c5.jpg",
@@ -1831,6 +1842,7 @@ const data = {
                 "Zərif və şık dizayna malik ağ çiyin çantası, hər gün üçün mükəmməl seçim.",
               colors: ["Ağ"],
               sizes: ["ST"],
+              slug: "ciyin-cantasi-wd-polo-ag",
               reviews: [
                 {
                   review_id: 22,
@@ -1844,13 +1856,14 @@ const data = {
               product_name: "Fendi",
               price: 1900.0,
               original_price: 2000.0,
-              discount: 5,
+              discount: 5, // (2000 - 1900) / 2000 * 100 = 5%
               salesCount: 80,
               image_url:
                 "https://cdn2.emporium.az/i/p/500/232717-ccfd9ceae8987b3691a9c1745df65a9e.jpg",
               description: "Dəri Sunshine kiçik çantası",
               colors: ["Narinci"],
               sizes: ["ST"],
+              slug: "fendi-sunshine-kiçik-cantasi",
               reviews: [
                 {
                   review_id: 22,
@@ -1859,12 +1872,13 @@ const data = {
                 },
               ],
             },
+
             {
               product_id: 309,
               product_name: "Bottega Veneta",
               price: 44.0,
               original_price: 80.0,
-              discount: 45, // (80 - 44) / 80 * 100 = 45%
+              discount: 45, // Discount calculated as (80 - 44) / 80 * 100 = 45%
               salesCount: 80,
               image_url:
                 "https://cdn2.emporium.az/i/p/500/188969-58cd51496d6e35f03443c2459a84bb47.jpg",
@@ -1885,7 +1899,7 @@ const data = {
               product_name: "Marc Jacobs",
               price: 700.0,
               original_price: 800.0,
-              discount: 12.5, // (800 - 700) / 800 * 100 = 12.5%
+              discount: 12.5, // Discount calculated as (800 - 700) / 800 * 100 = 12.5%
               salesCount: 80,
               image_url:
                 "https://cdn2.emporium.az/i/p/500/294061-8a1306b416f4bf5cd9d13c5e4225d061.jpg",
@@ -1906,7 +1920,7 @@ const data = {
               product_name: "Tory Burch",
               price: 540.0,
               original_price: 560.0,
-              discount: 3.57, // (560 - 540) / 560 * 100 ≈ 3.57%
+              discount: 3.57, // Discount calculated as (560 - 540) / 560 * 100 ≈ 3.57%
               salesCount: 80,
               image_url:
                 "https://cdn2.emporium.az/i/p/500/287736-43cc5f51e5ec2ca87bd2dec1b9b4d25c.jpg",
@@ -1922,13 +1936,12 @@ const data = {
                 },
               ],
             },
-
             {
               product_id: 312,
               product_name: "Tory Burch",
               price: 540.0,
               original_price: 560.0,
-              discount: 3.57, // (560 - 540) / 560 * 100 ≈ 3.57%
+              discount: 3.57, // Discount calculated as (560 - 540) / 560 * 100 ≈ 3.57%
               salesCount: 80,
               image_url:
                 "https://cdn2.emporium.az/i/p/500/248229-1b9621dbd58313178774d5622b021198.jpg",
@@ -1949,7 +1962,7 @@ const data = {
               product_name: "Jimmy Choo",
               price: 140.0,
               original_price: 160.0,
-              discount: 12.5, // (160 - 140) / 160 * 100 = 12.5%
+              discount: 12.5, // Discount calculated as (160 - 140) / 160 * 100 = 12.5%
               salesCount: 80,
               image_url:
                 "https://cdn2.emporium.az/i/p/500/258772-59d1b6e65e8afc23ce53dba8326f77dc.jpg",
@@ -2439,7 +2452,7 @@ const data = {
     {
       kateqoriya_id: 2,
       kateqoriya_adı: "Kişi",
-      icon:IoIosMan ,
+      icon: IoIosMan,
       subkateqoriyalar: [
         {
           subkateqoriya_id: 1,
@@ -3222,7 +3235,7 @@ const data = {
                 "https://strgimgr.umico.az/sized/280/314188-764f7c68a110c61d86de869a9c6a92f7.jpg",
               description: "Yaz fəslinə uyğun rahat və şık kişi sliperləri.",
               colors: ["Qara"],
-              sizes: ["S", "M", ],
+              sizes: ["S", "M"],
               reviews: [
                 {
                   review_id: 1,
@@ -3248,7 +3261,7 @@ const data = {
                 "https://cdn2.premiumoutlet.az/i/p/500/181043-196fb0d1afb83ad4e442fc8e6d6b641e.JPG",
               description: "Yaz aylarında rahat və trendy sliponlar.",
               colors: ["Qara"],
-              sizes: ["M", "L", ],
+              sizes: ["M", "L"],
               reviews: [
                 {
                   review_id: 1,
@@ -3275,7 +3288,7 @@ const data = {
                 "https://strgimgr.umico.az/sized/280/943742-ba6d2589b3a60547b2d5595ecfa7eec6.jpg",
               description: "Hər bir aktiv kişi üçün uyğun krosovka.",
               colors: ["Ağ"],
-              sizes: [ "L"],
+              sizes: ["L"],
               reviews: [
                 {
                   review_id: 1,
@@ -3358,7 +3371,7 @@ const data = {
               description:
                 "Şəhər həyatına uyğun, rahat və müasir kişi krosovkası.",
               colors: ["Mavi"],
-              sizes: [ "M", "L", "XL"],
+              sizes: ["M", "L", "XL"],
               reviews: [
                 {
                   review_id: 1,
@@ -3415,7 +3428,7 @@ const data = {
                 "https://cdn2.premiumoutlet.az/i/p/500/180316-cc65fdbcc5f36cbeb5954a50e87d60c6.JPG",
               description: "Loqo dizaynlı idman ayaqqabısı.",
               colors: ["Ağ"],
-              sizes: [ "M", "L", "XL"],
+              sizes: ["M", "L", "XL"],
               reviews: [
                 {
                   review_id: 1,
@@ -3443,7 +3456,7 @@ const data = {
                 "https://cdn2.premiumoutlet.az/i/p/500/t-154215-126608-p1d5ceof871atv3fkvel46rcs09.JPG",
               description: "Toxuma dizaynlı lofer.",
               colors: ["Mavi"],
-              sizes: ["S",  "L",],
+              sizes: ["S", "L"],
               reviews: [
                 {
                   review_id: 1,
@@ -3471,7 +3484,7 @@ const data = {
                 "https://cdn2.premiumoutlet.az/i/p/500/178505-64bc5d4cced438c6e5a06311dc911140.JPG",
               description: "Rezin alt hissəli zamşa lofer.",
               colors: ["Qırmızı"],
-              sizes: [ "M", "L", "XL"],
+              sizes: ["M", "L", "XL"],
               reviews: [
                 {
                   review_id: 1,
@@ -3499,7 +3512,7 @@ const data = {
                 "https://cdn2.premiumoutlet.az/i/p360/500/179308-4e2b6f088334754bf1d6569c2cdb15c3.JPG",
               description: "Enli alt hissəli zamşa idman ayaqqabıları",
               colors: ["Yaşıl"],
-              sizes: ["S",  "L", "XL"],
+              sizes: ["S", "L", "XL"],
               reviews: [
                 {
                   review_id: 1,
@@ -3527,7 +3540,7 @@ const data = {
                 "https://cdn2.premiumoutlet.az/i/p/500/160419-98378f639a6dc45dfd6263b7470db89e.JPG",
               description: "Qırmızı rəngli loqo detallı krossovka",
               colors: ["Qırmızı"],
-              sizes: [ "M", "L", ],
+              sizes: ["M", "L"],
               reviews: [
                 {
                   review_id: 1,
@@ -3555,7 +3568,7 @@ const data = {
                 "https://cdn2.premiumoutlet.az/i/p360/500/180812-8f6da7ff5a703f2d9be0c052eff4143b.JPG",
               description: "Qırmızı rəngli loqo detallı krossovka",
               colors: ["Yaşıl"],
-              sizes: ["S", "M", ],
+              sizes: ["S", "M"],
               reviews: [
                 {
                   review_id: 1,
@@ -3605,161 +3618,169 @@ const data = {
           subkateqoriya_id: 3,
           subkateqoriya_adı: "Kişi Aksesuarlari",
           məhsullar: [
-              {
-                "product_id": 1200,
-                "product_name": "Gucci qalstuk",
-                "price": 59.99,
-                "slug": "gucci-silk-tie",
-                "original_price": 79.0,
-                "discount": 24,
-                "salesCount": 230,
-                "image_url": "https://cdn2.premiumoutlet.az/i/p/500/180631-1e31c9e6044ac0cf6869e65cfdcf7e3f.JPG",
-                "description": "Naxışlı, yüksək keyfiyyətli ipək qalstuk.",
-                "colors": ["Qara"],
-                "sizes": ["S", "M", "L"],
-                "reviews": [
-                  {
-                    "review_id": 1,
-                    "rating": 4.5,
-                    "comment": "Çox şık və rahatdır, iş görüşləri üçün ideal."
-                  },
-                  {
-                    "review_id": 2,
-                    "rating": 5.0,
-                    "comment": "Rəngi və dizaynı mükəmməldir, çox bəyənildi."
-                  }
-                ]
-              },
-              {
-                "product_id": 1201,
-                "product_name": "Pal Zileri",
-                "price": 69.99,
-                "slug": "pal-zileri-tie",
-                "original_price": 85.0,
-                "discount": 18,
-                "salesCount": 180,
-                "image_url": "https://cdn2.premiumoutlet.az/i/p/500/110290-241504_1555936946800.4126748p908.JPG",
-                "description": "Boz rəngli, naxışlı ipək qalstuk.",
-                "colors": ["Boz"],
-                "sizes": ["M", "L"],
-                "reviews": [
-                  {
-                    "review_id": 1,
-                    "rating": 4.2,
-                    "comment": "Naxışlar çox gözəldir, amma qiyməti bir az yüksəkdir."
-                  },
-                  {
-                    "review_id": 2,
-                    "rating": 4.8,
-                    "comment": "Keyfiyyəti çox yüksəkdir, alqışlanacaq bir məhsuldur."
-                  }
-                ]
-              },
-              {
-                "product_id": 1202,
-                "product_name": "Celio İpək bant",
-                "price": 39.99,
-                "slug": "celio-silk-band",
-                "original_price": 59.0,
-                "discount": 33,
-                "salesCount": 250,
-                "image_url": "https://cdn2.premiumoutlet.az/i/p/500/156326-4d175a2b6690ac34ba4ded00c31f9273.JPG",
-                "description": "Çox rahat və şık ipək bant.",
-                "colors": ["Qırmızı"],
-                "sizes": ["S", "M"],
-                "reviews": [
-                  {
-                    "review_id": 1,
-                    "rating": 4.4,
-                    "comment": "Çox zərif və şık, mükəmməl dizayn."
-                  },
-                  {
-                    "review_id": 2,
-                    "rating": 4.9,
-                    "comment": "Bantın keyfiyyəti çox yaxşıdır, həqiqətən tövsiyə edirəm."
-                  }
-                ]
-              },
-              {
-                "product_id": 1203,
-                "product_name": "Etro Dəri kəmər",
-                "price": 79.99,
-                "slug": "etro-leather-belt",
-                "original_price": 100.0,
-                "discount": 20,
-                "salesCount": 110,
-                "image_url": "https://cdn2.premiumoutlet.az/i/p/500/179511-b765c9d108a3ea6ac1b484ce3baeee9c.JPG",
-                "description": "Yüksək keyfiyyətli dəri kəmər, gündəlik istifadə üçün mükəmməl.",
-                "colors": ["Qara"],
-                "sizes": ["L", "XL"],
-                "reviews": [
-                  {
-                    "review_id": 1,
-                    "rating": 4.7,
-                    "comment": "Çox yaxşı keyfiyyət, həm gündəlik həm də rəsmi geyimlər üçün uyğun."
-                  },
-                  {
-                    "review_id": 2,
-                    "rating": 5.0,
-                    "comment": "Həqiqətən mükəmməl bir məhsul, çox uzun müddət istifadə etdiyim bir kəmərdir."
-                  }
-                ]
-              },
-              {
-                "product_id": 1204,
-                "product_name": "Paul & Shark kepka",
-                "price": 55.99,
-                "slug": "paul-shark-cap",
-                "original_price": 70.0,
-                "discount": 20,
-                "salesCount": 200,
-                "image_url": "https://cdn2.premiumoutlet.az/i/p/500/178017-3bd08945fd5c0aadeaa28ab4ce34b115.jpg",
-                "description": "Şık və rahat Paul & Shark loqolu kepka.",
-                "colors": ["Ağ"],
-                "sizes": ["M", "L"],
-                "reviews": [
-                  {
-                    "review_id": 1,
-                    "rating": 4.5,
-                    "comment": "Rahat və şık dizaynı ilə hər mühitə uyğun."
-                  },
-                  {
-                    "review_id": 2,
-                    "rating": 4.3,
-                    "comment": "Yaxşı keyfiyyət, amma biraz daha böyük olmalıydı."
-                  }
-                ]
-              },
-              {
-                "product_id": 1205,
-                "product_name": "Altea İpək qalstuk",
-                "price": 65.99,
-                "slug": "altea-silk-tie",
-                "original_price": 90.0,
-                "discount": 27,
-                "salesCount": 60,
-                "image_url": "https://cdn2.premiumoutlet.az/i/p/500/180066-3c2969bdbd0d9064e6d8832ec31b9d36.JPG",
-                "description": "Rəngarəng və zərif dizaynla hazırlanmış ipək qalstuk.",
-                "colors": ["Sarı"],
-                "sizes": ["S", "M"],
-                "reviews": [
-                  {
-                    "review_id": 1,
-                    "rating": 4.3,
-                    "comment": "Çox gözəl rəng və keyfiyyətli material."
-                  },
-                  {
-                    "review_id": 2,
-                    "rating": 4.7,
-                    "comment": "Mükəmməl qalstuk, rəngi və dizaynı çox bəyənildi."
-                  }
-                ]
-              }
-          
-          
-
-
-
+            {
+              product_id: 1200,
+              product_name: "Gucci qalstuk",
+              price: 59.99,
+              slug: "gucci-silk-tie",
+              original_price: 79.0,
+              discount: 24,
+              salesCount: 230,
+              image_url:
+                "https://cdn2.premiumoutlet.az/i/p/500/180631-1e31c9e6044ac0cf6869e65cfdcf7e3f.JPG",
+              description: "Naxışlı, yüksək keyfiyyətli ipək qalstuk.",
+              colors: ["Qara"],
+              sizes: ["S", "M", "L"],
+              reviews: [
+                {
+                  review_id: 1,
+                  rating: 4.5,
+                  comment: "Çox şık və rahatdır, iş görüşləri üçün ideal.",
+                },
+                {
+                  review_id: 2,
+                  rating: 5.0,
+                  comment: "Rəngi və dizaynı mükəmməldir, çox bəyənildi.",
+                },
+              ],
+            },
+            {
+              product_id: 1201,
+              product_name: "Pal Zileri",
+              price: 69.99,
+              slug: "pal-zileri-tie",
+              original_price: 85.0,
+              discount: 18,
+              salesCount: 180,
+              image_url:
+                "https://cdn2.premiumoutlet.az/i/p/500/110290-241504_1555936946800.4126748p908.JPG",
+              description: "Boz rəngli, naxışlı ipək qalstuk.",
+              colors: ["Boz"],
+              sizes: ["M", "L"],
+              reviews: [
+                {
+                  review_id: 1,
+                  rating: 4.2,
+                  comment:
+                    "Naxışlar çox gözəldir, amma qiyməti bir az yüksəkdir.",
+                },
+                {
+                  review_id: 2,
+                  rating: 4.8,
+                  comment:
+                    "Keyfiyyəti çox yüksəkdir, alqışlanacaq bir məhsuldur.",
+                },
+              ],
+            },
+            {
+              product_id: 1202,
+              product_name: "Celio İpək bant",
+              price: 39.99,
+              slug: "celio-silk-band",
+              original_price: 59.0,
+              discount: 33,
+              salesCount: 250,
+              image_url:
+                "https://cdn2.premiumoutlet.az/i/p/500/156326-4d175a2b6690ac34ba4ded00c31f9273.JPG",
+              description: "Çox rahat və şık ipək bant.",
+              colors: ["Qırmızı"],
+              sizes: ["S", "M"],
+              reviews: [
+                {
+                  review_id: 1,
+                  rating: 4.4,
+                  comment: "Çox zərif və şık, mükəmməl dizayn.",
+                },
+                {
+                  review_id: 2,
+                  rating: 4.9,
+                  comment:
+                    "Bantın keyfiyyəti çox yaxşıdır, həqiqətən tövsiyə edirəm.",
+                },
+              ],
+            },
+            {
+              product_id: 1203,
+              product_name: "Etro Dəri kəmər",
+              price: 79.99,
+              slug: "etro-leather-belt",
+              original_price: 100.0,
+              discount: 20,
+              salesCount: 110,
+              image_url:
+                "https://cdn2.premiumoutlet.az/i/p/500/179511-b765c9d108a3ea6ac1b484ce3baeee9c.JPG",
+              description:
+                "Yüksək keyfiyyətli dəri kəmər, gündəlik istifadə üçün mükəmməl.",
+              colors: ["Qara"],
+              sizes: ["L", "XL"],
+              reviews: [
+                {
+                  review_id: 1,
+                  rating: 4.7,
+                  comment:
+                    "Çox yaxşı keyfiyyət, həm gündəlik həm də rəsmi geyimlər üçün uyğun.",
+                },
+                {
+                  review_id: 2,
+                  rating: 5.0,
+                  comment:
+                    "Həqiqətən mükəmməl bir məhsul, çox uzun müddət istifadə etdiyim bir kəmərdir.",
+                },
+              ],
+            },
+            {
+              product_id: 1204,
+              product_name: "Paul & Shark kepka",
+              price: 55.99,
+              slug: "paul-shark-cap",
+              original_price: 70.0,
+              discount: 20,
+              salesCount: 200,
+              image_url:
+                "https://cdn2.premiumoutlet.az/i/p/500/178017-3bd08945fd5c0aadeaa28ab4ce34b115.jpg",
+              description: "Şık və rahat Paul & Shark loqolu kepka.",
+              colors: ["Ağ"],
+              sizes: ["M", "L"],
+              reviews: [
+                {
+                  review_id: 1,
+                  rating: 4.5,
+                  comment: "Rahat və şık dizaynı ilə hər mühitə uyğun.",
+                },
+                {
+                  review_id: 2,
+                  rating: 4.3,
+                  comment: "Yaxşı keyfiyyət, amma biraz daha böyük olmalıydı.",
+                },
+              ],
+            },
+            {
+              product_id: 1205,
+              product_name: "Altea İpək qalstuk",
+              price: 65.99,
+              slug: "altea-silk-tie",
+              original_price: 90.0,
+              discount: 27,
+              salesCount: 60,
+              image_url:
+                "https://cdn2.premiumoutlet.az/i/p/500/180066-3c2969bdbd0d9064e6d8832ec31b9d36.JPG",
+              description:
+                "Rəngarəng və zərif dizaynla hazırlanmış ipək qalstuk.",
+              colors: ["Sarı"],
+              sizes: ["S", "M"],
+              reviews: [
+                {
+                  review_id: 1,
+                  rating: 4.3,
+                  comment: "Çox gözəl rəng və keyfiyyətli material.",
+                },
+                {
+                  review_id: 2,
+                  rating: 4.7,
+                  comment: "Mükəmməl qalstuk, rəngi və dizaynı çox bəyənildi.",
+                },
+              ],
+            },
           ],
         },
         {
@@ -3767,33 +3788,34 @@ const data = {
           subkateqoriya_adı: "Kişi Koynek",
           məhsullar: [
             {
-              "product_id": 1300,
-              "product_name": "Gucci qalstuk",
-              "price": 59.99,
-              "slug": "gucci-silk-tie",
-              "original_price": 79.0,
-              "discount": 24,
-              "salesCount": 230,
-              "image_url": "https://cdn2.premiumoutlet.az/i/p/500/180631-1e31c9e6044ac0cf6869e65cfdcf7e3f.JPG",
-              "description": "Naxışlı, yüksək keyfiyyətli ipək qalstuk.",
-              "colors": ["Qara"],
-              "sizes": ["S", "M", "L"],
-              "reviews": [
+              product_id: 1300,
+              product_name: "Gucci qalstuk",
+              price: 59.99,
+              slug: "gucci-silk-tie",
+              original_price: 79.0,
+              discount: 24,
+              salesCount: 230,
+              image_url:
+                "https://cdn2.premiumoutlet.az/i/p/500/180631-1e31c9e6044ac0cf6869e65cfdcf7e3f.JPG",
+              description: "Naxışlı, yüksək keyfiyyətli ipək qalstuk.",
+              colors: ["Qara"],
+              sizes: ["S", "M", "L"],
+              reviews: [
                 {
-                  "review_id": 1,
-                  "rating": 4.5,
-                  "comment": "Çox şık və rahatdır, iş görüşləri üçün ideal."
+                  review_id: 1,
+                  rating: 4.5,
+                  comment: "Çox şık və rahatdır, iş görüşləri üçün ideal.",
                 },
                 {
-                  "review_id": 2,
-                  "rating": 5.0,
-                  "comment": "Rəngi və dizaynı mükəmməldir, çox bəyənildi."
-                }
-              ]
+                  review_id: 2,
+                  rating: 5.0,
+                  comment: "Rəngi və dizaynı mükəmməldir, çox bəyənildi.",
+                },
+              ],
             },
           ],
         },
-  
+
         // {
         //   subkateqoriya_id: 9,
         //   subkateqoriya_adı: "Eynək",
@@ -3804,14 +3826,13 @@ const data = {
         //   subkateqoriya_adı: "Pul Kisəsi",
         //   məhsullar: [],
         // },
-        
       ],
     },
 
     {
       kateqoriya_id: 3,
       kateqoriya_adı: "Elektronika",
-      icon:IoMdPhonePortrait ,
+      icon: IoMdPhonePortrait,
       subkateqoriyalar: [
         {
           subkateqoriya_id: 50,
@@ -4309,7 +4330,7 @@ const data = {
               ],
             },
             {
-              product_id:2301,
+              product_id: 2301,
               product_name: "Smart saat Smart Watch HK9 Pro Plus Black",
               price: 1500.0,
               slug: "smart-watch-hk9-pro-plus-black",
@@ -4700,7 +4721,7 @@ const data = {
     {
       kateqoriya_id: 4,
       kateqoriya_adı: "Ev & Yaşam",
-      icon:FaHome ,
+      icon: FaHome,
       subkateqoriyalar: [
         {
           subkateqoriya_id: 1,
@@ -4823,7 +4844,7 @@ const data = {
     {
       kateqoriya_id: 5,
       kateqoriya_adı: "Supermarket",
-      icon:FaStore ,
+      icon: FaStore,
       subkateqoriyalar: [
         {
           subkateqoriya_id: 1,
@@ -4904,7 +4925,7 @@ const data = {
     {
       kateqoriya_id: 6,
       kateqoriya_adı: "İdman & Əyləncə",
-      icon:MdOutlineSportsTennis ,
+      icon: MdOutlineSportsTennis,
       subkateqoriyalar: [
         {
           subkateqoriya_id: 1,
@@ -5011,7 +5032,7 @@ const data = {
     {
       kateqoriya_id: 6,
       kateqoriya_adı: "Avtomobil Məhsulları",
-      icon:FaCar  ,
+      icon: FaCar,
       subkateqoriyalar: [
         {
           subkateqoriya_id: 1,
@@ -5118,7 +5139,7 @@ const data = {
     {
       kateqoriya_id: 7,
       kateqoriya_adı: "Gözəllik Məhsulları",
-      icon:GiLips  ,
+      icon: GiLips,
       subkateqoriyalar: [
         {
           subkateqoriya_id: 1,
@@ -5175,15 +5196,13 @@ const data = {
           subkateqoriya_adı: "Boks Əlcəyi",
           məhsullar: [],
         },
-       
-      
+
         {
           subkateqoriya_id: 17,
           subkateqoriya_adı: "Balıqçılıq Ləvazimatları",
           məhsullar: [],
         },
-      
-       
+
         {
           subkateqoriya_id: 21,
           subkateqoriya_adı: "Protein tozu",
@@ -5236,7 +5255,6 @@ export const servicesData = [
   },
 ];
 
-
 export const contactInfo = [
   {
     icon: "fa-phone",
@@ -5246,7 +5264,7 @@ export const contactInfo = [
         <p>Həftənin 7 günü, 24 saat mövcuduq.</p>
         <p>Telefon: +994515489272</p>
       </>
-    )
+    ),
   },
   {
     icon: "fa-envelope",
@@ -5256,11 +5274,8 @@ export const contactInfo = [
         <p>Formamızı doldurun, 24 saat ərzində sizinlə əlaqə saxlayacağıq.</p>
         <p>Email: herseyburada28@gmail.com</p>
       </>
-    )
-  }
+    ),
+  },
 ];
 
-
-
 export default data;
-

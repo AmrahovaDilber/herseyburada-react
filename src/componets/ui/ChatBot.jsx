@@ -8,19 +8,15 @@ export default function ChatBot() {
   const [isOpen, setIsOpen] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const systemPrompt = `You are a customer service chatbot for an e-commerce website. Here are the available categories and products: ${JSON.stringify(
-    categoriesdata
-  )}. 
-Please help customers find products, provide product details, and answer general inquiries about the items in our catalog.
-
+  const systemPrompt = `You are a customer service chatbot for an e-commerce website.
+   Here are the available categories and products: ${JSON.stringify(categoriesdata)}. 
+Please help customers find products, provide product details, 
+and answer general inquiries about the items in our catalog.
 Current customer message: `;
-
   
   const isImageUrl = (text) => {
     return /\.(jpg|jpeg|png|gif|webp)$/i.test(text);
   };
-
- 
   const formatText = (text) => {
     return text.split("\n").map((line, index) => (
       <p key={index} className="whitespace-pre-line">
@@ -28,12 +24,9 @@ Current customer message: `;
       </p>
     ));
   };
-
   const getChatbotResponse = async () => {
     if (!value.trim()) return;
-
     setLoading(true);
-
     try {
       const response = await fetch(
         `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyBVvTBolZejVqpUQAc8nu5nQ9iS-B8czug`,
