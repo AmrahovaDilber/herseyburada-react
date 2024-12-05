@@ -102,7 +102,7 @@ export default function NavLinks() {
           >
             <Link
               to={"/contact"}
-              className="flex justify-between items-center px-4 py-2 text-sm hover:bg-gray-100 hover:text-[#ff7518]"
+              className="flex justify-between items-center px-4 py-2 text-sm hover:bg-gray-100 hover:text-[#ff7518] dark:text-[#1a1a1a]"
             >
               <img
                 src="/Icon-service.svg"
@@ -114,7 +114,7 @@ export default function NavLinks() {
 
             <Link
               to={"/login"}
-              className="flex justify-between items-center px-4 py-2 text-sm hover:bg-gray-100 hover:text-[#ff7518]"
+              className="flex justify-between items-center px-4 py-2 text-sm hover:bg-gray-100 hover:text-[#ff7518]  dark:text-[#1a1a1a]"
             >
               <img
                 src="/Icon-logout.svg"

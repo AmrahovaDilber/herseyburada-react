@@ -52,7 +52,8 @@ export default function Header() {
               <Link to="/">
                 <img
                   className="h-8 w-auto sm:h-10"
-                  src={darkMode ? "/logodark2.png" : "/herseyburada.svg"}
+                  // src={darkMode ? "/logodark2.png" : "/herseyburada.svg"}
+                  src={ "/herseyburada.svg"}
                   alt="Logo"
                 />
               </Link>
@@ -89,7 +90,6 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Mobile Menu */}
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="fixed top-0 left-0 w-full p-2 transition transform origin-top lg:hidden bg-white dark:bg-[#202020]">
@@ -133,7 +133,7 @@ export default function Header() {
               {/* Dark Mode Toggle Button */}
               <button
                 onClick={toggleDarkMode}
-                className="flex items-center justify-center text-gray-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded-full transition-colors duration-300"
+                className="flex items-center justify-center px-4 sm:px-0 text-gray-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded-full transition-colors duration-300"
                 aria-label="Toggle dark mode"
               >
                 {darkMode ? (

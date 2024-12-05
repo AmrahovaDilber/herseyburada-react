@@ -92,7 +92,7 @@ export const AppContextProvider = ({ children }) => {
         error
       );
       notification(
-        "İstifadəçi məlumatlarını əldə edərkən xəta baş verdi. Yenidən cəhd edin."
+        "İstifadəçi məlumatlarını əldə edərkən xəta baş verdi. Yenidən cəhd edin.",'error'
       );
     }
   };
@@ -107,16 +107,17 @@ export const AppContextProvider = ({ children }) => {
         });
       } catch (error) {
         console.error("İstifadəçi məlumatlarının yenilənməsi xətası:", error);
-        notification("Data yenilənərkən xəta baş verdi. Yenidən cəhd edin.");
+        notification("Data yenilənərkən xəta baş verdi. Yenidən cəhd edin.",'error');
       }
     } else {
       localStorage.setItem("carts", JSON.stringify(newCarts));
       localStorage.setItem("favorites", JSON.stringify(newFavorites));
     }
   };
+ 
   const addToCart = async (id) => {
     if (!userLoggedIn) {
-      notification("Səbətə əşyalar əlavə etmək üçün daxil olmalısınız");
+      notification("Səbətə əşyalar əlavə etmək üçün daxil olmalısınız","info");
       return;
     }
     console.log("Adding to cart:", id);
@@ -128,12 +129,12 @@ export const AppContextProvider = ({ children }) => {
         setCarts(newCarts);
         console.log("Cart updated:", newCarts);
         await updateUserData(newCarts, favorites);
-        notification(`${product.product_name} səbətə əlavə edildi`);
+        notification(`${product.product_name} səbətə əlavə edildi`,    "success");
       } else {
-        notification(`${product.product_name} artıq səbətdədir mövcuddur`);
+        notification(`${product.product_name} artıq səbətdədir mövcuddur`,"info");
       }
     } else {
-      notification(`Məhsul tapılmadı`);
+      notification(`Məhsul tapılmadı`,'error');
     }
   };
 
@@ -144,9 +145,9 @@ export const AppContextProvider = ({ children }) => {
 
     if (product) {
       await updateUserData(newCarts, favorites);
-      notification(`${product.product_name} səbətdən silindi`);
+      notification(`${product.product_name} səbətdən silindi`,"success");
     } else {
-      notification("Məhsul tapılmadı");
+      notification("Məhsul tapılmadı","error");
     }
   };
   const isInCart = (id) => {
@@ -159,7 +160,7 @@ export const AppContextProvider = ({ children }) => {
   const addToFavorites = async (id) => {
     if (!userLoggedIn) {
       notification(
-        "Sevimlilərinizə elementlər əlavə etmək üçün daxil olmalısınız"
+        "Sevimlilərinizə elementlər əlavə etmək üçün daxil olmalısınız","info"
       );
       return;
     }
@@ -170,14 +171,14 @@ export const AppContextProvider = ({ children }) => {
         const newFavorites = [...favorites, id];
         setFavorites(newFavorites);
         await updateUserData(carts, newFavorites);
-        notification(`${findProduct.product_name} sevimlilərə əlavə edildi`);
+        notification(`${findProduct.product_name} sevimlilərə əlavə edildi`,"success");
       } else {
         notification(
-          `${findProduct.product_name} artıq sevimlilər siyahısındadır`
+          `${findProduct.product_name} artıq sevimlilər siyahısındadır`,"info"
         );
       }
     } else {
-      notification("Məhsul tapılmadı");
+      notification("Məhsul tapılmadı","error");
     }
   };
 
@@ -188,9 +189,9 @@ export const AppContextProvider = ({ children }) => {
 
     if (findProduct) {
       await updateUserData(carts, newFavorites);
-      notification(`${findProduct.product_name} sevimlilərdən silindi`);
+      notification(`${findProduct.product_name} sevimlilərdən silindi`,"success");
     } else {
-      notification(`Məhsul tapılmadı`);
+      notification(`Məhsul tapılmadı`,'error');
     }
   };
 

@@ -196,37 +196,38 @@ const SignupForm = () => {
 
  
               <div className="relative">
-                <input
-                  type={showRePassword ? "text" : "password"}
-                  {...registerUser("rePassword", {
-                    required: "Zəhmət olmasa parolunuzu təsdiqləyin",
-                    validate: (value) =>
-                      value === watchRegister("password") ||
-                      "Parollar uyğun gəlmir",
-                  })}
-                  className={`form-input border focus:ring focus:ring-[#ff9130]/50 outline-none w-full py-3 px-4 rounded-md text-lg ${
-                    darkMode
-                      ? "bg-[#333] border-[#444] text-white focus:border-[#ff9130]"
-                      : "bg-white border-gray-300 text-gray-700 focus:border-[#ff9130]"
-                  }`}                  placeholder="Şifrəni yenidən daxil edin"
-                />
-                {showRePassword ? (
-                  <FaRegEye
-                    className="absolute top-3 right-4 text-gray-500 cursor-pointer"
-                    size={24}
-                    onClick={() => setShowRePassword(!showRePassword)}
-                  />
-                ) : (
-                  <FaRegEyeSlash
-                    className="absolute top-3 right-4 text-gray-500 cursor-pointer"
-                    size={24}
-                    onClick={() => setShowRePassword(!showRePassword)}
-                  />
-                )}
-                <p className="text-red-500 text-sm">
-                  {registerErrors.rePassword?.message}
-                </p>
-              </div>
+  <input
+    type={showRePassword ? "text" : "password"}
+    {...registerUser("rePassword", {
+      required: "Zəhmət olmasa parolunuzu təsdiqləyin",
+      validate: (value) =>
+        value === watchRegister("password") ||
+        "Parollar uyğun gəlmir",
+    })}
+    className={`form-input border focus:ring focus:ring-[#ff9130]/50 outline-none w-full py-3 px-4 rounded-md text-lg placeholder:text-sm sm:placeholder:text-base md:placeholder:text-lg ${
+      darkMode
+        ? "bg-[#333] border-[#444] text-white focus:border-[#ff9130]"
+        : "bg-white border-gray-300 text-gray-700 focus:border-[#ff9130]"
+    }`}
+    placeholder="Şifrəni yenidən daxil edin"
+  />
+  {showRePassword ? (
+    <FaRegEye
+      className="absolute top-3 right-4 text-gray-500 cursor-pointer"
+      size={24}
+      onClick={() => setShowRePassword(!showRePassword)}
+    />
+  ) : (
+    <FaRegEyeSlash
+      className="absolute top-3 right-4 text-gray-500 cursor-pointer"
+      size={24}
+      onClick={() => setShowRePassword(!showRePassword)}
+    />
+  )}
+  <p className="text-red-500 text-sm">
+    {registerErrors.rePassword?.message}
+  </p>
+</div>
 
 
               <button

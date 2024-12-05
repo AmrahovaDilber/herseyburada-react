@@ -57,17 +57,7 @@ export default function Slider() {
             </SwiperSlide>
           ))}
 
-          <SwiperSlide className="h-full">
-            <Link to="/cartpage">
-              <div className="relative w-full h-full">
-                <img
-                  src={banner4}
-                  alt="Ad 2"
-                  className="absolute inset-0 w-full h-full object-cover rounded-md"
-                />
-              </div>
-            </Link>
-          </SwiperSlide>
+   
 
           <SwiperSlide className="h-full">
             <Link to="/products/Kişi">

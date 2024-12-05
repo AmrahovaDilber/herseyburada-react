@@ -95,23 +95,23 @@ export default function ProductItem({ product }) {
             ${product.original_price}
           </p>
         </div>
-        <div className="flex items-center mb-[8px]">
-          <p className="text-[12px] sm:text-[14px] mt-1 text-[#7F7F7F] dark:text-gray-400 font-semibold">
+        <div className="flex items-center mb-2 space-x-2 sm:space-x-3">
+          {/* Average Rating */}
+          <p className="text-[12px] sm:text-[14px] text-[#7F7F7F] dark:text-gray-400 font-semibold">
             {averageRating.toFixed(1)}
           </p>
-          <div className="flex space-x-[2px] sm:space-x-[4px] ml-2">
-            {Array.from({ length: 5 }, (_, index) => (
-              <div key={index}>
-                <FaStar
-                  className="fa-regular fa-star w-[12px] sm:w-[14px]"
-                  style={{ color: getStarColor(index), objectFit: "cover" }}
-                />
-              </div>
-            ))}
+
+          {/* Star Icons */}
+          <div className="flex space-x-[2px] sm:space-x-[4px]">
+            <FaStar
+              className={`w-[12px] sm:w-[14px]  text-yellow-400`}
+            />
           </div>
-          <div className="text-[13px] text-[#7F7F7F] dark:text-gray-400 ml-0 sm:ml-1 mt-1">
+
+          {/* Reviews Count */}
+          <p className="text-[12px] sm:text-[13px] text-[#7F7F7F] dark:text-gray-400">
             ({product.reviews.length})
-          </div>
+          </p>
         </div>
       </div>
     </div>

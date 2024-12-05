@@ -32,10 +32,10 @@ const LoginForm = () => {
       setIsSigningIn(true);
       try {
         await doSignInWithEmailAndPassword(email, password);
-        notification("Uğurla daxil oldunuz!");
+        notification("Uğurla daxil oldunuz!",'succes');
       } catch (error) {
         console.error("Daxilolma xətası:", error);
-        notification("Daxil olmaq alınmadı. Lütfən, məlumatları yoxlayın.");
+        notification("Daxil olmaq alınmadı. Lütfən, məlumatları yoxlayın.",'error');
       } finally {
         setIsSigningIn(false);
       }
@@ -62,23 +62,23 @@ const LoginForm = () => {
     if (forgotPasswordEmail) {
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(forgotPasswordEmail)) {
-        notification("Düzgün formatda e-poçt daxil edin.");
+        notification("Düzgün formatda e-poçt daxil edin.",'info');
         return;
       }
       try {
         await doPasswordReset(forgotPasswordEmail);
-        notification("E-poçtunuza parol sıfırlama e-poçtu göndərildi.");
+        notification("E-poçtunuza parol sıfırlama e-poçtu göndərildi.",'success');
       } catch (error) {
         if (error.code === "auth/user-not-found") {
-          notification("Bu e-poçt ünvanı ilə istifadəçi tapılmadı.");
+          notification("Bu e-poçt ünvanı ilə istifadəçi tapılmadı.",'error');
         } else if (error.code === "auth/invalid-email") {
-          notification("Düzgün formatda e-poçt daxil edin.");
+          notification("Düzgün formatda e-poçt daxil edin.",'error');
         } else {
-          notification(`Sıfırlama e-poçtu göndərmək alınmadı. Xəta: ${error.message}`);
+          notification(`Sıfırlama e-poçtu göndərmək alınmadı. Xəta: ${error.message}`,'error');
         }
       }
     } else {
-      notification("Şifrəni sıfırlamaq üçün e-poçtunuzu daxil edin.");
+      notification("Şifrəni sıfırlamaq üçün e-poçtunuzu daxil edin.",'info');
     }
   };
   

@@ -9,11 +9,13 @@ export default function ChatBot() {
   const [loading, setLoading] = useState(false);
 
   const systemPrompt = `You are a customer service chatbot for an e-commerce website.
-   Here are the available categories and products: ${JSON.stringify(categoriesdata)}. 
+   Here are the available categories and products: ${JSON.stringify(
+     categoriesdata
+   )}. 
 Please help customers find products, provide product details, 
 and answer general inquiries about the items in our catalog.
 Current customer message: `;
-  
+
   const isImageUrl = (text) => {
     return /\.(jpg|jpeg|png|gif|webp)$/i.test(text);
   };
@@ -36,7 +38,7 @@ Current customer message: `;
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            contents: [{parts: [{ text: systemPrompt + value }],},],
+            contents: [{ parts: [{ text: systemPrompt + value }] }],
           }),
         }
       );
@@ -86,7 +88,7 @@ Current customer message: `;
   };
 
   return (
-    <div className="">
+    <>
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="fixed bottom-[70px] sm:bottom-4 right-4 flex items-center gap-1 p-3 z-50 bg-blue-500 text-white rounded-full shadow-lg hover:bg-blue-600 focus:outline-none"
@@ -96,7 +98,7 @@ Current customer message: `;
       </button>
 
       {isOpen && (
-        <div className="fixed bottom-[35px] sm:bottom-0 right-0 m-6 max-w-full sm:max-w-[500px] z-50 bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden">
+        <div className="fixed bottom-0 right-0 mx-4 my-2 w-full max-w-[90%] sm:max-w-[500px] z-50 bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden">
           <div className="flex justify-between items-center p-4 border-b border-gray-200">
             <h2 className="text-lg font-bold">ChatBot</h2>
             <button
@@ -111,7 +113,8 @@ Current customer message: `;
             <div className="flex flex-col space-y-4 mb-4 h-full overflow-y-auto">
               {messages.length === 0 && (
                 <div className="text-gray-500 text-center">
-                  Xoş gəldiniz! Bu gün alış-verişinizdə sizə necə kömək edə bilərəm?
+                  Xoş gəldiniz! Bu gün alış-verişinizdə sizə necə kömək edə
+                  bilərəm?
                 </div>
               )}
               {messages.map((message, index) => (
@@ -165,6 +168,6 @@ Current customer message: `;
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 }
