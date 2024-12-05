@@ -98,7 +98,7 @@ Current customer message: `;
       </button>
 
       {isOpen && (
-        <div className="fixed bottom-0 right-0 mx-4 my-2 w-full max-w-[90%] sm:max-w-[500px] z-50 bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden">
+        <div className="fixed right-0 bottom-[60px] mx-4 my-2 w-full max-w-[94%] sm:max-w-[500px] z-50 bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden">
           <div className="flex justify-between items-center p-4 border-b border-gray-200">
             <h2 className="text-lg font-bold">ChatBot</h2>
             <button
