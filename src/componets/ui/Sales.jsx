@@ -1,75 +1,71 @@
-import { useState, useEffect } from "react";
+import { useRef } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
 import { useContextApp } from "../../context/AppContext";
 import ProductItem from "./ProductItem";
 import TitleSubtitle from "./TitleSubtitle";
+import "swiper/css";
+import "swiper/css/navigation";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 export default function Sales() {
   const { sortedDiscountedProducts } = useContextApp();
-  const [startIndex, setStartIndex] = useState(0);
-  const [perIndex, setPerIndex] = useState(4);
+  const swiperRef = useRef(null);
 
-  
-  
-  function updatePerIndex() {
-    const width = window.innerWidth;
-    if (width >= 720) {
-      setPerIndex(5); // Desktop
-    } else {
-      setPerIndex(2); // Mobile
+  const handlePrevClick = () => {
+    if (swiperRef.current) {
+      swiperRef.current.slidePrev();
     }
-  }
+  };
 
- 
-  useEffect(() => {
-    updatePerIndex();
-    window.addEventListener("resize", updatePerIndex);
-    return () => window.removeEventListener("resize", updatePerIndex);
-  }, []);
-
-  function handlePrev() {
-    setStartIndex((prevIndex) =>
-      prevIndex > 0
-        ? prevIndex - perIndex
-        : sortedDiscountedProducts.length - perIndex
-    );
-  }
-
-  function handleNext() {
-    setStartIndex((prevIndex) =>
-      prevIndex + perIndex < sortedDiscountedProducts.length
-        ? prevIndex + perIndex
-        : 0
-    );
-  }
+  const handleNextClick = () => {
+    if (swiperRef.current) {
+      swiperRef.current.slideNext();
+    }
+  };
 
   return (
-    <div className="">
-      <TitleSubtitle  title="Endirimlər">
-        <div className="space-x-[8px] flex items-center">
-          <figure
-            onClick={handlePrev}
-            className="bg-[#F5F5F5] size-[46px] rounded-full text-black flex justify-center items-center cursor-pointer"
+    <div className="sales-container relative">
+      <TitleSubtitle title="Endirimlər">
+        <div className="space-x-2 flex items-center">
+          <button
+            onClick={handlePrevClick}
+            className="bg-[#F5F5F5] w-10 h-10 md:w-12 md:h-12 rounded-full text-black flex justify-center items-center cursor-pointer"
           >
-            <img src="/icons_arrow-left.svg" alt="Previous" />
-          </figure>
-          <figure
-            onClick={handleNext}
-            className="bg-[#F5F5F5] size-[46px] rounded-full text-black flex justify-center items-center cursor-pointer"
+            <IoIosArrowBack size={24} />
+          </button>
+          <button
+            onClick={handleNextClick}
+            className="bg-[#F5F5F5] w-10 h-10 md:w-12 md:h-12 rounded-full text-black flex justify-center items-center cursor-pointer"
           >
-            <img src="/icons_arrow-right.svg" alt="Next" />
-          </figure>
+            <IoIosArrowForward size={24} />
+          </button>
         </div>
       </TitleSubtitle>
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-[35px]">
-        {sortedDiscountedProducts
-          .slice(startIndex, startIndex + perIndex)
-          .map((product, index) => (
-            <ProductItem key={index} product={product} />
-          ))}
-      </div>
-      <div className="mx-auto w-full sm:w-[234px] my-[30px] sm:my-[60px]">
-   
-      </div>
+
+      <Swiper
+        modules={[Navigation]}
+        onSwiper={(swiper) => (swiperRef.current = swiper)}
+        spaceBetween={20}
+        breakpoints={{
+          0: {
+            slidesPerView: 2,
+          },
+          768: {
+            slidesPerView: 4,
+          },
+          1024: {
+            slidesPerView: 5,
+          },
+        }}
+        className="w-full"
+      >
+        {sortedDiscountedProducts.map((product, index) => (
+          <SwiperSlide key={index}>
+            <ProductItem product={product} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   );
 }

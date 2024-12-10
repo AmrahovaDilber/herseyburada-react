@@ -6,11 +6,8 @@ function Filter() {
     <div className="flex h-[100vh]">
       {/* Sidebar */}
       <ProductsSidebar></ProductsSidebar>
-      {/* Main Content */}
-      <div className="flex-1 ml-8">
-        {/* Results Summary and Sorting */}
 
-        {/* Product Listing */}
+      <div className="flex-1 ml-8">
         <Products></Products>
       </div>
     </div>

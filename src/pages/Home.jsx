@@ -4,6 +4,7 @@ import MusicExperience from "../componets/ui/MusicExperience";
 import Services from "../componets/ui/Services";
 import Sales from "../componets/ui/Sales";
 import ExploreProducts from "../componets/ui/ExploreProducts";
+import Api from "../componets/ui/Api";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <MusicExperience></MusicExperience>
       <ExploreProducts></ExploreProducts>
       <Services></Services>
+      <Api></Api>
     </div>
   );
 }

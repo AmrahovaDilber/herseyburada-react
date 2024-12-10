@@ -2,3 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+.custom-arrow {
+    @apply absolute top-1/2 transform -translate-y-1/2 w-4 h-4 bg-white  rounded-full shadow-md flex items-center justify-center hover:bg-gray-100 text-gray-700 transition-all;
+  }
+  
+  .custom-arrow-left {
+    @apply left-[-10px];
+  }
+  
+  .custom-arrow-right {
+    @apply right-[-10px];
+  }
+  
+  .custom-arrow::before {
+    @apply content-none; /* Remove Swiper's default content */
+  }
+  
