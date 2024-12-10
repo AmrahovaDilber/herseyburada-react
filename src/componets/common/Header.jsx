@@ -51,8 +51,9 @@ export default function Header() {
             <div className="flex justify-start lg:w-0 lg:flex-1">
               <Link to="/">
                 <img
-                  className="h-8 w-auto sm:h-10"
-                  // src={darkMode ? "/logodark2.png" : "/herseyburada.svg"}
+                  className={`h-8 w-auto sm:h-10 ${
+                    darkMode ? "fill-white" : ""
+                  }`}
                   src={ "/herseyburada.svg"}
                   alt="Logo"
                 />

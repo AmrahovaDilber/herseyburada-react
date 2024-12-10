@@ -19,10 +19,6 @@ export default function ProductItem({ product }) {
         product.reviews.length
       : 0;
 
-  const getStarColor = (index) => {
-    return index < Math.round(averageRating) ? "#fbd439" : "#CCCCCC";
-  };
-
   return (
     <div className="group relative shadow-lg rounded-lg overflow-hidden bg-white  transition-all duration-300 hover:scale-105">
       <div className="relative flex items-center justify-center h-[250px] bg-[#F5F5F5] ">
@@ -60,23 +56,23 @@ export default function ProductItem({ product }) {
             </button>
           )}
         </figure>
-
-        <div className="absolute bottom-[-10px] py-[8px] hidden group-hover:flex space-x-[3px] items-center justify-center w-full bg-black dark:bg-[#202020]">
+        <div
+          onClick={() => {
+            isInCart(product.product_id)
+              ? removeFromCart(product.product_id)
+              : addToCart(product.product_id);
+          }}
+          className="absolute cursor-pointer bottom-[-10px] py-[8px] hidden group-hover:flex space-x-[3px] items-center justify-center w-full bg-black dark:bg-[#202020]"
+        >
           <figure className="size-[24px] text-white">
-            <img src="/sebet.svg" className="object-cover" />
+            <img src="/sebet.svg" className="object-cover" alt="Cart Icon" />
           </figure>
           {isInCart(product.product_id) ? (
-            <button
-              onClick={() => removeFromCart(product.product_id)}
-              className="text-white text-[12px] font-normal"
-            >
+            <button className="text-white text-[12px] font-normal">
               Səbətdən Sil
             </button>
           ) : (
-            <button
-              onClick={() => addToCart(product.product_id)}
-              className="text-white text-[12px] font-normal"
-            >
+            <button className="text-white text-[12px] font-normal">
               Səbətə Əlavə et
             </button>
           )}
@@ -103,9 +99,7 @@ export default function ProductItem({ product }) {
 
           {/* Star Icons */}
           <div className="flex space-x-[2px] sm:space-x-[4px]">
-            <FaStar
-              className={`w-[12px] sm:w-[14px]  text-yellow-400`}
-            />
+            <FaStar className={`w-[12px] sm:w-[14px]  text-yellow-400`} />
           </div>
 
           {/* Reviews Count */}
