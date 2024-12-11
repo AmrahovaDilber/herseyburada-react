@@ -54,7 +54,11 @@ export default function Header() {
                   className={`h-8 w-auto sm:h-10 ${
                     darkMode ? "fill-white" : ""
                   }`}
-                  src={ "/herseyburada.svg"}
+             
+                  src={darkMode ? "/download.svg" : "/herseyburada.svg"}
+                  
+            
+                
                   alt="Logo"
                 />
               </Link>

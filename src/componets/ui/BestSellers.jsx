@@ -26,7 +26,7 @@ export default function BestSellers() {
   };
 
   return (
-    <div className="sales-container relative mt-20">
+    <div className=" relative mt-20">
       <TitleSubtitle subtitle="Bu ay" title="Ən çox satılanlar">
         <div className="space-x-2 flex items-center">
           <button
@@ -59,7 +59,7 @@ export default function BestSellers() {
             slidesPerView: 5,
           },
         }}
-        className="w-full"
+         className="w-full overflow-visible"
       >
         {sortedSellerProducts.map((product, index) => (
           <SwiperSlide key={index}>

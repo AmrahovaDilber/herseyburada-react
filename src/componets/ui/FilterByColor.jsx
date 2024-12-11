@@ -23,7 +23,7 @@ const FilterByColor = () => {
         {colors.map(({ bgColorClass, name }) => (
           <li
             key={name}
-            className="flex items-center p-2 rounded-lg transition-colors duration-200 hover:bg-gray-100"
+            className="flex items-center p-2 rounded-lg transition-colors duration-200 hover:bg-gray-100 dark:hover:bg-transparent"
           >
             <label className="flex items-center cursor-pointer ">
               <input

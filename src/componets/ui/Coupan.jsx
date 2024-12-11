@@ -7,7 +7,7 @@ export default function Coupon({ handleApply, text, setText }) {
         type="text"
         id="coupon-code"
         placeholder="Kupon kodu"
-        className="px-[24px] w-full mb-3 sm:mb-0 border border-gray-300 h-[56px] sm:w-[250px] opacity-75 outline-none rounded-[4px] mr-[16px] placeholder-gray-500"
+        className="px-[24px] w-full mb-3 sm:mb-0 border border-gray-300 h-[56px] sm:w-[250px] opacity-75 outline-none rounded-[4px] mr-[16px] text-[#1a1a1a] placeholder-gray-500"
       />
       <button
         onClick={handleApply}

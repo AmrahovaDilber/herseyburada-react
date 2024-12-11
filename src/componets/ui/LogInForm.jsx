@@ -95,7 +95,8 @@ const LoginForm = () => {
           <Link to="/">
             <figure className="w-[180px] mb-5 mx-auto">
               <img
-                src="./herseyburada.svg"
+                   src={darkMode ? "/download.svg" : "/herseyburada.svg"}
+                  
                 alt="Hərşeyburada Logo"
                 className="object-contain w-full h-full"
               />

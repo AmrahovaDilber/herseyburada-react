@@ -91,14 +91,14 @@ Current customer message: `;
     <>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-[70px] sm:bottom-4 right-4 flex items-center gap-1 p-3 z-50 bg-blue-500 text-white rounded-full shadow-lg hover:bg-blue-600 focus:outline-none"
+        className="fixed bottom-[70px]  sm:bottom-4 right-4 flex items-center gap-1 p-3 z-50 bg-blue-500 text-white rounded-full shadow-lg hover:bg-blue-600 focus:outline-none"
       >
         <span> Chat</span>
         <IoChatbubble />
       </button>
 
       {isOpen && (
-        <div className="fixed right-0 bottom-[60px] mx-4 my-2 w-full max-w-[94%] sm:max-w-[500px] z-50 bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden">
+        <div className="fixed right-0 bottom-[60px] sm:bottom-0 mx-4 my-2 w-full max-w-[94%] sm:max-w-[500px] z-50 bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden">
           <div className="flex justify-between items-center p-4 border-b border-gray-200">
             <h2 className="text-lg font-bold">ChatBot</h2>
             <button
@@ -144,15 +144,16 @@ Current customer message: `;
             </div>
 
             <div className="flex space-x-2">
-              <input
-                type="text"
-                value={value}
-                onChange={(e) => setValue(e.target.value)}
-                onKeyPress={handleKeyPress}
-                placeholder="Mesajınızı yazın..."
-                className="flex-1 p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                disabled={loading}
-              />
+            <input
+  type="text"
+  value={value}
+  onChange={(e) => setValue(e.target.value)}
+  onKeyPress={handleKeyPress}
+  placeholder="Mesajınızı yazın..."
+  className="flex-1 p-2 border rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-blue-500"
+  disabled={loading}
+/>
+
               <button
                 onClick={getChatbotResponse}
                 className={`p-2 rounded-lg ${

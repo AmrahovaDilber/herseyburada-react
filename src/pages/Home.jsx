@@ -5,6 +5,7 @@ import Services from "../componets/ui/Services";
 import Sales from "../componets/ui/Sales";
 import ExploreProducts from "../componets/ui/ExploreProducts";
 
+
 export default function Home() {
   return (
     <div>
@@ -14,7 +15,7 @@ export default function Home() {
       <MusicExperience></MusicExperience>
       <ExploreProducts></ExploreProducts>
       <Services></Services>
-    
+
     </div>
   );
 }
