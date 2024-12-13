@@ -43,36 +43,38 @@ export default function NavLinks() {
   };
   return (
     <nav className="flex space-x-6">
-      <Link
-        to="/cartpage"
-        className="group flex items-center gap-1 text-[#1a1a1a] dark:text-white hover:text-[#ff9130] transition-colors duration-300 ease-in-out"
-      >
-        <div className="relative">
-          <IoCartOutline className="text-[22px] text-[#1a1a1a] dark:text-white transition-transform duration-300 transform hover:scale-110 group-hover:text-[#ff9130] ease-in-out" />
-          {cartLength > 0 && (
-            <span className="absolute -top-2 -right-2 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-white text-xs">
-              {cartLength}
-            </span>
-          )}
-        </div>
-        <span>Səbət</span>
-      </Link>
+  <Link
+  to="/cartpage"
+  className="group flex items-center gap-1 text-[#1a1a1a] dark:text-white transition-colors duration-300 ease-in-out hover:text-[#ff9130]"
+>
+  <div className="relative">
+    <IoCartOutline className="text-[22px] transition-transform duration-300 transform group-hover:scale-110 group-hover:text-[#ff9130] ease-in-out" />
+    {cartLength > 0 && (
+      <span className="absolute -top-2 -right-2 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-white text-xs">
+        {cartLength}
+      </span>
+    )}
+  </div>
+  <span className="transition-colors duration-300 group-hover:text-[#ff9130]">Səbət</span>
+</Link>
 
-      <Link
-        to="/wishlist"
-        className="group flex items-center gap-1 text-[#1a1a1a] dark:text-white hover:text-[#ff9130] transition-colors duration-300 ease-in-out"
-      >
-        <div className="relative">
-          <IoMdHeartEmpty className="text-[22px] text-[#1a1a1a] dark:text-white transition-transform duration-300 transform hover:scale-110 group-hover:text-[#ff9130] ease-in-out" />
-          {favoritesLength > 0 && (
-            <span className="absolute -top-2 -right-2 flex h-4 w-4 items-center justify-center rounded-full bg-gradient-to-r from-red-500 to-red-600 text-white text-xs font-bold shadow-md transform hover:scale-105 transition-transform duration-200 ease-in-out">
-              {favoritesLength}
-            </span>
-          )}
-        </div>
-        <span>Sevimlilər</span>
-      </Link>
+<Link
+  to="/wishlist"
+  className="group flex items-center gap-1 text-[#1a1a1a] dark:text-white transition-colors duration-200 ease-in-out hover:text-[#ff9130]"
+>
+  <div className="relative">
+    <IoMdHeartEmpty className="text-[22px] transition-transform duration-100 transform group-hover:scale-110 group-hover:text-[#ff9130] ease-in-out" />
+    {favoritesLength > 0 && (
+      <span className="absolute -top-2 -right-2 flex h-4 w-4 items-center justify-center rounded-full bg-gradient-to-r from-red-500 to-red-600 text-white text-xs font-bold shadow-md transform group-hover:scale-105 transition-transform duration-100 ease-in-out">
+        {favoritesLength}
+      </span>
+    )}
+  </div>
+  <span className="transition-colors duration-100 group-hover:text-[#ff9130]">Sevimlilər</span>
+</Link>
 
+
+  
     <button
         onClick={toggleDarkMode}
         className="flex items-center justify-center text-gray-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded-full transition-colors duration-300"

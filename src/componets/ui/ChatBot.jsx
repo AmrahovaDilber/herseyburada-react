@@ -1,5 +1,5 @@
 import { useState } from "react";
-import categoriesdata from "../../data/categoriesData";
+
 import { IoChatbubble } from "react-icons/io5";
 
 export default function ChatBot() {
@@ -8,17 +8,13 @@ export default function ChatBot() {
   const [isOpen, setIsOpen] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const systemPrompt = `You are a customer service chatbot for an e-commerce website.
-   Here are the available categories and products: ${JSON.stringify(
-     categoriesdata
-   )}. 
-Please help customers find products, provide product details, 
-and answer general inquiries about the items in our catalog.
-Current customer message: `;
+  const systemPrompt = `You are a customer service chatbot. Available categories: 
+  )}. Please assist customers with their inquiries.`;
 
   const isImageUrl = (text) => {
     return /\.(jpg|jpeg|png|gif|webp)$/i.test(text);
   };
+
   const formatText = (text) => {
     return text.split("\n").map((line, index) => (
       <p key={index} className="whitespace-pre-line">
@@ -26,19 +22,22 @@ Current customer message: `;
       </p>
     ));
   };
+
   const getChatbotResponse = async () => {
     if (!value.trim()) return;
     setLoading(true);
     try {
+      const truncatedValue = value.length > 500 ? value.slice(0, 500) : value; 
+
       const response = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyBVvTBolZejVqpUQAc8nu5nQ9iS-B8czug`,
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyCYtj7wKiddFVnBSQ0j4F5xFNddwWZGRtI`,
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            contents: [{ parts: [{ text: systemPrompt + value }] }],
+            contents: [{ parts: [{ text: systemPrompt + truncatedValue }] }],
           }),
         }
       );
@@ -91,7 +90,7 @@ Current customer message: `;
     <>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-[70px]  sm:bottom-4 right-4 flex items-center gap-1 p-3 z-50 bg-blue-500 text-white rounded-full shadow-lg hover:bg-blue-600 focus:outline-none"
+        className="fixed bottom-[70px] sm:bottom-4 right-4 flex items-center gap-1 p-3 z-50 bg-blue-500 text-white rounded-full shadow-lg hover:bg-blue-600 focus:outline-none"
       >
         <span> Chat</span>
         <IoChatbubble />
@@ -144,15 +143,15 @@ Current customer message: `;
             </div>
 
             <div className="flex space-x-2">
-            <input
-  type="text"
-  value={value}
-  onChange={(e) => setValue(e.target.value)}
-  onKeyPress={handleKeyPress}
-  placeholder="Mesajınızı yazın..."
-  className="flex-1 p-2 border rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-blue-500"
-  disabled={loading}
-/>
+              <input
+                type="text"
+                value={value}
+                onChange={(e) => setValue(e.target.value)}
+                onKeyPress={handleKeyPress}
+                placeholder="Mesajınızı yazın..."
+                className="flex-1 p-2 border rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-blue-500"
+                disabled={loading}
+              />
 
               <button
                 onClick={getChatbotResponse}
